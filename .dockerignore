@@ -1,0 +1,12 @@
+tests/
+vendor/
+.editorconfig
+.env
+.env.example
+.gitattributes
+.gitignore
+.php_cs.dist
+docker-compose.yaml
+phpunit.xml
+README.md
+server.php
