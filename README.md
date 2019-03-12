@@ -2,8 +2,12 @@ Requirements
 ------------
 
  - [PHP](https://secure.php.net/) >= 7.1.3
+ - [MySQL](https://www.mysql.com/) 5.7
+
+#### For develpment
+
  - [Composer](https://getcomposer.org/)
- - [Docker](https://www.docker.com/) (for local development)
+ - [Docker](https://www.docker.com/)
    - [Docker Compose](https://docs.docker.com/compose/)
 
 Setting up a Local Development Environment
