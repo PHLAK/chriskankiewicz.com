@@ -1,14 +1,16 @@
 Requirements
 ------------
 
- - [PHP](https://secure.php.net/) >= 7.1.3
- - [MySQL](https://www.mysql.com/) 5.7
+  - [PHP](https://secure.php.net/) >= 7.1.3
+  - [MySQL](https://www.mysql.com/) 5.7
 
-#### For develpment
+#### For development
 
- - [Composer](https://getcomposer.org/)
- - [Docker](https://www.docker.com/)
-   - [Docker Compose](https://docs.docker.com/compose/)
+  - [Composer](https://getcomposer.org/)
+  - [Docker](https://www.docker.com/)
+    - [Docker Compose](https://docs.docker.com/compose/)
+  - [SQLite](https://www.sqlite.org/index.html)
+    - `php-sqlite3` extension
 
 Setting up a Local Development Environment
 ------------------------------------------
