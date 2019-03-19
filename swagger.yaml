@@ -1,0 +1,157 @@
+openapi: 3.0.0
+info:
+  title: Chris's Resume as a Service
+  description: Chris Kankiewicz's Resume as a Service.
+  version: 0.1.0
+
+servers:
+  - url: https://chriskankiewicz.com/api
+
+paths:
+  /experience:
+    get:
+      summary: List Experiences
+      description: Returns a list of all experiences.
+      tags:
+        - Experience
+      responses:
+        '200':
+          description: A list of experiences
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Experience'
+
+    post:
+      summary: Create Experience
+      description: Creates a new experience.
+      tags:
+        - Experience
+      responses:
+        '201':
+          description: The created experience
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Experience'
+        '422':
+          $ref: '#/components/responses/422'
+
+  /experience/{id}:
+    get:
+      summary: Fetch Experience
+      description: Returns a single experience.
+      tags:
+        - Experience
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '200':
+          description: A single experience
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Experience'
+        '404':
+          $ref: '#/components/responses/404'
+
+    patch:
+      summary: Update Experience
+      description: Update an experience.
+      tags:
+        - Experience
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '200':
+          description: The updated experience
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Experience'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+
+    delete:
+      summary: Delete Experience
+      description: Delete an experience.
+      tags:
+        - Experience
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '204':
+          description: No Content
+        '404':
+          $ref: '#/components/responses/404'
+
+components:
+  schemas:
+    Experience:
+      type: object
+      properties:
+        id:
+          type: integer
+        company:
+          type: string
+        title:
+          type: string
+        start_date:
+          type: string
+        end_date:
+          type: string
+        current_position:
+          type: boolean
+        location:
+          type: string
+      example:
+        id: 1337
+        company: Pied Piper
+        title: Data Janitor
+        start_date: '1986-05-20 00:00:00'
+        end_date: '1986-07-06 00:00:00'
+        current_position: false
+        location: San Francisco, California
+
+  responses:
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            example:
+              message: No query results for model
+
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              errors:
+                type: array
+            example:
+              message: The given data was invalid.
