@@ -20,6 +20,4 @@ RUN apt-get update && apt-get install -y libxml2-dev zlib1g-dev \
 RUN docker-php-ext-install bcmath pdo_mysql \
     && pecl install redis && docker-php-ext-enable redis
 
-RUN if [ "${INSTALL_XDEBUG}" = "true" ]; then \
-        pecl install xdebug && docker-php-ext-enable xdebug; \
-    fi
+RUN [ "${INSTALL_XDEBUG}" = "true" ] && pecl install xdebug && docker-php-ext-enable xdebug
