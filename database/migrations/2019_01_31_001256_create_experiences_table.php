@@ -20,7 +20,7 @@ class CreateExperiencesTable extends Migration
             $table->text('description');
             $table->datetime('start_date');
             $table->datetime('end_date')->nullable();
-            $table->boolean('current_position');
+            $table->boolean('current_position')->default(false);
             $table->string('location');
             $table->timestamps();
             $table->softDeletes();
