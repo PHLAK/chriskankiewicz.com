@@ -51,3 +51,7 @@ following from the project's root directory:
 Run the migrations and seed the database.
 
     docker-compose exec php artisan migrate
+
+### Accessing the Development Site
+
+You can access the development site at <http://chriskankiewicz.local>.
