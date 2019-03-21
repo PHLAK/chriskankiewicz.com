@@ -21,7 +21,7 @@ class ExperienceSeeder extends Seeder
     {
         $experiences = collect($this->experiences)->map(function ($experience) {
             return array_combine([
-                'company', 'position', 'description', 'start_date', 'end_date', 'current_position', 'location'
+                'company', 'title', 'description', 'start_date', 'end_date', 'current_position', 'location'
             ], $experience);
         });
 
