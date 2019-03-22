@@ -347,6 +347,11 @@ components:
         start_date: '1986-05-20 00:00:00'
         end_date: '1986-07-06 00:00:00'
         currently_enrolled: false
+      required:
+        - institution
+        - degree
+        - start_date
+        - currently_enrolled
 
     Experience:
       type: object
@@ -373,6 +378,12 @@ components:
         end_date: '1986-07-06 00:00:00'
         current_position: false
         location: San Francisco, California
+      required:
+        - company
+        - title
+        - start_date
+        - current_position
+        - location
 
     Project:
       type: object
@@ -393,6 +404,8 @@ components:
         description: That's no moon!
         project_url: https://en.wikipedia.org/wiki/Death_star
         source_url: https://github.com/PHLAK/death-star
+      required:
+        - name
 
   responses:
     '404':
