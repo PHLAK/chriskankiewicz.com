@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('project_url')->nullable();
             $table->string('source_url')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

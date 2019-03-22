@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('education', 'EducationController');
 Route::apiResource('experience', 'ExperienceController');
+Route::apiResource('project', 'ProjectController');
