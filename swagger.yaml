@@ -29,6 +29,12 @@ paths:
       description: Creates a new experience.
       tags:
         - Education
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Education'
       responses:
         '201':
           description: The created education
@@ -72,6 +78,12 @@ paths:
           schema:
             type: integer
             example: 1337
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Education'
       responses:
         '200':
           description: The updated education
@@ -122,6 +134,12 @@ paths:
       description: Creates a new experience.
       tags:
         - Experience
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Experience'
       responses:
         '201':
           description: The created experience
@@ -165,6 +183,12 @@ paths:
           schema:
             type: integer
             example: 1337
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Experience'
       responses:
         '200':
           description: The updated experience
@@ -215,6 +239,12 @@ paths:
       description: Creates a new project.
       tags:
         - Project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
       responses:
         '201':
           description: The created project
@@ -258,6 +288,12 @@ paths:
           schema:
             type: integer
             example: 1337
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
       responses:
         '200':
           description: The updated project
