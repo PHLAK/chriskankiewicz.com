@@ -38,7 +38,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Education'
+                  allOf:
+                    - $ref: '#/components/properties/id'
+                    - $ref: '#/components/schemas/Education'
+                    - $ref: '#/components/properties/timestamps'
 
     post:
       summary: Create Education
@@ -57,7 +60,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Education'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Education'
+                  - $ref: '#/components/properties/timestamps'
         '422':
           $ref: '#/components/responses/422'
 
@@ -79,7 +85,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Education'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Education'
+                  - $ref: '#/components/properties/timestamps'
+
         '404':
           $ref: '#/components/responses/404'
 
@@ -106,7 +116,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Education'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Education'
+                  - $ref: '#/components/properties/timestamps'
         '404':
           $ref: '#/components/responses/404'
         '422':
@@ -143,7 +156,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Experience'
+                  allOf:
+                    - $ref: '#/components/properties/id'
+                    - $ref: '#/components/schemas/Experience'
+                    - $ref: '#/components/properties/timestamps'
 
     post:
       summary: Create Experience
@@ -162,7 +178,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Experience'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Experience'
+                  - $ref: '#/components/properties/timestamps'
         '422':
           $ref: '#/components/responses/422'
 
@@ -184,7 +203,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Experience'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Experience'
+                  - $ref: '#/components/properties/timestamps'
         '404':
           $ref: '#/components/responses/404'
 
@@ -211,7 +233,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Experience'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Experience'
+                  - $ref: '#/components/properties/timestamps'
         '404':
           $ref: '#/components/responses/404'
         '422':
@@ -248,7 +273,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Project'
+                  allOf:
+                    - $ref: '#/components/properties/id'
+                    - $ref: '#/components/schemas/Project'
+                    - $ref: '#/components/properties/timestamps'
 
     post:
       summary: Create Project
@@ -267,7 +295,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Project'
+                  - $ref: '#/components/properties/timestamps'
         '422':
           $ref: '#/components/responses/422'
 
@@ -289,7 +320,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Project'
+                  - $ref: '#/components/properties/timestamps'
         '404':
           $ref: '#/components/responses/404'
 
@@ -316,7 +350,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Project'
+                  - $ref: '#/components/properties/timestamps'
         '404':
           $ref: '#/components/responses/404'
         '422':
@@ -344,8 +381,6 @@ components:
     Education:
       type: object
       properties:
-        id:
-          type: integer
         institution:
           type: string
         degree:
@@ -357,7 +392,6 @@ components:
         currently_enrolled:
           type: boolean
       example:
-        id: 1337
         company: Hogwarts School of Witchcraft and Wizardry
         title: Care of Magical Creatures
         start_date: '1986-05-20 00:00:00'
@@ -372,8 +406,6 @@ components:
     Experience:
       type: object
       properties:
-        id:
-          type: integer
         company:
           type: string
         title:
@@ -387,7 +419,6 @@ components:
         location:
           type: string
       example:
-        id: 1337
         company: Pied Piper
         title: Data Janitor
         start_date: '1986-05-20 00:00:00'
@@ -404,8 +435,6 @@ components:
     Project:
       type: object
       properties:
-        id:
-          type: integer
         name:
           type: string
         description:
@@ -415,7 +444,6 @@ components:
         source_url:
           type: string
       example:
-        id: 1337
         name: Death Star
         description: That's no moon!
         project_url: https://en.wikipedia.org/wiki/Death_star
@@ -449,3 +477,22 @@ components:
                 type: array
             example:
               message: The given data was invalid.
+  properties:
+    id:
+      type: object
+      properties:
+        id:
+          type: integer
+      example:
+        id: 1337
+
+    timestamps:
+      type: object
+      properties:
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      example:
+        created_at: '1986-05-20 00:00:00'
+        updated_at: '1986-07-06 00:00:00'
