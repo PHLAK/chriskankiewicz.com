@@ -7,6 +7,6 @@ $factory->define(App\Project::class, function (Faker $faker) {
         'name' => $faker->colorName(),
         'description' => $faker->sentence(),
         'project_url' => $faker->url(),
-        'source_url' => 'https://github.com/PHLAK/chriskankiewicz.com'
+        'source_url' => 'https://github.com/PHLAK/death-star'
     ];
 });

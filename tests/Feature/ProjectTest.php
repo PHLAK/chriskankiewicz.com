@@ -43,7 +43,7 @@ class ProjectTest extends TestCase
             'name' => 'Death Star',
             'description' => "That's no moon",
             'project_url' => 'https://en.wikipedia.org/wiki/Death_Star',
-            'source_url' => 'https://github.com/PHLAK/chriskankiewicz.com'
+            'source_url' => 'https://github.com/PHLAK/death-star'
         ]);
 
         $response->assertStatus(201)
@@ -51,7 +51,7 @@ class ProjectTest extends TestCase
                 'name' => 'Death Star',
                 'description' => "That's no moon",
                 'project_url' => 'https://en.wikipedia.org/wiki/Death_Star',
-                'source_url' => 'https://github.com/PHLAK/chriskankiewicz.com'
+                'source_url' => 'https://github.com/PHLAK/death-star'
             ]);
     }
 
