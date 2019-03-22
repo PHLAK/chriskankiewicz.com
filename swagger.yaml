@@ -201,22 +201,22 @@ paths:
         '422':
           $ref: '#/components/responses/422'
 
-      delete:
-        summary: Delete Experience
-        description: Delete an experience.
-        tags:
-          - Experience
-        parameters:
-          - in: query
-            name: id
-            schema:
-              type: integer
-              example: 1337
-        responses:
-          '204':
-            description: No Content
-          '404':
-            $ref: '#/components/responses/404'
+    delete:
+      summary: Delete Experience
+      description: Delete an experience.
+      tags:
+        - Experience
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '204':
+          description: No Content
+        '404':
+          $ref: '#/components/responses/404'
 
   /project:
     get:
@@ -306,22 +306,22 @@ paths:
         '422':
           $ref: '#/components/responses/422'
 
-      delete:
-        summary: Delete Project
-        description: Delete a project.
-        tags:
-          - Project
-        parameters:
-          - in: query
-            name: id
-            schema:
-              type: integer
-              example: 1337
-        responses:
-          '204':
-            description: No Content
-          '404':
-            $ref: '#/components/responses/404'
+    delete:
+      summary: Delete Project
+      description: Delete a project.
+      tags:
+        - Project
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '204':
+          description: No Content
+        '404':
+          $ref: '#/components/responses/404'
 
 components:
   schemas:
