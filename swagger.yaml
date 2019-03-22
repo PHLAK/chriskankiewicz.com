@@ -1,11 +1,27 @@
 openapi: 3.0.0
+
+servers:
+  - url: https://chriskankiewicz.com/api
+
 info:
   title: Chris's Resume as a Service
   description: Chris Kankiewicz's Resume as a Service.
   version: 0.1.0
+  license:
+    name: MIT
+    url: https://choosealicense.com/licenses/mit/
+  contact:
+    name: API Support
+    email: Chris@ChrisKankiewicz.com
+    url: https://github.com/PHLAK/chriskankiewicz.com
 
-servers:
-  - url: https://chriskankiewicz.com/api
+tags:
+  - name: Education
+    description: Schools attended and degrees earned.
+  - name: Experience
+    description: Chris's work history.
+  - name: Projects
+    description: Personal and professional projects.
 
 paths:
   /education:
@@ -223,7 +239,7 @@ paths:
       summary: List Projects
       description: Returns a list of all projects.
       tags:
-        - Project
+        - Projects
       responses:
         '200':
           description: A list of projects
@@ -238,7 +254,7 @@ paths:
       summary: Create Project
       description: Creates a new project.
       tags:
-        - Project
+        - Projects
       requestBody:
         required: true
         content:
@@ -260,7 +276,7 @@ paths:
       summary: Fetch Project
       description: Returns a single project.
       tags:
-        - Project
+        - Projects
       parameters:
         - in: query
           name: id
@@ -281,7 +297,7 @@ paths:
       summary: Update Project
       description: Update a project.
       tags:
-        - Project
+        - Projects
       parameters:
         - in: query
           name: id
@@ -310,7 +326,7 @@ paths:
       summary: Delete Project
       description: Delete a project.
       tags:
-        - Project
+        - Projects
       parameters:
         - in: query
           name: id
