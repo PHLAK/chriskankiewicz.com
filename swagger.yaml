@@ -19,7 +19,7 @@ tags:
   - name: Education
     description: Schools attended and degrees earned.
   - name: Experience
-    description: Chris's work history.
+    description: Porfessional work history.
   - name: Projects
     description: Personal and professional projects.
   - name: Skills
@@ -97,7 +97,7 @@ paths:
 
     patch:
       summary: Update Education
-      description: Update an education.
+      description: Updates an education.
       tags:
         - Education
       parameters:
@@ -129,7 +129,7 @@ paths:
 
     delete:
       summary: Delete Education
-      description: Delete an education.
+      description: Deletes an education.
       tags:
         - Education
       parameters:
@@ -214,7 +214,7 @@ paths:
 
     patch:
       summary: Update Experience
-      description: Update an experience.
+      description: Updates an experience.
       tags:
         - Experience
       parameters:
@@ -246,7 +246,7 @@ paths:
 
     delete:
       summary: Delete Experience
-      description: Delete an experience.
+      description: Deletes an experience.
       tags:
         - Experience
       parameters:
@@ -331,7 +331,7 @@ paths:
 
     patch:
       summary: Update Project
-      description: Update a project.
+      description: Updates a project.
       tags:
         - Projects
       parameters:
@@ -363,7 +363,7 @@ paths:
 
     delete:
       summary: Delete Project
-      description: Delete a project.
+      description: Deletes a project.
       tags:
         - Projects
       parameters:
