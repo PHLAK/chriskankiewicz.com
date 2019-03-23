@@ -22,6 +22,8 @@ tags:
     description: Chris's work history.
   - name: Projects
     description: Personal and professional projects.
+  - name: Skills
+    description: Skills and areas of knowledge.
 
 paths:
   /education:
@@ -376,6 +378,124 @@ paths:
         '404':
           $ref: '#/components/responses/404'
 
+  /skill:
+    get:
+      summary: List Skills
+      description: Returns a list of all skills.
+      tags:
+        - Skills
+      responses:
+        '200':
+          description: A list of skills
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/properties/id'
+                    - $ref: '#/components/schemas/Skill'
+                    - $ref: '#/components/properties/timestamps'
+
+    post:
+      summary: Create Skill
+      description: Creates a new skill.
+      tags:
+        - Skills
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Skill'
+      responses:
+        '201':
+          description: The created skill
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Skill'
+                  - $ref: '#/components/properties/timestamps'
+        '422':
+          $ref: '#/components/responses/422'
+
+  /skill/{id}:
+    get:
+      summary: Fetch Skill
+      description: Returns a single skill.
+      tags:
+        - Skills
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '200':
+          description: A single skill
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Skill'
+                  - $ref: '#/components/properties/timestamps'
+
+        '404':
+          $ref: '#/components/responses/404'
+
+    patch:
+      summary: Update Skill
+      description: Updates a skill.
+      tags:
+        - Skills
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            example: 1337
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Skill'
+      responses:
+        '200':
+          description: The updated skill
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/Skill'
+                  - $ref: '#/components/properties/timestamps'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+
+    delete:
+      summary: Delete Skill
+      description: Deletes a skill.
+      tags:
+        - Skills
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '204':
+          description: No Content
+        '404':
+          $ref: '#/components/responses/404'
+
 components:
   schemas:
     Education:
@@ -448,6 +568,16 @@ components:
         description: That's no moon!
         project_url: https://en.wikipedia.org/wiki/Death_star
         source_url: https://github.com/PHLAK/death-star
+      required:
+        - name
+
+    Skill:
+      type: object
+      properties:
+        name:
+          type: string
+      example:
+        name: Pickpocketing
       required:
         - name
 
