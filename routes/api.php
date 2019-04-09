@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers;
 use Illuminate\Http\Request;
 
 /*
@@ -17,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('education', 'EducationController');
-Route::apiResource('experience', 'ExperienceController');
-Route::apiResource('project', 'ProjectController');
-Route::apiResource('skill', 'SkillController');
+Route::apiResource('education', Controllers\EducationController::class);
+Route::apiResource('experience', Controllers\ExperienceController::class);
+Route::apiResource('project', Controllers\ProjectController::class);
+Route::apiResource('skill', Controllers\SkillController::class);
