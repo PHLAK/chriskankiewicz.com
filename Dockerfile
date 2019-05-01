@@ -3,7 +3,7 @@ COPY . /app
 COPY ./.docker/auth.json /tmp/auth.json
 RUN composer install --ignore-platform-reqs --no-dev --no-interaction --working-dir /app
 
-FROM php:7.2-apache
+FROM php:7.3-apache
 MAINTAINER Chris Kankiewicz <ckankiewicz@freedomdebtrelief.com>
 
 ARG INSTALL_XDEBUG="false"
