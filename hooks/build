@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Custom Docker Hub build hook. For reference, see:
+# https://docs.docker.com/docker-cloud/builds/advanced/
+
+docker build --build-arg COMPOSER_AUTH=${COMPOSER_AUTH} --tag ${IMAGE_NAME} .

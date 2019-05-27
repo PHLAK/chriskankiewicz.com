@@ -1,5 +1,5 @@
 FROM composer:1.8 as build
-ARG COMPOSER_AUTH="{}"
+ARG COMPOSER_AUTH={}
 COPY . /app
 RUN composer install --ignore-platform-reqs --no-dev --no-interaction --working-dir /app
 
