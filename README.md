@@ -27,7 +27,7 @@ Setting up a Local Development Environment
 
 Add the following entry to `/etc/hosts`:
 
-    127.0.0.1  chriskankiewicz.local chriskankiewicz-dot-com-mysql chriskankiewicz-dot-com-memcached
+    127.0.0.1  chriskankiewicz.local chriskankiewicz-dot-com-mysql chriskankiewicz-dot-com-redis
 
 ### Set Environment Variables
 
