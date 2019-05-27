@@ -47,15 +47,15 @@
             <div id="content" class="w-7/12 p-6">
                 <h1 class="font-mono text-2xl mb-8">Main Content</h1>
 
-                <http-request-component request-uri="/api/skill" title="Skills">
+                <http-request-component request-path="/api/skill" title="Skills">
                     Skills and areas of expertise.
                 </http-request-component>
 
-                <http-request-component request-uri="/api/experience" title="Experience">
+                <http-request-component request-path="/api/experience" title="Experience">
                     Work experience and job history.
                 </http-request-component>
 
-                <http-request-component request-uri="/api/education" title="Education">
+                <http-request-component request-path="/api/education" title="Education">
                     Educational history and achievements.
                 </http-request-component>
             </div>

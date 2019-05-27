@@ -2,7 +2,7 @@
     <div class="rounded-lg border-2 border-gray-800 shadow-solid-gray-800 overflow-hidden w-full my-8">
         <div class="flex justify-between items-center bg-gray-800 border-b-2 border-gray-800 p-4">
             <span class="font-mono text-white text-xl">
-                GET {{ requestUri }}
+                GET {{ requestPath }}
             </span>
 
             <button v-on:click="makeRequest" class="bg-teal-600 px-4 py-2 rounded text-white hover:bg-teal-700">
@@ -32,10 +32,10 @@
                 return '/docs#tag/' + this.title;
             }
         },
-        props: ['request-uri', 'title'],
+        props: ['request-path', 'title'],
         methods: {
             makeRequest: function () {
-                axios.get(this.requestUri).then(
+                axios.get(this.requestPath).then(
                     response => this.responseBody = JSON.stringify(response.data, null, 2)
                 ).catch(
                     response => console.log(response)
