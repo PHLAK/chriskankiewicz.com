@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::apiResource('education', Controllers\EducationController::class);
-Route::apiResource('experience', Controllers\ExperienceController::class);
-Route::apiResource('project', Controllers\ProjectController::class);
-Route::apiResource('skill', Controllers\SkillController::class);
+Route::apiResource('education', Api\EducationController::class);
+Route::apiResource('experience', Api\ExperienceController::class);
+Route::apiResource('project', Api\ProjectController::class);
+Route::apiResource('skill', Api\SkillController::class);

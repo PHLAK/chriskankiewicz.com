@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Project;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProject;
 use App\Http\Requests\UpdateProject;
-use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -22,7 +22,8 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreProject  $request
+     * @param \App\Http\Requests\StoreProject $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreProject $request)
@@ -33,7 +34,8 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Project  $project
+     * @param \App\Project $project
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Project $project)
@@ -44,8 +46,9 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateProject  $request
-     * @param  \App\Project  $project
+     * @param \App\Http\Requests\UpdateProject $request
+     * @param \App\Project                     $project
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateProject $request, Project $project)
@@ -58,7 +61,8 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Project  $project
+     * @param \App\Project $project
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Project $project)

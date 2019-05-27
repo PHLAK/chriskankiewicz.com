@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Education;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEducation;
 use App\Http\Requests\UpdateEducation;
-use Illuminate\Http\Request;
 
 class EducationController extends Controller
 {
@@ -22,7 +22,8 @@ class EducationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEducation  $request
+     * @param \App\Http\Requests\StoreEducation $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreEducation $request)
@@ -33,7 +34,8 @@ class EducationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Education  $education
+     * @param \App\Education $education
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Education $education)
@@ -44,8 +46,9 @@ class EducationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEducation  $request
-     * @param  \App\Education  $education
+     * @param \App\Http\Requests\UpdateEducation $request
+     * @param \App\Education                     $education
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateEducation $request, Education $education)
@@ -58,7 +61,8 @@ class EducationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Education  $education
+     * @param \App\Education $education
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Education $education)

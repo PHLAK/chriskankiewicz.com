@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Skill;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSkill;
 use App\Http\Requests\UpdateSkill;
-use Illuminate\Http\Request;
 
 class SkillController extends Controller
 {
@@ -22,7 +22,8 @@ class SkillController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreSkill  $request
+     * @param \App\Http\Requests\StoreSkill $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreSkill $request)
@@ -33,7 +34,8 @@ class SkillController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Skill  $skill
+     * @param \App\Skill $skill
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Skill $skill)
@@ -44,8 +46,9 @@ class SkillController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateSkill  $request
-     * @param  \App\Skill  $skill
+     * @param \App\Http\Requests\UpdateSkill $request
+     * @param \App\Skill                     $skill
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateSkill $request, Skill $skill)
@@ -58,7 +61,8 @@ class SkillController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Skill  $skill
+     * @param \App\Skill $skill
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Skill $skill)
