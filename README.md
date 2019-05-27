@@ -3,6 +3,7 @@ Requirements
 
   - [PHP](https://secure.php.net/) >= 7.1.3
   - [MySQL](https://www.mysql.com/) 5.7
+  - [Node.js](https://nodejs.org) >= 10.15.3
 
 #### For development
 
@@ -55,3 +56,14 @@ Run the migrations and seed the database.
 ### Accessing the Development Site
 
 You can access the development site at <http://chriskankiewicz.local>.
+
+Compiling Assets
+----------------
+
+CSS and JavaScript assets must be compiled. This can be accomplished by running:
+
+    npm run dev
+
+Or to watch for changed files and re-compile automatically (during development):
+
+    npm run watch
