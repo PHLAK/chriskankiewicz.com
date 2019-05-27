@@ -1,6 +1,6 @@
 FROM composer:1.8 as build
+ARG COMPOSER_AUTH="{}"
 COPY . /app
-COPY ./.docker/auth.json /tmp/auth.json
 RUN composer install --ignore-platform-reqs --no-dev --no-interaction --working-dir /app
 
 FROM php:7.3-apache
