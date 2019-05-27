@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded-lg border-2 border-gray-800 shadow-solid-gray-800 overflow-hidden w-full my-8">
+    <div class="border-2 border-gray-800 shadow-solid-gray-800 overflow-hidden w-full my-8">
         <div class="flex justify-between items-center bg-gray-800 border-b-2 border-gray-800 p-4">
             <span class="font-mono text-white text-xl">
                 GET {{ requestPath }}

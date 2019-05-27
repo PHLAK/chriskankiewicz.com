@@ -4,7 +4,7 @@
     <div class="container">
         <div class="flex">
             <div id="sidebar" class="flex-none w-5/12 max-w-3xl min-w-xl min-h-screen p-6 bg-gray-200">
-                <div id="user-card" class="rounded-lg border-2 border-gray-800 shadow-solid-gray-800 w-full bg-white overflow-hidden">
+                <div id="user-card" class="border-2 border-gray-800 shadow-solid-gray-800 w-full bg-white overflow-hidden">
                     <div class="h-40 bg-cover bg-center" style="background-image: url('{{ asset('images/user_bg.jpg') }}');"></div>
 
                     <img src="{{ asset('images/mustache_chris.jpg') }}" alt="Profile Photo" class="w-32 rounded-full border-white border-8 mx-4 -mt-16">
@@ -45,7 +45,7 @@
             </div>
 
             <div id="content" class="w-7/12 p-6">
-                <h1 class="font-mono text-2xl mb-8">Main Content</h1>
+                <h1 class="inline-block bg-gray-800 font-mono text-white text-2xl mb-8 px-4 py-2">Main Content</h1>
 
                 <http-request-component request-path="/api/skill" title="Skills">
                     Skills and areas of expertise.
