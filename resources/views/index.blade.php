@@ -47,14 +47,6 @@
             <div id="content" class="w-7/12 p-6">
                 <h1 class="font-mono text-2xl mb-8">Main Content</h1>
 
-                <p class="mb-8">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsum, fugiat laudantium! Ea nam nihil obcaecati nesciunt
-                    accusantium enim exercitationem dicta facilis praesentium
-                    quod fuga saepe voluptatum mollitia, soluta qui eaque!
-                </p>
-
-                {{-- <skills-component></skills-component> --}}
                 <http-request-component request-uri="/api/skill" title="Skills">
                     Skills and areas of expertise.
                 </http-request-component>
