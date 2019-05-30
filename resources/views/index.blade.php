@@ -7,7 +7,7 @@
                 <div id="user-card" class="border-2 border-gray-800 shadow-solid-gray-800 w-full bg-white overflow-hidden">
                     <div class="h-40 bg-cover bg-center" style="background-image: url('{{ asset('images/user_bg.jpg') }}');"></div>
 
-                    <img src="{{ asset('images/mustache_chris.jpg') }}" alt="Profile Photo" class="w-32 rounded-full border-white border-8 mx-4 -mt-16">
+                    <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 300) }}" alt="Profile Photo" class="w-32 rounded-full border-white border-8 mx-4 -mt-16">
 
                     <h1 class="font-semibold text-2xl -mt-16 ml-32 px-4 py-2">
                         Chris Kankiewicz
