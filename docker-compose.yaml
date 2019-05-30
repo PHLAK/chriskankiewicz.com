@@ -6,6 +6,7 @@ services:
     build:
       context: .
       args:
+        COMPOSER_AUTH: ${COMPOSER_AUTH}
         INSTALL_XDEBUG: 'true'
     environment:
       APP_ENV: 'docker'
