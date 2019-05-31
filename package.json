@@ -11,9 +11,9 @@
     },
     "devDependencies": {
         "@fortawesome/fontawesome-pro": "^5.8.2",
-        "axios": "^0.18",
+        "axios": "^0.19",
         "cross-env": "^5.1",
-        "laravel-mix": "^2.0",
+        "laravel-mix": "^3.0",
         "lodash": "^4.17.5",
         "tailwindcss": "^1.0.2",
         "vue": "^2.5.17"
