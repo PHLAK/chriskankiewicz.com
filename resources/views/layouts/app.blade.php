@@ -11,5 +11,13 @@
 <title>Chris Kankiewicz</title>
 
 <div id="app">
-    @yield('content')
+    <div class="flex flex-col md:flex-row">
+        <div class="md:min-h-screen">
+            @include('components/sidebar')
+        </div>
+
+        <div id="content" class="w-full p-6">
+            @yield('content')
+        </div>
+    </div>
 </div>
