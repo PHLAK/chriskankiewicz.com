@@ -19,8 +19,8 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         return view('index', [
-            'education' => Education::all(),
-            'experience' => Experience::all(),
+            'education' => Education::orderBy('start_date', 'DESC')->get(),
+            'experience' => Experience::orderBy('start_date', 'DESC')->get(),
             'skills' => Skill::all()
         ]);
     }
