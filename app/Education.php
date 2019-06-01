@@ -21,4 +21,7 @@ class Education extends Model
     protected $casts = [
         'currently_enrolled' => 'boolean',
     ];
+
+    /** @var array The attributes that should be hidden for arrays. */
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 }

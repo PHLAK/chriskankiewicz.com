@@ -13,7 +13,7 @@ use App\Http\Controllers;
 |
 */
 
-Route::view('/', 'index')->name('index');
+Route::get('/', Controllers\IndexController::class)->name('index');
 
 Route::get('/home', [Controllers\HomeController::class, 'index'])->name('home');
 

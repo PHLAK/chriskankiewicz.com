@@ -24,7 +24,8 @@ class StoreSkill extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:255']
+            'name' => ['required', 'string', 'max:255'],
+            'proficiency' => ['required', 'integer', 'between:0,100']
         ];
     }
 }
