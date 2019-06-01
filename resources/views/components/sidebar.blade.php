@@ -1,5 +1,5 @@
-<div id="sidebar" class="flex flex-col justify-between p-6 bg-gray-200 h-full">
-    <div id="user-card" class="border-2 border-gray-800 shadow-solid-gray-800 w-full bg-white overflow-hidden">
+<div id="sidebar" class="flex flex-col justify-between w-full p-6 bg-gray-200 h-full md:max-w-md">
+    <div id="user-card" class="border-2 border-gray-800 shadow-solid-gray-800 bg-white overflow-hidden md:sticky md:top-6">
         <div class="h-40 bg-cover bg-center" style="background-image: url('{{ asset('images/user_bg.jpg') }}');"></div>
 
         <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 300) }}" alt="Profile Photo" class="w-32 rounded-full border-white border-8 mx-4 -mt-16">
@@ -39,8 +39,7 @@
         </div>
     </div>
 
-
-    <a href="https://github.com/PHLAK/chriskankiewicz.com" class="block bg-gray-800 text-white text-center p-4 mt-6 -mx-6 -mb-6 hover:bg-gray-700">
+    <a href="https://github.com/PHLAK/chriskankiewicz.com" class="block bg-gray-800 text-white text-center p-4 mt-6 -mx-6 -mb-6 sticky bottom-0 hover:bg-gray-700">
         <i class="far fa-code fa-fw"></i> View source on GitHub
     </a>
 </div>

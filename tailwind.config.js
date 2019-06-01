@@ -12,18 +12,21 @@ module.exports = {
                 'solid-gray-800': '4px 4px 0 #2D3748',
                 'solid-gray-900': '4px 4px 0 #1A202C'
             },
+            inset: {
+                '1': "0.25rem",
+                '2': "0.5rem",
+                '3': "0.75rem",
+                '4': "1rem",
+                '5': "1.25rem",
+                '6': "1.5rem",
+                '8': "2rem",
+            },
             textColor: {
                 'github': '#171515',
                 'keybase': '#FF6F21',
                 'linkedin': '#2977C9', // #4875B4
                 'steam': '#3B3B38',
                 'twitter': '#1DA1F2',
-            },
-            top: {
-                '1': "0.25rem",
-                '2': "0.5rem",
-                '3': "0.75rem",
-                '4': "1rem"
             }
         }
     },
