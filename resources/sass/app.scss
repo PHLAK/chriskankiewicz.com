@@ -8,3 +8,7 @@
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
+
+#content > *:last-child {
+    margin-bottom: 0 !important;
+}

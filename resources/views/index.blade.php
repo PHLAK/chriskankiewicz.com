@@ -7,9 +7,9 @@
                 <i class="far fa-lightbulb"></i> Skills
             @endheading
 
-            <div class="text-justify mb-8">
+            <div class="flex flex-wrap mb-8">
                 @foreach ($skills as $skill)
-                    <span class="inline-block bg-gray-200 px-2 py-1 m-1 rounded {{ $skill->textSize() }}">
+                    <span class="self-center inline-block bg-gray-200 px-2 py-1 m-1 rounded {{ $skill->textSize() }}">
                         {{ $skill->name }}
                     </span>
                 @endforeach

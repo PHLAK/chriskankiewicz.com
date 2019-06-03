@@ -23,21 +23,21 @@ class Skill extends Model
     public function textSize(): string
     {
         if (in_array($this->proficiency, range(0, 15))) {
-            return 'text-xs';
-        }
-
-        if (in_array($this->proficiency, range(16, 35))) {
             return 'text-sm';
         }
 
-        if (in_array($this->proficiency, range(66, 85))) {
-            return 'text-lg';
+        if (in_array($this->proficiency, range(16, 35))) {
+            return 'text-base';
         }
 
-        if (in_array($this->proficiency, range(86, 100))) {
+        if (in_array($this->proficiency, range(66, 85))) {
             return 'text-xl';
         }
 
-        return 'text-base';
+        if (in_array($this->proficiency, range(86, 100))) {
+            return 'text-2xl';
+        }
+
+        return 'text-lg';
     }
 }

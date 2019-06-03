@@ -43,7 +43,7 @@
                         </a>
                     @endif
 
-                    <button type="submit" class="inline-block bg-teal-600 text-white px-4 py-2 hover:bg-teal-700">
+                    <button type="submit" class="inline-block rounded bg-teal-600 text-white px-4 py-2 hover:bg-teal-700">
                         {{ __('Login') }}
                     </button>
                 </div>

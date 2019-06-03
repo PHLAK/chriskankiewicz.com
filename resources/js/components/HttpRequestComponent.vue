@@ -6,7 +6,7 @@
             </span>
 
             <button v-on:click="makeRequest" class="bg-teal-600 px-4 py-2 rounded text-white hover:bg-teal-700">
-                Fetch {{ title }}
+                Send
             </button>
         </div>
 

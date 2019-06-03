@@ -1,4 +1,4 @@
-<div id="sidebar" class="flex flex-col justify-between w-full p-6 bg-gray-200 h-full md:max-w-md">
+<div id="sidebar" class="flex flex-col justify-between p-6 bg-gray-200 h-full md:max-w-md">
     <div id="user-card" class="border-2 border-gray-800 shadow-solid-gray-800 bg-white overflow-hidden md:sticky md:top-6">
         <div class="h-40 bg-cover bg-center" style="background-image: url('{{ asset('images/user_bg.jpg') }}');"></div>
 
