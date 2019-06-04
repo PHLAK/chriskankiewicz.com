@@ -52,7 +52,9 @@ class CreateUsersTable extends Migration
             'name' => 'Chris Kankiewicz',
             'email' => 'Chris@ChrisKankiewicz.com',
             'email_verified_at' => Carbon::now(),
-            'password' => Hash::make(Str::random(32)),
+            'password' => Hash::make(
+                config('app.env') == 'local' ? 'secret' : Str::random(32)
+            ),
             'admin' => true
         ]);
     }
