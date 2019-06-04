@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\User;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUsersTable extends Migration
 {
@@ -23,6 +27,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        $this->seed();
     }
 
     /**
@@ -33,5 +39,21 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+    }
+
+    /**
+     * Seed the users table.
+     *
+     * @return void
+     */
+    protected function seed()
+    {
+        User::create([
+            'name' => 'Chris Kankiewicz',
+            'email' => 'Chris@ChrisKankiewicz.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make(Str::random(32)),
+            'admin' => true
+        ]);
     }
 }
