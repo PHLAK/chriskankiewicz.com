@@ -31,7 +31,7 @@
 
             @foreach ($experience as $experience)
                 <div class="mb-8">
-                    <h3 class="text-xl">
+                    <h3 class="text-2xl">
                         <span class="font-bold">
                             {{ $experience->title }}
                         </span>
@@ -39,14 +39,21 @@
                         @ {{ $experience->company }}
                     </h3>
 
-                    <div class="text-sm text-gray-700">
-                        {{ $experience->start_date->format('F Y') }} -
-                        @if($experience->current_position)
-                            Current
-                        @else
-                            {{ $experience->end_date->format('F Y') }}
-                        @endif
-                        &bull; {{ $experience->location }}
+                    <div class="text-sm text-gray-600">
+                        <span class="mr-2">
+                            <i class="far fa-calendar-day fa-fw"></i>
+                            {{ $experience->start_date->format('F Y') }} -
+                            @if($experience->current_position)
+                                Current
+                            @else
+                                {{ $experience->end_date->format('F Y') }}
+                            @endif
+                        </span>
+
+                        <span>
+                            <i class="far fa-map-marker-alt fa-fw"></i>
+                            {{ $experience->location }}
+                        </span>
                     </div>
 
                     <p class="my-4">
@@ -71,13 +78,14 @@
 
             @foreach ($education as $education)
                 <div class="mb-8">
-                    <h3 class="text-xl">
+                    <h3 class="text-2xl">
                         <span class="font-bold">
                             {{ $education->institution }}
                         </span>
                     </h3>
 
-                    <div class="text-sm text-gray-700">
+                    <div class="text-sm text-gray-600">
+                        <i class="far fa-calendar-day fa-fw"></i>
                         {{ $education->start_date->format('F Y') }}
                         - {{ $education->end_date->format('F Y') }}
                     </div>
