@@ -48,14 +48,17 @@ class CreateUsersTable extends Migration
      */
     protected function seed()
     {
-        User::create([
+        $user = new User([
             'name' => 'Chris Kankiewicz',
             'email' => 'Chris@ChrisKankiewicz.com',
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make(
                 config('app.env') == 'local' ? 'secret' : Str::random(32)
-            ),
-            'admin' => true
+            )
         ]);
+
+        $user->admin = true;
+
+        $user->save();
     }
 }
