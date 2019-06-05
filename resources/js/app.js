@@ -34,10 +34,10 @@ if (token) {
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-const files = require.context('./', true, /\.vue$/i)
-files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
+// const files = require.context('./', true, /\.vue$/i);
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-// Vue.component('education-component', require('./components/EducationComponent.vue'));
+Vue.component('http-request-component', require('./components/HttpRequestComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
