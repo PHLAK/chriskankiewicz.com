@@ -10,7 +10,7 @@
             </button>
         </div>
 
-        <textarea v-model="responseBody" class="block font-mono p-4 w-full h-64" readonly></textarea>
+        <textarea v-model="responseBody" class="block font-mono p-4 w-full h-64 resize-y whitespace-pre" readonly></textarea>
 
         <div class="bg-gray-200 border-t-2 border-gray-800 p-4 text-center">
             <a :href="docsHref" class="text-sm underline">
