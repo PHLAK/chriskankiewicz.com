@@ -9,6 +9,9 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
+// Prism.js Theme
+@import "prism.scss";
+
 #content > *:last-child {
     margin-bottom: 0 !important;
 }

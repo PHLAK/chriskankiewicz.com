@@ -4,17 +4,18 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Code;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 
-class Skill extends Resource
+class Project extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Skill';
+    public static $model = 'App\Project';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -29,7 +30,7 @@ class Skill extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name'
+        'id', 'name', 'description'
     ];
 
     /**
@@ -48,7 +49,13 @@ class Skill extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Number::make('Proficiency')->min(1)->max(100)
+            Markdown::make('Description'),
+
+            Code::make('Snippet'),
+
+            Text::make('Project URL')->rules('max:2000'),
+
+            Text::make('Source URL')->rules('max:2000')
         ];
     }
 

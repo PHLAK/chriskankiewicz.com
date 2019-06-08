@@ -1,0 +1,164 @@
+$background: #2f343e;
+$white: #fff;
+$gray: #66727d;
+$red: #b86367;
+$orange: #cb876c;
+$yellow: #ebca8a;
+$green: #a2bd8b;
+$blue: #8da0b1;
+$purple: #af8eac;
+
+code[class*="language-"],
+pre[class*="language-"] {
+    background: $background;
+    color: $white;
+    direction: ltr;
+    hyphens: none;
+    line-height: 2;
+    tab-size: 4;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+    background: $white;
+    color: $red;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1.5em;
+    overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: $gray;
+}
+
+.token.function {
+    color: $blue;
+}
+
+.token.punctuation {
+    color: $white;
+}
+
+.token.namespace {
+    opacity: 0.7;
+}
+
+.token.operator {
+    color: $white;
+}
+.token.boolean,
+.token.number {
+    color: $orange;
+}
+
+.token.property {
+    color: $orange;
+}
+
+.token.tag {
+    color: $blue;
+}
+
+.token.string {
+    color: $green;
+}
+
+.token.selector {
+    color: $purple;
+}
+
+.token.attr-name {
+    color: $red;
+}
+
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: $green;
+}
+
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+    color: $purple;
+}
+
+.token.statement,
+.token.regex,
+.token.atrule {
+    color: $blue;
+}
+
+.token.placeholder,
+.token.variable {
+    color: $red;
+}
+
+.token.deleted {
+    text-decoration: line-through;
+}
+
+.token.inserted {
+    border-bottom: 1px dotted $white;
+    text-decoration: none;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.important {
+    color: $red;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+pre > code.highlight {
+    outline: 0.4em solid $red;
+    outline-offset: 0.4em;
+}
+
+.line-numbers .line-numbers-rows {
+    border-right-color: $gray !important;
+}
+
+.line-numbers-rows > span:before {
+    color: $blue !important;
+}
+
+.line-highlight {
+    background: #393f4a !important;
+    background: linear-gradient(
+        to right,
+        #393f4a 70%,
+        rgba(239, 241, 245, 0)
+    ) !important;
+}

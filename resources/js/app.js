@@ -48,3 +48,22 @@ Vue.component('http-request-component', require('./components/HttpRequestCompone
 const app = new Vue({
     el: '#app'
 });
+
+/*
+ * Prism.js
+ */
+
+import Prism from "prismjs";
+import "prismjs/components/prism-markup-templating";
+import "prismjs/components/prism-php";
+import "prismjs/plugins/show-language/prism-show-language";
+import "prismjs/plugins/normalize-whitespace/prism-normalize-whitespace";
+
+Prism.plugins.NormalizeWhitespace.setDefaults({
+    "remove-trailing": true,
+    "remove-indent": true,
+    "left-trim": true,
+    "right-trim": true
+});
+
+Prism.highlightAll();

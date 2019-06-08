@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Education;
 use App\Experience;
+use App\Project;
 use App\Skill;
 
 class IndexController extends Controller
@@ -21,6 +22,7 @@ class IndexController extends Controller
         return view('index', [
             'education' => Education::orderBy('start_date', 'DESC')->get(),
             'experience' => Experience::orderBy('start_date', 'DESC')->get(),
+            'projects' => Project::all(),
             'skills' => Skill::all()
         ]);
     }

@@ -103,4 +103,58 @@
             </http-request-component>
         </div>
     </div>
+
+    <div class="flex flex-col mb-16 xl:flex-row">
+        <div class="xl:w-7/12 xl:mr-6">
+            @heading(['tag' => 'h2'])
+                <i class="far fa-coffee fa-fw"></i> Projects
+            @endheading
+
+            @foreach ($projects as $project)
+                <div class="mb-8">
+                    <h3 class="text-2xl">
+                        <span class="font-bold">
+                            {{ $project->name }}
+                        </span>
+                    </h3>
+
+                    <div class="text-sm text-gray-600">
+                        <a href="#" class="inline-block mr-2 hover:underline">
+                            <i class="fab fa-github fa-fw"></i> phlak/something
+                        </a>
+
+                        <a href="#" class="inline-block mr-2 hover:underline">
+                            <i class="far fa-star fa-fw"></i> 1337
+                        </a>
+
+                        <a href="#" class="inline-block hover:underline">
+                            <i class="far fa-code-branch fa-fw"></i> 42
+                        </a>
+                    </div>
+
+                    <p class="my-4">
+                        {{ $project->description }}
+                    </p>
+
+                    @isset($project->snippet)
+                        <pre class="rounded-lg my-4 max-w-full overflow-x-scroll">
+                            <code class="language-php">{{ $project->snippet }}</code>
+                        </pre>
+                    @endif
+
+                    @isset($project->project_url)
+                        <a href="{{ $project->project_url }}" class="inline-block underline hover:text-teal-700">
+                            {{ $project->project_url }}
+                        </a>
+                    @endif
+                </div>
+            @endforeach
+        </div>
+
+        <div class="xl:w-5/12">
+            <http-request-component request-path="/api/project" title="Projects">
+                Software and web projects.
+            </http-request-component>
+        </div>
+    </div>
 @endsection
