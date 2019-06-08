@@ -1,19 +1,19 @@
-<div id="user-card" class="border-2 border-gray-800 shadow-solid-gray-800 bg-white overflow-hidden md:sticky md:top-6">
+<div id="user-card" class="border-2 border-gray-800 shadow-solid-gray-800 bg-white overflow-hidden max-w-full md:sticky md:top-6 md:max-w-xs lg:max-w-full">
     <div class="h-40 bg-cover bg-center" style="background-image: url('{{ asset('images/user_bg.jpg') }}');"></div>
 
-    <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 300) }}" alt="Profile Photo" class="w-32 rounded-full border-white border-8 mx-4 -mt-16">
+    <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 300) }}" alt="Profile Photo" class="w-32 rounded-full border-white border-8 mx-4 -mt-16 md:w-24 md:-mt-12 lg:w-32 lg:-mt-16">
 
-    <h1 class="font-semibold text-xl -mt-16 ml-32 px-4 py-2">
+    <h1 class="font-semibold text-xl -mt-16 ml-32 px-8 py-2 md:text-lg md:-mt-12 md:ml-24 lg:-mt-16 lg:text-xl lg:ml-32">
         Chris Kankiewicz
 
-        <div class="font-light text-base text-gray-500">
+        <div class="font-light text-base text-gray-500 md:text-sm lg:text-base">
             <i class="far fa-map-marker-alt fa-fw"></i>
 
             <a href="https://goo.gl/maps/Y5xrX7AQ9RUNpCKo8" class="hover:underline">Mesa, Arizona</a>
         </div>
     </h1>
 
-    <p class="mb-4 px-4 py-2">
+    <p class="mb-4 px-4 py-2 md:text-sm lg:text-base">
         Passionate PHP developer, Linux junkie, gamer and coffee afficionado.
     </p>
 
