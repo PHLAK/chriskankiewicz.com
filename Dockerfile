@@ -1,8 +1,18 @@
-FROM composer:1.8 as build
+# Install PHP dependencies
+FROM composer:1.8 as php-dependencies
 ARG COMPOSER_AUTH={}
 COPY . /app
 RUN composer install --ignore-platform-reqs --no-dev --no-interaction --working-dir /app
 
+# Install and compile JavaScript assets
+FROM node:12.4 as js-dependencies
+ARG FONT_AWESOME_TOKEN
+COPY --from=php-dependencies /app /app
+RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+RUN npm config set "//npm.fontawesome.com/:_authToken" ${FONT_AWESOME_TOKEN}
+RUN cd /app && npm install && npm run production
+
+# Build application image
 FROM php:7.3-apache
 LABEL maintainer="Chris Kankiewicz <ckankiewicz@freedomdebtrelief.com>"
 
@@ -10,7 +20,7 @@ ARG INSTALL_XDEBUG="false"
 
 RUN a2enmod rewrite
 
-COPY --from=build /app /var/www/html
+COPY --from=js-dependencies /app /var/www/html
 COPY ./.docker/php/config/php.prd.ini /usr/local/etc/php/php.ini
 COPY ./.docker/apache2/config/000-default.prd.conf /etc/apache2/sites-available/000-default.conf
 
