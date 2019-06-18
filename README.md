@@ -53,17 +53,18 @@ Run the migrations and seed the database.
 
     docker-compose exec php artisan migrate
 
+## Install and Compile CSS and JavaScript Assets
+
+    npm install
+    npm run dev
+
+> #### ℹ️ Watching for Changes
+>
+> You can watch for changes to assets and re-compile automatically during
+> development by running:
+> 
+>     npm run watch
+
 ### Accessing the Development Site
 
 You can access the development site at <http://chriskankiewicz.local>.
-
-Compiling Assets
-----------------
-
-CSS and JavaScript assets must be compiled. This can be accomplished by running:
-
-    npm run dev
-
-Or to watch for changed files and re-compile automatically (during development):
-
-    npm run watch
