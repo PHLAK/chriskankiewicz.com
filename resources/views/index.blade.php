@@ -124,11 +124,13 @@
                         </a>
 
                         <a href="#" class="inline-block mr-2 hover:underline">
-                            <i class="far fa-star fa-fw"></i> 1337
+                            <i class="far fa-star fa-fw"></i>
+                            {{ $project->stars() ?? '??'}}
                         </a>
 
                         <a href="#" class="inline-block hover:underline">
-                            <i class="far fa-code-branch fa-fw"></i> 42
+                            <i class="far fa-code-branch fa-fw"></i>
+                            {{ $project->forks() ?? '??' }}
                         </a>
                     </div>
 
