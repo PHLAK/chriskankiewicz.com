@@ -10,6 +10,16 @@ use App\Http\Requests\UpdateSkill;
 class SkillController extends Controller
 {
     /**
+     * Create a new Skill controller.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api')->except(['index', 'show']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

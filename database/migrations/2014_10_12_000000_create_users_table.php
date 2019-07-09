@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('admin')->default(false);
+            $table->string('api_token', 80)->unique()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -54,7 +55,8 @@ class CreateUsersTable extends Migration
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make(
                 config('app.env') == 'local' ? 'secret' : Str::random(32)
-            )
+            ),
+            'api_token' => config('app.env') == 'local' ? 'TEST_TOKEN_PLEASE_IGNORE' : Str::random(60)
         ]);
 
         $user->admin = true;
