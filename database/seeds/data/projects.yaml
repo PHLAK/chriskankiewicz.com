@@ -1,7 +1,5 @@
 - name: Twine
   description: |-
-    String manipulation, leveled up!
-
     Twine is a simple string manipulation library with an expressive, fluent syntax.
   snippet: |-
     use PHLAK\Twine;
@@ -16,7 +14,7 @@
 
 - name: SemVer
   description: |-
-    Semantic versioning helper library for PHP.
+    A semantic versioning helper library for PHP.
   snippet: |-
     use PHLAK\SemVer;
 
@@ -29,7 +27,7 @@
 
 - name: Stash
   description: |-
-    Simple PHP caching library
+    Simple, fluent PHP caching library.
   snippet: |-
     // Coming soon...
   project_url: https://packagist.org/packages/phlak/stash
@@ -37,7 +35,7 @@
 
 - name: Config
   description: |-
-    PHP library for simple configuration management
+    PHP library for easy configuration management.
   snippet: |-
     // Coming soon...
   project_url: https://packagist.org/packages/phlak/config
