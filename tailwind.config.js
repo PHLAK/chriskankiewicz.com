@@ -31,8 +31,9 @@ module.exports = {
         }
     },
     variants: {
+        cursor: ["responsive", "hover", "focus"],
         textColor: ["group-hover"],
-        textDecoration: ["group-hover"]
+        textDecoration: ["responsive", "hover", "focus", "group-hover"]
     },
     plugins: []
 };
