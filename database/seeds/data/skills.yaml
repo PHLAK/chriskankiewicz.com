@@ -1,0 +1,83 @@
+- name: PHP
+  proficiency: 95
+
+- name: HTML
+  proficiency: 95
+
+- name: CSS
+  proficiency: 95
+
+- name: JavaScript
+  proficiecny: 65
+
+- name: Sass / SCSS
+  proficiecny: 75
+
+- name: Vue.js
+  proficiecny: 50
+
+- name: Composer
+  proficiency: 95
+
+- name: Node.js
+  proficiecny: 25
+
+- name: npm
+  proficiecny: 66
+
+- name: Yarn
+  proficiecny: 33
+
+- name: MySQL
+  proficiecny: 80
+
+- name: Postgres
+  proficiecny: 40
+
+- name: Nginx
+  proficiecny: 85
+
+- name: Apache
+  proficiency: 75
+
+- name: Git Version Control
+  proficiency: 90
+
+- name: MVC Frameworks
+  proficiency: 95
+
+- name: Laravel
+  proficiency: 85
+
+- name: CakePHP
+  proficiency: 60
+
+- name: Networking
+  proficiency: 50
+
+- name: Linux
+  proficiency: 90
+
+- name: Windows
+  proficiency: 75
+
+- name: Google Cloud Platform (GCS)
+  proficiency: 75
+
+- name: Amazon Web Services (AWS)
+  proficiency: 33
+
+- name: Docker
+  proficiency: 95
+
+- name: Kubernetes
+  proficiecny: 66
+
+- name: Continuous Integration
+  proficiency: 95
+
+- name: Travis CI
+  proficiency: 80
+
+- name: Jenkins
+  proficiency: 40

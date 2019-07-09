@@ -1,0 +1,64 @@
+- company: PetSmart Store Support Group
+  title: Solution Center Technician
+  description: |-
+    - Provided over-the-phone technical support to store and corporate employees.
+    - Performed advanced troubleshooting on Windows based store servers, registers, and workstations.
+  start_date: '2008-02-01'
+  end_date: '2009-03-01'
+  current_position: false
+  location: Phoenix, Arizona
+
+- company: Southwest Medical & Rehab
+  title: Web Developer / Designer
+  description: |-
+    - Worked alongside senior developer to conceptualize, design, and deploy a custom PHP based e-commerce platform built on Zend Framework.
+    - Designed and implemented multiple detailed site layouts written in HTML, CSS and jQuery/JavaScript.
+    - Built out a highly available infrastructure for hosting of the e-commerce platform.
+    - Increased traffic to all sites via email campaigns and search engine optimizations.
+  start_date: '2009-03-01'
+  end_date: '2011-04-01'
+  current_position: false
+  location: Phoenix, Arizona
+
+- company: Arizona State University
+  title: Web Application Developer
+  description: |-
+    - Designed and developed a new iteration of the PHP based learning management system built on the CakePHP MVC framework.
+    - Rearchitected a normalized MySQL database from existing fragmented database structure.
+    - Designed a detailed site frontend written in HTML, CSS and jQuery/JavaScript.
+  start_date: '2011-04-01'
+  end_date: '2014-06-01'
+  current_position: false
+  location: Phoenix, Arizona
+
+- company: IO Data Center
+  title: Cloud Engineer
+  description: |-
+    - Automated the continuous deployment of Arch Linux-backed, OpenStack instances via SaltStack.
+    - Built Arch Linux images with Packer for PXE booting cloud servers and infrastructure.
+    - Deployed Elasticsearch, Logstash and Kibana monitoring platform in a Docker-backed, containerized environment.
+    - Deployed Consul scripts written in Python for monitoring service usage and alerting on service warnings/failure.
+    - Locally built and tested cloud instances in Vagrant test environments.
+  start_date: '2014-06-01'
+  end_date: '2015-07-01'
+  current_position: false
+  location: Scottsdale, Arizona
+
+- company: IO Data Center
+  title: Software Development Engineer
+  description: |-
+    - Planned, designed and developed second iteration of the PHP based customer authentication and management portal built on the Laravel MVC framework.
+    - Consumed Okta REST API to implement authentication and authorization and identity management within a custom-built customer web portal.
+  start_date: '2015-07-01'
+  end_date: '2017-03-01'
+  current_position: false
+  location: Scottsdale, Arizona
+
+- company: Freedom Financial Network
+  title: Senior Software Engineer
+  description: |-
+    - Coming soon...
+  start_date: '2017-07-10'
+  end_date: null
+  current_position: true
+  location: Tempe, Arizona

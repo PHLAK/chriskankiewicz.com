@@ -1,0 +1,14 @@
+- institution: Shadow Mountain High School
+  degree: |-
+    - Received high school diploma
+    - Graduated National Honor Society member
+  start_date: '2001-07-01'
+  end_date: '2005-05-01'
+  currently_enrolled: false
+
+- institution: DeVry University
+  degree: |-
+    - Bachelor's of Science Degree in Network and Communication Management
+  start_date: '2005-07-01'
+  end_date: '2008-02-01'
+  currently_enrolled: false

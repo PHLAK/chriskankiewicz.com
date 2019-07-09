@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Symfony\Component\Yaml\Yaml;
-use App\Experience;
+use App\Project;
 
-class ExperienceSeeder extends Seeder
+class ProjectSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,8 +13,8 @@ class ExperienceSeeder extends Seeder
      */
     public function run()
     {
-        Experience::insert(
-            Yaml::parseFile(database_path('seeds/data/experience.yaml'))
+        Project::insert(
+            Yaml::parseFile(database_path('seeds/data/projects.yaml'))
         );
     }
 }
