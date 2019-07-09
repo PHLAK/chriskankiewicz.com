@@ -57,7 +57,7 @@
                     </div>
 
                     <p class="my-4">
-                        {{ $experience->description }}
+                        {!! $experience->description !!}
                     </p>
                 </div>
             @endforeach
@@ -91,7 +91,7 @@
                     </div>
 
                     <p class="my-4">
-                        {{ $education->degree }}
+                        {!! $education->degree !!}
                     </p>
                 </div>
             @endforeach
@@ -119,35 +119,43 @@
                     </h3>
 
                     <div class="text-sm text-gray-600">
-                        <a href="#" class="inline-block mr-2 hover:underline">
-                            <i class="fab fa-github fa-fw"></i> phlak/something
+                        <a href="{{ $project->source_url }}" class="group inline-block mr-2">
+                            <i class="fab fa-github fa-fw"></i>
+                            <span class="group-hover:text-teal-700 group-hover:underline">
+                                {{ $project->github_project_id }}
+                            </span>
                         </a>
 
-                        <a href="#" class="inline-block mr-2 hover:underline">
+                        <span class="group inline-block mr-2">
                             <i class="far fa-star fa-fw"></i>
-                            {{ $project->stars() ?? '??'}}
-                        </a>
 
-                        <a href="#" class="inline-block hover:underline">
+                            {{ $project->stars()}}
+                        </span>
+
+                        <span class="group inline-block mr-2">
                             <i class="far fa-code-branch fa-fw"></i>
-                            {{ $project->forks() ?? '??' }}
-                        </a>
+
+                            {{ $project->forks() }}
+                        </span>
+
+                        @isset($project->project_url)
+                            <a href="{{ $project->project_url }}" class="group inline-block">
+                                <i class="far fa-globe-americas fa-fw"></i>
+                                <span class="group-hover:text-teal-700 group-hover:underline">
+                                    {{ $project->project_url }}
+                                </span>
+                            </a>
+                        @endif
                     </div>
 
                     <p class="my-4">
-                        {{ $project->description }}
+                        {!! $project->description !!}
                     </p>
 
                     @isset($project->snippet)
                         <pre class="rounded-lg my-4 max-w-full overflow-x-scroll">
                             <code class="language-php">{{ $project->snippet }}</code>
                         </pre>
-                    @endif
-
-                    @isset($project->project_url)
-                        <a href="{{ $project->project_url }}" class="inline-block underline hover:text-teal-700">
-                            {{ $project->project_url }}
-                        </a>
                     @endif
                 </div>
             @endforeach

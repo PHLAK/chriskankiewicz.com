@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Parsedown;
 
 class Education extends Model
 {
@@ -24,4 +25,16 @@ class Education extends Model
 
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
+
+    /**
+     * Get the education degree.
+     *
+     * @param string $value
+     *
+     * @return string
+     */
+    public function getDegreeAttribute($value)
+    {
+        return (new Parsedown)->text($value);
+    }
 }

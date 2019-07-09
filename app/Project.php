@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
 use App\Libs\GitHubClient;
+use Parsedown;
 
 class Project extends Model
 {
@@ -35,10 +36,7 @@ class Project extends Model
      */
     public function forks()
     {
-        [$owner, $repo] = explode('/', $this->github_project_id);
-        $repository = App::make(GitHubClient::class)->repository($owner, $repo);
-
-        return $repository->forks_count ?? 'UNKNOWN';
+        return $this->repository()->forks_count ?? 'UNKNOWN';
     }
 
     /**
@@ -48,9 +46,30 @@ class Project extends Model
      */
     public function stars()
     {
-        [$owner, $repo] = explode('/', $this->github_project_id);
-        $repository = App::make(GitHubClient::class)->repository($owner, $repo);
+        return $this->repository()->stargazers_count ?? 'UNKNOWN';
+    }
 
-        return $repository->stargazers_count ?? 'UNKNOWN';
+    /**
+     * Get the project description.
+     *
+     * @param string $value
+     *
+     * @return string
+     */
+    public function getDescriptionAttribute($value)
+    {
+        return (new Parsedown)->text($value);
+    }
+
+    /**
+     * Get the projects repository information.
+     *
+     * @return object
+     */
+    protected function repository()
+    {
+        [$owner, $repo] = explode('/', $this->github_project_id);
+
+        return App::make(GitHubClient::class)->repository($owner, $repo);
     }
 }
