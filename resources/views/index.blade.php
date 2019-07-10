@@ -153,9 +153,15 @@
                     </p>
 
                     @isset($project->snippet)
-                        <pre class="rounded-lg my-4 max-w-full overflow-x-scroll">
-                            <code class="language-php">{{ $project->snippet }}</code>
-                        </pre>
+                        <details class="my-4">
+                            <summary class="hover:cursor-pointer">
+                                Example Code
+                            </summary>
+
+                            <pre class="rounded-lg my-4 max-w-full overflow-x-scroll">
+                                <code class="language-php">{{ $project->snippet }}</code>
+                            </pre>
+                        </details>
                     @endif
                 </div>
             @endforeach
