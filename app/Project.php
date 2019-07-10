@@ -21,6 +21,11 @@ class Project extends Model
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
+    /**
+     * Return the project's GitHub ID.
+     *
+     * @return string
+     */
     public function getGithubProjectIdAttribute(): string
     {
         preg_match('/https?:\/\/(?:www\.)?github\.com\/(.+)\/(.+)\/?/', $this->source_url, $matches);
