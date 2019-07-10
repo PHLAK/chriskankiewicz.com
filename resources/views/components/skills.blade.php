@@ -1,0 +1,21 @@
+<div class="flex flex-col mb-16 xl:flex-row">
+    <div class="xl:w-7/12 xl:mr-6">
+        @heading(['tag' => 'h2'])
+            <i class="far fa-lightbulb fw"></i> Skills
+        @endheading
+
+        <div class="flex flex-wrap mb-8">
+            @foreach ($skills as $skill)
+                <span class="self-center inline-block bg-gray-200 px-2 py-1 m-1 rounded {{ $skill->textSize() }}">
+                    {{ $skill->name }}
+                </span>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="xl:w-5/12">
+        <http-request-component request-path="/api/skill" title="Skills">
+            Skills and areas of expertise.
+        </http-request-component>
+    </div>
+</div>
