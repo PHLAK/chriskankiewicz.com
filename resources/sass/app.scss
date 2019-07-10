@@ -15,3 +15,18 @@
 #content > *:last-child {
     margin-bottom: 0 !important;
 }
+
+#education ul,
+#experience ul,
+#projects ul,
+#skills ul {
+    list-style: disc;
+}
+
+#education ul > li,
+#experience ul > li,
+#projects ul > li,
+#skills ul > li {
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+}

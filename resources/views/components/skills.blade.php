@@ -1,4 +1,4 @@
-<div class="flex flex-col mb-16 xl:flex-row">
+<div id="skills" class="flex flex-col mb-16 xl:flex-row">
     <div class="xl:w-7/12 xl:mr-6">
         @heading(['tag' => 'h2'])
             <i class="far fa-lightbulb fw"></i> Skills
