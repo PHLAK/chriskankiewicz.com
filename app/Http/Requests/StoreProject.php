@@ -27,7 +27,7 @@ class StoreProject extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'description' => ['string', 'max:10000'],
             'project_url' => ['url', 'max:255'],
-            'source_url' => ['url', 'max:255']
+            'source_url' => ['url', 'max:255', 'regex:/https?:\/\/(?:www\.)?github\.com\/(.+)\/(.+)\/?/']
         ];
     }
 }
