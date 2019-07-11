@@ -1,11 +1,11 @@
 # Install PHP dependencies
-FROM composer:1.8 as php-dependencies
+FROM composer:1.8 AS php-dependencies
 ARG COMPOSER_AUTH={}
 COPY . /app
 RUN composer install --ignore-platform-reqs --no-dev --no-interaction --working-dir /app
 
 # Install and compile JavaScript assets
-FROM node:12.4 as js-dependencies
+FROM node:12.4 AS js-dependencies
 ARG FONT_AWESOME_TOKEN
 COPY --from=php-dependencies /app /app
 RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
