@@ -61,10 +61,10 @@
 - name: Windows
   proficiency: 75
 
-- name: Google Cloud Platform (GCS)
+- name: Google Cloud Platform
   proficiency: 75
 
-- name: Amazon Web Services (AWS)
+- name: Amazon Web Services
   proficiency: 33
 
 - name: Docker
