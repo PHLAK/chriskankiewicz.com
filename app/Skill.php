@@ -20,24 +20,17 @@ class Skill extends Model
      *
      * @return string
      */
-    public function textSize(): string
+    public function styles(): string
     {
-        if (in_array($this->proficiency, range(0, 15))) {
-            return 'text-sm';
-        }
+        switch ($this->emphasis) {
+            case 1:
+                return 'text-gray-900 text-xl';
 
-        if (in_array($this->proficiency, range(16, 35))) {
-            return 'text-base';
-        }
+            case -1:
+                return 'text-gray-700 text-xs';
 
-        if (in_array($this->proficiency, range(66, 85))) {
-            return 'text-xl';
+            default:
+                return 'text-gray-800 text-base';
         }
-
-        if (in_array($this->proficiency, range(86, 100))) {
-            return 'text-2xl';
-        }
-
-        return 'text-lg';
     }
 }

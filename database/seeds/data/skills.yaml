@@ -1,83 +1,80 @@
 - name: PHP
-  proficiency: 95
+  emphasis: 1
 
 - name: HTML
-  proficiency: 95
+  emphasis: 0
 
 - name: CSS
-  proficiency: 95
+  emphasis: 0
 
 - name: JavaScript
-  proficiecny: 65
-
-- name: Sass / SCSS
-  proficiecny: 75
-
-- name: Vue.js
-  proficiecny: 50
-
-- name: Composer
-  proficiency: 95
-
-- name: Node.js
-  proficiecny: 25
-
-- name: npm
-  proficiecny: 66
-
-- name: Yarn
-  proficiecny: 33
-
-- name: MySQL
-  proficiecny: 80
-
-- name: Postgres
-  proficiecny: 40
-
-- name: Nginx
-  proficiecny: 85
-
-- name: Apache
-  proficiency: 75
-
-- name: Git Version Control
-  proficiency: 90
-
-- name: MVC Frameworks
-  proficiency: 95
+  emphasis: 1
 
 - name: Laravel
-  proficiency: 85
+  emphasis: 1
 
-- name: CakePHP
-  proficiency: 60
+- name: Vue.js
+  emphasis: 0
 
-- name: Networking
-  proficiency: 50
+- name: Sass / SCSS
+  emphasis: 0
+
+- name: Composer
+  emphasis: 1
+
+- name: npm
+  emphasis: 0
+
+- name: Yarn
+  emphasis: -1
+
+- name: Git Version Control
+  emphasis: 1
+
+- name: MySQL
+  emphasis: 1
+
+- name: Postgres
+  emphasis: 0
 
 - name: Linux
-  proficiency: 90
+  emphasis: 1
 
-- name: Windows
-  proficiency: 75
+- name: Nginx
+  emphasis: 0
 
-- name: Google Cloud Platform
-  proficiency: 75
+- name: Apache
+  emphasis: 0
 
-- name: Amazon Web Services
-  proficiency: 33
+- name: MVC Frameworks
+  emphasis: 0
 
 - name: Docker
-  proficiency: 95
+  emphasis: 1
 
 - name: Kubernetes
-  proficiecny: 66
+  emphasis: 0
 
 - name: Continuous Integration
-  proficiency: 95
+  emphasis: 1
+
+- name: CakePHP
+  emphasis: -1
 
 - name: Travis CI
-  proficiency: 80
+  emphasis: 0
 
 - name: Jenkins
-  proficiency: 40
+  emphasis: -1
+
+- name: Windows
+  emphasis: 0
+
+- name: Networking
+  emphasis: -1
+
+- name: Google Cloud Platform
+  emphasis: 1
+
+- name: Amazon Web Services
+  emphasis: 0

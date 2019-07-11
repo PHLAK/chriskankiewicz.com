@@ -25,7 +25,7 @@ class StoreSkill extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'proficiency' => ['required', 'integer', 'between:0,100']
+            'emphasis' => ['required', 'integer', 'between:-1,1']
         ];
     }
 }
