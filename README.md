@@ -68,3 +68,19 @@ Run the migrations and seed the database.
 ### Accessing the Development Site
 
 You can access the development site at <http://chriskankiewicz.local>.
+
+
+## Debugging
+
+### Laravel Telescope
+
+[Laravel Telescope](https://laravel.com/docs/5.8/telescope) is included in local
+environments for debugging. Telescope provides insight into the requests coming
+into your application, exceptions, log entries, database queries, queued jobs,
+mail, notifications, cache operations, scheduled tasks, variable dumps and more.
+
+You can access Telescope via http://chriskankiewicz.local/telescope
+
+### Tailing Application Logs
+
+    docker-compose logs --follow --tail 20 app
