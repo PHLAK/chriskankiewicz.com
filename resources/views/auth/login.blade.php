@@ -29,7 +29,7 @@
 
             <div class="flex flex-row justify-between">
                 <div class="py-2 sm:block">
-                    <input type="checkbox" name="remember" id="remember" class="relative top-2" {{ old('remember') ? 'checked' : null }}>
+                    <input type="checkbox" name="remember" id="remember" class="align-middle" {{ old('remember') ? 'checked' : null }}>
 
                     <label for="remember" class="text-sm text-gray-600">
                         {{ __('Remember Me') }}

@@ -9,7 +9,7 @@
         @endif
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="text-center">
-            {{ csrf_field() }}
+            @csrf
 
             <h1 class="text-2xl pb-4">You are logged in!</h1>
 
