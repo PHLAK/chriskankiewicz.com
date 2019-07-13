@@ -6,10 +6,6 @@
   emphasis: 1
   icon: fab fa-laravel
 
-- name: Composer
-  emphasis: 1
-  icon: null
-
 - name: HTML
   emphasis: 0
   icon: fab fa-html5
@@ -38,6 +34,14 @@
   emphasis: 0
   icon: fab fa-sass
 
+- name: Composer
+  emphasis: 0
+  icon: null
+
+- name: Linux
+  emphasis: 1
+  icon: fab fa-linux
+
 - name: Git Version Control
   emphasis: 1
   icon: fab fa-git-alt
@@ -49,10 +53,6 @@
 - name: Postgres
   emphasis: 0
   icon: far fa-database
-
-- name: Linux
-  emphasis: 1
-  icon: fab fa-linux
 
 - name: Nginx
   emphasis: 0
@@ -75,7 +75,7 @@
   icon: null
 
 - name: Continuous Integration
-  emphasis: 1
+  emphasis: 0
   icon: null
 
 - name: CakePHP
