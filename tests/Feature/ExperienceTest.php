@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Experience;
+use App\User;
 
 class ExperienceTest extends TestCase
 {
@@ -39,14 +40,17 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_create_a_new_experience()
     {
-        $response = $this->json('POST', route('experience.store'), [
-            'company' => 'Pied Piper',
-            'title' => 'Data Janitor',
-            'description' => 'Pushed bits around.',
-            'start_date' => '1986-05-20 ',
-            'current_position' => true,
-            'location' => 'San Francisco, California'
-        ]);
+        $user = factory(User::class)->create(['is_admin' => true]);
+
+        $response = $this->actingAs($user, 'api')
+            ->json('POST', route('experience.store'), [
+                'company' => 'Pied Piper',
+                'title' => 'Data Janitor',
+                'description' => 'Pushed bits around.',
+                'start_date' => '1986-05-20 ',
+                'current_position' => true,
+                'location' => 'San Francisco, California'
+            ]);
 
         $response->assertStatus(201)
             ->assertJson([
@@ -61,11 +65,13 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_update_an_experience()
     {
+        $user = factory(User::class)->create(['is_admin' => true]);
         $experience = factory(Experience::class)->create();
 
-        $response = $this->json('PATCH', route('experience.update', ['id' => $experience]), [
-            'company' => 'Pied Piper'
-        ]);
+        $response = $this->actingAs($user, 'api')
+            ->json('PATCH', route('experience.update', ['id' => $experience]), [
+                'company' => 'Pied Piper'
+            ]);
 
         $response->assertStatus(200)
             ->assertJson([
@@ -80,11 +86,13 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_delete_an_experience()
     {
+        $user = factory(User::class)->create(['is_admin' => true]);
         factory(Experience::class)->create();
         $experience = factory(Experience::class)->create();
         factory(Experience::class)->create();
 
-        $response = $this->json('DELETE', route('experience.destroy', ['id' => $experience ]));
+        $response = $this->actingAs($user, 'api')
+            ->json('DELETE', route('experience.destroy', ['id' => $experience]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('experiences', [

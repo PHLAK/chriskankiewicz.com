@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Project;
+use App\User;
 
 class ProjectTest extends TestCase
 {
@@ -39,12 +40,15 @@ class ProjectTest extends TestCase
 
     public function test_it_can_create_a_new_project()
     {
-        $response = $this->json('POST', route('project.store'), [
-            'name' => 'Death Star',
-            'description' => "That's no moon",
-            'project_url' => 'https://en.wikipedia.org/wiki/Death_Star',
-            'source_url' => 'https://github.com/PHLAK/death-star'
-        ]);
+        $user = factory(User::class)->create(['is_admin' => true]);
+
+        $response = $this->actingAs($user, 'api')
+            ->json('POST', route('project.store'), [
+                'name' => 'Death Star',
+                'description' => "That's no moon",
+                'project_url' => 'https://en.wikipedia.org/wiki/Death_Star',
+                'source_url' => 'https://github.com/PHLAK/death-star'
+            ]);
 
         $response->assertStatus(201)
             ->assertJson([
@@ -57,11 +61,13 @@ class ProjectTest extends TestCase
 
     public function test_it_can_update_an_project()
     {
+        $user = factory(User::class)->create(['is_admin' => true]);
         $project = factory(Project::class)->create();
 
-        $response = $this->json('PATCH', route('project.update', ['id' => $project]), [
-            'name' => 'Death Star 2'
-        ]);
+        $response = $this->actingAs($user, 'api')
+            ->json('PATCH', route('project.update', ['id' => $project]), [
+                'name' => 'Death Star 2'
+            ]);
 
         $response->assertStatus(200)
             ->assertJson([
@@ -76,11 +82,13 @@ class ProjectTest extends TestCase
 
     public function test_it_can_delete_an_project()
     {
+        $user = factory(User::class)->create(['is_admin' => true]);
         factory(Project::class)->create();
         $project = factory(Project::class)->create();
         factory(Project::class)->create();
 
-        $response = $this->json('DELETE', route('project.destroy', ['id' => $project ]));
+        $response = $this->actingAs($user, 'api')
+            ->json('DELETE', route('project.destroy', ['id' => $project]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('projects', [

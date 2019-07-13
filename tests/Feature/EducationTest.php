@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Education;
+use App\User;
 
 class EducationTest extends TestCase
 {
@@ -39,12 +40,15 @@ class EducationTest extends TestCase
 
     public function test_it_can_create_a_new_education()
     {
-        $response = $this->json('POST', route('education.store'), [
-            'institution' => 'Hogwarts School of Witchcraft and Wizardry',
-            'degree' => 'Care of Magical Creatures',
-            'start_date' => '1986-05-20',
-            'currently_enrolled' => true
-        ]);
+        $user = factory(User::class)->create(['is_admin' => true]);
+
+        $response = $this->actingAs($user, 'api')
+            ->json('POST', route('education.store'), [
+                'institution' => 'Hogwarts School of Witchcraft and Wizardry',
+                'degree' => 'Care of Magical Creatures',
+                'start_date' => '1986-05-20',
+                'currently_enrolled' => true
+            ]);
 
         $response->assertStatus(201)
             ->assertJson([
@@ -57,12 +61,14 @@ class EducationTest extends TestCase
 
     public function test_it_can_update_an_education()
     {
+        $user = factory(User::class)->create(['is_admin' => true]);
         $education = factory(Education::class)->create();
 
-        $response = $this->json('PATCH', route('education.update', ['id' => $education]), [
-            'end_date' => '1986-07-06',
-            'currently_enrolled' => false
-        ]);
+        $response = $this->actingAs($user, 'api')
+            ->json('PATCH', route('education.update', ['id' => $education]), [
+                'end_date' => '1986-07-06',
+                'currently_enrolled' => false
+            ]);
 
         $response->assertStatus(200)
             ->assertJson([
@@ -79,11 +85,13 @@ class EducationTest extends TestCase
 
     public function test_it_can_delete_an_education()
     {
+        $user = factory(User::class)->create(['is_admin' => true]);
         factory(Education::class)->create();
         $education = factory(Education::class)->create();
         factory(Education::class)->create();
 
-        $response = $this->json('DELETE', route('education.destroy', ['id' => $education ]));
+        $response = $this->actingAs($user, 'api')
+            ->json('DELETE', route('education.destroy', ['id' => $education]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('education', [

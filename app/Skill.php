@@ -10,7 +10,7 @@ class Skill extends Model
     use SoftDeletes;
 
     /** @var array The attributes that are mass assignable. */
-    protected $fillable = ['name', 'proficiency'];
+    protected $fillable = ['name', 'emphasis', 'icon'];
 
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];

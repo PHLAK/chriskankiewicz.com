@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Skill;
+use App\User;
 
 class SkillTest extends TestCase
 {
@@ -19,7 +20,7 @@ class SkillTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['name']
+                ['name', 'emphasis']
             ]);
     }
 
@@ -33,29 +34,39 @@ class SkillTest extends TestCase
 
         $response->assertStatus(200)
             ->assertJsonStructure([
-                'name'
+                'name', 'emphasis'
             ]);
     }
 
     public function test_it_can_create_a_new_skill()
     {
-        $response = $this->json('POST', route('skill.store'), [
-            'name' => 'Lockpicking'
-        ]);
+        $user = factory(User::class)->create(['is_admin' => true]);
+
+        $response = $this->actingAs($user, 'api')
+            ->json('POST', route('skill.store'), [
+                'name' => 'Lockpicking'
+            ]);
 
         $response->assertStatus(201)
             ->assertJson([
                 'name' => 'Lockpicking'
             ]);
+
+        $this->assertDatabaseHas('skills', [
+            'name' => 'Lockpicking',
+            'emphasis' => 0
+        ]);
     }
 
-    public function test_it_can_update_an_skill()
+    public function test_it_can_update_a_skill()
     {
+        $user = factory(User::class)->create(['is_admin' => true]);
         $skill = factory(Skill::class)->create();
 
-        $response = $this->json('PATCH', route('skill.update', ['id' => $skill]), [
-            'name' => 'Pickpocketing'
-        ]);
+        $response = $this->actingAs($user, 'api')
+            ->json('PATCH', route('skill.update', ['id' => $skill]), [
+                'name' => 'Pickpocketing'
+            ]);
 
         $response->assertStatus(200)
             ->assertJson([
@@ -68,13 +79,16 @@ class SkillTest extends TestCase
         ]);
     }
 
-    public function test_it_can_delete_an_skill()
+    public function test_it_can_delete_a_skill()
     {
+        $user = factory(User::class)->create(['is_admin' => true]);
+
         factory(Skill::class)->create();
         $skill = factory(Skill::class)->create();
         factory(Skill::class)->create();
 
-        $response = $this->json('DELETE', route('skill.destroy', ['id' => $skill ]));
+        $response = $this->actingAs($user, 'api')
+            ->json('DELETE', route('skill.destroy', ['id' => $skill]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('skills', [
