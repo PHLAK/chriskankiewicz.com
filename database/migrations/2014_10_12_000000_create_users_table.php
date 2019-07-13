@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('admin')->default(false);
+            $table->boolean('is_admin')->default(false);
             $table->string('api_token', 80)->unique()->nullable();
             $table->rememberToken();
             $table->timestamps();
@@ -59,7 +59,7 @@ class CreateUsersTable extends Migration
             'api_token' => config('app.env') == 'local' ? 'TEST_TOKEN_PLEASE_IGNORE' : Str::random(60)
         ]);
 
-        $user->admin = true;
+        $user->is_admin = true;
 
         $user->save();
     }

@@ -20,13 +20,8 @@ class User extends Authenticatable
         'password', 'remember_token', 'admin', 'api_token'
     ];
 
-    /**
-     * Determine if the user is an admin.
-     *
-     * @return bool
-     */
-    public function isAdmin()
-    {
-        return $this->admin;
-    }
+    /** @var array The attributes that should be cast to native types. */
+    protected $casts = [
+        'is_admin' => 'boolean',
+    ];
 }
