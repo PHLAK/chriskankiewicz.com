@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
 use App\Libs\GitHubClient;
-use Parsedown;
 
 class Project extends Model
 {
@@ -52,18 +51,6 @@ class Project extends Model
     public function stars()
     {
         return $this->repository()->stargazers_count ?? 'UNKNOWN';
-    }
-
-    /**
-     * Get the project description.
-     *
-     * @param string $value
-     *
-     * @return string
-     */
-    public function getDescriptionAttribute($value)
-    {
-        return (new Parsedown)->text($value);
     }
 
     /**

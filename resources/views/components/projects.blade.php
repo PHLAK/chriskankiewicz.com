@@ -43,7 +43,7 @@
                 </div>
 
                 <p class="my-4">
-                    {!! $project->description !!}
+                    {!! markdown($project->description) !!}
                 </p>
 
                 @isset($project->snippet)

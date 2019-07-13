@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Parsedown;
 
 class Experience extends Model
 {
@@ -25,16 +24,4 @@ class Experience extends Model
 
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
-
-    /**
-     * Get the experience description.
-     *
-     * @param string $value
-     *
-     * @return string
-     */
-    public function getDescriptionAttribute($value)
-    {
-        return (new Parsedown)->text($value);
-    }
 }

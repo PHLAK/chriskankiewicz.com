@@ -32,7 +32,7 @@
                 </div>
 
                 <p class="my-4">
-                    {!! $experience->description !!}
+                    {!! markdown($experience->description) !!}
                 </p>
             </div>
         @endforeach

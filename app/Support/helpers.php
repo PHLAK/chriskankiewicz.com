@@ -21,3 +21,17 @@ if (! function_exists('gravatar')) {
         return "https://www.gravatar.com/avatar/{$hash}{$queryString}";
     }
 }
+
+if (! function_exists('markdown')) {
+    /**
+     * Parse a string of markdown into HTML.
+     *
+     * @param string $input
+     *
+     * @return string
+     */
+    function markdown(string $input)
+    {
+        return (new Parsedown)->text($input);
+    }
+}

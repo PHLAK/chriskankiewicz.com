@@ -19,7 +19,7 @@
                 </div>
 
                 <p class="my-4">
-                    {!! $education->degree !!}
+                    {!! markdown($education->degree) !!}
                 </p>
             </div>
         @endforeach
