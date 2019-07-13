@@ -13,7 +13,7 @@ class UpdateSkill extends FormRequest
      */
     public function authorize()
     {
-        return true; // TODO: Authorize this request
+        return $this->user()->is_admin;
     }
 
     /**
