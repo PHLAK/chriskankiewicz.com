@@ -27,7 +27,7 @@ COPY ./.docker/apache2/config/000-default.prd.conf /etc/apache2/sites-available/
 RUN apt-get update && apt-get install -y libxml2-dev zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install bcmath pdo_mysql \
+RUN docker-php-ext-install bcmath opcache pdo_mysql \
     && pecl install redis && docker-php-ext-enable redis
 
 RUN if [ "${INSTALL_XDEBUG}" = "true" ]; then pecl install xdebug && docker-php-ext-enable xdebug; fi
