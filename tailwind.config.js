@@ -12,6 +12,23 @@ module.exports = {
                 "solid-gray-800": "4px 4px 0 #2D3748",
                 "solid-gray-900": "4px 4px 0 #1A202C"
             },
+            fontFamily: {
+                sans: [
+                    "Lato",
+                    "-apple-system",
+                    "BlinkMacSystemFont",
+                    '"Segoe UI"',
+                    "Roboto",
+                    '"Helvetica Neue"',
+                    "Arial",
+                    '"Noto Sans"',
+                    "sans-serif",
+                    '"Apple Color Emoji"',
+                    '"Segoe UI Emoji"',
+                    '"Segoe UI Symbol"',
+                    '"Noto Color Emoji"'
+                ]
+            },
             inset: {
                 "1": "0.25rem",
                 "2": "0.5rem",

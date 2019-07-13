@@ -8,6 +8,6 @@
 
 <title>Chris Kankiewicz</title>
 
-<div id="app">
+<div id="app" class="font-sans">
     @yield('content')
 </div>

@@ -4,7 +4,7 @@
     <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 300) }}" alt="Profile Photo" class="w-32 rounded-full border-white border-8 mx-4 -mt-16 md:w-24 md:-mt-12 lg:w-32 lg:-mt-16">
 
     <div class="-mt-16 ml-32 px-6 py-2 md:-mt-12 md:ml-24 lg:-mt-16 lg:ml-32">
-        <h1 class="font-semibold text-xl lg:text-2xl">
+        <h1 class="text-xl tracking-wide lg:text-2xl">
             Chris Kankiewicz
         </h1>
 
