@@ -4,9 +4,9 @@
             <i class="far fa-lightbulb fw"></i> Skills
         @endheading
 
-        <div class="flex flex-wrap mb-8">
+        <div class="flex flex-wrap items-center mb-8">
             @foreach ($skills as $skill)
-                <span class="self-center inline-block bg-gray-200 px-2 py-1 m-1 rounded {{ $skill->styles() }}">
+                <span class="inline-block bg-gray-200 px-2 py-1 m-1 rounded {{ $skill->styles() }}">
                     @isset($skill->icon)
                         <i class="{{ strtolower($skill->icon) }} mr-1"></i>
                     @endisset
