@@ -7,6 +7,10 @@
         <div class="flex flex-wrap mb-8">
             @foreach ($skills as $skill)
                 <span class="self-center inline-block bg-gray-200 px-2 py-1 m-1 rounded {{ $skill->styles() }}">
+                    @isset($skill->icon)
+                        <i class="{{ strtolower($skill->icon) }} mr-1"></i>
+                    @endisset
+
                     {{ $skill->name }}
                 </span>
             @endforeach

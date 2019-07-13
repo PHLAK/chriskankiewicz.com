@@ -17,6 +17,7 @@ class CreateSkillsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('emphasis')->default(0);
+            $table->string('icon')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
