@@ -4,7 +4,6 @@ namespace App\Libs;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Carbon;
-use GuzzleHttp\Exception\ClientException;
 
 class CachedGitHubClient extends GitHubClient
 {
@@ -21,11 +20,7 @@ class CachedGitHubClient extends GitHubClient
         $key = "repository:{$owner}:{$repo}";
 
         return Cache::remember($key, Carbon::now()->addHours(6), function () use ($owner, $repo) {
-            try {
-                return parent::repository($owner, $repo);
-            } catch (ClientException $exception) {
-                return json_decode('{}');
-            }
+            return parent::repository($owner, $repo);
         });
     }
 }

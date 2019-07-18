@@ -3,6 +3,7 @@
 namespace App\Libs;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 class GitHubClient
 {
@@ -37,7 +38,11 @@ class GitHubClient
      */
     public function repository(string $owner, string $repo): object
     {
-        $response = $this->client->get("repos/{$owner}/{$repo}");
+        try {
+            $response = $this->client->get("repos/{$owner}/{$repo}");
+        } catch (ClientException $exception) {
+            return json_decode('{}');
+        }
 
         return json_decode($response->getBody()->getContents());
     }
