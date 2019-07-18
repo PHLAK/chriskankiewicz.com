@@ -13,7 +13,10 @@ require("laravel-mix-purgecss");
  |
  */
 
-mix.js("resources/js/app.js", "public/js")
+mix.webpackConfig({
+        watchOptions: {ignored: ['node_modules', 'vendor']}
+    })
+    .js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .options({
         processCssUrls: false,
