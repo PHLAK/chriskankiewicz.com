@@ -23,6 +23,7 @@
              <exclude>
                 <directory>./app/Nova</directory>
                 <file>./app/Providers/BroadcastServiceProvider.php</file>
+                <file>./app/Providers/TelescopeServiceProvider.php</file>
             </exclude>
         </whitelist>
     </filter>
