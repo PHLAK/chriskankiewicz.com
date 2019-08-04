@@ -40,7 +40,7 @@ class ProjectTest extends TestCase
 
     public function test_it_can_create_a_new_project()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('project.store'), [
@@ -61,7 +61,7 @@ class ProjectTest extends TestCase
 
     public function test_it_can_update_an_project()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
         $project = factory(Project::class)->create();
 
         $response = $this->actingAs($user, 'api')
@@ -82,7 +82,7 @@ class ProjectTest extends TestCase
 
     public function test_it_can_delete_an_project()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
         factory(Project::class)->create();
         $project = factory(Project::class)->create();
         factory(Project::class)->create();

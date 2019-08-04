@@ -40,7 +40,7 @@ class SkillTest extends TestCase
 
     public function test_it_can_create_a_new_skill()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('skill.store'), [
@@ -60,7 +60,7 @@ class SkillTest extends TestCase
 
     public function test_it_can_update_a_skill()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
         $skill = factory(Skill::class)->create();
 
         $response = $this->actingAs($user, 'api')
@@ -81,7 +81,7 @@ class SkillTest extends TestCase
 
     public function test_it_can_delete_a_skill()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
 
         factory(Skill::class)->create();
         $skill = factory(Skill::class)->create();

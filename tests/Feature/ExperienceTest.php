@@ -40,7 +40,7 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_create_a_new_experience()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('experience.store'), [
@@ -65,7 +65,7 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_update_an_experience()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
         $experience = factory(Experience::class)->create();
 
         $response = $this->actingAs($user, 'api')
@@ -86,7 +86,7 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_delete_an_experience()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
         factory(Experience::class)->create();
         $experience = factory(Experience::class)->create();
         factory(Experience::class)->create();

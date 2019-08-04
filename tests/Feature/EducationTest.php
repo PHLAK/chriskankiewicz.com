@@ -40,7 +40,7 @@ class EducationTest extends TestCase
 
     public function test_it_can_create_a_new_education()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('education.store'), [
@@ -61,7 +61,7 @@ class EducationTest extends TestCase
 
     public function test_it_can_update_an_education()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
         $education = factory(Education::class)->create();
 
         $response = $this->actingAs($user, 'api')
@@ -85,7 +85,7 @@ class EducationTest extends TestCase
 
     public function test_it_can_delete_an_education()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
         factory(Education::class)->create();
         $education = factory(Education::class)->create();
         factory(Education::class)->create();

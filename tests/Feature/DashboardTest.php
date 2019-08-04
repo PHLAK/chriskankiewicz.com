@@ -12,7 +12,7 @@ class DashboardTest extends TestCase
 
     public function test_it_can_see_the_dashboard_when_logged_in()
     {
-        $user = factory(User::class)->create(['is_admin' => true]);
+        $user = factory(User::class)->states('is_admin')->create();
 
         $response = $this->actingAs($user)->get(route('dashboard'));
 
