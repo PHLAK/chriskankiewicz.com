@@ -34,4 +34,16 @@ if (! function_exists('markdown')) {
     {
         return (new Parsedown)->text($input);
     }
+
+    /**
+     * Parse a string of markdown into a line of HTML.
+     *
+     * @param string $input
+     *
+     * @return string
+     */
+    function markdownInline(string $input)
+    {
+        return (new Parsedown)->line($input);
+    }
 }

@@ -5,6 +5,7 @@
     @include('components.experience')
     @include('components.education')
     @include('components.projects')
+    @include('components.accomplishments')
 
     <footer class="border-t border-gray-500 text-center text-gray-500 text-sm pt-6">
         &copy; {{ date('Y') }} Chris Kankiewicz

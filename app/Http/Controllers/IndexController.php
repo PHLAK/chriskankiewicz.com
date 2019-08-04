@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Accomplishment;
 use App\Education;
 use App\Experience;
 use App\Project;
@@ -20,6 +21,7 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         return view('index', [
+            'accomplishments' => Accomplishment::all(),
             'education' => Education::orderBy('start_date', 'DESC')->get(),
             'experience' => Experience::orderBy('start_date', 'DESC')->get(),
             'projects' => Project::all(),

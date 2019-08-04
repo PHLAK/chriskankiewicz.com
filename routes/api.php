@@ -13,6 +13,7 @@ use App\Http\Controllers\Api;
 |
 */
 
+Route::apiResource('accomplishment', Api\AccomplishmentController::class);
 Route::apiResource('education', Api\EducationController::class);
 Route::apiResource('experience', Api\ExperienceController::class);
 Route::apiResource('project', Api\ProjectController::class);
