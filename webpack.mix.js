@@ -14,12 +14,15 @@ require("laravel-mix-purgecss");
  */
 
 mix.webpackConfig({
-        watchOptions: {ignored: ['node_modules', 'vendor']}
-    })
+    watchOptions: { ignored: ["node_modules", "vendor"] }
+})
     .js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .options({
         processCssUrls: false,
         postCss: [tailwindcss("tailwind.config.js")]
     })
-    .purgeCss();
+    .purgeCss({
+        whitelist: ["html", "body"],
+        whitelistPatterns: [/^fa\-/]
+    });
