@@ -14,7 +14,7 @@
     </div>
 
     <div class="xl:w-5/12">
-        <http-request-component request-path="/api/accomplishment" title="Accomplishment">
+        <http-request-component request-path="/api/accomplishment" title="Accomplishments">
             Miscellaneous accomplishments.
         </http-request-component>
     </div>
