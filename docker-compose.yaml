@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 services:
   app:
@@ -7,7 +7,8 @@ services:
       context: .
       args:
         COMPOSER_AUTH: ${COMPOSER_AUTH}
-        INSTALL_XDEBUG: 'true'
+        FONT_AWESOME_TOKEN: ${FONT_AWESOME_TOKEN}
+      target: development
     environment:
       APP_ENV: 'docker'
       LOG_CHANNEL: 'stderr'

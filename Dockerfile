@@ -1,11 +1,12 @@
 # Install PHP dependencies
-FROM composer:1.8 AS php-dependencies
+FROM composer:1.9 AS php-dependencies
 ARG COMPOSER_AUTH={}
 COPY . /app
-RUN composer install --ignore-platform-reqs --no-dev --no-interaction --working-dir /app
+RUN composer install --working-dir /app --ignore-platform-reqs \
+    --no-cache --no-dev --no-interaction
 
 # Install and compile JavaScript assets
-FROM node:12.4 AS js-dependencies
+FROM node:12.8 AS js-dependencies
 ARG FONT_AWESOME_TOKEN
 COPY --from=php-dependencies /app /app
 RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
@@ -13,10 +14,8 @@ RUN npm config set "//npm.fontawesome.com/:_authToken" ${FONT_AWESOME_TOKEN}
 RUN cd /app && npm install && npm run production
 
 # Build application image
-FROM php:7.3-apache
+FROM php:7.3-apache as application
 LABEL maintainer="Chris Kankiewicz <ckankiewicz@freedomdebtrelief.com>"
-
-ARG INSTALL_XDEBUG="false"
 
 RUN a2enmod rewrite
 
@@ -30,4 +29,9 @@ RUN apt-get update && apt-get install -y libxml2-dev zlib1g-dev \
 RUN docker-php-ext-install bcmath opcache pdo_mysql \
     && pecl install redis && docker-php-ext-enable redis
 
-RUN if [ "${INSTALL_XDEBUG}" = "true" ]; then pecl install xdebug && docker-php-ext-enable xdebug; fi
+# Build (local) development image
+FROM application as development
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+
+# Build production image
+FROM application as production
