@@ -2,13 +2,9 @@
 
 @section('content')
     @include('components.skills')
-    <hr class="border-t-4 border-teal-600 w-40 my-16">
     @include('components.experience')
-    <hr class="border-t-4 border-teal-600 w-40 my-16">
     @include('components.education')
-    <hr class="border-t-4 border-teal-600 w-40 my-16">
     @include('components.projects')
-    <hr class="border-t-4 border-teal-600 w-40 my-16">
     @include('components.accomplishments')
 
     <footer class="border-t border-gray-500 text-center text-gray-500 text-sm mt-16 pt-6">

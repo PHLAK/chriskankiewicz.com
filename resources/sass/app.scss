@@ -12,27 +12,9 @@
 // Prism.js Theme
 @import "prism.scss";
 
+// Markdown Formatting
+@import "markdown.scss";
+
 #content > *:last-child {
     margin-bottom: 0 !important;
-}
-
-#accomplishments a {
-    text-decoration: underline;
-}
-
-#accomplishments ul,
-#education ul,
-#experience ul,
-#projects ul,
-#skills ul {
-    list-style: disc;
-}
-
-#accomplishments ul > li,
-#education ul > li,
-#experience ul > li,
-#projects ul > li,
-#skills ul > li {
-    margin-bottom: 0.5rem;
-    margin-left: 2rem;
 }

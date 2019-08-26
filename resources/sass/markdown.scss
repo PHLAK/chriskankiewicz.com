@@ -1,0 +1,59 @@
+.markdown {
+    a {
+        text-decoration: underline;
+    }
+
+    h1 {
+        font-size: 1.875rem;
+        font-weight: bold;
+        margin: 0 0 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0 0 1rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin: 0 0 1rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        margin: 0 0 1rem;
+    }
+
+    img {
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        max-width: 100%;
+    }
+
+    p {
+        margin: 1rem 0;
+    }
+
+    pre {
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+        max-width: 100%;
+
+        code {
+            max-width: 100%;
+            overflow-x: scroll;
+        }
+    }
+
+    ul {
+        list-style: disc;
+
+        li {
+            margin-bottom: 0.5rem;
+            margin-left: 2rem;
+        }
+    }
+}

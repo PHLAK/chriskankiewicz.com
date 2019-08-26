@@ -45,19 +45,11 @@
                 <p class="my-4">
                     {!! markdown($project->description) !!}
                 </p>
-
-                @isset($project->snippet)
-                    <details class="my-4">
-                        <summary class="hover:cursor-pointer">
-                            Example Code
-                        </summary>
-
-                        <pre class="rounded-lg my-4 max-w-full overflow-x-scroll">
-                            <code class="language-php">{{ $project->snippet }}</code>
-                        </pre>
-                    </details>
-                @endif
             </div>
+
+            @if(! $loop->last)
+                <hr class="border-t-4 border-teal-600 w-40 my-8">
+            @endif
         @endforeach
     </div>
 

@@ -35,6 +35,10 @@
                     {!! markdown($experience->description) !!}
                 </p>
             </div>
+
+            @if(! $loop->last)
+                <hr class="border-t-4 border-teal-600 w-40 my-8">
+            @endif
         @endforeach
     </div>
 

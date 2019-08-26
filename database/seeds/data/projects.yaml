@@ -1,7 +1,16 @@
 - name: Twine
   description: |-
     Twine is a simple string manipulation library with an expressive, fluent syntax.
-  snippet: |-
+
+    Twine takes an object-oriented approach to making string manipulation and
+    comparisons easy and readable. With Twine every string is an object. This
+    gives you power and flexibility that native strings do not have in PHP.
+
+    [Check out the slides from the azPHP presentation](https://phlak.github.io/string-manipulation-leveled-up/)
+
+    **Example:**
+
+    ```php
     use PHLAK\Twine;
 
     $string = new Twine\Str('john pinkerton');
@@ -9,42 +18,53 @@
     $string->uppercase(Twine\Config::WORDS); // 'John Pinkerton'
     $string->substring(5, 4)->equals('pink'); // true
     $string->words(); // ['john', 'pinkerton']
+    ```
   project_url: https://twine.phlak.net
   source_url: https://github.com/PHLAK/Twine
 
 - name: SemVer
   description: |-
     A semantic versioning helper library for PHP.
-  snippet: |-
+
+    ```php
     use PHLAK\SemVer;
 
     $version = new SemVer\Version('v1.2.3');
 
     $version->incrementMinor(); // v1.2.3 -> v1.3.0
     $version->incrementPatch(); // v1.3.0 -> v1.3.1
-  project_url: null
+    ```
+  project_url: https://packagist.org/packages/phlak/semver
   source_url: https://github.com/PHLAK/SemVer
 
 - name: Stash
   description: |-
     Simple, fluent PHP caching library.
-  snippet: |-
-    // Coming soon...
   project_url: https://packagist.org/packages/phlak/stash
   source_url: https://github.com/PHLAK/Stash
 
 - name: Config
   description: |-
     PHP library for easy configuration management.
-  snippet: |-
-    // Coming soon...
   project_url: https://packagist.org/packages/phlak/config
   source_url: https://github.com/PHLAK/Config
+
+- name: 'azPHP Presentation: PsySh'
+  description: |-
+    My presentation on psysh, a terminal-based interactive PHP debugger and REPL
+    for the azPHP June, 2019 meeting.
+
+    [![azPHP June, 2019: psysh](http://i3.ytimg.com/vi/lblQtfwlVls/maxresdefault.jpg)](https://www.youtube.com/watch?v=lblQtfwlVls)
+
+    <https://www.meetup.com/azPHPUG/events/rrzlqqyzjbhc/>
+  project_url: https://www.youtube.com/watch?v=lblQtfwlVls
+  source_url: https://github.com/PHLAK/psysh-demo
 
 - name: Chronometer
   description: |-
     Measure the passing of time.
-  snippet: |-
+
+    ```php
     use PHLAK\Chronometer\Timer;
 
     Timer::start(); // 1562650807.427
@@ -52,13 +72,15 @@
     Timer::lastLap()->duration(); // 5.8519079685211
     Timer::stop(); // 1562650817.0831
     Timer::elapsed(); // 9.6561479568481
+    ```
   project_url: null
   source_url: https://github.com/PHLAK/Chronometer
 
 - name: PHX2600
   description: |-
     Homepage for the PHX2600, the Phoenix, Arizona Network of Hackers.
-  snippet: null
+
+    ![phx2600.org](https://raw.githubusercontent.com/PHX2600/phx2600.org/master/screenshot.png)
   project_url: https://www.phx2600.org
   source_url: https://github.com/PHX2600/phx2600.org
 
@@ -66,13 +88,11 @@
   description: |-
     A PHP based directory lister that lists a directory and all it's
     sub-directories and allows you to navigate there within.
-  snippet: null
   project_url: https://www.directorylister.com
   source_url: https://github.com/DirectoryLister/DirectoryLister
 
 - name: Uber Gallery
   description: |-
     An easy to use, simple to manage, web photo gallery written in PHP.
-  snippet: null
   project_url: https://www.ubergallery.net
   source_url: https://github.com/UberGallery/UberGallery

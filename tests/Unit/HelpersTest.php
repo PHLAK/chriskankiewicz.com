@@ -18,7 +18,17 @@ class HelpersTest extends TestCase
         $html = markdown("# Heading\nParagraph text.\n  - Bulleted list item");
 
         $this->assertEquals(
-            "<h1>Heading</h1>\n<p>Paragraph text.</p>\n<ul>\n<li>Bulleted list item</li>\n</ul>",
+            "<div class=\"markdown\"><h1>Heading</h1>\n<p>Paragraph text.</p>\n<ul>\n<li>Bulleted list item</li>\n</ul></div>",
+            $html
+        );
+    }
+
+    public function test_it_can_convert_markdown_to_inline_html()
+    {
+        $html = markdownInline('Some `inline` text');
+
+        $this->assertEquals(
+            '<span class="markdown">Some <code>inline</code> text</span>',
             $html
         );
     }
