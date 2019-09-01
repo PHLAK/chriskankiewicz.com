@@ -4,7 +4,6 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 
@@ -50,8 +49,6 @@ class Project extends Resource
                 ->rules('required', 'max:255'),
 
             Markdown::make('Description'),
-
-            Code::make('Snippet'),
 
             Text::make('Project URL')->rules('max:2000'),
 

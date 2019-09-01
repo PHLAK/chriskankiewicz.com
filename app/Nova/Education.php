@@ -50,6 +50,7 @@ class Education extends Resource
                 ->rules('required', 'string', 'max:255'),
 
             Text::make('Degree')
+                ->onlyOnForms()
                 ->rules('required', 'string', 'max:255'),
 
             Date::make('start_date')->sortable(),

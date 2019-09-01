@@ -48,7 +48,9 @@ class Skill extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Number::make('Proficiency')->min(1)->max(100)
+            Number::make('Emphasis')->min(-1)->max(1),
+
+            Text::make('Icon')
         ];
     }
 
