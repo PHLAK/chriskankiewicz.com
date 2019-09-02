@@ -24,5 +24,6 @@ mix.webpackConfig({
     })
     .purgeCss({
         whitelist: ["html", "body", "code", "pre"],
-        whitelistPatterns: [/^fa\-/]
+        whitelistPatterns: [/^fa\-/],
+        whitelistPatternsChildren: [/^markdown/, /^token/]
     });
