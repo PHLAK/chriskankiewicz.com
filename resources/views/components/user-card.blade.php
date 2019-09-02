@@ -29,6 +29,10 @@
             <i class="fab fa-twitter fa-fw fa-2x"></i>
         </a>
 
+        <a href="https://medium.com/chriskankiewicz" title="Medium" class="text-medium">
+            <i class="fab fa-medium fa-fw fa-2x"></i>
+        </a>
+
         <a href="https://www.linkedin.com/in/chriskankiewicz/" title="LinkedIn" class="text-linkedin">
             <i class="fab fa-linkedin fa-fw fa-2x"></i>
         </a>

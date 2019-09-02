@@ -42,6 +42,7 @@ module.exports = {
                 github: "#171515",
                 keybase: "#FF6F21",
                 linkedin: "#2977C9", // #4875B4
+                medium: "#1F1F1F",
                 steam: "#3B3B38",
                 twitter: "#1DA1F2"
             }
