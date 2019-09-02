@@ -15,15 +15,19 @@ require("laravel-mix-purgecss");
 
 mix.webpackConfig({
     watchOptions: { ignored: ["node_modules", "vendor"] }
-})
-    .js("resources/js/app.js", "public/js")
-    .sass("resources/sass/app.scss", "public/css")
-    .options({
-        processCssUrls: false,
-        postCss: [tailwindcss("tailwind.config.js")]
-    })
-    .purgeCss({
-        whitelist: ["html", "body", "code", "pre"],
-        whitelistPatterns: [/^fa\-/],
-        whitelistPatternsChildren: [/^markdown/, /^token/]
-    });
+});
+
+mix.js("resources/js/app.js", "public/js").version();
+
+mix.sass("resources/sass/app.scss", "public/css").version();
+
+mix.options({
+    processCssUrls: false,
+    postCss: [tailwindcss("tailwind.config.js")]
+});
+
+mix.purgeCss({
+    whitelist: ["html", "body", "code", "pre"],
+    whitelistPatterns: [/^fa\-/],
+    whitelistPatternsChildren: [/^markdown/, /^token/]
+});
