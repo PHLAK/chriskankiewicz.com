@@ -23,6 +23,6 @@ mix.webpackConfig({
         postCss: [tailwindcss("tailwind.config.js")]
     })
     .purgeCss({
-        whitelist: ["html", "body"],
+        whitelist: ["html", "body", "code", "pre"],
         whitelistPatterns: [/^fa\-/]
     });
