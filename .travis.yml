@@ -30,4 +30,4 @@ before_install:
   - npm ci
 
 install:
-  - "[[ $COMPOSER_PREFER == 'lowest' ]] && composer update --prefer-lowest || composer update"
+  - "[[ $COMPOSER_PREFER == 'lowest' ]] && composer update --prefer-lowest || composer install"
