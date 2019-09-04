@@ -23,7 +23,6 @@ cache:
 
 before_install:
   - phpenv config-rm xdebug.ini || true
-  - travis_retry composer self-update
 
 install:
   - "[[ $COMPOSER_PREFER == 'lowest' ]] && composer update --prefer-lowest || composer update"
