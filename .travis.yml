@@ -32,4 +32,4 @@ before_install:
 
 install:
   - "[[ $COMPOSER_PREFER == 'lowest' ]] && composer update --prefer-lowest || composer install"
-  - npm ci
+  - npm ci && npm run development
