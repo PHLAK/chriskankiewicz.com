@@ -21,6 +21,9 @@ cache:
     - $HOME/.composer/cache
     - vendor
 
+services:
+  - mysql
+
 before_install:
   - phpenv config-rm xdebug.ini || true
 
