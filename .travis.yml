@@ -19,6 +19,7 @@ matrix:
 cache:
   directories:
     - $HOME/.composer/cache
+    - $HOME/.npm
     - vendor
 
 services:
@@ -26,6 +27,7 @@ services:
 
 before_install:
   - phpenv config-rm xdebug.ini || true
+  - npm ci
 
 install:
   - "[[ $COMPOSER_PREFER == 'lowest' ]] && composer update --prefer-lowest || composer update"
