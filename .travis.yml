@@ -2,12 +2,7 @@ sudo: false
 
 language: php
 
-env:
-  - COMPOSER_PREFER=default
-  - COMPOSER_PREFER=lowest
-
 php:
-  - 7.1
   - 7.2
   - 7.3
   - nightly
@@ -31,5 +26,5 @@ before_install:
   - npm config set "//npm.fontawesome.com/:_authToken" $FONT_AWESOME_TOKEN
 
 install:
-  - "[[ $COMPOSER_PREFER == 'lowest' ]] && composer update --prefer-lowest || composer install"
+  - composer install
   - npm ci && npm run development
