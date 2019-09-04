@@ -27,7 +27,9 @@ services:
 
 before_install:
   - phpenv config-rm xdebug.ini || true
-  - npm ci
+  - npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+  - npm config set "//npm.fontawesome.com/:_authToken" $FONT_AWESOME_TOKEN
 
 install:
   - "[[ $COMPOSER_PREFER == 'lowest' ]] && composer update --prefer-lowest || composer install"
+  - npm ci
