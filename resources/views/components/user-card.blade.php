@@ -16,7 +16,7 @@
     </div>
 
     <p class="mb-4 px-4 py-2 md:text-sm lg:text-base">
-        Passionate PHP developer, Linux junkie, gamer and coffee afficionado.
+        Passionate PHP developer, Linux junkie, gamer and coffee aficionado.
         Dedicated husband and father of two.
     </p>
 
