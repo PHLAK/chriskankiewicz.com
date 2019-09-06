@@ -46,18 +46,6 @@
   project_url: https://packagist.org/packages/phlak/semver
   source_url: https://github.com/PHLAK/SemVer
 
-- name: Stash
-  description: |-
-    Simple, fluent PHP caching library.
-  project_url: https://packagist.org/packages/phlak/stash
-  source_url: https://github.com/PHLAK/Stash
-
-- name: Config
-  description: |-
-    PHP library for easy configuration management.
-  project_url: https://packagist.org/packages/phlak/config
-  source_url: https://github.com/PHLAK/Config
-
 - name: 'azPHP Presentation: PsySh'
   description: |-
     My presentation on psysh, a terminal-based interactive PHP debugger and REPL
@@ -69,9 +57,56 @@
   project_url: https://www.youtube.com/watch?v=lblQtfwlVls
   source_url: https://github.com/PHLAK/psysh-demo
 
+- name: Stash
+  description: |-
+    Simple, fluent PHP caching library.
+
+    **Example:**
+
+    ```php
+    use PHLAK\Stash;
+
+    $stash = new Stash::memcached(function ($memcached) {
+        $memcached->addServer('localhost', 11211);
+    });
+
+    $stash->put('foo', $data, 5); // Cache $data for 5 minutes
+    $stash->has('foo'); // True if 'foo' is in the cahce
+    $stash->get('foo'); // Retrievs the 'foo' from the cache
+    ```
+  project_url: https://packagist.org/packages/phlak/stash
+  source_url: https://github.com/PHLAK/Stash
+
+- name: PHX2600
+  description: |-
+    Homepage for the PHX2600, the Phoenix, Arizona Network of Hackers.
+
+    ![phx2600.org](https://raw.githubusercontent.com/PHX2600/phx2600.org/master/screenshot.png)
+  project_url: https://www.phx2600.org
+  source_url: https://github.com/PHX2600/phx2600.org
+
+- name: Config
+  description: |-
+    PHP library for easy configuration management.
+
+    **Example:**
+
+    ```php
+    use PHLAK\Config\Config;
+
+    $config = new Config('path/to/config/databse.yaml');
+
+    $config->set('port', 3307); // Sets 'port' config item
+    $config->get('hostname'); // Returns 'localhost'
+    ```
+  project_url: https://packagist.org/packages/phlak/config
+  source_url: https://github.com/PHLAK/Config
+
 - name: Chronometer
   description: |-
     Measure the passing of time.
+
+    **Example:**
 
     ```php
     use PHLAK\Chronometer\Timer;
@@ -84,14 +119,6 @@
     ```
   project_url: null
   source_url: https://github.com/PHLAK/Chronometer
-
-- name: PHX2600
-  description: |-
-    Homepage for the PHX2600, the Phoenix, Arizona Network of Hackers.
-
-    ![phx2600.org](https://raw.githubusercontent.com/PHX2600/phx2600.org/master/screenshot.png)
-  project_url: https://www.phx2600.org
-  source_url: https://github.com/PHX2600/phx2600.org
 
 - name: Directory Lister
   description: |-
