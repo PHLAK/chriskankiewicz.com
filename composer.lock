@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "234cf291968559e22e421cd797c2e640",
+    "content-hash": "77090f3c6e6099cff46b547abd34d050",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2285,9 +2285,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
-                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be"
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
                 }
             ],
             "description": "A magic memoization function",
@@ -3838,20 +3838,20 @@
         },
         {
             "name": "writingink/wink",
-            "version": "v0.0.12",
+            "version": "v0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/writingink/wink.git",
-                "reference": "a3354d8362d9f7a5a05666eb1325c1a8eab7b9e3"
+                "reference": "dbfcc4147ab8556a19f45ec6d7ba2e0b5ec272ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/writingink/wink/zipball/a3354d8362d9f7a5a05666eb1325c1a8eab7b9e3",
-                "reference": "a3354d8362d9f7a5a05666eb1325c1a8eab7b9e3",
+                "url": "https://api.github.com/repos/writingink/wink/zipball/dbfcc4147ab8556a19f45ec6d7ba2e0b5ec272ed",
+                "reference": "dbfcc4147ab8556a19f45ec6d7ba2e0b5ec272ed",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.7",
+                "laravel/framework": "~5.7|~6.0",
                 "php": "^7.1"
             },
             "require-dev": {
@@ -3886,7 +3886,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-01-20T18:27:08+00:00"
+            "time": "2019-09-05T17:56:26+00:00"
         }
     ],
     "packages-dev": [
