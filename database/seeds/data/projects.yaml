@@ -6,7 +6,8 @@
     comparisons easy and readable. With Twine every string is an object. This
     gives you power and flexibility that native strings do not have in PHP.
 
-    [Check out the slides from the azPHP presentation](https://phlak.github.io/string-manipulation-leveled-up/)
+    Check out the [slides from my azPHP presentation](https://phlak.github.io/string-manipulation-leveled-up/)
+    or the article on [Laravel News](https://laravel-news.com/twine-string-manipulation-leveled-up).
 
     **Example:**
 
@@ -34,6 +35,10 @@
 - name: SemVer
   description: |-
     A semantic versioning helper library for PHP.
+
+    [Featured on Laravel News](https://laravel-news.com/php-semantic-versioning-helper)
+
+    **Example:**
 
     ```php
     use PHLAK\SemVer;
