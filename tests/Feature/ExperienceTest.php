@@ -30,7 +30,7 @@ class ExperienceTest extends TestCase
         $experience = factory(Experience::class)->create();
         factory(Experience::class)->create();
 
-        $response = $this->json('GET', route('experience.show', ['id' => $experience]));
+        $response = $this->json('GET', route('experience.show', ['experience' => $experience]));
 
         $response->assertStatus(200)
             ->assertJsonStructure([
@@ -69,7 +69,7 @@ class ExperienceTest extends TestCase
         $experience = factory(Experience::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('PATCH', route('experience.update', ['id' => $experience]), [
+            ->json('PATCH', route('experience.update', ['experience' => $experience]), [
                 'company' => 'Pied Piper'
             ]);
 
@@ -92,7 +92,7 @@ class ExperienceTest extends TestCase
         factory(Experience::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('DELETE', route('experience.destroy', ['id' => $experience]));
+            ->json('DELETE', route('experience.destroy', ['experience' => $experience]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('experiences', [

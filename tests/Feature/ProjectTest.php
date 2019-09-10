@@ -30,7 +30,7 @@ class ProjectTest extends TestCase
         $project = factory(Project::class)->create();
         factory(Project::class)->create();
 
-        $response = $this->json('GET', route('project.show', ['id' => $project]));
+        $response = $this->json('GET', route('project.show', ['project' => $project]));
 
         $response->assertStatus(200)
             ->assertJsonStructure([
@@ -65,7 +65,7 @@ class ProjectTest extends TestCase
         $project = factory(Project::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('PATCH', route('project.update', ['id' => $project]), [
+            ->json('PATCH', route('project.update', ['project' => $project]), [
                 'name' => 'Death Star 2'
             ]);
 
@@ -88,7 +88,7 @@ class ProjectTest extends TestCase
         factory(Project::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('DELETE', route('project.destroy', ['id' => $project]));
+            ->json('DELETE', route('project.destroy', ['project' => $project]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('projects', [

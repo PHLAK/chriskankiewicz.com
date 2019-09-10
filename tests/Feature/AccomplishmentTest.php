@@ -30,7 +30,9 @@ class AccomplishmentTest extends TestCase
         $accomplishment = factory(Accomplishment::class)->create();
         factory(Accomplishment::class)->create();
 
-        $response = $this->json('GET', route('accomplishment.show', ['id' => $accomplishment]));
+        $response = $this->json('GET', route('accomplishment.show', [
+            'accomplishment' => $accomplishment
+        ]));
 
         $response->assertStatus(200)
             ->assertJsonStructure([
@@ -59,7 +61,7 @@ class AccomplishmentTest extends TestCase
         $accomplishment = factory(Accomplishment::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('PATCH', route('accomplishment.update', ['id' => $accomplishment]), [
+            ->json('PATCH', route('accomplishment.update', ['accomplishment' => $accomplishment]), [
                 'description' => 'Father of Kaylee and Victor.'
             ]);
 
@@ -82,7 +84,7 @@ class AccomplishmentTest extends TestCase
         factory(Accomplishment::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('DELETE', route('accomplishment.destroy', ['id' => $accomplishment]));
+            ->json('DELETE', route('accomplishment.destroy', ['accomplishment' => $accomplishment]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('accomplishments', [

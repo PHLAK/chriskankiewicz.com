@@ -30,7 +30,7 @@ class EducationTest extends TestCase
         $education = factory(Education::class)->create();
         factory(Education::class)->create();
 
-        $response = $this->json('GET', route('education.show', ['id' => $education]));
+        $response = $this->json('GET', route('education.show', ['education' => $education]));
 
         $response->assertStatus(200)
             ->assertJsonStructure([
@@ -65,7 +65,7 @@ class EducationTest extends TestCase
         $education = factory(Education::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('PATCH', route('education.update', ['id' => $education]), [
+            ->json('PATCH', route('education.update', ['education' => $education]), [
                 'end_date' => '1986-07-06',
                 'currently_enrolled' => false
             ]);
@@ -91,7 +91,7 @@ class EducationTest extends TestCase
         factory(Education::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('DELETE', route('education.destroy', ['id' => $education]));
+            ->json('DELETE', route('education.destroy', ['education' => $education]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('education', [

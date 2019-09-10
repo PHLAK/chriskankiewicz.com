@@ -30,12 +30,9 @@ class SkillTest extends TestCase
         $skill = factory(Skill::class)->create();
         factory(Skill::class)->create();
 
-        $response = $this->json('GET', route('skill.show', ['id' => $skill]));
+        $response = $this->json('GET', route('skill.show', ['skill' => $skill]));
 
-        $response->assertStatus(200)
-            ->assertJsonStructure([
-                'name', 'emphasis'
-            ]);
+        $response->assertStatus(200)->assertJsonStructure(['name', 'emphasis']);
     }
 
     public function test_it_can_create_a_new_skill()
@@ -64,7 +61,7 @@ class SkillTest extends TestCase
         $skill = factory(Skill::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('PATCH', route('skill.update', ['id' => $skill]), [
+            ->json('PATCH', route('skill.update', ['skill' => $skill]), [
                 'name' => 'Pickpocketing'
             ]);
 
@@ -88,7 +85,7 @@ class SkillTest extends TestCase
         factory(Skill::class)->create();
 
         $response = $this->actingAs($user, 'api')
-            ->json('DELETE', route('skill.destroy', ['id' => $skill]));
+            ->json('DELETE', route('skill.destroy', ['skill' => $skill]));
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('skills', [
