@@ -1090,17 +1090,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "188b331861e22abc9ec9c17d28ebdb837ed6de67"
+                "reference": "54ca98c880e740520bb66340d24f94dd5d64bb0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-188b331861e22abc9ec9c17d28ebdb837ed6de67-zip-113270.zip",
-                "reference": "188b331861e22abc9ec9c17d28ebdb837ed6de67",
-                "shasum": "5f5bddd072dc7c0ee095c040a04ae31318ecb126"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-54ca98c880e740520bb66340d24f94dd5d64bb0d-zip-c89159.zip",
+                "reference": "54ca98c880e740520bb66340d24f94dd5d64bb0d",
+                "shasum": "b63fd7fb1e81c021417af0a9009bbbbbfc4b1663"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
@@ -1156,7 +1156,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2019-09-03T20:23:50+00:00"
+            "time": "2019-09-10T16:40:45+00:00"
         },
         {
             "name": "laravel/telescope",
@@ -3851,9 +3851,9 @@
             "authors": [
                 {
                     "name": "Marcel Pociot",
-                    "role": "Developer",
                     "email": "marcel@beyondco.de",
-                    "homepage": "https://beyondco.de"
+                    "homepage": "https://beyondco.de",
+                    "role": "Developer"
                 }
             ],
             "description": "Symfony Var-Dump Server for Laravel",
@@ -4131,8 +4131,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "role": "Developer",
-                    "homepage": "https://github.com/filp"
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -5789,8 +5789,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
