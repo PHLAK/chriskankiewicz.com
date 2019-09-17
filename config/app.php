@@ -176,7 +176,6 @@ return [
         App\Providers\NovaServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\GitHubProvider::class,
     ],
 
     /*
