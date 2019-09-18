@@ -1,59 +1,45 @@
 .markdown {
     a {
-        text-decoration: underline;
+        @apply underline;
     }
 
     h1 {
-        font-size: 1.875rem;
-        font-weight: bold;
-        margin: 0 0 1rem;
+        @apply text-3xl font-bold mb-4;
     }
 
     h2 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin: 0 0 1rem;
+        @apply text-2xl font-bold mb-4;
     }
 
     h3 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        margin: 0 0 1rem;
+        @apply text-xl font-bold mb-4;
     }
 
     h4 {
-        font-size: 1.25rem;
-        margin: 0 0 1rem;
+        @apply text-xl .mb-4;
     }
 
     img {
-        border: 2px solid #2d3748;
-        box-shadow: 4px 4px 0 #2d3748;
-        max-width: 100%;
+        @apply border-2 border-gray-800 shadow-solid-gray-800 max-w-full;
     }
 
     p {
-        margin: 1rem 0;
+        @apply my-4;
     }
 
     pre {
-        border: 2px solid #2d3748;
-        box-shadow: 4px 4px 0 #2d3748;
-        margin: 1rem 0;
-        max-width: 100%;
+        @apply border-2 border-gray-800 shadow-solid-gray-800 max-w-full my-4;
 
         code {
-            max-width: 100%;
-            overflow-x: scroll;
+            @apply max-w-full overflow-x-scroll;
         }
     }
 
     ul {
-        list-style: disc;
+        @apply list-disc;
 
         li {
-            margin-bottom: 0.5rem;
-            margin-left: 2rem;
+            @apply ml-8 mb-2;
         }
     }
 }
