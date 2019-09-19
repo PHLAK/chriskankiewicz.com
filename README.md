@@ -1,7 +1,7 @@
 Requirements
 ------------
 
-  - [PHP](https://secure.php.net/) >= 7.1.3
+  - [PHP](https://secure.php.net/) >= 7.2
   - [MySQL](https://www.mysql.com/) 5.7
   - [Node.js](https://nodejs.org) >= 10.15.3
 
