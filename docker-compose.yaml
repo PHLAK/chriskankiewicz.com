@@ -6,7 +6,8 @@ services:
     build:
       context: .
       args:
-        COMPOSER_AUTH: ${COMPOSER_AUTH}
+        NOVA_USERNAME: ${NOVA_USERNAME}
+        NOVA_PASSWORD: ${NOVA_PASSWORD}
         FONT_AWESOME_TOKEN: ${FONT_AWESOME_TOKEN}
       target: development
     environment:

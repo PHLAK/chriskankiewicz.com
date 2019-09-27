@@ -1,7 +1,9 @@
 # Install PHP dependencies
 FROM composer:1.9 AS php-dependencies
-ARG COMPOSER_AUTH={}
+ARG NOVA_USERNAME
+ARG NOVA_PASSWORD
 COPY . /app
+RUN composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
 RUN composer install --working-dir /app --ignore-platform-reqs \
     --no-cache --no-dev --no-interaction
 
