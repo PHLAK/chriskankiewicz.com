@@ -8,7 +8,7 @@ RUN composer install --working-dir /app --ignore-platform-reqs \
     --no-cache --no-dev --no-interaction
 
 # Install and compile JavaScript assets
-FROM node:12.8 AS js-dependencies
+FROM node:12.10 AS js-dependencies
 ARG FONT_AWESOME_TOKEN
 COPY --from=php-dependencies /app /app
 RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
