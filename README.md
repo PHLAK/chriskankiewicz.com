@@ -45,18 +45,28 @@ Once done you must set the remaining variables in the `.env` file.
 To build and start the containers on your system for the first time run the
 following from the project's root directory:
 
-    docker-compose up -d --build
+    docker-compose up -d
 
-### Initialize the Database
+## Install PHP dependencies
 
-Run the migrations and seed the database.
+    composer install
 
-    docker-compose exec php artisan migrate
+or from within the Docker container:
+
+    docker run -it --rm --env-file ${PWD}/.env --user $(id -u):$(id -g) --volume ${PWD}:/app composer:1.9 \
+        composer config --global http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD} \
+        && composer install --working-dir /app --ignore-platform-reqs --no-cache --no-interaction --no-scripts
 
 ## Install and Compile CSS and JavaScript Assets
 
-    npm install
-    npm run dev
+    npm install && npm run dev
+
+or from within the Docker container:
+
+    docker run -it --rm --env-file ${PWD}/.env --user $(id -u):$(id -g) --volume ${PWD}:/app node:12.10 \
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/ \
+        && npm config set "//npm.fontawesome.com/:_authToken" ${FONT_AWESOME_TOKEN} \
+        && npm install && npm run dev
 
 > #### ℹ️ Watching for Changes
 >
@@ -64,6 +74,12 @@ Run the migrations and seed the database.
 > development by running:
 > 
 >     npm run watch
+
+### Initialize the Database
+
+Run the migrations and seed the database.
+
+    docker-compose exec php artisan migrate
 
 ### Accessing the Development Site
 
