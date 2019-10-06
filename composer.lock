@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b44add3b6c5ffcfb5db1ea06791c4c7",
+    "content-hash": "e5e77d16836f0542251ea638bb370ff2",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -1499,16 +1499,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.24.0",
+            "version": "2.25.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29"
+                "reference": "d59c6cea9c4a3547bb6c0dfec451319abdaa4fb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/934459c5ac0658bc765ad1e53512c7c77adcac29",
-                "reference": "934459c5ac0658bc765ad1e53512c7c77adcac29",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d59c6cea9c4a3547bb6c0dfec451319abdaa4fb1",
+                "reference": "d59c6cea9c4a3547bb6c0dfec451319abdaa4fb1",
                 "shasum": ""
             },
             "require": {
@@ -1555,14 +1555,14 @@
                     "homepage": "http://github.com/kylekatarnls"
                 }
             ],
-            "description": "A API extension for DateTime that supports 281 different languages.",
+            "description": "An API extension for DateTime that supports 281 different languages.",
             "homepage": "http://carbon.nesbot.com",
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
-            "time": "2019-08-31T16:37:55+00:00"
+            "time": "2019-10-05T15:52:23+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3976,16 +3976,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "1.9.1",
+            "version": "1.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "ca7ab4f49230cb57c62fedddc5245f5496b82065"
+                "reference": "9b312a29fb6c781d5e2f4e41fb42ce3fde63a237"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/ca7ab4f49230cb57c62fedddc5245f5496b82065",
-                "reference": "ca7ab4f49230cb57c62fedddc5245f5496b82065",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/9b312a29fb6c781d5e2f4e41fb42ce3fde63a237",
+                "reference": "9b312a29fb6c781d5e2f4e41fb42ce3fde63a237",
                 "shasum": ""
             },
             "require": {
@@ -4043,7 +4043,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2019-10-01T17:44:44+00:00"
+            "time": "2019-10-04T09:34:40+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -4679,22 +4679,22 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.8.1",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "1927e75f4ed19131ec9bcc3b002e07fb1173ee76"
+                "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/1927e75f4ed19131ec9bcc3b002e07fb1173ee76",
-                "reference": "1927e75f4ed19131ec9bcc3b002e07fb1173ee76",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/f6811d96d97bdf400077a0cc100ae56aa32b9203",
+                "reference": "f6811d96d97bdf400077a0cc100ae56aa32b9203",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
-                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
+                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0|^5.0",
                 "sebastian/comparator": "^1.1|^2.0|^3.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
@@ -4738,7 +4738,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2019-06-13T12:50:23+00:00"
+            "time": "2019-10-03T11:07:50+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -4994,16 +4994,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.3.5",
+            "version": "8.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "302faed7059fde575cf3403a78c730c5e3a62750"
+                "reference": "57e5e77b62086033528ee1f4063ae03035f57894"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/302faed7059fde575cf3403a78c730c5e3a62750",
-                "reference": "302faed7059fde575cf3403a78c730c5e3a62750",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/57e5e77b62086033528ee1f4063ae03035f57894",
+                "reference": "57e5e77b62086033528ee1f4063ae03035f57894",
                 "shasum": ""
             },
             "require": {
@@ -5047,7 +5047,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "8.3-dev"
+                    "dev-master": "8.4-dev"
                 }
             },
             "autoload": {
@@ -5073,7 +5073,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-09-14T09:12:03+00:00"
+            "time": "2019-10-04T03:12:25+00:00"
         },
         {
             "name": "scrivo/highlight.php",
@@ -5118,18 +5118,18 @@
             "authors": [
                 {
                     "name": "Geert Bergman",
-                    "homepage": "http://www.scrivo.org/",
-                    "role": "Project Author"
+                    "role": "Project Author",
+                    "homepage": "http://www.scrivo.org/"
                 },
                 {
                     "name": "Vladimir Jimenez",
-                    "homepage": "https://allejo.io",
-                    "role": "Contributor"
+                    "role": "Contributor",
+                    "homepage": "https://allejo.io"
                 },
                 {
                     "name": "Martin Folkers",
-                    "homepage": "https://twobrain.io",
-                    "role": "Contributor"
+                    "role": "Contributor",
+                    "homepage": "https://twobrain.io"
                 }
             ],
             "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",
@@ -5854,7 +5854,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "ext-redis": "*"
     },
     "platform-dev": []
 }
