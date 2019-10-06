@@ -14,7 +14,7 @@ class CreateEducationTable extends Migration
     public function up()
     {
         Schema::create('education', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('institution');
             $table->string('degree')->nullable();
             $table->datetime('start_date');
