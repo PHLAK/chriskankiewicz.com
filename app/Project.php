@@ -34,6 +34,14 @@ class Project extends Model
     }
 
     /**
+     * Get the project's skills.
+     */
+    public function skills()
+    {
+        return $this->morphToMany('App\Skill', 'skillable');
+    }
+
+    /**
      * Return the number of GitHub stars the project has.
      *
      * @return int|null

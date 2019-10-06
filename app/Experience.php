@@ -24,4 +24,12 @@ class Experience extends Model
 
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
+
+    /**
+     * Get the experience's skills.
+     */
+    public function skills()
+    {
+        return $this->morphToMany('App\Skill', 'skillable');
+    }
 }
