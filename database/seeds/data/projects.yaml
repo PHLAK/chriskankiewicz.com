@@ -22,6 +22,12 @@
     ```
   project_url: https://twine.phlak.net
   source_url: https://github.com/PHLAK/Twine
+  skills:
+    - PHP
+    - Composer
+    - Packagist
+    - Git Version Control
+    - Travis CI
 
 - name: vueColorClock
   description: |-
@@ -31,6 +37,12 @@
     ![vueColorClock](https://raw.githubusercontent.com/PHLAK/vueColorClock/master/screenshot.png)
   project_url: https://colorclock.phlak.net
   source_url: https://github.com/PHLAK/vueColorClock
+  skills:
+    - Vue.js
+    - Tailwind CSS
+    - Sass / SCSS
+    - Git Version Control
+    - Netlify
 
 - name: SemVer
   description: |-
@@ -50,6 +62,12 @@
     ```
   project_url: https://packagist.org/packages/phlak/semver
   source_url: https://github.com/PHLAK/SemVer
+  skills:
+    - PHP
+    - Composer
+    - Packagist
+    - Semantic Versioning
+    - Git Version Control
 
 - name: 'azPHP Presentation: PsySh'
   description: |-
@@ -61,6 +79,9 @@
     <https://www.meetup.com/azPHPUG/events/rrzlqqyzjbhc/>
   project_url: https://www.youtube.com/watch?v=lblQtfwlVls
   source_url: https://github.com/PHLAK/psysh-demo
+  skills:
+    - PHP
+    - PsySH
 
 - name: Stash
   description: |-
@@ -81,6 +102,10 @@
     ```
   project_url: https://packagist.org/packages/phlak/stash
   source_url: https://github.com/PHLAK/Stash
+  skills:
+    - PHP
+    - Memcached
+    - Redis
 
 - name: PHX2600
   description: |-
@@ -89,6 +114,11 @@
     ![phx2600.org](https://raw.githubusercontent.com/PHX2600/phx2600.org/master/screenshot.png)
   project_url: https://www.phx2600.org
   source_url: https://github.com/PHX2600/phx2600.org
+  skills:
+    - Vue.js
+    - Tailwind CSS
+    - Jigsaw
+    - Netlify
 
 - name: Config
   description: |-
@@ -106,6 +136,11 @@
     ```
   project_url: https://packagist.org/packages/phlak/config
   source_url: https://github.com/PHLAK/Config
+  skills:
+    - PHP
+    - JSON
+    - YAML
+    - TOML
 
 - name: Chronometer
   description: |-
@@ -124,6 +159,10 @@
     ```
   project_url: null
   source_url: https://github.com/PHLAK/Chronometer
+  skills:
+    - PHP
+    - Composer
+    - Packagist
 
 - name: Directory Lister
   description: |-
@@ -131,9 +170,13 @@
     sub-directories and allows you to navigate there within.
   project_url: https://www.directorylister.com
   source_url: https://github.com/DirectoryLister/DirectoryLister
+  skills:
+    - PHP
 
 - name: Uber Gallery
   description: |-
     An easy to use, simple to manage, web photo gallery written in PHP.
   project_url: https://www.ubergallery.net
   source_url: https://github.com/UberGallery/UberGallery
+  skills:
+    - PHP
