@@ -40,10 +40,10 @@ class Skill extends Model
     {
         switch ($this->emphasis) {
             case 1:
-                return 'text-gray-900 text-xl';
+                return 'text-gray-900 text-lg';
 
             case -1:
-                return 'text-gray-700 text-xs';
+                return 'text-gray-700 text-sm';
 
             default:
                 return 'text-gray-800 text-base';

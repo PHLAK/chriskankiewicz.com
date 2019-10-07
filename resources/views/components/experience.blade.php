@@ -34,6 +34,18 @@
                 <p class="my-4">
                     {!! markdown($experience->description) !!}
                 </p>
+
+                <div class="flex flex-wrap items-center mb-8">
+                    @foreach ($experience->skills as $skill)
+                        <span class="inline-block bg-gray-200 px-2 py-1 m-1 rounded {{ $skill->styles() }}">
+                            @isset($skill->icon)
+                                <i class="{{ strtolower($skill->icon) }} mr-1"></i>
+                            @endisset
+
+                            {{ $skill->name }}
+                        </span>
+                    @endforeach
+                </div>
             </div>
 
             @if(! $loop->last)

@@ -80,7 +80,7 @@
 
 - name: CakePHP
   emphasis: -1
-  icon: null
+  icon: fab fa-cake
 
 - name: Travis CI
   emphasis: 0
@@ -105,3 +105,43 @@
 - name: Amazon Web Services
   emphasis: 0
   icon: fab fa-aws
+
+- name: CodeIgniter
+  emphasis: -1
+  icon: fas fa-fire
+
+- name: Drupal
+  emphasis: 0
+  icon: fab fa-drupal
+
+- name: Python
+  emphasis: 0
+  icon: fab fa-python
+
+- name: Memcached
+  emphasis: 0
+  icon: far fa-database
+
+- name: Redis
+  emphasis: 0
+  icon: far fa-database
+
+- name: Jigsaw
+  emphasis: 0
+  icon: fas fa-puzzle-piece
+
+- name: JSON
+  emphasis: 0
+  icon: far fa-brackets-curly
+
+- name: YAML
+  emphasis: 0
+  icon: far fa-align-right
+
+- name: OpenStack
+  emphasis: -1
+  icon: far fa-server
+
+- name: SaltStack
+  emphasis: -1
+  icon: null

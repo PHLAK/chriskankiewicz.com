@@ -39,7 +39,7 @@
     - PHP
     - CakePHP
     - Drupal
-    - Code Ignighter
+    - CodeIgniter
 
 - company: IO Data Center
   title: Cloud Engineer
@@ -56,9 +56,9 @@
   skills:
     - OpenStack
     - SaltStack
-    - Arch Linux
-    - Docker
+    - Linux
     - Python
+    - Docker
     - Vagrant
 
 - company: IO Data Center
