@@ -25,6 +25,9 @@ class Experience extends Model
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
+    /** @var array The relations to eager load on every query. */
+    protected $with = ['skills'];
+
     /**
      * Get the experience's skills.
      */
