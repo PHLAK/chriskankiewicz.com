@@ -7,6 +7,9 @@
   end_date: '2009-03-01'
   current_position: false
   location: Phoenix, Arizona
+  skills:
+    - Windows
+    - Networking
 
 - company: Southwest Medical & Rehab
   title: Web Developer / Designer
@@ -73,6 +76,8 @@
   skills:
     - PHP
     - Laravel
+    - HTML
+    - CSS
     - Sass / SCSS
     - Composer
     - Packagist

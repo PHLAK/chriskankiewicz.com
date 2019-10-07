@@ -102,6 +102,10 @@
   emphasis: 1
   icon: fab fa-google
 
+- name: Google Kubernetes Engine
+  emphasis: 0
+  icon: far fa-cubes
+
 - name: Amazon Web Services
   emphasis: 0
   icon: fab fa-aws
