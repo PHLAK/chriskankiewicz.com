@@ -83,8 +83,8 @@
     - Developed, managed and maintained business-critical RESTful Laravel PHP applications and infrastructure.
     - Developed continuous integration solutions for delivering micro-service architecture hosted on Google Cloud Platform and Google Kubernetes Engine.
   start_date: '2017-07-10'
-  end_date: null
-  current_position: true
+  end_date: '2019-09-27'
+  current_position: false
   location: Tempe, Arizona
   skills:
     - PHP
@@ -92,3 +92,16 @@
     - Docker
     - Google Cloud Platform
     - Google Kubernetes Engine
+
+- company: Roave
+  title: Freelance Software Developer
+  description: |-
+    - PHP software development.
+  start_date: '2019-09-30'
+  end_date: null
+  current_position: true
+  location: Remote
+  skills:
+    - PHP
+    - Laravel
+    - Docker
