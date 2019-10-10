@@ -48,10 +48,10 @@
 
                 <div class="flex flex-wrap items-center mb-8">
                     @foreach ($project->skills as $skill)
-                        <span class="inline-block bg-gray-200 px-2 py-1 m-1 rounded {{ $skill->styles() }}">
-                            @isset($skill->icon)
-                                <i class="{{ strtolower($skill->icon) }} mr-1"></i>
-                            @endisset
+                        <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 m-1 rounded">
+                            @if($skill->hasIcon())
+                                {!! $skill->iconMarkup(['mr-1']) !!}
+                            @endif
 
                             {{ $skill->name }}
                         </span>

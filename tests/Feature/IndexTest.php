@@ -15,7 +15,6 @@ class IndexTest extends TestCase
 
         $response
             ->assertSee('Chris Kankiewicz')
-            ->assertSee('Skills')
             ->assertSee('Experience')
             ->assertSee('Education')
             ->assertSee('Projects');

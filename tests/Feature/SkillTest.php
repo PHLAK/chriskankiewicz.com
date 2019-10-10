@@ -20,7 +20,7 @@ class SkillTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['name', 'emphasis']
+                ['name', 'icon_name', 'icon_style']
             ]);
     }
 
@@ -32,7 +32,7 @@ class SkillTest extends TestCase
 
         $response = $this->json('GET', route('skill.show', ['skill' => $skill]));
 
-        $response->assertStatus(200)->assertJsonStructure(['name', 'emphasis']);
+        $response->assertStatus(200)->assertJsonStructure(['name', 'icon_name', 'icon_style']);
     }
 
     public function test_it_can_create_a_new_skill()
@@ -51,7 +51,8 @@ class SkillTest extends TestCase
 
         $this->assertDatabaseHas('skills', [
             'name' => 'Lockpicking',
-            'emphasis' => 0
+            'icon_name' => null,
+            'icon_style' => null
         ]);
     }
 

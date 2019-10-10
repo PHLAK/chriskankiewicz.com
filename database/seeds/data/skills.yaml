@@ -1,151 +1,155 @@
 - name: PHP
-  emphasis: 1
-  icon: fab fa-php
+  icon_name: php
+  icon_style: fab
 
 - name: Laravel
-  emphasis: 1
-  icon: fab fa-laravel
+  icon_name: laravel
+  icon_style: fab
 
 - name: HTML
-  emphasis: 0
-  icon: fab fa-html5
+  icon_name: html5
+  icon_style: fab
 
 - name: CSS
-  emphasis: 0
-  icon: fab fa-css3
+  icon_name: css3
+  icon_style: fab
 
 - name: JavaScript
-  emphasis: 1
-  icon: fab fa-js
+  icon_name: js
+  icon_style: fab
 
 - name: Vue.js
-  emphasis: 0
-  icon: fab fa-vuejs
+  icon_name: vuejs
+  icon_style: fab
 
 - name: npm
-  emphasis: 0
-  icon: fab fa-npm
+  icon_name: npm
+  icon_style: fab
 
 - name: Yarn
-  emphasis: -1
-  icon: fab fa-yarn
+  icon_name: yarn
+  icon_style: fab
 
 - name: Sass / SCSS
-  emphasis: 0
-  icon: fab fa-sass
+  icon_name: sass
+  icon_style: fab
 
 - name: Composer
-  emphasis: 0
-  icon: null
+  icon_name: null
+  icon_style: null
 
 - name: Linux
-  emphasis: 1
-  icon: fab fa-linux
+  icon_name: linux
+  icon_style: fab
 
 - name: Git Version Control
-  emphasis: 1
-  icon: fab fa-git-alt
+  icon_name: git-alt
+  icon_style: fab
 
 - name: MySQL
-  emphasis: 0
-  icon: far fa-database
+  icon_name: database
+  icon_style: far
 
 - name: Postgres
-  emphasis: 0
-  icon: far fa-database
+  icon_name: database
+  icon_style: far
 
 - name: Nginx
-  emphasis: 0
-  icon: null
+  icon_name: null
+  icon_style: null
 
 - name: Apache
-  emphasis: 0
-  icon: null
+  icon_name: null
+  icon_style: null
 
 - name: MVC Frameworks
-  emphasis: 0
-  icon: null
+  icon_name: null
+  icon_style: null
 
 - name: Docker
-  emphasis: 1
-  icon: fab fa-docker
+  icon_name: docker
+  icon_style: fab
 
 - name: Kubernetes
-  emphasis: 0
-  icon: null
+  icon_name: null
+  icon_style: null
 
 - name: Continuous Integration
-  emphasis: 0
-  icon: null
+  icon_name: null
+  icon_style: null
 
 - name: CakePHP
-  emphasis: -1
-  icon: fab fa-cake
+  icon_name: cake
+  icon_style: fab
 
 - name: Travis CI
-  emphasis: 0
-  icon: null
+  icon_name: null
+  icon_style: null
 
 - name: Jenkins
-  emphasis: -1
-  icon: fab fa-jenkins
+  icon_name: jenkins
+  icon_style: fab
 
 - name: Windows
-  emphasis: 0
-  icon: fab fa-windows
+  icon_name: windows
+  icon_style: fab
 
 - name: Networking
-  emphasis: -1
-  icon: far fa-network-wired
+  icon_name: network-wired
+  icon_style: fal
 
 - name: Google Cloud Platform
-  emphasis: 1
-  icon: fab fa-google
+  icon_name: google
+  icon_style: fab
 
 - name: Google Kubernetes Engine
-  emphasis: 0
-  icon: far fa-cubes
+  icon_name: cubes
+  icon_style: fal
 
 - name: Amazon Web Services
-  emphasis: 0
-  icon: fab fa-aws
+  icon_name: aws
+  icon_style: fab
 
 - name: CodeIgniter
-  emphasis: -1
-  icon: fas fa-fire
+  icon_name: fire
+  icon_style: fas
 
 - name: Drupal
-  emphasis: 0
-  icon: fab fa-drupal
+  icon_name: drupal
+  icon_style: fab
 
 - name: Python
-  emphasis: 0
-  icon: fab fa-python
+  icon_name: python
+  icon_style: fab
 
 - name: Memcached
-  emphasis: 0
-  icon: far fa-database
+  icon_name: database
+  icon_style: fal
 
 - name: Redis
-  emphasis: 0
-  icon: far fa-database
+  icon_name: database
+  icon_style: fal
 
 - name: Jigsaw
-  emphasis: 0
-  icon: fas fa-puzzle-piece
+  icon_name: puzzle-piece
+  icon_style: fas
 
 - name: JSON
-  emphasis: 0
-  icon: far fa-brackets-curly
+  icon_name: brackets-curly
+  icon_style: far
 
 - name: YAML
-  emphasis: 0
-  icon: far fa-align-right
+  icon_name: align-right
+  icon_style: far
 
 - name: OpenStack
-  emphasis: -1
-  icon: far fa-server
+  icon_name: server
+  icon_style: fal
 
 - name: SaltStack
-  emphasis: -1
-  icon: null
+  icon_name: null
+  icon_style: null
+
+- name: Packagist
+  icon_name: null
+  icon_style: null

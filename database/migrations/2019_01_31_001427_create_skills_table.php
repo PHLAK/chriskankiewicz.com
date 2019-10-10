@@ -17,7 +17,8 @@ class CreateSkillsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->integer('emphasis')->default(0);
-            $table->string('icon')->nullable();
+            $table->string('icon_name')->nullable();
+            $table->string('icon_style')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

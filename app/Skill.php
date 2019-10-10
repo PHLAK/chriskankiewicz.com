@@ -10,7 +10,7 @@ class Skill extends Model
     use SoftDeletes;
 
     /** @var array The attributes that are mass assignable. */
-    protected $fillable = ['name', 'emphasis', 'icon'];
+    protected $fillable = ['name', 'icon_name', 'icon_style'];
 
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['pivot', 'created_at', 'updated_at', 'deleted_at'];
@@ -32,21 +32,42 @@ class Skill extends Model
     }
 
     /**
-     * Get the text size Tailwind class name based on the proficiency.
+     * Determine if this skill has an icon.
+     *
+     * @return bool
+     */
+    public function hasIcon(): bool
+    {
+        return isset($this->icon_style, $this->icon_name);
+    }
+
+    /**
+     * Get the skill's icon style classes.
+     *
+     * @param array $extraStyles Array of extra style class names
      *
      * @return string
      */
-    public function styles(): string
+    public function iconStyles(array $extraStyles = []): string
     {
-        switch ($this->emphasis) {
-            case 1:
-                return 'text-gray-900 text-lg';
+        $styles = "{$this->icon_style} fa-{$this->icon_name}";
 
-            case -1:
-                return 'text-gray-700 text-sm';
-
-            default:
-                return 'text-gray-800 text-base';
+        foreach ($extraStyles as $style) {
+            $styles .= " {$style}";
         }
+
+        return $styles;
+    }
+
+    /**
+     * Get the skill's icon markup.
+     *
+     * @param array $extraStyles Array of extra style class names
+     *
+     * @return string
+     */
+    public function iconMarkup(array $extraStyles = []): string
+    {
+        return "<i class=\"{$this->iconStyles($extraStyles)}\"></i>";
     }
 }
