@@ -6,7 +6,7 @@
             @include('components/sidebar')
         </div>
 
-        <div id="content" class="flex-grow w-full p-6 lg:max-w-2xl">
+        <div id="content" class="flex-grow w-full">
             @yield('content')
         </div>
     </div>

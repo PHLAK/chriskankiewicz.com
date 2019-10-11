@@ -1,8 +1,4 @@
-<div id="projects" class="mb-24">
-    @heading(['tag' => 'h2'])
-        <i class="far fa-coffee fa-fw"></i> Projects
-    @endheading
-
+<div id="projects" class="mb-24" v-show="activeSection == 'projects'">
     @foreach ($projects as $project)
         <div class="mb-8">
             <h3 class="text-2xl">

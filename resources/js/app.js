@@ -46,7 +46,17 @@ Vue.component('http-request-component', require('./components/HttpRequestCompone
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        activeSection: 'experience'
+    },
+    methods: {
+        ifActive(section) {
+            return this.activeSection == section ? [
+                'bg-white', 'text-gray-800'
+            ] : ['active:bg-gray-700', 'hover:bg-gray-700'];
+        }
+    }
 });
 
 /*

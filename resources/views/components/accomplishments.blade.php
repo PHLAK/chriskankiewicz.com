@@ -1,8 +1,4 @@
-<div id="accomplishments" class="mb-24">
-    @heading(['tag' => 'h2'])
-        <i class="far fa-award fa-fw"></i> Accomplishments
-    @endheading
-
+<div id="accomplishments" class="mb-24" v-show="activeSection == 'accomplishments'">
     <ul class="list-disc list-inside mb-8">
         @foreach ($accomplishments as $accomplishment)
             <li class="text-lg mb-2">
