@@ -1,7 +1,7 @@
 @extends('layouts.app-sidebar')
 
 @section('content')
-    <div class="bg-gray-800 border-b-4 border-white sticky top-0">
+    <div id="navigation" class="bg-gray-800 border-b-4 border-white sticky top-0">
         @include('components.content-navigation')
     </div>
 

@@ -58,7 +58,22 @@ const app = new Vue({
         },
         navigateTo(section) {
             this.activeSection = section;
-            window.scrollTo(0, 0);
+
+            setTimeout(() => {
+                let navigationElement = document.getElementById("navigation");
+                let sectionElement = document.getElementById(section);
+
+                console.log(
+                    sectionElement.offsetTop - navigationElement.offsetHeight
+                );
+
+                window.scrollTo({
+                    top:
+                        sectionElement.offsetTop -
+                        navigationElement.offsetHeight,
+                    behavior: "smooth"
+                });
+            }, 50);
         }
     }
 });
