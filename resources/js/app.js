@@ -55,6 +55,10 @@ const app = new Vue({
             return this.activeSection == section ? [
                 'bg-white', 'text-gray-800'
             ] : ['active:bg-gray-700', 'hover:bg-gray-700'];
+        },
+        navigateTo(section) {
+            this.activeSection = section;
+            window.scrollTo(0, 0);
         }
     }
 });
