@@ -1,7 +1,7 @@
 <ul class="flex items-end text-sm md:text-base">
     <li class="flex-grow lg:flex-initial">
         <button
-            class="inline-block w-full focus:outline-none font-mono text-xs text-gray-400 text-center px-2 py-4 sm:text-sm lg:text-base lg:px-4 xl:px-6"
+            class="inline-block rounded-none w-full focus:outline-none font-mono text-xs text-gray-400 text-center px-2 py-4 sm:text-sm lg:text-base lg:px-4 xl:px-6"
             v-on:click="activeSection = 'experience'"
             v-bind:class="ifActive('experience')"
         >
@@ -11,7 +11,7 @@
 
     <li class="flex-grow lg:flex-initial">
         <button
-            class="inline-block w-full focus:outline-none font-mono text-xs text-gray-400 text-center px-2 py-4 sm:text-sm lg:text-base lg:px-4 xl:px-6"
+            class="inline-block rounded-none w-full focus:outline-none font-mono text-xs text-gray-400 text-center px-2 py-4 sm:text-sm lg:text-base lg:px-4 xl:px-6"
             v-on:click="activeSection = 'projects'"
             v-bind:class="ifActive('projects')"
         >
@@ -21,7 +21,7 @@
 
     <li class="flex-grow lg:flex-initial">
         <button
-            class="inline-block w-full focus:outline-none font-mono text-xs text-gray-400 text-center px-2 py-4 sm:text-sm lg:text-base lg:px-4 xl:px-6"
+            class="inline-block rounded-none w-full focus:outline-none font-mono text-xs text-gray-400 text-center px-2 py-4 sm:text-sm lg:text-base lg:px-4 xl:px-6"
             v-on:click="activeSection = 'education'"
             v-bind:class="ifActive('education')"
         >
@@ -31,7 +31,7 @@
 
     <li class="flex-grow lg:flex-initial">
         <button
-            class="inline-block w-full focus:outline-none font-mono text-xs text-gray-400 text-center px-2 py-4 sm:text-sm lg:text-base lg:px-4 xl:px-6"
+            class="inline-block rounded-none w-full focus:outline-none font-mono text-xs text-gray-400 text-center px-2 py-4 sm:text-sm lg:text-base lg:px-4 xl:px-6"
             v-on:click="activeSection = 'accomplishments'"
             v-bind:class="ifActive('accomplishments')"
         >
