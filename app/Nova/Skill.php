@@ -4,7 +4,6 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 
 class Skill extends Resource
@@ -48,7 +47,9 @@ class Skill extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Number::make('Emphasis')->min(-1)->max(1),
+            Text::make('Icon Name')->rules('max:255'),
+
+            Text::make('Icon Style')->rules('max:255'),
 
             Text::make('Icon')
         ];

@@ -25,7 +25,8 @@ class StoreSkill extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'emphasis' => ['integer', 'between:-1,1']
+            'icon_name' => ['string', 'max:255'],
+            'icon_style' => ['string', 'max:255']
         ];
     }
 }
