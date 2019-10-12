@@ -60,17 +60,8 @@ const app = new Vue({
             this.activeSection = section;
 
             setTimeout(() => {
-                let navigationElement = document.getElementById("navigation");
-                let sectionElement = document.getElementById(section);
-
-                console.log(
-                    sectionElement.offsetTop - navigationElement.offsetHeight
-                );
-
                 window.scrollTo({
-                    top:
-                        sectionElement.offsetTop -
-                        navigationElement.offsetHeight,
+                    top: document.getElementById('content').offsetTop,
                     behavior: "smooth"
                 });
             }, 50);

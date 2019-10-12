@@ -5,7 +5,7 @@
         @include('components.content-navigation')
     </div>
 
-    <div class="p-6 lg:max-w-2xl">
+    <div id="content" class="p-6 lg:max-w-2xl">
         @include('components.experience')
         @include('components.projects')
         @include('components.education')
