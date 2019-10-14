@@ -2,7 +2,7 @@
     @include('components.user-card')
 
     <div class="block bg-gray-800 text-white text-center p-4 mt-6 -mx-6 -mb-6 sticky bottom-0">
-        <a href="mailto:Chris@ChrisKankiewicz.com" class="hover:underline">
+        <a href="mailto:Chris@ChrisKankiewicz.com" class="inline-block hover:underline">
             Chris@ChrisKankiewicz.com
         </a>
 
@@ -10,7 +10,7 @@
             &bull;
         </span>
 
-        <a href="tel:623-252-6855">
+        <a href="tel:623-252-6855" class="inline-block">
             623-252-6855
         </a>
     </div>
