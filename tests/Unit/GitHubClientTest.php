@@ -3,8 +3,8 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
-use App\Libs\GitHubClient;
-use App\Libs\CachedGitHubClient;
+use App\GitHub\Client as GitHubClient;
+use App\GitHub\CachedClient as CachedGitHubClient;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;

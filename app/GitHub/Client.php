@@ -1,24 +1,21 @@
 <?php
 
-namespace App\Libs;
+namespace App\GitHub;
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleHttpClient;
 use GuzzleHttp\Exception\ClientException;
 
-class GitHubClient
+class Client extends GuzzleHttpClient
 {
-    /** @var Client GuzzleHttp Client object */
-    protected $client;
-
     /**
-     * Create a new GitHubClient instance.
+     * Create a new GitHub Client instance.
      *
      * @param string $authToken GitHub OAuth token
      * @param array  $config    GuzzleHttp Client config
      */
     public function __construct(string $authToken, $config = [])
     {
-        $this->client = new Client(array_replace_recursive([
+        parent::__construct(array_replace_recursive([
             'base_uri' => config('services.github.base_uri'),
             'connect_timeout' => 5,
             'headers' => [
@@ -39,7 +36,7 @@ class GitHubClient
     public function repository(string $owner, string $repo): object
     {
         try {
-            $response = $this->client->get("repos/{$owner}/{$repo}");
+            $response = $this->get("repos/{$owner}/{$repo}");
         } catch (ClientException $exception) {
             return json_decode('{}');
         }

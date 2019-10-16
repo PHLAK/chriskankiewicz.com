@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\GitHub\Client as GitHubClient;
 use Tests\TestCase;
 use App\Project;
 
@@ -29,7 +30,7 @@ class ProjectTest extends TestCase
             'source_url' => 'https://github.com/fprefect/hhgttg'
         ]);
 
-        $this->mockGitHubClient(function ($gitHubClient) {
+        $this->mock(GitHubClient::class, function ($gitHubClient) {
             $gitHubClient->shouldReceive('repository')->andReturn((object) [
                 'forks_count' => 1337
             ]);
@@ -44,7 +45,7 @@ class ProjectTest extends TestCase
             'source_url' => 'https://github.com/fprefect/hhgttg'
         ]);
 
-        $this->mockGitHubClient(function ($gitHubClient) {
+        $this->mock(GitHubClient::class, function ($gitHubClient) {
             $gitHubClient->shouldReceive('repository')->andReturn((object) [
                 'stargazers_count' => 1337
             ]);

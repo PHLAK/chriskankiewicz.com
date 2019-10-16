@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Libs;
+namespace App\GitHub;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Carbon;
 
-class CachedGitHubClient extends GitHubClient
+class CachedClient extends Client
 {
     /**
      * Get a cached repository.
