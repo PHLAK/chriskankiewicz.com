@@ -1,4 +1,4 @@
-<div id="experience" class="mb-24" v-show="activeSection == 'experience'">
+<div id="experience" class="mb-12" v-show="activeSection == 'experience'">
     @foreach ($experience as $experience)
         <div class="mb-8">
             <h3 class="text-2xl">

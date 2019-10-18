@@ -1,4 +1,4 @@
-<div id="accomplishments" class="mb-24" v-show="activeSection == 'accomplishments'">
+<div id="accomplishments" class="mb-12" v-show="activeSection == 'accomplishments'">
     <ul class="list-disc list-inside mb-8">
         @foreach ($accomplishments as $accomplishment)
             <li class="text-lg mb-2">
