@@ -534,8 +534,6 @@ components:
           type: string
         end_date:
           type: string
-        current_position:
-          type: boolean
         location:
           type: string
       example:
@@ -543,13 +541,11 @@ components:
         title: Data Janitor
         start_date: '1986-05-20 00:00:00'
         end_date: '1986-07-06 00:00:00'
-        current_position: false
         location: San Francisco, California
       required:
         - company
         - title
         - start_date
-        - current_position
         - location
 
     Project:

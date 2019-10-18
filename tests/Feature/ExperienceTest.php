@@ -20,7 +20,7 @@ class ExperienceTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['company', 'title', 'description', 'start_date', 'end_date', 'current_position']
+                ['company', 'title', 'description', 'start_date', 'end_date']
             ]);
     }
 
@@ -34,7 +34,7 @@ class ExperienceTest extends TestCase
 
         $response->assertStatus(200)
             ->assertJsonStructure([
-                'company', 'title', 'description', 'start_date', 'end_date', 'current_position'
+                'company', 'title', 'description', 'start_date', 'end_date'
             ]);
     }
 
@@ -48,7 +48,6 @@ class ExperienceTest extends TestCase
                 'title' => 'Data Janitor',
                 'description' => 'Pushed bits around.',
                 'start_date' => '1986-05-20 ',
-                'current_position' => true,
                 'location' => 'San Francisco, California'
             ]);
 
@@ -58,7 +57,6 @@ class ExperienceTest extends TestCase
                 'title' => 'Data Janitor',
                 'description' => 'Pushed bits around.',
                 'start_date' => '1986-05-20 00:00:00',
-                'current_position' => true,
                 'location' => 'San Francisco, California'
             ]);
     }

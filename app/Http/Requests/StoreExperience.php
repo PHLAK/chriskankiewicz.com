@@ -28,8 +28,7 @@ class StoreExperience extends FormRequest
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
             'start_date' => ['required', 'date'],
-            'end_date' => ['required_if:current_position,false', 'date', 'after:start_date'],
-            'current_position' => ['required', 'boolean'],
+            'end_date' => ['date', 'after:start_date'],
             'location' => ['required', 'string', 'max:255'],
         ];
     }

@@ -28,8 +28,7 @@ class UpdateExperience extends FormRequest
             'title' => ['string', 'max:255'],
             'description' => ['string'],
             'start_date' => ['date'],
-            'end_date' => ['required_if:current_position,false', 'date', 'after:start_date'],
-            'current_position' => ['boolean'],
+            'end_date' => ['date', 'after:start_date'],
             'location' => ['string', 'max:255'],
         ];
     }

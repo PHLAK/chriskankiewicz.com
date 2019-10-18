@@ -5,7 +5,6 @@
     - Performed advanced troubleshooting on Windows based store servers, registers, and workstations.
   start_date: '2008-02-01'
   end_date: '2009-03-01'
-  current_position: false
   location: Phoenix, Arizona
   skills:
     - Windows
@@ -20,7 +19,6 @@
     - Increased traffic to all sites via email campaigns and search engine optimizations.
   start_date: '2009-03-01'
   end_date: '2011-04-01'
-  current_position: false
   location: Phoenix, Arizona
   skills:
     - PHP
@@ -36,7 +34,6 @@
     - Designed a detailed site frontend written in HTML, CSS and jQuery/JavaScript.
   start_date: '2011-04-01'
   end_date: '2014-06-01'
-  current_position: false
   location: Phoenix, Arizona
   skills:
     - PHP
@@ -54,7 +51,6 @@
     - Locally built and tested cloud instances in Vagrant test environments.
   start_date: '2014-06-01'
   end_date: '2015-07-01'
-  current_position: false
   location: Scottsdale, Arizona
   skills:
     - OpenStack
@@ -71,7 +67,6 @@
     - Consumed Okta REST API to implement authentication and authorization and identity management within a custom-built customer web portal.
   start_date: '2015-07-01'
   end_date: '2017-03-01'
-  current_position: false
   location: Scottsdale, Arizona
   skills:
     - PHP
@@ -89,7 +84,6 @@
     - Developed continuous integration solutions for delivering micro-service architecture hosted on Google Cloud Platform and Google Kubernetes Engine.
   start_date: '2017-07-10'
   end_date: '2019-09-27'
-  current_position: false
   location: Tempe, Arizona
   skills:
     - PHP
@@ -104,7 +98,6 @@
     - PHP software development.
   start_date: '2019-09-30'
   end_date: null
-  current_position: true
   location: Remote
   skills:
     - PHP

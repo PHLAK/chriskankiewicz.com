@@ -15,15 +15,6 @@ class ExperienceTest extends TestCase
         $this->assertInstanceOf(Experience::class, $experience);
     }
 
-    public function test_it_casts_current_position_to_a_boolean()
-    {
-        $experience = new Experience([
-            'current_position' => 1
-        ]);
-
-        $this->assertTrue($experience->current_position);
-    }
-
     public function test_it_casts_start_and_end_dates_to_carbon_instances()
     {
         $experience = new Experience([

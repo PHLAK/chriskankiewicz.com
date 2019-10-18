@@ -4,7 +4,6 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
@@ -55,8 +54,6 @@ class Experience extends Resource
             Date::make('Start Date'),
 
             Date::make('End Date'),
-
-            Boolean::make('Current Position'),
 
             Text::make('Location')
         ];

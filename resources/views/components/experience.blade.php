@@ -13,11 +13,7 @@
                 <span class="mr-2">
                     <i class="far fa-calendar-day fa-fw"></i>
                     {{ $experience->start_date->format('F Y') }} -
-                    @if($experience->current_position)
-                        Current
-                    @else
-                        {{ $experience->end_date->format('F Y') }}
-                    @endif
+                    {{ optional($experience->end_date)->format('F Y') ?? 'Current' }}
                 </span>
 
                 <span>
