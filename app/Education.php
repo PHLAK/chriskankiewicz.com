@@ -11,16 +11,11 @@ class Education extends Model
 
     /** @var array The attributes that are mass assignable. */
     protected $fillable = [
-        'institution', 'degree', 'start_date', 'end_date', 'currently_enrolled'
+        'institution', 'degree', 'start_date', 'end_date'
     ];
 
     /** @var array The attributes that should be mutated to dates. */
     protected $dates = ['start_date', 'end_date'];
-
-    /** @var array The attributes that should be cast to native types. */
-    protected $casts = [
-        'currently_enrolled' => 'boolean',
-    ];
 
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];

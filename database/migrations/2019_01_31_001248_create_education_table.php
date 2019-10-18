@@ -19,7 +19,6 @@ class CreateEducationTable extends Migration
             $table->string('degree')->nullable();
             $table->datetime('start_date');
             $table->datetime('end_date')->nullable();
-            $table->boolean('currently_enrolled')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

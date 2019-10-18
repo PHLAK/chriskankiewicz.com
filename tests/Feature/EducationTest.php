@@ -20,7 +20,7 @@ class EducationTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['institution', 'degree', 'start_date', 'end_date', 'currently_enrolled']
+                ['institution', 'degree', 'start_date', 'end_date']
             ]);
     }
 
@@ -34,7 +34,7 @@ class EducationTest extends TestCase
 
         $response->assertStatus(200)
             ->assertJsonStructure([
-                'institution', 'degree', 'start_date', 'end_date', 'currently_enrolled'
+                'institution', 'degree', 'start_date', 'end_date'
             ]);
     }
 
@@ -46,16 +46,14 @@ class EducationTest extends TestCase
             ->json('POST', route('education.store'), [
                 'institution' => 'Hogwarts School of Witchcraft and Wizardry',
                 'degree' => 'Care of Magical Creatures',
-                'start_date' => '1986-05-20',
-                'currently_enrolled' => true
+                'start_date' => '1986-05-20'
             ]);
 
         $response->assertStatus(201)
             ->assertJson([
                 'institution' => 'Hogwarts School of Witchcraft and Wizardry',
                 'degree' => 'Care of Magical Creatures',
-                'start_date' => '1986-05-20 00:00:00',
-                'currently_enrolled' => true
+                'start_date' => '1986-05-20 00:00:00'
             ]);
     }
 
@@ -66,20 +64,15 @@ class EducationTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('education.update', ['education' => $education]), [
-                'end_date' => '1986-07-06',
-                'currently_enrolled' => false
+                'end_date' => '1986-07-06'
             ]);
 
         $response->assertStatus(200)
-            ->assertJson([
-                'end_date' => '1986-07-06 00:00:00',
-                'currently_enrolled' => false
-            ]);
+            ->assertJson(['end_date' => '1986-07-06 00:00:00']);
 
         $this->assertDatabaseHas('education', [
             'id' => $education->id,
-            'end_date' => '1986-07-06 00:00:00',
-            'currently_enrolled' => false
+            'end_date' => '1986-07-06 00:00:00'
         ]);
     }
 

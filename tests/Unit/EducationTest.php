@@ -15,15 +15,6 @@ class EducationTest extends TestCase
         $this->assertInstanceOf(Education::class, $education);
     }
 
-    public function test_it_casts_currently_enrolled_to_a_boolean()
-    {
-        $education = new Education([
-            'currently_enrolled' => 1
-        ]);
-
-        $this->assertTrue($education->currently_enrolled);
-    }
-
     public function test_it_casts_start_and_end_dates_to_carbon_instances()
     {
         $education = new Education([

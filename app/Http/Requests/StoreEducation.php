@@ -27,8 +27,7 @@ class StoreEducation extends FormRequest
             'institution' => ['required', 'string', 'max:255'],
             'degree' => ['required', 'string', 'max:255'],
             'start_date' => ['required', 'date'],
-            'end_date' => ['required_if:currently_enrolled,false', 'date', 'after:start_date'],
-            'currently_enrolled' => ['required', 'boolean'],
+            'end_date' => ['date', 'after:start_date'],
         ];
     }
 }

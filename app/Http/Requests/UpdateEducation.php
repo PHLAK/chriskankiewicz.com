@@ -27,8 +27,7 @@ class UpdateEducation extends FormRequest
             'institution' => ['string', 'max:255'],
             'degree' => ['string', 'max:255'],
             'start_date' => ['date'],
-            'end_date' => ['required_if:currently_enrolled,false', 'date', 'after:start_date'],
-            'currently_enrolled' => ['boolean'],
+            'end_date' => ['date', 'after:start_date'],
         ];
     }
 }
