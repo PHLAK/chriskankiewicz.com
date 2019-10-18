@@ -66,7 +66,7 @@ class User extends Resource
 
             PasswordConfirmation::make('Password Confirmation'),
 
-            Boolean::make('Admin')
+            Boolean::make('Admin', 'is_admin')
                 ->creationRules('required', 'boolean')
                 ->updateRules('required', 'boolean'),
         ];

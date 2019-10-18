@@ -49,9 +49,7 @@ class Skill extends Resource
 
             Text::make('Icon Name')->rules('max:255'),
 
-            Text::make('Icon Style')->rules('max:255'),
-
-            Text::make('Icon')
+            Text::make('Icon Style')->rules('max:255')
         ];
     }
 

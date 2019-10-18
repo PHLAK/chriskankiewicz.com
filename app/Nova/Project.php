@@ -5,6 +5,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Text;
 
 class Project extends Resource
@@ -52,7 +53,9 @@ class Project extends Resource
 
             Text::make('Project URL')->rules('max:2000'),
 
-            Text::make('Source URL')->rules('max:2000')
+            Text::make('Source URL')->rules('max:2000'),
+
+            MorphToMany::make('Skills')
         ];
     }
 

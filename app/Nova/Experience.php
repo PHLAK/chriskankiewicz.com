@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Text;
 
 class Experience extends Resource
@@ -55,7 +56,9 @@ class Experience extends Resource
 
             Date::make('End Date'),
 
-            Text::make('Location')
+            Text::make('Location'),
+
+            MorphToMany::make('Skills')
         ];
     }
 
