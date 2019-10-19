@@ -19,7 +19,7 @@ class CachedClient extends Client
     {
         $key = "repository:{$owner}:{$repo}";
 
-        return Cache::remember($key, Carbon::now()->addHours(6), function () use ($owner, $repo) {
+        return Cache::remember($key, Carbon::now()->addHours(6)->addMinutes(rand(-120, 120)), function () use ($owner, $repo) {
             return parent::repository($owner, $repo);
         });
     }
