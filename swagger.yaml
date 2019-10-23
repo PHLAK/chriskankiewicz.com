@@ -6,7 +6,7 @@ servers:
 info:
   title: Chris's Resume as a Service
   description: Chris Kankiewicz's Resume as a Service.
-  version: 0.1.0
+  version: 1.0.0
   license:
     name: MIT
     url: https://choosealicense.com/licenses/mit/
@@ -41,15 +41,16 @@ paths:
                 type: array
                 items:
                   allOf:
-                    - $ref: '#/components/properties/id'
+                    - $ref: '#/components/schemas/id'
                     - $ref: '#/components/schemas/Education'
-                    - $ref: '#/components/properties/timestamps'
 
     post:
       summary: Create Education
       description: Creates a new experience.
       tags:
         - Education
+      security:
+        - BearrerAuth: []
       requestBody:
         required: true
         content:
@@ -63,9 +64,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Education'
-                  - $ref: '#/components/properties/timestamps'
+        '401':
+          $ref: '#/components/responses/401'
         '422':
           $ref: '#/components/responses/422'
 
@@ -76,8 +78,9 @@ paths:
       tags:
         - Education
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
@@ -88,10 +91,8 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Education'
-                  - $ref: '#/components/properties/timestamps'
-
         '404':
           $ref: '#/components/responses/404'
 
@@ -100,9 +101,12 @@ paths:
       description: Updates an education.
       tags:
         - Education
+      security:
+        - BearrerAuth: []
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
@@ -119,9 +123,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Education'
-                  - $ref: '#/components/properties/timestamps'
+        '401':
+          $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
         '422':
@@ -132,15 +137,20 @@ paths:
       description: Deletes an education.
       tags:
         - Education
+      security:
+        - BearrerAuth: []
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
       responses:
         '204':
           description: No Content
+        '401':
+          $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
 
@@ -159,15 +169,16 @@ paths:
                 type: array
                 items:
                   allOf:
-                    - $ref: '#/components/properties/id'
+                    - $ref: '#/components/schemas/id'
                     - $ref: '#/components/schemas/Experience'
-                    - $ref: '#/components/properties/timestamps'
 
     post:
       summary: Create Experience
       description: Creates a new experience.
       tags:
         - Experience
+      security:
+        - BearrerAuth: []
       requestBody:
         required: true
         content:
@@ -181,9 +192,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Experience'
-                  - $ref: '#/components/properties/timestamps'
+        '401':
+          $ref: '#/components/responses/401'
         '422':
           $ref: '#/components/responses/422'
 
@@ -194,8 +206,9 @@ paths:
       tags:
         - Experience
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
@@ -206,9 +219,8 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Experience'
-                  - $ref: '#/components/properties/timestamps'
         '404':
           $ref: '#/components/responses/404'
 
@@ -217,9 +229,12 @@ paths:
       description: Updates an experience.
       tags:
         - Experience
+      security:
+        - BearrerAuth: []
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
@@ -236,9 +251,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Experience'
-                  - $ref: '#/components/properties/timestamps'
+        '401':
+          $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
         '422':
@@ -249,15 +265,20 @@ paths:
       description: Deletes an experience.
       tags:
         - Experience
+      security:
+        - BearrerAuth: []
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
       responses:
         '204':
           description: No Content
+        '401':
+          $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
 
@@ -276,15 +297,16 @@ paths:
                 type: array
                 items:
                   allOf:
-                    - $ref: '#/components/properties/id'
+                    - $ref: '#/components/schemas/id'
                     - $ref: '#/components/schemas/Project'
-                    - $ref: '#/components/properties/timestamps'
 
     post:
       summary: Create Project
       description: Creates a new project.
       tags:
         - Projects
+      security:
+        - BearrerAuth: []
       requestBody:
         required: true
         content:
@@ -298,9 +320,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Project'
-                  - $ref: '#/components/properties/timestamps'
+        '401':
+          $ref: '#/components/responses/401'
         '422':
           $ref: '#/components/responses/422'
 
@@ -311,8 +334,9 @@ paths:
       tags:
         - Projects
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
@@ -323,9 +347,8 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Project'
-                  - $ref: '#/components/properties/timestamps'
         '404':
           $ref: '#/components/responses/404'
 
@@ -334,9 +357,12 @@ paths:
       description: Updates a project.
       tags:
         - Projects
+      security:
+        - BearrerAuth: []
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
@@ -353,9 +379,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Project'
-                  - $ref: '#/components/properties/timestamps'
+        '401':
+          $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
         '422':
@@ -366,15 +393,20 @@ paths:
       description: Deletes a project.
       tags:
         - Projects
+      security:
+        - BearrerAuth: []
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
       responses:
         '204':
           description: No Content
+        '401':
+          $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
 
@@ -393,15 +425,16 @@ paths:
                 type: array
                 items:
                   allOf:
-                    - $ref: '#/components/properties/id'
+                    - $ref: '#/components/schemas/id'
                     - $ref: '#/components/schemas/Skill'
-                    - $ref: '#/components/properties/timestamps'
 
     post:
       summary: Create Skill
       description: Creates a new skill.
       tags:
         - Skills
+      security:
+        - BearrerAuth: []
       requestBody:
         required: true
         content:
@@ -415,9 +448,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Skill'
-                  - $ref: '#/components/properties/timestamps'
+        '401':
+          $ref: '#/components/responses/401'
         '422':
           $ref: '#/components/responses/422'
 
@@ -428,8 +462,9 @@ paths:
       tags:
         - Skills
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
@@ -440,10 +475,8 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Skill'
-                  - $ref: '#/components/properties/timestamps'
-
         '404':
           $ref: '#/components/responses/404'
 
@@ -452,9 +485,12 @@ paths:
       description: Updates a skill.
       tags:
         - Skills
+      security:
+        - BearrerAuth: []
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
@@ -471,9 +507,10 @@ paths:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/properties/id'
+                  - $ref: '#/components/schemas/id'
                   - $ref: '#/components/schemas/Skill'
-                  - $ref: '#/components/properties/timestamps'
+        '401':
+          $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
         '422':
@@ -484,15 +521,20 @@ paths:
       description: Deletes a skill.
       tags:
         - Skills
+      security:
+        - BearrerAuth: []
       parameters:
-        - in: query
+        - in: path
           name: id
+          required: true
           schema:
             type: integer
             example: 1337
       responses:
         '204':
           description: No Content
+        '401':
+          $ref: '#/components/responses/401'
         '404':
           $ref: '#/components/responses/404'
 
@@ -503,17 +545,16 @@ components:
       properties:
         institution:
           type: string
+          example: Hogwarts School of Witchcraft and Wizardry
         degree:
           type: string
+          example: Care of Magical Creatures
         start_date:
           type: string
+          example: '1986-05-20 00:00:00'
         end_date:
           type: string
-      example:
-        institution: Hogwarts School of Witchcraft and Wizardry
-        degree: Care of Magical Creatures
-        start_date: '1986-05-20 00:00:00'
-        end_date: '1986-07-06 00:00:00'
+          example: '1986-07-06 00:00:00'
       required:
         - institution
         - degree
@@ -524,20 +565,23 @@ components:
       properties:
         company:
           type: string
+          example: Pied Piper
         title:
           type: string
+          example: Data Janitor
         start_date:
           type: string
+          example: '1986-05-20 00:00:00'
         end_date:
           type: string
+          example: '1986-07-06 00:00:00'
         location:
           type: string
-      example:
-        company: Pied Piper
-        title: Data Janitor
-        start_date: '1986-05-20 00:00:00'
-        end_date: '1986-07-06 00:00:00'
-        location: San Francisco, California
+          example: San Francisco, California
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/Skill'
       required:
         - company
         - title
@@ -549,17 +593,20 @@ components:
       properties:
         name:
           type: string
+          example: Death Star
         description:
           type: string
+          example: That's no moon!
         project_url:
           type: string
+          example: https://en.wikipedia.org/wiki/Death_star
         source_url:
           type: string
-      example:
-        name: Death Star
-        description: That's no moon!
-        project_url: https://en.wikipedia.org/wiki/Death_star
-        source_url: https://github.com/PHLAK/death-star
+          example: https://github.com/PHLAK/death-star
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/Skill'
       required:
         - name
 
@@ -568,10 +615,22 @@ components:
       properties:
         name:
           type: string
-      example:
-        name: Pickpocketing
+          example: Lockpicking
+        icon_name:
+          type: string
+          example: lock
+        icon_style:
+          type: string
+          example: fal
       required:
         - name
+
+    id:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1337
 
   responses:
     '404':
@@ -583,8 +642,18 @@ components:
             properties:
               message:
                 type: string
-            example:
-              message: No query results for model
+                example: No query results for model
+
+    '401':
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Unauthenticated.
 
     '422':
       description: Unprocessable Entity
@@ -595,26 +664,17 @@ components:
             properties:
               message:
                 type: string
+                example: The given data was invalid.
               errors:
-                type: array
-            example:
-              message: The given data was invalid.
-  properties:
-    id:
-      type: object
-      properties:
-        id:
-          type: integer
-      example:
-        id: 1337
+                type: object
+                properties:
+                  field_name:
+                    type: array
+                    items:
+                      type: string
+                      example: Some error message
 
-    timestamps:
-      type: object
-      properties:
-        created_at:
-          type: string
-        updated_at:
-          type: string
-      example:
-        created_at: '1986-05-20 00:00:00'
-        updated_at: '1986-07-06 00:00:00'
+  securitySchemes:
+    BearrerAuth:
+      type: http
+      scheme: bearer
