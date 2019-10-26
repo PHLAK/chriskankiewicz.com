@@ -1,7 +1,7 @@
 <template>
     <div class="border-2 border-gray-800 shadow-solid-gray-800 overflow-hidden">
         <div class="flex justify-between items-center bg-gray-800 border-b-2 border-gray-800 p-4">
-            <span class="font-mono text-white text-xl">
+            <span class="font-mono text-white sm:text-xl">
                 GET {{ requestPath }}
             </span>
 
