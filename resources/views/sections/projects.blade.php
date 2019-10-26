@@ -16,20 +16,20 @@
                 </a>
 
                 <span class="group inline-block mr-2">
-                    <i class="far fa-star fa-fw"></i>
+                    <i class="fal fa-star fa-fw"></i>
 
                     {{ $project->stars()}}
                 </span>
 
                 <span class="group inline-block mr-2">
-                    <i class="far fa-code-branch fa-fw"></i>
+                    <i class="fal fa-code-branch fa-fw"></i>
 
                     {{ $project->forks() }}
                 </span>
 
                 @isset($project->project_url)
                     <a href="{{ $project->project_url }}" class="group inline-block">
-                        <i class="far fa-globe-americas fa-fw"></i>
+                        <i class="fal fa-globe-americas fa-fw"></i>
                         <span class="group-hover:text-teal-700 group-hover:underline">
                             {{ $project->project_url }}
                         </span>

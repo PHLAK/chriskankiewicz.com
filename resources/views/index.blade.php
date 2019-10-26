@@ -6,10 +6,10 @@
     </div>
 
     <div id="content" class="p-6 lg:max-w-2xl">
-        @include('components.experience')
-        @include('components.projects')
-        @include('components.education')
-        @include('components.accomplishments')
+        @include('sections.experience')
+        @include('sections.projects')
+        @include('sections.education')
+        @include('sections.accomplishments')
     </div>
 
     <footer class="bg-gray-200 text-center text-gray-600 p-4">

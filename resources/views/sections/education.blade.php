@@ -8,7 +8,7 @@
             </h3>
 
             <div class="text-sm text-gray-600">
-                <i class="far fa-calendar-day fa-fw"></i>
+                <i class="fal fa-calendar-day fa-fw"></i>
                 {{ $education->start_date->format('F Y') }}
                 - {{ optional($education->end_date)->format('F Y') ?? 'Current' }}
             </div>

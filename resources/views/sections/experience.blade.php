@@ -1,23 +1,25 @@
 <div id="experience" class="mb-12" v-show="activeSection == 'experience'">
     @foreach ($experience as $experience)
         <div class="mb-8">
-            <h3 class="text-2xl">
-                <span class="font-bold">
+            <h3 class="flex flex-wrap items-start items-center text-2xl">
+                <span class="font-bold mr-1">
                     {{ $experience->title }}
                 </span>
 
-                @ {{ $experience->company }}
+                <span class="text-lg text-gray-800">
+                    @ {{ $experience->company }}
+                </span>
             </h3>
 
-            <div class="text-sm text-gray-600">
+            <div class="text-sm text-gray-600 mt-1">
                 <span class="mr-2">
-                    <i class="far fa-calendar-day fa-fw"></i>
+                    <i class="fal fa-calendar-day fa-fw"></i>
                     {{ $experience->start_date->format('F Y') }} -
                     {{ optional($experience->end_date)->format('F Y') ?? 'Current' }}
                 </span>
 
                 <span>
-                    <i class="far fa-map-marker-alt fa-fw"></i>
+                    <i class="fal fa-map-marker-alt fa-fw"></i>
                     {{ $experience->location }}
                 </span>
             </div>
