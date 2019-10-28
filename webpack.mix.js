@@ -27,7 +27,7 @@ mix.options({
 });
 
 mix.purgeCss({
-    whitelist: ["html", "body", "code", "pre", "fab", "far", "fal", "fad"],
+    whitelist: ["html", "body", "code", "pre", "fab", "far", "fas", "fal", "fad"],
     whitelistPatterns: [/^fa\-/],
     whitelistPatternsChildren: [/^markdown/, /^token/]
 });
