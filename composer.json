@@ -7,7 +7,6 @@
     "require": {
         "php": "^7.2",
         "erusev/parsedown": "^1.7",
-        "facade/ignition": "^1.4",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^6.0",
@@ -19,6 +18,7 @@
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
+        "facade/ignition": "^1.4",
         "filp/whoops": "^2.0",
         "friendsofphp/php-cs-fixer": "^2.15",
         "fzaninotto/faker": "^1.4",
