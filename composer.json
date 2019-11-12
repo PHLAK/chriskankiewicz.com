@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
-        "facade/ignition": "^1.4",
+        "facade/ignition": "^1.4 !=1.11.2",
         "filp/whoops": "^2.0",
         "friendsofphp/php-cs-fixer": "^2.15",
         "fzaninotto/faker": "^1.4",
