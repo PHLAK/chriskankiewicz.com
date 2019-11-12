@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Skill;
+use Tests\TestCase;
 
 class SkillTest extends TestCase
 {

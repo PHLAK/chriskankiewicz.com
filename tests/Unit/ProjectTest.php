@@ -3,8 +3,8 @@
 namespace Tests\Unit;
 
 use App\GitHub\Client as GitHubClient;
-use Tests\TestCase;
 use App\Project;
+use Tests\TestCase;
 
 class ProjectTest extends TestCase
 {

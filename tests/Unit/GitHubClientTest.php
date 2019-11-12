@@ -2,14 +2,14 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
-use App\GitHub\Client as GitHubClient;
 use App\GitHub\CachedClient as CachedGitHubClient;
-use GuzzleHttp\HandlerStack;
+use App\GitHub\Client as GitHubClient;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use Tests\TestCase;
 
 class GitHubClientTest extends TestCase
 {

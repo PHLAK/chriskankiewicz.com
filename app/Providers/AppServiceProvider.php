@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Blade;
-use App\GitHub\Client as GitHubClient;
 use App\GitHub\CachedClient as CachedGitHubClient;
+use App\GitHub\Client as GitHubClient;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

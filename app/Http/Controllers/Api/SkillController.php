@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Skill;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSkill;
 use App\Http\Requests\UpdateSkill;
+use App\Skill;
 
 class SkillController extends Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
+use App\Project;
+use App\Skill;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Symfony\Component\Yaml\Yaml;
-use App\Project;
-use App\Skill;
 
 class ProjectSeeder extends Seeder
 {

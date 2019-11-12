@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Accomplishment;
+use Tests\TestCase;
 
 class AccomplishmentTest extends TestCase
 {

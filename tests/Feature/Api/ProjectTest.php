@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Api;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Project;
 use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class ProjectTest extends TestCase
 {

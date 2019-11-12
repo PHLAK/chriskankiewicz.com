@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Api;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Accomplishment;
 use App\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class AccomplishmentTest extends TestCase
 {

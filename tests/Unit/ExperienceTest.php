@@ -2,9 +2,9 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Experience;
 use Illuminate\Support\Carbon;
+use Tests\TestCase;
 
 class ExperienceTest extends TestCase
 {

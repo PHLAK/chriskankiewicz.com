@@ -2,8 +2,8 @@
 
 namespace App\GitHub;
 
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Cache;
 
 class CachedClient extends Client
 {

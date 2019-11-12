@@ -1,8 +1,8 @@
 <?php
 
+use App\Accomplishment;
 use Illuminate\Database\Seeder;
 use Symfony\Component\Yaml\Yaml;
-use App\Accomplishment;
 
 class AccomplishmentSeeder extends Seeder
 {

@@ -1,10 +1,10 @@
 <?php
 
+use App\Experience;
+use App\Skill;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Symfony\Component\Yaml\Yaml;
-use App\Experience;
-use App\Skill;
 
 class ExperienceSeeder extends Seeder
 {

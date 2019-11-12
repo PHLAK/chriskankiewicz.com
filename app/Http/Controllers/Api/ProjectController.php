@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Project;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProject;
 use App\Http\Requests\UpdateProject;
+use App\Project;
 
 class ProjectController extends Controller
 {

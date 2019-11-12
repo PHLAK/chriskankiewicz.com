@@ -2,9 +2,9 @@
 
 namespace Tests\Unit;
 
-use Tests\TestCase;
 use App\Education;
 use Illuminate\Support\Carbon;
+use Tests\TestCase;
 
 class EducationTest extends TestCase
 {

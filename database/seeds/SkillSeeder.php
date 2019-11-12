@@ -1,8 +1,8 @@
 <?php
 
+use App\Skill;
 use Illuminate\Database\Seeder;
 use Symfony\Component\Yaml\Yaml;
-use App\Skill;
 
 class SkillSeeder extends Seeder
 {

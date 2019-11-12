@@ -2,10 +2,10 @@
 
 namespace App;
 
+use App\GitHub\Client as GitHubClient;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
-use App\GitHub\Client as GitHubClient;
 
 class Project extends Model
 {

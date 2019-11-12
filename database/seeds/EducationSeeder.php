@@ -1,8 +1,8 @@
 <?php
 
+use App\Education;
 use Illuminate\Database\Seeder;
 use Symfony\Component\Yaml\Yaml;
-use App\Education;
 
 class EducationSeeder extends Seeder
 {
