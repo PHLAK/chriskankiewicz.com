@@ -5,10 +5,10 @@ ARG NOVA_PASSWORD
 COPY . /app
 RUN composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
 RUN composer install --working-dir /app --ignore-platform-reqs \
-    --no-cache --no-dev --no-interaction
+    --no-cache --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Install and compile JavaScript assets
-FROM node:12.10 AS js-dependencies
+FROM node:13.1 AS js-dependencies
 ARG FONT_AWESOME_TOKEN
 COPY --from=php-dependencies /app /app
 RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
@@ -19,21 +19,28 @@ RUN cd /app && npm install && npm run production
 FROM php:7.3-apache as application
 LABEL maintainer="Chris Kankiewicz <ckankiewicz@freedomdebtrelief.com>"
 
-RUN a2enmod rewrite
-
 COPY --from=js-dependencies /app /var/www/html
-COPY ./.docker/php/config/php.prd.ini /usr/local/etc/php/php.ini
-COPY ./.docker/apache2/config/000-default.prd.conf /etc/apache2/sites-available/000-default.conf
 
 RUN apt-get update && apt-get install -y libxml2-dev zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install bcmath opcache pdo_mysql \
+RUN docker-php-ext-install bcmath pdo_mysql \
     && pecl install redis && docker-php-ext-enable redis
+
+RUN a2enmod rewrite
 
 # Build (local) development image
 FROM application as development
+
+COPY ./.docker/php/config/php.dev.ini /usr/local/etc/php/php.ini
+COPY ./.docker/apache2/config/000-default.dev.conf /etc/apache2/sites-available/000-default.conf
+
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Build production image
 FROM application as production
+
+COPY ./.docker/php/config/php.prd.ini /usr/local/etc/php/php.ini
+COPY ./.docker/apache2/config/000-default.prd.conf /etc/apache2/sites-available/000-default.conf
+
+RUN docker-php-ext-install opcache
