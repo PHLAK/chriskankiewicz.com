@@ -25,7 +25,6 @@ return PhpCsFixer\Config::create()->setRules([
     'no_superfluous_phpdoc_tags' => false,
     'no_useless_return' => true,
     'not_operator_with_successor_space' => true,
-    'ordered_imports' => false,
     'phpdoc_to_comment' => false,
     'phpdoc_no_empty_return' => false,
     'phpdoc_order' => true,
