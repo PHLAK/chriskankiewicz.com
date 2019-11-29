@@ -1,3 +1,16 @@
+<p align="center">
+  <img src="chris-kankiewicz.svg" alt="Chris Kankiewicz" width="50%">
+</p>
+
+<p align="center">
+  <a href="https://github.com/PHLAK/chriskankiewicz.com/blob/master/LICENSE"><img src="https://img.shields.io/github/license/phlak/chriskankiewicz.com?style=flat-square" alt="License"></a>
+  <a href="https://travis-ci.org/PHLAK/chriskankiewicz.com"><img src="https://img.shields.io/travis/PHLAK/chriskankiewicz.com.svg?style=flat-square" alt="Build Status"></a>
+  <a href="https://styleci.io/repos/176871591"><img src="https://styleci.io/repos/176871591/shield?branch=master" alt="StyleCI"></a>
+  <a href="https://www.ChrisKankiewicz.com"><img src="https://img.shields.io/badge/created_by-Chris%20Kankiewicz-319795.svg?style=flat-square" alt="Author"></a>
+</p>
+
+---
+
 Requirements
 ------------
 
