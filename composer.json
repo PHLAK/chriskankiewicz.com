@@ -13,7 +13,7 @@
         "laravel/nova": "^2.2",
         "laravel/telescope": "^2.1",
         "laravel/tinker": "^2.0",
-        "symfony/yaml": "^4.3",
+        "symfony/yaml": "^5.0",
         "writingink/wink": "^0.1"
     },
     "require-dev": {
