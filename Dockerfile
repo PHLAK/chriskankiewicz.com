@@ -8,7 +8,7 @@ RUN composer install --working-dir /app --ignore-platform-reqs \
     --no-cache --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Install and compile JavaScript assets
-FROM node:13.1 AS js-dependencies
+FROM node:13.2 AS js-dependencies
 ARG FONT_AWESOME_TOKEN
 COPY --from=php-dependencies /app /app
 RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
@@ -16,7 +16,7 @@ RUN npm config set "//npm.fontawesome.com/:_authToken" ${FONT_AWESOME_TOKEN}
 RUN cd /app && npm install && npm run production
 
 # Build application image
-FROM php:7.3-apache as application
+FROM php:7.4-apache as application
 LABEL maintainer="Chris Kankiewicz <ckankiewicz@freedomdebtrelief.com>"
 
 COPY --from=js-dependencies /app /var/www/html
