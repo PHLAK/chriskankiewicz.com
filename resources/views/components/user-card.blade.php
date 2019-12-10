@@ -1,14 +1,14 @@
 <div id="user-card" class="border-2 border-gray-800 shadow-solid-gray-800 bg-white overflow-hidden max-w-full md:sticky md:top-6 md:max-w-xs lg:max-w-full">
     <div class="h-40 bg-cover bg-center" style="background-image: url('{{ asset('images/user_bg.jpg') }}');"></div>
 
-    <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 300) }}" alt="Profile Photo" class="w-32 rounded-full border-white border-8 mx-4 -mt-16 md:w-24 md:-mt-12 lg:w-32 lg:-mt-16">
+    <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 300) }}" alt="Profile Photo" class="w-48 rounded-full border-white border-8 mx-auto -mt-24 lg:w-32 lg:mx-4 lg:-mt-16">
 
-    <div class="-mt-16 ml-32 px-6 py-2 md:-mt-12 md:ml-24 lg:-mt-16 lg:ml-32">
-        <h1 class="text-xl tracking-wide lg:text-2xl">
+    <div class="px-6 py-2 lg:-mt-16 lg:ml-32">
+        <h1 class="font-montserrat text-3xl text-center tracking-wide xs:text-4xl md:text-3xl lg:text-2xl lg:text-left">
             Chris Kankiewicz
         </h1>
 
-        <div class="font-light text-base text-gray-500 md:text-sm lg:text-base">
+        <div class="font-light text-lg text-center text-gray-500 lg:text-left">
             <i class="far fa-map-marker-alt fa-fw"></i>
 
             <a href="https://goo.gl/maps/Y5xrX7AQ9RUNpCKo8" class="hover:underline">Mesa, Arizona</a>

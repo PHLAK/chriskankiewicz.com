@@ -13,6 +13,7 @@ module.exports = {
                 "solid-gray-900": "4px 4px 0 #1A202C"
             },
             fontFamily: {
+                montserrat: ["Montserrat", "Lato", "sans-serif"],
                 sans: [
                     "Lato",
                     "-apple-system",
