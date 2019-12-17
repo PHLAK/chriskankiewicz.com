@@ -1111,17 +1111,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.8.0",
+            "version": "v2.9.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "f2d32be336a4b8b4bdc9247aacefc7a7a3c5101d"
+                "reference": "a63196f3a4a6679efe4d6716327120739da87280"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-f2d32be336a4b8b4bdc9247aacefc7a7a3c5101d-zip-1b8fd7.zip",
-                "reference": "f2d32be336a4b8b4bdc9247aacefc7a7a3c5101d",
-                "shasum": "33eb8e8f709a4a705d66967ce08a7f95a0d7d068"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-a63196f3a4a6679efe4d6716327120739da87280-zip-53fb98.zip",
+                "reference": "a63196f3a4a6679efe4d6716327120739da87280",
+                "shasum": "7fd1c7a9dfbb72384399be64213ea219054a0369"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
@@ -1134,7 +1134,6 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/database": "3.7.* | 3.8.*",
                 "orchestra/testbench": "3.7.* | 3.8.*",
                 "phpunit/phpunit": "^7.0 | ^8.0",
                 "predis/predis": "^1.1"
@@ -1142,7 +1141,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1177,7 +1176,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2019-11-26T20:49:09+00:00"
+            "time": "2019-12-11T17:23:05+00:00"
         },
         {
             "name": "laravel/telescope",
