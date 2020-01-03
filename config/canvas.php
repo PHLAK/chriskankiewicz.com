@@ -44,7 +44,7 @@ return [
 
     'storage_disk' => env('CANVAS_STORAGE_DISK', 'local'),
 
-    'storage_path' => env('CANVAS_STORAGE_PATH', 'public/canvas'),
+    'storage_path' => env('CANVAS_STORAGE_PATH', 'public/storage/canvas'),
 
     /*
     |--------------------------------------------------------------------------

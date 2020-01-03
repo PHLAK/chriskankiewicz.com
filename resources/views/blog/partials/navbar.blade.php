@@ -1,6 +1,6 @@
 <header class="blog-header py-3 border-bottom">
     <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1">
+        <div class="col-3 pt-1">
             <p class="my-auto">
                 <a href="https://twitter.com/@cnvs_io" class="pr-3 text-decoration-none" target="_blank" rel="noopener">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 20"><path d="M21.173 3.162A5.038 5.038 0 0023.338.37a9.698 9.698 0 01-3.129 1.223A4.856 4.856 0 0016.616 0c-2.718 0-4.922 2.26-4.922 5.049 0 .396.042.78.126 1.15C7.728 5.988 4.1 3.979 1.67.922a5.14 5.14 0 00-.666 2.54c0 1.751.87 3.297 2.19 4.203a4.834 4.834 0 01-2.23-.63v.062c0 2.447 1.697 4.488 3.951 4.95a4.695 4.695 0 01-1.297.178c-.317 0-.627-.03-.927-.09.626 2.006 2.444 3.466 4.599 3.505A9.722 9.722 0 010 17.733 13.71 13.71 0 007.548 20c9.058 0 14.01-7.692 14.01-14.365 0-.22-.005-.439-.013-.654A10.1 10.1 0 0024 2.368a9.617 9.617 0 01-2.827.794z" fill="#A0AEBF" fill-rule="evenodd"/></svg>
@@ -10,12 +10,12 @@
                 </a>
             </p>
         </div>
-        <div class="col-4 text-center">
+        <div class="col-6 text-center">
             <a id="brand" class="text-dark font-weight-bolder text-decoration-none font-serif" href="{{ route('blog.index') }}">{{ config('app.name', __('canvas::blog.title')) }}</a>
         </div>
 
         @auth()
-            <div class="col-4 d-flex justify-content-end align-items-center">
+            <div class="col-3 d-flex justify-content-end align-items-center">
                 @yield('actions')
 
                 <div class="dropdown">
@@ -48,7 +48,7 @@
         @endauth
 
         @guest()
-            <div class="col-4 d-flex justify-content-end align-items-center">
+            <div class="col-3 d-flex justify-content-end align-items-center">
                 <a class="text-muted text-decoration-none" href="{{ url(config('canvas.path')) }}">{{ __('canvas::blog.nav.user.login') }}</a>
             </div>
         @endguest
