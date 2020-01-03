@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers;
+use Canvas\Http\Middleware\ViewThrottle;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,15 @@ use App\Http\Controllers;
 */
 
 Route::get('/', Controllers\IndexController::class)->name('index');
+
+Route::prefix('blog')->group(function () {
+    Route::get('/', [Controllers\BlogController::class, 'getPosts'])->name('blog.index');
+    Route::middleware(ViewThrottle::class)->get('{slug}', [
+        Controllers\BlogController::class, 'findPostBySlug'
+    ])->name('blog.post');
+    Route::get('tag/{slug}', [Controllers\BlogController::class, 'getPostsByTag'])->name('blog.tag');
+    Route::get('topic/{slug}', [Controllers\BlogController::class, 'getPostsByTopic'])->name('blog.topic');
+});
 
 Route::get('/dashboard', [Controllers\DashboardController::class, 'index'])->name('dashboard');
 

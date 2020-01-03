@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "cnvs/canvas": "^5.0",
         "erusev/parsedown": "^1.7",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
@@ -13,8 +14,7 @@
         "laravel/nova": "^2.2",
         "laravel/telescope": "^2.1",
         "laravel/tinker": "^2.0",
-        "symfony/yaml": "^5.0",
-        "writingink/wink": "^0.1"
+        "symfony/yaml": "^5.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
