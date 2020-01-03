@@ -2,7 +2,12 @@
 
 @section('content')
     <div id="navigation" class="bg-gray-800 border-b-4 border-white sticky top-0">
-        @include('components.content-navigation')
+        <ul class="flex items-end text-sm md:text-base">
+            @include('components.navigation-item', ['section' => 'experience', 'icon' => 'fa-briefcase'])
+            @include('components.navigation-item', ['section' => 'projects', 'icon' => 'fa-coffee'])
+            @include('components.navigation-item', ['section' => 'education', 'icon' => 'fa-graduation-cap'])
+            @include('components.navigation-item', ['section' => 'accomplishments', 'icon' => 'fa-award'])
+        </ul>
     </div>
 
     <div id="content" class="p-6 lg:max-w-2xl">

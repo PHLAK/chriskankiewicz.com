@@ -53,9 +53,9 @@ const app = new Vue({
     methods: {
         ifActive(section) {
             return this.activeSection == section ? [
-                'bg-white', 'text-gray-800'
+                'bg-white', 'text-gray-800 border-teal-600'
             ] : [
-                'active:bg-gray-700', 'hover:bg-gray-700'
+                'active:bg-gray-700', 'hover:bg-gray-700 hover:border-gray-700'
             ];
         },
         navigateTo(section) {
