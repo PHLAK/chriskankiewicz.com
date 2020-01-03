@@ -17,7 +17,7 @@ RUN cd /app && npm install && npm run production
 
 # Build application image
 FROM php:7.4-apache as application
-LABEL maintainer="Chris Kankiewicz <ckankiewicz@freedomdebtrelief.com>"
+LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
 COPY --from=js-dependencies /app /var/www/html
 
