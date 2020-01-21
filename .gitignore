@@ -15,5 +15,5 @@ yarn-error.log
 .env
 .phpunit.result.cache
 .php_cs.cache
-public/css/app.css
-public/js/app.js
+public/css/*
+public/js/*
