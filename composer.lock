@@ -1171,17 +1171,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.9.3",
+            "version": "v2.9.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "b86eaee07c59edcc82816143a10461434d2f31e9"
+                "reference": "98f7dac7cf6518e57398f9e73b4068d705daf60f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-b86eaee07c59edcc82816143a10461434d2f31e9-zip-121166.zip",
-                "reference": "b86eaee07c59edcc82816143a10461434d2f31e9",
-                "shasum": "482b2d86e1163868fc08a3ecf4d0cb03826b9ae6"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-98f7dac7cf6518e57398f9e73b4068d705daf60f-zip-66ff64.zip",
+                "reference": "98f7dac7cf6518e57398f9e73b4068d705daf60f",
+                "shasum": "cfbb70e224755a3b43b852eb89b91092dcfd96d9"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
@@ -1236,7 +1236,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2020-01-07T18:37:48+00:00"
+            "time": "2020-01-21T18:45:10+00:00"
         },
         {
             "name": "laravel/telescope",
