@@ -64,16 +64,16 @@
         },
         {
             "name": "cnvs/canvas",
-            "version": "v5.1.0",
+            "version": "v5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cnvs/canvas.git",
-                "reference": "eec43b32ab89bbf420fc66f92df8fd929aecef3c"
+                "reference": "4aeaa2eb5c2b421ddecb878a64cd0c160413fc17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cnvs/canvas/zipball/eec43b32ab89bbf420fc66f92df8fd929aecef3c",
-                "reference": "eec43b32ab89bbf420fc66f92df8fd929aecef3c",
+                "url": "https://api.github.com/repos/cnvs/canvas/zipball/4aeaa2eb5c2b421ddecb878a64cd0c160413fc17",
+                "reference": "4aeaa2eb5c2b421ddecb878a64cd0c160413fc17",
                 "shasum": ""
             },
             "require": {
@@ -119,7 +119,7 @@
                 "platform",
                 "publishing"
             ],
-            "time": "2020-01-22T12:11:52+00:00"
+            "time": "2020-01-22T15:37:21+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
