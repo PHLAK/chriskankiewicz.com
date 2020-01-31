@@ -19,9 +19,9 @@ Route::get('/', Controllers\IndexController::class)->name('index');
 
 Route::prefix('blog')->group(function () {
     Route::get('/', [Controllers\BlogController::class, 'getPosts'])->name('blog.index');
-    Route::middleware(ViewThrottle::class)->get('{slug}', [
+    Route::get('{slug}', [
         Controllers\BlogController::class, 'findPostBySlug'
-    ])->name('blog.post');
+    ])->middleware(ViewThrottle::class)->name('blog.post');
     Route::get('tag/{slug}', [Controllers\BlogController::class, 'getPostsByTag'])->name('blog.tag');
     Route::get('topic/{slug}', [Controllers\BlogController::class, 'getPostsByTopic'])->name('blog.topic');
 });
