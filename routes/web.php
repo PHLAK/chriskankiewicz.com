@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers;
-use Canvas\Http\Middleware\ViewThrottle;
+use Canvas\Http\Middleware\Session;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +21,7 @@ Route::prefix('blog')->group(function () {
     Route::get('/', [Controllers\BlogController::class, 'getPosts'])->name('blog.index');
     Route::get('{slug}', [
         Controllers\BlogController::class, 'findPostBySlug'
-    ])->middleware(ViewThrottle::class)->name('blog.post');
+    ])->middleware(Session::class)->name('blog.post');
     Route::get('tag/{slug}', [Controllers\BlogController::class, 'getPostsByTag'])->name('blog.tag');
     Route::get('topic/{slug}', [Controllers\BlogController::class, 'getPostsByTopic'])->name('blog.topic');
 });
