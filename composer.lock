@@ -1261,17 +1261,17 @@
         },
         {
             "name": "laravel/nova",
-            "version": "v2.11.0",
+            "version": "v2.11.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "f2b68b66180ce4310d695cb3b242ac7a2406fe8d"
+                "reference": "c227726dc7a1d49c373654cfbd1f9a2383d3be22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-f2b68b66180ce4310d695cb3b242ac7a2406fe8d-zip-db1903.zip",
-                "reference": "f2b68b66180ce4310d695cb3b242ac7a2406fe8d",
-                "shasum": "5cc7907e44fd5bbfd59ede08a1265a838a0f4375"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-c227726dc7a1d49c373654cfbd1f9a2383d3be22-zip-6778dc.zip",
+                "reference": "c227726dc7a1d49c373654cfbd1f9a2383d3be22",
+                "shasum": "a47f7ca72f40c9528a549eb6401e6bba039e3570"
             },
             "require": {
                 "brick/money": "^0.4.2",
@@ -1328,7 +1328,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2020-02-18T19:50:19+00:00"
+            "time": "2020-02-19T21:38:47+00:00"
         },
         {
             "name": "laravel/telescope",
@@ -2086,16 +2086,16 @@
         },
         {
             "name": "phpseclib/phpseclib",
-            "version": "2.0.23",
+            "version": "2.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "c78eb5058d5bb1a183133c36d4ba5b6675dfa099"
+                "reference": "c18159618ed7cd7ff721ac1a8fec7860a475d2f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c78eb5058d5bb1a183133c36d4ba5b6675dfa099",
-                "reference": "c78eb5058d5bb1a183133c36d4ba5b6675dfa099",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/c18159618ed7cd7ff721ac1a8fec7860a475d2f0",
+                "reference": "c18159618ed7cd7ff721ac1a8fec7860a475d2f0",
                 "shasum": ""
             },
             "require": {
@@ -2174,7 +2174,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2019-09-17T03:41:22+00:00"
+            "time": "2020-02-25T04:16:50+00:00"
         },
         {
             "name": "psr/container",
