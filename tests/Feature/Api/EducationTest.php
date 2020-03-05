@@ -53,7 +53,7 @@ class EducationTest extends TestCase
             ->assertJson([
                 'institution' => 'Hogwarts School of Witchcraft and Wizardry',
                 'degree' => 'Care of Magical Creatures',
-                'start_date' => '1986-05-20T07:00:00.000000Z'
+                'start_date' => '1986-05-20T00:00:00.000000Z'
             ]);
     }
 
@@ -68,7 +68,7 @@ class EducationTest extends TestCase
             ]);
 
         $response->assertStatus(200)
-            ->assertJson(['end_date' => '1986-07-06T07:00:00.000000Z']);
+            ->assertJson(['end_date' => '1986-07-06T00:00:00.000000Z']);
 
         $this->assertDatabaseHas('education', [
             'id' => $education->id,

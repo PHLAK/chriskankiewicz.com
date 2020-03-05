@@ -56,7 +56,7 @@ class ExperienceTest extends TestCase
                 'company' => 'Pied Piper',
                 'title' => 'Data Janitor',
                 'description' => 'Pushed bits around.',
-                'start_date' => '1986-05-20T07:00:00.000000Z',
+                'start_date' => '1986-05-20T00:00:00.000000Z',
                 'location' => 'San Francisco, California'
             ]);
     }
