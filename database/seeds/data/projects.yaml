@@ -89,8 +89,6 @@
     My presentation on psysh, a terminal-based interactive PHP debugger and REPL
     for the azPHP June, 2019 meeting.
 
-    [![azPHP June, 2019: psysh](http://i3.ytimg.com/vi/lblQtfwlVls/maxresdefault.jpg)](https://www.youtube.com/watch?v=lblQtfwlVls)
-
     <https://www.meetup.com/azPHPUG/events/rrzlqqyzjbhc/>
   project_url: https://www.youtube.com/watch?v=lblQtfwlVls
   source_url: https://github.com/PHLAK/psysh-demo
