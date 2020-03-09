@@ -1,3 +1,18 @@
+- name: Directory Lister
+  description: |-
+    Directory Lister is a PHP application that exposes the contents of your
+    web-accessible folders for browsing and sharing. Featuring a zero
+    configuration, drag-and-drop installation for quick and easy setup.
+
+    ![Directory Lister](https://www.directorylister.com/images/screenshot-light.png)
+  project_url: https://www.directorylister.com
+  source_url: https://github.com/DirectoryLister/DirectoryLister
+  skills:
+    - PHP
+    - Slim Framework
+    - Vue.js
+    - Tailwind CSS
+
 - name: Twine
   description: |-
     Twine is a simple string manipulation library with an expressive, fluent syntax.
@@ -163,15 +178,6 @@
     - PHP
     - Composer
     - Packagist
-
-- name: Directory Lister
-  description: |-
-    A PHP based directory lister that lists a directory and all it's
-    sub-directories and allows you to navigate there within.
-  project_url: https://www.directorylister.com
-  source_url: https://github.com/DirectoryLister/DirectoryLister
-  skills:
-    - PHP
 
 - name: Uber Gallery
   description: |-
