@@ -1,13 +1,14 @@
-sudo: false
-
+os: linux
+dist: bionic
 language: php
 
 php:
   - 7.2
   - 7.3
+  - 7.4
   - nightly
 
-matrix:
+jobs:
   allow_failures:
     - php: nightly
 
@@ -21,10 +22,14 @@ services:
   - mysql
 
 before_install:
-  - phpenv config-rm xdebug.ini || true
   - npm config set "@fortawesome:registry" https://npm.fontawesome.com/
   - npm config set "//npm.fontawesome.com/:_authToken" $FONT_AWESOME_TOKEN
 
 install:
   - composer install
   - npm ci && npm run development
+
+script:
+  - vendor/bin/php-cs-fixer fix --diff --dry-run
+  - vendor/bin/psalm --show-info=true
+  - vendor/bin/phpunit --coverage-text
