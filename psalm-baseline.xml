@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="3.10.1@eeed5ecccc10131397f0eb7ee6da810c0be3a7fc">
+  <file src="app/Nova/Resource.php">
+    <UndefinedDocblockClass occurrences="2">
+      <code>\Laravel\Scout\Builder</code>
+      <code>\Laravel\Scout\Builder</code>
+    </UndefinedDocblockClass>
+  </file>
+</files>
