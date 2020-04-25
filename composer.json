@@ -18,6 +18,7 @@
         "symfony/yaml": "^5.0"
     },
     "require-dev": {
+        "php": ">=7.4",
         "beyondcode/laravel-dump-server": "^1.0",
         "facade/ignition": "^2.0",
         "filp/whoops": "^2.0",
