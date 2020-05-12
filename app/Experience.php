@@ -9,6 +9,10 @@ class Experience extends Model
 {
     use SoftDeletes;
 
+    // NOTE: Temporary workaround for broken pluralizer
+    /** @var string The table associated with the model. */
+    protected $table = 'experiences';
+
     /** @var array The attributes that are mass assignable. */
     protected $fillable = [
         'company', 'title', 'description', 'start_date', 'end_date', 'location'
