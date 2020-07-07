@@ -26,6 +26,7 @@ services:
       - ./:/var/www/html
       - ./.docker/php/config/php.dev.ini:/usr/local/etc/php/php.ini
       - ./.docker/apache2/config/000-default.dev.conf:/etc/apache2/sites-available/000-default.conf
+    restart: on-failure
 
   mysql:
     container_name: chriskankiewicz-dot-com-mysql
@@ -37,12 +38,14 @@ services:
       MYSQL_DATABASE: ${DB_DATABASE:-homestead}
       MYSQL_USER: ${DB_USERNAME:-homestead}
       MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
+    restart: on-failure
 
   redis:
     container_name: chriskankiewicz-dot-com-redis
     image: redis:5.0
     ports:
       - ${REDIS_PORT:-6379}:6379
+    restart: on-failure
 
 networks:
   default:
