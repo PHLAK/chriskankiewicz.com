@@ -19,7 +19,7 @@
         "lodash": "^4.17.15",
         "prismjs": "^1.20.0",
         "sass": "^1.26.8",
-        "sass-loader": "^8.0.2",
+        "sass-loader": "^9.0.1",
         "tailwindcss": "^1.4.6",
         "vue": "^2.6.11",
         "vue-template-compiler": "^2.6.11"
