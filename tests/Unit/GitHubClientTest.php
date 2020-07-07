@@ -43,7 +43,7 @@ class GitHubClientTest extends TestCase
     public function test_it_returns_an_empty_object_when_it_fails_to_retrieve_repository_details()
     {
         $mock = new MockHandler([
-            new ClientException('Not found', new Request('GET', 'test'))
+            new ClientException('Not found', new Request('GET', 'test'), new Response)
         ]);
 
         $gitHubClient = new GitHubClient('NOT_A_REAL_TOKEN', [
