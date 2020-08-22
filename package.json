@@ -14,14 +14,14 @@
         "@fullhuman/postcss-purgecss": "^2.3.0",
         "axios": "^0.19.2",
         "cross-env": "^7.0.2",
-        "laravel-mix": "^5.0.4",
+        "laravel-mix": "^5.0.5",
         "laravel-mix-purgecss": "^4.2.0",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.20",
         "prismjs": "^1.21.0",
         "sass": "^1.26.10",
         "sass-loader": "^8.0.2",
-        "tailwindcss": "^1.6.2",
-        "vue": "^2.6.11",
-        "vue-template-compiler": "^2.6.11"
+        "tailwindcss": "^1.7.3",
+        "vue": "^2.6.12",
+        "vue-template-compiler": "^2.6.12"
     }
 }
