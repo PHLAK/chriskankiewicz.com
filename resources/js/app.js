@@ -45,31 +45,7 @@ Vue.component('http-request-component', require('./components/HttpRequestCompone
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-    data: {
-        activeSection: 'experience'
-    },
-    methods: {
-        ifActive(section) {
-            return this.activeSection == section ? [
-                'bg-white', 'text-gray-800 border-teal-600'
-            ] : [
-                'active:bg-gray-700', 'hover:bg-gray-700 hover:border-gray-700'
-            ];
-        },
-        navigateTo(section) {
-            this.activeSection = section;
-
-            setTimeout(() => {
-                window.scrollTo({
-                    top: document.getElementById('content').offsetTop,
-                    behavior: "smooth"
-                });
-            }, 50);
-        }
-    }
-});
+const app = new Vue({ el: '#app' });
 
 /*
  * Prism.js

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94e076c3c230bc553182affc9d043624",
+    "content-hash": "181f78e59c2c6e137ed008334cd398ba",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5521,6 +5521,58 @@
                 }
             ],
             "time": "2020-05-20T17:43:50+00:00"
+        },
+        {
+            "name": "themsaid/wink",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/themsaid/wink.git",
+                "reference": "f9f463288d47935342d2af0e62cb60aeba7b8886"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/themsaid/wink/zipball/f9f463288d47935342d2af0e62cb60aeba7b8886",
+                "reference": "f9f463288d47935342d2af0e62cb60aeba7b8886",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~7.0",
+                "php": "^7.3||^7.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Wink\\WinkServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wink\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
+                }
+            ],
+            "description": "Wink Publishing Framework.",
+            "keywords": [
+                "blog",
+                "framework",
+                "laravel"
+            ],
+            "time": "2020-08-11T04:58:37+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
