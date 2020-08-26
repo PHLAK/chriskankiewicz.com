@@ -10,27 +10,11 @@
                     </span>
                 </a>
 
-                <div class="text-sm text-gray-600 mt-1">
-                    <span class="mr-2" title="{{ $post->publish_date->toDayDateTimeString() }}">
-                        <i class="fal fa-calendar-day fa-fw"></i>
+                <x-post-metadata :post="$post" />
 
-                        {{ $post->publish_date->toFormattedDateString() }}
-                    </span>
-
-                    @if($post->tags->count() > 0)
-                        <span>
-                            <i class="fal fa-tags fa-fw"></i>
-
-                            @foreach ($post->tags as $tag)
-                                <a href="{{ $tag->slug }}">{{ $tag->name }}</a>
-                            @endforeach
-                        </span>
-                    @endif
+                <div class="my-4">
+                    {!! markdown($post->excerpt) !!}
                 </div>
-            </div>
-
-            <div class="my-4">
-                {!! markdown($post->excerpt) !!}
             </div>
 
             @if(! $loop->last)

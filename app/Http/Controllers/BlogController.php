@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\View\View;
-use Wink\WinkPost;
+use Wink;
 
 class BlogController extends Controller
 {
@@ -15,7 +15,7 @@ class BlogController extends Controller
     public function index(): View
     {
         return view('blog.index', [
-            'posts' => WinkPost::with(['author', 'tags'])->get(),
+            'posts' => Wink\WinkPost::with(['author', 'tags'])->get(),
         ]);
     }
 
@@ -28,11 +28,26 @@ class BlogController extends Controller
      */
     public function post(string $slug): View
     {
-        $post = WinkPost::with(['author', 'tags'])->where('slug', $slug)->firstOrFail();
+        $post = Wink\WinkPost::with(['author', 'tags'])->where('slug', $slug)->firstOrFail();
 
         return view('blog.post', [
             'post' => $post,
             'title' => $post->title,
+        ]);
+    }
+
+    /**
+     * Display posts belonging to a specific tag.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function tag(string $slug): View
+    {
+        $tag = Wink\WinkTag::with('posts')->where('slug', $slug)->firstOrFail();
+
+        return view('blog.index', [
+            'posts' => $tag->posts,
+            'title' => $tag->name,
         ]);
     }
 }
