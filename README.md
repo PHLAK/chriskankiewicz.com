@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/PHLAK/chriskankiewicz.com/blob/master/LICENSE"><img src="https://img.shields.io/github/license/phlak/chriskankiewicz.com?style=flat-square" alt="License"></a>
-  <a href="https://travis-ci.org/PHLAK/chriskankiewicz.com"><img src="https://img.shields.io/travis/PHLAK/chriskankiewicz.com.svg?style=flat-square" alt="Build Status"></a>
+  <a href="https://travis-ci.com/PHLAK/chriskankiewicz.com"><img src="https://img.shields.io/travis/com/PHLAK/chriskankiewicz.com.svg?style=flat-square" alt="Build Status"></a>
   <a href="https://styleci.io/repos/176871591"><img src="https://styleci.io/repos/176871591/shield?branch=master" alt="StyleCI"></a>
   <a href="https://www.ChrisKankiewicz.com"><img src="https://img.shields.io/badge/created_by-Chris%20Kankiewicz-319795.svg?style=flat-square" alt="Author"></a>
 </p>
@@ -98,17 +98,16 @@ Run the migrations and seed the database.
 
 You can access the development site at <http://chriskankiewicz.local>.
 
-
 ## Debugging
 
 ### Laravel Telescope
 
-[Laravel Telescope](https://laravel.com/docs/5.8/telescope) is included in local
+[Laravel Telescope](https://laravel.com/docs/telescope) is included in local
 environments for debugging. Telescope provides insight into the requests coming
 into your application, exceptions, log entries, database queries, queued jobs,
 mail, notifications, cache operations, scheduled tasks, variable dumps and more.
 
-You can access Telescope via http://chriskankiewicz.local/telescope
+You can access Telescope via <http://chriskankiewicz.local/telescope>
 
 ### Tailing Application Logs
 
