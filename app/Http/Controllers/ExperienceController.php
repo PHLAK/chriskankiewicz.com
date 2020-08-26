@@ -16,6 +16,7 @@ class ExperienceController extends Controller
     {
         return view('experience', [
             'experience' => Experience::orderBy('start_date', 'DESC')->get(),
+            'title' => 'Experience',
         ]);
     }
 }

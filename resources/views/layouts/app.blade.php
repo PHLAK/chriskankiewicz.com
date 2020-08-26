@@ -7,8 +7,7 @@
 <link rel="icon" href="{{ asset('favicon.png') }}">
 <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-
-<title>Chris Kankiewicz</title>
+<title>{{ isset($title) ? sprintf('%s • ', $title) : null }}Chris Kankiewicz</title>
 
 <div id="app" class="font-sans">
     @yield('content')

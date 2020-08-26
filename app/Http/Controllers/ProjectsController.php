@@ -16,6 +16,7 @@ class ProjectsController extends Controller
     {
         return view('projects', [
             'projects' => Project::all(),
+            'title' => 'Projects',
         ]);
     }
 }

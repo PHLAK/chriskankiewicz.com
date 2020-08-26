@@ -28,8 +28,11 @@ class BlogController extends Controller
      */
     public function post(string $slug): View
     {
+        $post = WinkPost::with(['author', 'tags'])->where('slug', $slug)->firstOrFail();
+
         return view('blog.post', [
-            'post' => WinkPost::with(['author', 'tags'])->where('slug', $slug)->firstOrFail(),
+            'post' => $post,
+            'title' => $post->title,
         ]);
     }
 }

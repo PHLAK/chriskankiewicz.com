@@ -16,6 +16,7 @@ class EducationController extends Controller
     {
         return view('education', [
             'education' => Education::orderBy('start_date', 'DESC')->get(),
+            'title' => 'Education',
         ]);
     }
 }
