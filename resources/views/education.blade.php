@@ -1,8 +1,6 @@
-@extends('layouts.app-sidebar')
+@extends('layouts.app-with-nav')
 
 @section('content')
-    @include('components.navigation')
-
     <div class="p-6 lg:max-w-2xl">
         <div id="education" class="mb-12" {{-- v-show="activeSection == 'education'" --}}>
             @foreach ($education as $education)
@@ -33,8 +31,5 @@
                 Educational history and achievements.
             </http-request-component>
         </div>
-
     </div>
-
-    @include('components.footer')
 @endsection

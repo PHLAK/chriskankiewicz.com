@@ -1,12 +1,10 @@
-@extends('layouts.app-sidebar')
+@extends('layouts.app-with-nav')
 
 @section('content')
-    @include('components.navigation')
-
     <div class="p-6 lg:max-w-2xl">
         @foreach ($posts as $post)
             <div class="mb-8">
-                <a href="{{ route('blog.post', [$post->slug]) }}" class="flex flex-wrap items-start text-2xl">
+                <a href="{{ route('post', [$post->slug]) }}" class="flex flex-wrap items-start text-2xl">
                     <span class="font-bold mr-1">
                         {{ $post->title }}
                     </span>
@@ -40,6 +38,4 @@
             @endif
         @endforeach
     </div>
-
-    @include('components.footer')
 @endsection

@@ -1,8 +1,6 @@
-@extends('layouts.app-sidebar')
+@extends('layouts.app-with-nav')
 
 @section('content')
-    @include('components.navigation')
-
     <div id="content" class="p-6 lg:max-w-2xl">
         <h3 class="flex flex-wrap items-start text-2xl">
             <span class="font-bold mr-1">
@@ -30,6 +28,4 @@
             {!! markdown($post->body) !!}
         </p>
     </div>
-
-    @include('components.footer')
 @endsection

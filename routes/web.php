@@ -14,17 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index')->name('index');
+Route::get('/', [Controllers\BlogController::class, 'index'])->name('home');
+Route::get('/post/{slug}', [Controllers\BlogController::class, 'post'])->name('post');
 
 Route::get('/experience', Controllers\ExperienceController::class)->name('experience');
 Route::get('/projects', Controllers\ProjectsController::class)->name('projects');
 Route::get('/education', Controllers\EducationController::class)->name('education');
 Route::get('/accomplishments', Controllers\AccomplishmentsController::class)->name('accomplishments');
-
-Route::name('blog.')->prefix('blog')->group(function (): void {
-    Route::get('/', [Controllers\BlogController::class, 'index'])->name('index');
-    Route::get('/{slug}', [Controllers\BlogController::class, 'post'])->name('post');
-});
 
 Route::get('/dashboard', [Controllers\DashboardController::class, 'index'])->name('dashboard');
 

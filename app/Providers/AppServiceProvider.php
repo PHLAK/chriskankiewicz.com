@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use App\GitHub\CachedClient as CachedGitHubClient;
 use App\GitHub\Client as GitHubClient;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::aliasComponent('components.heading', 'heading');
+        // ...
     }
 
     /**

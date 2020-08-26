@@ -1,8 +1,6 @@
-@extends('layouts.app-sidebar')
+@extends('layouts.app-with-nav')
 
 @section('content')
-    @include('components.navigation')
-
     <div class="p-6 lg:max-w-2xl">
         <div id="accomplishments" class="mb-12" {{-- v-show="activeSection == 'accomplishments'" --}}>
             <ul class="list-disc list-inside mb-8">
@@ -18,6 +16,4 @@
             </http-request-component>
         </div>
     </div>
-
-    @include('components.footer')
 @endsection
