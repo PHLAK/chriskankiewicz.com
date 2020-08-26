@@ -10,8 +10,8 @@
 
         <x-post-metadata :post="$post" />
 
-        <p class="my-4">
+        <div class="my-4">
             {!! markdown($post->body) !!}
-        </p>
+        </div>
     </div>
 @endsection

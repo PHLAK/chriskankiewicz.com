@@ -41,9 +41,9 @@
                         @endif
                     </div>
 
-                    <p class="my-4">
+                    <div class="my-4">
                         {!! markdown($project->description) !!}
-                    </p>
+                    </div>
 
                     <div class="flex flex-wrap items-center mb-8">
                         @foreach ($project->skills as $skill)

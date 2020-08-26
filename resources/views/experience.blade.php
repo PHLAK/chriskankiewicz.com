@@ -28,9 +28,9 @@
                         </span>
                     </div>
 
-                    <p class="my-4">
+                    <div class="my-4">
                         {!! markdown($experience->description) !!}
-                    </p>
+                    </div>
 
                     <div class="flex flex-wrap items-center mb-8">
                         @foreach ($experience->skills as $skill)

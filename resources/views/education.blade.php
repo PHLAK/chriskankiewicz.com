@@ -17,9 +17,9 @@
                         - {{ optional($education->end_date)->format('F Y') ?? 'Current' }}
                     </div>
 
-                    <p class="my-4">
+                    <div class="my-4">
                         {!! markdown($education->degree) !!}
-                    </p>
+                    </div>
                 </div>
 
                 @if(! $loop->last)

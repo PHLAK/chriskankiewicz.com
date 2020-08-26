@@ -32,7 +32,7 @@ if (! function_exists('markdown')) {
      */
     function markdown(string $input)
     {
-        return '<div class="markdown">' . (new Parsedown)->text($input) . '</div>';
+        return '<article class="markdown">' . (new Parsedown)->text($input) . '</article>';
     }
 
     /**
@@ -44,6 +44,6 @@ if (! function_exists('markdown')) {
      */
     function markdownInline(string $input)
     {
-        return '<span class="markdown">' . (new Parsedown)->line($input) . '</span>';
+        return '<article class="markdown">' . (new Parsedown)->line($input) . '</article>';
     }
 }
