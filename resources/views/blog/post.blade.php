@@ -10,6 +10,10 @@
 
         <x-post-metadata :post="$post" />
 
+        @isset($post->featured_image)
+            <x-featured-image :post="$post" />
+        @endisset
+
         <div class="my-4">
             {!! markdown($post->body) !!}
         </div>

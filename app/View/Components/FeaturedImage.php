@@ -5,7 +5,7 @@ namespace App\View\Components;
 use App\Post;
 use Illuminate\View\Component;
 
-class PostMetadata extends Component
+class FeaturedImage extends Component
 {
     public Post $post;
 
@@ -26,6 +26,6 @@ class PostMetadata extends Component
      */
     public function render()
     {
-        return view('components.post-metadata');
+        return view('components.featured-image');
     }
 }

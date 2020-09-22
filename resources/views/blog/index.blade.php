@@ -12,8 +12,12 @@
 
                 <x-post-metadata :post="$post" />
 
+                @isset($post->featured_image)
+                    <x-featured-image :post="$post" />
+                @endisset
+
                 <div class="my-4">
-                    {!! markdown($post->excerpt) !!}
+                    {!! markdown(mb_strimwidth($post->body, 0, 360, '...')) !!}
                 </div>
             </div>
 

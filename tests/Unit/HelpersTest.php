@@ -18,7 +18,7 @@ class HelpersTest extends TestCase
         $html = markdown("# Heading\nParagraph text.\n  - Bulleted list item");
 
         $this->assertEquals(
-            "<div class=\"markdown\"><h1>Heading</h1>\n<p>Paragraph text.</p>\n<ul>\n<li>Bulleted list item</li>\n</ul></div>",
+            "<article class=\"markdown\"><h1>Heading</h1>\n<p>Paragraph text.</p>\n<ul>\n<li>Bulleted list item</li>\n</ul></article>",
             $html
         );
     }

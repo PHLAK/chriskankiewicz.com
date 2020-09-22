@@ -1,8 +1,8 @@
 <div class="text-sm text-gray-600 mt-1">
-    <span class="mr-2" title="{{ $post->publish_date->toDayDateTimeString() }}">
+    <span class="mr-2" title="{{ $post->published_at->toDayDateTimeString() }}">
         <i class="fal fa-calendar-day fa-fw"></i>
 
-        {{ $post->publish_date->format('F jS, Y') }}
+        {{ $post->published_at->format('F jS, Y') }}
     </span>
 
     @if($post->tags->isNotEmpty())

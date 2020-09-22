@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\Tag;
 use Illuminate\View\View;
-use Wink;
 
 class BlogController extends Controller
 {
@@ -14,8 +15,9 @@ class BlogController extends Controller
      */
     public function index(): View
     {
+        // TODO: Paginate the posts...
         return view('blog.index', [
-            'posts' => Wink\WinkPost::with(['author', 'tags'])->get(),
+            'posts' => Post::with(['tags'])->orderBy('published_at', 'DESC')->get(),
         ]);
     }
 
@@ -28,7 +30,7 @@ class BlogController extends Controller
      */
     public function post(string $slug): View
     {
-        $post = Wink\WinkPost::with(['author', 'tags'])->where('slug', $slug)->firstOrFail();
+        $post = Post::with(['tags'])->where('slug', $slug)->firstOrFail();
 
         return view('blog.post', [
             'post' => $post,
@@ -43,8 +45,9 @@ class BlogController extends Controller
      */
     public function tag(string $slug): View
     {
-        $tag = Wink\WinkTag::with('posts')->where('slug', $slug)->firstOrFail();
+        $tag = Tag::with('posts')->where('slug', $slug)->firstOrFail();
 
+        // TODO: Paginate the posts...
         return view('blog.index', [
             'posts' => $tag->posts,
             'title' => $tag->name,

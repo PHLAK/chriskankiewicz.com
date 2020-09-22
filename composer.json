@@ -5,7 +5,7 @@
     "keywords": ["Chris Kankiewicz"],
     "license": "MIT",
     "require": {
-        "php": "^7.2",
+        "php": "^7.4",
         "erusev/parsedown": "^1.7",
         "fideloper/proxy": "^4.0",
         "fruitcake/laravel-cors": "^1.0",
@@ -15,11 +15,10 @@
         "laravel/telescope": "^3.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "symfony/yaml": "^5.0",
-        "themsaid/wink": "^1.1"
+        "spatie/yaml-front-matter": "^2.0",
+        "symfony/yaml": "^5.0"
     },
     "require-dev": {
-        "php": ">=7.4",
         "beyondcode/laravel-dump-server": "^1.0",
         "facade/ignition": "^2.0",
         "filp/whoops": "^2.0",

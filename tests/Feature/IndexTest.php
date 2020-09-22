@@ -9,14 +9,10 @@ class IndexTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_see_the_home_page()
+    public function test_it_can_access_the_home_page(): void
     {
-        $response = $this->get(route('index'));
+        $response = $this->get(route('home'));
 
-        $response
-            ->assertSee('Chris Kankiewicz')
-            ->assertSee('Experience')
-            ->assertSee('Education')
-            ->assertSee('Projects');
+        $response->assertOk()->assertViewIs('home');
     }
 }

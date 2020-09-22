@@ -44,6 +44,6 @@ if (! function_exists('markdown')) {
      */
     function markdownInline(string $input)
     {
-        return '<article class="markdown">' . (new Parsedown)->line($input) . '</article>';
+        return '<span class="markdown">' . (new Parsedown)->line($input) . '</span>';
     }
 }

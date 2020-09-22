@@ -12,11 +12,11 @@
     }
 
     h3 {
-        @apply text-xl font-bold mb-4;
+        @apply text-lg font-bold mb-4;
     }
 
     h4 {
-        @apply text-xl .mb-4;
+        @apply text-base .mb-4;
     }
 
     img {
@@ -31,11 +31,27 @@
         @apply border-l-4 border-gray-200 pl-2 ml-4;
     }
 
+    hr {
+        @apply my-4;
+    }
+
+    code {
+        @apply bg-gray-200 rounded text-sm p-1;
+    }
+
     pre {
         @apply block border-2 border-gray-800 shadow-solid-gray-800 max-w-full my-4;
 
         code {
-            @apply block max-w-full overflow-x-scroll whitespace-pre p-6;
+            @apply block max-w-full overflow-x-auto whitespace-pre rounded-none p-6;
+        }
+    }
+
+    ol {
+        @apply list-decimal;
+
+        li {
+            @apply ml-8 mb-2;
         }
     }
 
