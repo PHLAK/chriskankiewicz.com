@@ -25,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if ($this->app->environment(['local', 'docker'])) {
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+        }
+
         $this->app->bind(GitHubClient::class, function ($app) {
             return new CachedGitHubClient(config('services.github.token'));
         });

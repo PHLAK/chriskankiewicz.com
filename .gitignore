@@ -8,6 +8,8 @@
 /.vscode
 /nbproject
 /.vagrant
+_ide_helper.php
+_ide_helper_models.php
 Homestead.json
 Homestead.yaml
 npm-debug.log
@@ -15,5 +17,5 @@ yarn-error.log
 .env
 .phpunit.result.cache
 .php_cs.cache
-public/css/*
+/public/css/*
 public/js/*
