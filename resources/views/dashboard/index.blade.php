@@ -14,8 +14,7 @@
             <h1 class="text-2xl pb-4">You are logged in!</h1>
 
             <div class="pb-4">
-                <a href="{{ route('index') }}" class="hover:underline">Home</a>
-                &bull; <a href="{{ route('wink.spa') }}" class="hover:underline">Wink</a>
+                <a href="{{ route('home') }}" class="hover:underline">Home</a>
                 &bull; <a href="{{ route('telescope') }}" class="hover:underline">Telescope</a>
                 &bull; <a href="{{ route('nova.login') }}" class="hover:underline">Nova</a>
             </div>
