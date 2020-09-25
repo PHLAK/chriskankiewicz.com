@@ -1,6 +1,7 @@
 ---
 title: Seeding is Hard
 tags: ['Laravel', 'PHP', 'Code']
+featured_image: /images/blog/seedling.jpeg
 published: 2018-05-24 01:23:45
 ---
 

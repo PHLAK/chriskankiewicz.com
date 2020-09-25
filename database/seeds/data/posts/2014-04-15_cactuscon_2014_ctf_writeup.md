@@ -1,6 +1,8 @@
 ---
 title: CactusCon 2014 CTF Writeup
 tags: ['Linux', 'PHP', 'Hacking', 'CTF']
+featured_image: https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=1000
+featured_image_text: Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
 published: 2014-04-15 21:12:42
 ---
 
