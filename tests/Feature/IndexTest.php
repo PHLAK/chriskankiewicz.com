@@ -13,6 +13,6 @@ class IndexTest extends TestCase
     {
         $response = $this->get(route('home'));
 
-        $response->assertOk()->assertViewIs('home');
+        $response->assertOk()->assertViewIs('blog.index');
     }
 }

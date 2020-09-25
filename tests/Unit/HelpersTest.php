@@ -18,7 +18,7 @@ class HelpersTest extends TestCase
         $html = markdown("# Heading\nParagraph text.\n  - Bulleted list item");
 
         $this->assertEquals(
-            "<article class=\"markdown\"><h1>Heading</h1>\n<p>Paragraph text.</p>\n<ul>\n<li>Bulleted list item</li>\n</ul></article>",
+            "<article class=\"markdown\" v-pre><h1>Heading</h1>\n<p>Paragraph text.</p>\n<ul>\n<li>Bulleted list item</li>\n</ul></article>",
             $html
         );
     }
@@ -28,7 +28,7 @@ class HelpersTest extends TestCase
         $html = markdownInline('Some `inline` text');
 
         $this->assertEquals(
-            '<span class="markdown">Some <code>inline</code> text</span>',
+            '<span class="markdown" v-pre>Some <code>inline</code> text</span>',
             $html
         );
     }
