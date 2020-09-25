@@ -4,7 +4,7 @@
     <div class="p-6 lg:max-w-2xl">
         @foreach ($posts as $post)
             <div class="mb-8">
-                <a href="{{ route('post', [$post->slug]) }}" class="flex flex-wrap items-start text-2xl">
+                <a href="{{ $post->url() }}" class="flex flex-wrap items-start text-2xl">
                     <span class="font-bold mr-1">
                         {{ $post->title }}
                     </span>
@@ -24,6 +24,10 @@
                     @endif
                 </div>
             </div>
+
+            <a href="{{ $post->url() }}" class="block my-4 underline">
+                Read More
+            </a>
 
             @if(! $loop->last)
                 <hr class="border-t-4 border-teal-600 w-40 my-8">

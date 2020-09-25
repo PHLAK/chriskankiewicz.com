@@ -24,4 +24,10 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    /** Get the URL for the post. */
+    public function url(): string
+    {
+        return route('post', $this->slug);
+    }
 }
