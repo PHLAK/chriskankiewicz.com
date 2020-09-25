@@ -25,5 +25,7 @@
                 <hr class="border-t-4 border-teal-600 w-40 my-8">
             @endif
         @endforeach
+
+        <x-paginator :paginator="$posts" />
     </div>
 @endsection

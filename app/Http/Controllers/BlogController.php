@@ -15,9 +15,8 @@ class BlogController extends Controller
      */
     public function index(): View
     {
-        // TODO: Paginate the posts...
         return view('blog.index', [
-            'posts' => Post::with(['tags'])->orderBy('published_at', 'DESC')->get(),
+            'posts' => Post::with('tags')->orderBy('published_at', 'DESC')->simplePaginate(5),
         ]);
     }
 
@@ -30,7 +29,7 @@ class BlogController extends Controller
      */
     public function post(string $slug): View
     {
-        $post = Post::with(['tags'])->where('slug', $slug)->firstOrFail();
+        $post = Post::with('tags')->where('slug', $slug)->firstOrFail();
 
         return view('blog.post', [
             'post' => $post,
@@ -45,11 +44,10 @@ class BlogController extends Controller
      */
     public function tag(string $slug): View
     {
-        $tag = Tag::with('posts')->where('slug', $slug)->firstOrFail();
+        $tag = Tag::where('slug', $slug)->firstOrFail();
 
-        // TODO: Paginate the posts...
         return view('blog.index', [
-            'posts' => $tag->posts,
+            'posts' => $tag->posts()->with('tags')->simplePaginate(5),
             'title' => $tag->name,
         ]);
     }
