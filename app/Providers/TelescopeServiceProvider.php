@@ -27,7 +27,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
      */
     protected function hideSensitiveRequestDetails()
     {
-        if ($this->app->isLocal()) {
+        if ($this->app->environment('local', 'docker')) {
             return;
         }
 
