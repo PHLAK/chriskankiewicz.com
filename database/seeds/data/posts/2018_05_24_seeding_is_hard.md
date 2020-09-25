@@ -62,7 +62,66 @@ In the aftermath historians identified that the tests failed due to missing
 
 The solution: Seed your initial data in your migrations.
 
-<script src="https://gist.github.com/PHLAK/e14bc99b459c01a13bba12b147e5b97c.js"></script>
+```php
+<?php
+
+use App\Pokemon;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePokemonTable extends Migration
+{
+    /** @var array Array of Pokemon */
+    protected $pokemon = [
+        [1, 'Bulbasaur', 'Bulbasaur can be seen napping in bright sunlight.'],
+        [2, 'Ivysaur', "There is a bud on this Pokémon's back."],
+        [3, 'Venusaur', "There is a large flower on Venusaur's back."]
+        // ...
+    ];
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('pokemon', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->unique();
+            $table->string('description');
+            $table->timestamps();
+        });
+
+        $this->seed();
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('pokemon');
+    }
+
+    /**
+     * Seed the pokemon table.
+     *
+     * @return void
+     */
+    protected function seed()
+    {
+        $pokemon = collect($this->pokemon)->map(function ($pokemon) {
+            return array_combine(['id', 'name', 'description'], $pokemon);
+        });
+
+        Pokemon::insert($pokemon->toArray());
+    }
+}
+```
 
 With this, all the above troubles are alleviated and all you have to do is 
 remember to run `artisan migrate`. This simple and elegant solution has several
