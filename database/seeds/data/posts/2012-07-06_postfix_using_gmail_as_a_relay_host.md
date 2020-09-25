@@ -1,12 +1,5 @@
 ---
 title: "Postfix: Using Gmail as a Relay Host"
-excerpt: |-
-    I maintain several Linux servers at any given moment. Every server has 
-    postfix installed for sending emails, usually notifications or warning
-    messages of some sort and most of these servers are professionally hosted
-    allowing outbound emails with little to no configuration beyond installing
-    postfix. However, my home server lies behind my ISP and they block all
-    outbound emails...
 tags: ['Linux', 'Ubuntu', 'Gmail']
 published: 2012-07-06 15:35:42
 ---

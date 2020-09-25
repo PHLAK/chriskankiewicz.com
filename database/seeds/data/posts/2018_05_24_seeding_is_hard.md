@@ -1,9 +1,5 @@
 ---
 title: Seeding is Hard
-excerpt: |-
-    We've all been there... banging our heads against a wall for 20 minutes
-    wondering why our app isn't working before we realize we forgot to seed our
-    database when running migrations. Okay, easy fix...
 tags: ['Laravel', 'PHP', 'Code']
 published: 2018-05-24 01:23:45
 ---

@@ -1,8 +1,5 @@
 ---
 title: Search Engine Optimization Tips
-excerpt: |-
-    Search engine ranking and your web sites traffic are directly influenced by
-    four main areas...
 tags: ['SEO', 'Web Development']
 published: 2010-04-14 00:00
 ---

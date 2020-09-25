@@ -1,9 +1,5 @@
 ---
 title: Join multiple .avi files in Ubuntu
-excerpt: |-
-    I was just in a bit of a pickle and needed to join two .avi files together
-    while in Ubuntu. There are a number of solutions out there, but the most
-    simple solution I could find was via avimerge.
 tags: ['Linux', 'Ubuntu']
 published: 2016-02-01 11:12:13
 ---

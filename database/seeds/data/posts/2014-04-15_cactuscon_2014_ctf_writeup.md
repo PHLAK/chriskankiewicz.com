@@ -1,9 +1,5 @@
 ---
 title: CactusCon 2014 CTF Writeup
-excerpt: |-
-    This is a write up to the 2014 CactusCon web application (SpookiLeaks)
-    challenge. You can grab the SpookiLeaks-VM here and try the challenge
-    yourself before reading the solution.
 tags: ['Linux', 'PHP', 'Hacking', 'CTF']
 published: 2014-04-15 21:12:42
 ---

@@ -1,10 +1,5 @@
 ---
 title: Increasing the Size of a Virtual Hard Drive in VirtualBox
-excerpt: |-
-    I work in Linux primarily but run a Windows 7 virtual machine in VirtualBox
-    so I can use Photoshop and do some necessary testing. Today my VM ran out of
-    space. After a little searching I found an easy way to increase the size of
-    a virtual disk.
 tags: ['Linux']
 published: 2011-11-16 19:45:13
 ---

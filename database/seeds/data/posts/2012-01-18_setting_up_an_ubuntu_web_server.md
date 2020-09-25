@@ -1,10 +1,5 @@
 ---
 title: Setting Up an Ubuntu Web Server
-excerpt: |-
-    Having set up several Debian and Ubuntu web servers in the past I thought it
-    would be a good idea to share my process. The following is a relatively
-    comprehensive guide to installing and configuring an Apache based web server
-    with some optimizations and basic resource monitoring.
 tags: ['Linux', 'Ubuntu']
 published: 2012-01-18 22:11:00
 ---

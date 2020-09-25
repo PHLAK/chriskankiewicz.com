@@ -1,9 +1,5 @@
 ---
 title: Directory Lister 3 (beta) is here!
-excerpt: |-
-    I'm excited to announce the immediate availability of **Directory Lister 3 Beta**
-    for testing and feedback. Everyone is encouraged to download the Directory
-    Lister 3 beta and start testing today.
 tags: ['Code', 'Directory Lister', 'PHP', 'Open Source']
 published: 2020-01-21 12:12:12
 ---

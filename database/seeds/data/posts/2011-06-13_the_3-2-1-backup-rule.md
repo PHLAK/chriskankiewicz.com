@@ -1,22 +1,18 @@
 ---
-title: The 3–2–1 Backup Rule
-excerpt: |-
-    Too many people today don't backup their files. And of those that do, many
-    don't do it well. An easy way to remember a "safe" way to backup your data
-    is with the "3–2–1 Backup Rule"...
+title: The 3-2-1 Backup Rule
 tags: ['Backups']
 published: 2011-07-13 13:37:42
 ---
 
 Too many people today don't backup their files. And of those that do, many don't
 do it well. An easy way to remember a "safe" way to backup your data is with the
-"3–2–1 Backup Rule" which goes like this:
+"3-2-1 Backup Rule" which goes like this:
 
   - Keep 3 copies of any important files (your primary/working copy counts as one)
   - Store your files on 2 different media types (Example: Hard drive and in the Cloud)
   - Always have 1 copy off site
 
-With the 3–2–1 rule you can be relatively confident that you'll always be able
+With the 3-2-1 rule you can be relatively confident that you'll always be able
 to access your critical data, even after a catastrophic failure.
 
 Another rule I live by when it comes to backup is:

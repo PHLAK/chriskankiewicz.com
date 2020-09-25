@@ -1,11 +1,5 @@
 ---
 title: Gaming, Then and Now
-excerpt: |-
-    My brother is currently attending the DigiPen School of Technology working
-    on a degree in video game programming / design. He's an avid gamer but has
-    missed some of (IMO) the best games of all time, specifically, the Half-Life
-    saga. Naturally, I email him recommending these games in the hope of
-    inspiring him or, at the very least, giving him a better understanding...
 tags: ['Gaming']
 published: 2010-09-23 14:53:00
 ---
