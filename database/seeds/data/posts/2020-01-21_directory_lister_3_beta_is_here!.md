@@ -4,12 +4,14 @@ tags: ['Code', 'Directory Lister', 'PHP', 'Open Source']
 published: 2020-01-21 12:12:12
 ---
 
+<!-- excerpt -->
 I'm excited to announce the immediate availability of **Directory Lister 3 Beta**
 for testing and feedback. Everyone is encouraged to download the Directory
 Lister 3 beta and start testing today. Head on over to
 [beta.directorylister.com](https://beta.directorylister.com) to get started.
 
-Image for post
+![Directory Lister 3](/images/blog/directory-lister.png)
+<!-- endexcerpt -->
 
 Directory Lister 3 was rebuilt from the ground up both inside and out. The
 biggest changes are under the hood including being rebuilt on top of PHP Slim

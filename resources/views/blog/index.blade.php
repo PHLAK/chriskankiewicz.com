@@ -17,7 +17,11 @@
                 @endisset
 
                 <div class="my-4">
-                    {!! markdown(mb_strimwidth($post->body, 0, 360, '...')) !!}
+                    @if(Str::of($post->body)->containsAll(['<!-- excerpt -->', '<!-- endexcerpt -->']))
+                        {!! markdown(Str::of($post->body)->between('<!-- excerpt -->', '<!-- endexcerpt -->')) !!}
+                    @else
+                        {!! markdown(Str::of($post->body)->limit(360)) !!}
+                    @endif
                 </div>
             </div>
 

@@ -1,10 +1,5 @@
 ---
 title: Windows 7 Activation Hack
-excerpt: |-
-    When installing Windows 7 it's very picky about which installation disc you
-    use (Full vs. Upgrade) and if improperly matched with your key can prevent
-    you from activating your copy of Windows usually returning an "Invalid
-    Product Key" error message.
 tags: ['Microsoft', 'Windows']
 published: 2011-07-19 12:34:56
 ---
@@ -15,6 +10,7 @@ published: 2011-07-19 12:34:56
 > **Don't want to upgrade to Windows 10?** [Give Ubuntu a try!](https://ubuntu.com/download/desktop)
 > It's 100% free, more secure and runs better on the same hardware than Windows.
 
+<!-- excerpt -->
 When installing Windows 7 it's very picky about which installation disc you use
 (Full vs. Upgrade) and if improperly matched with your key can prevent you from
 activating your copy of Windows usually returning an "Invalid Product Key" error
@@ -23,6 +19,7 @@ installation with an upgrade disc. This can be very annoying, especially when
 you have a legitimate key and disc but just didn't install it the way Microsoft
 thinks you should. In the event that you are having trouble activating your
 Windows 7 installation with a legitimate key, try the following registry hack:
+<!-- endexcerpt -->
 
   1. First make sure there are no pending tasks requiring a reboot.This is
      indicated by an orange shield icon next to your shutdown button on the

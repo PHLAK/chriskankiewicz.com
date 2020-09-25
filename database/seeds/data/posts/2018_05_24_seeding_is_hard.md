@@ -4,6 +4,7 @@ tags: ['Laravel', 'PHP', 'Code']
 published: 2018-05-24 01:23:45
 ---
 
+<!-- excerpt -->
 We've all been there... banging our heads against a wall for 20 minutes
 wondering why our app isn't working before we realize we forgot to seed our
 database when running migrations. Okay, easy fix:
@@ -13,6 +14,7 @@ database when running migrations. Okay, easy fix:
     Migrating: 1996_02_27_123456_create_pokemon_table
     Migrated:  1996_02_27_123456_create_pokemon_table
     Seeding: PokemonSeederReflectionException : Class PokemonSeeder does not exist
+<!-- endexcerpt -->
 
 Sigh... okay. I should have remembered to refresh the the autoload file first.
 My bad.

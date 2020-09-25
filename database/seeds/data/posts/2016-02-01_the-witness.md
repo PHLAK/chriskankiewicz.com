@@ -4,10 +4,12 @@ tags: ['Games']
 published: 2016-02-01 11:12:13
 ---
 
+<!-- excerpt -->
 I'm loving The Witness. It's a beautiful game, and challenges me in a way very
 different from just about any other puzzle game I can think of. I highly
 recommend it to anyone looking for a brain teaser and something off the beaten
 path of modern games.
+<!-- endexcerpt -->
 
 Now, for those that do pick up the game, I wanted to offer some tips but can't
 say too much because the process of discovery is a major part of the game, so
