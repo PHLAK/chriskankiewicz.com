@@ -8,7 +8,7 @@
         "php": "^7.4",
         "erusev/parsedown": "^1.7",
         "fideloper/proxy": "^4.0",
-        "fruitcake/laravel-cors": "^1.0",
+        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0",
         "laravel/framework": "^7.0",
         "laravel/nova": "^3.0",
