@@ -1,7 +1,7 @@
 ---
 title: Join multiple .avi files in Ubuntu
 tags: ['Linux', 'Ubuntu']
-published: 2016-02-01 11:12:13
+published: 2010-12-29 00:00:00
 ---
 
 <!-- excerpt -->
