@@ -10,7 +10,7 @@
         </button>
     </div>
 
-    <ul class="flex-col sm:flex sm:flex-row" v-bind:class="menuStyles">
+    <ul class="sm:flex sm:flex-row" v-bind:class="menuStyles">
         <x-nav-item route="home" section="home" icon="fa-home" class="hidden sm:flex" />
         <x-nav-item route="experience" section="experience" icon="fa-briefcase" />
         <x-nav-item route="projects" section="projects" icon="fa-coffee" />

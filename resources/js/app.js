@@ -53,7 +53,9 @@ const app = new Vue({
     }),
 
     computed: {
-        menuStyles() { return { 'hidden': ! this.menuOpen } }
+        menuStyles() {
+            return { 'flex-col': this.menuOpen, 'hidden': ! this.menuOpen }
+        }
     },
 });
 
