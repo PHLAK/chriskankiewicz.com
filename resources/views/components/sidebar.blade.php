@@ -1,4 +1,4 @@
-<div id="sidebar" class="flex flex-col justify-between p-6 bg-gray-200 h-full md:max-w-md">
+<div id="sidebar" class="flex flex-col justify-between p-6 pt-20 bg-gray-200 h-full sm:pt-6 md:max-w-md">
     <x-user-card />
 
     <div class="block bg-gray-800 text-white text-center p-4 mt-6 -mx-6 -mb-6 sticky bottom-0">

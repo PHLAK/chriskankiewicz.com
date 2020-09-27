@@ -45,7 +45,17 @@ Vue.component('http-request-component', require('./components/HttpRequestCompone
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({ el: '#app' });
+const app = new Vue({
+    el: '#app',
+
+    data: () => ({
+        menuOpen: false
+    }),
+
+    computed: {
+        menuStyles() { return { 'hidden': ! this.menuOpen } }
+    },
+});
 
 /*
  * Prism.js
