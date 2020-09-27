@@ -5,7 +5,7 @@
         <div id="experience" class="mb-12" {{-- v-show="activeSection == 'experience'" --}}>
             @foreach ($experience as $experience)
                 <div class="mb-8">
-                    <h3 class="flex flex-wrap items-start text-2xl">
+                    <h3 class="flex flex-wrap items-center text-2xl">
                         <span class="font-bold mr-1">
                             {{ $experience->title }}
                         </span>
