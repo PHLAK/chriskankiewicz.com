@@ -4,13 +4,13 @@
             <i class="fal fa-home fa-fw fa-lg"></i> Home
         </a>
 
-        <button class="text-white p-4 focus:outline-none hover:bg-gray-700" v-on:click="menuOpen = ! menuOpen">
+        <button class="text-white p-4 focus:outline-none hover:bg-gray-700" v-on:click="menuOpen = ! menuOpen" v-cloak>
             <i class="fal fa-times fa-fw" v-if="menuOpen"></i>
             <i class="fal fa-bars fa-fw" v-else></i>
         </button>
     </div>
 
-    <ul class="sm:flex sm:flex-row" v-bind:class="menuStyles">
+    <ul class="flex-col sm:flex sm:flex-row" v-bind:class="menuStyles" v-cloak>
         <x-nav-item route="home" section="home" icon="fa-home" class="hidden sm:flex" />
         <x-nav-item route="experience" section="experience" icon="fa-briefcase" />
         <x-nav-item route="projects" section="projects" icon="fa-coffee" />

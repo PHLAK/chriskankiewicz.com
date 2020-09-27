@@ -15,3 +15,8 @@
 
 // Prism.js Theme
 @import "prism.scss";
+
+// Vue.js
+[v-cloak] {
+    display: none;
+}
