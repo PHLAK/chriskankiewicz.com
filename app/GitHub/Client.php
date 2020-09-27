@@ -5,24 +5,14 @@ namespace App\GitHub;
 use GuzzleHttp\Client as GuzzleHttpClient;
 use GuzzleHttp\Exception\ClientException;
 
-class Client extends GuzzleHttpClient
+class Client
 {
-    /**
-     * Create a new GitHub Client instance.
-     *
-     * @param string $authToken GitHub OAuth token
-     * @param array  $config    GuzzleHttp Client config
-     */
-    public function __construct(string $authToken, $config = [])
+    private GuzzleHttpClient $client;
+
+    /** Create a new GitHub Client instance. */
+    public function __construct(GuzzleHttpClient $client)
     {
-        parent::__construct(array_replace_recursive([
-            'base_uri' => config('services.github.base_uri'),
-            'connect_timeout' => 5,
-            'headers' => [
-                'Authorization' => "Token {$authToken}"
-            ],
-            'timeout' => 30
-        ], $config));
+        $this->client = $client;
     }
 
     /**
@@ -36,11 +26,12 @@ class Client extends GuzzleHttpClient
     public function repository(string $owner, string $repo): object
     {
         try {
-            $response = $this->get("repos/{$owner}/{$repo}");
+            $response = $this->client->get("repos/{$owner}/{$repo}");
         } catch (ClientException $exception) {
+            // throw new GitHubClientException('Failed to fetch a response', 0, $exception);
             return json_decode('{}');
         }
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), false, 512, JSON_THROW_ON_ERROR);
     }
 }

@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\GitHub\CachedClient as CachedGitHubClient;
 use App\GitHub\Client as GitHubClient;
+use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -22,16 +23,12 @@ class GitHubClientTest extends TestCase
 
     public function test_it_can_get_repository_details()
     {
-        $mock = new MockHandler([
+        $gitHubClient = $this->mockGitHubClient([
             new Response(200, [], json_encode([
                 'id' => 12345,
                 'fork_count' => 1337,
                 'stargazers_count' => 1337
             ]))
-        ]);
-
-        $gitHubClient = new GitHubClient('NOT_A_REAL_TOKEN', [
-            'handler' => HandlerStack::create($mock)
         ]);
 
         $repository = $gitHubClient->repository('fprefect', 'hhgttg');
@@ -42,12 +39,8 @@ class GitHubClientTest extends TestCase
 
     public function test_it_returns_an_empty_object_when_it_fails_to_retrieve_repository_details()
     {
-        $mock = new MockHandler([
+        $gitHubClient = $this->mockGitHubClient([
             new ClientException('Not found', new Request('GET', 'test'), new Response)
-        ]);
-
-        $gitHubClient = new GitHubClient('NOT_A_REAL_TOKEN', [
-            'handler' => HandlerStack::create($mock)
         ]);
 
         $repository = $gitHubClient->repository('adent', 'another_thing');
@@ -58,7 +51,7 @@ class GitHubClientTest extends TestCase
 
     public function test_it_can_cache_repository_details()
     {
-        $mock = new MockHandler([
+        $gitHubClient = $this->mockCachedGitHubClient([
             new Response(200, [], json_encode([
                 'id' => 12345,
                 'fork_count' => 1337,
@@ -71,10 +64,6 @@ class GitHubClientTest extends TestCase
             ])),
         ]);
 
-        $gitHubClient = new CachedGitHubClient('NOT_A_REAL_TOKEN', [
-            'handler' => HandlerStack::create($mock)
-        ]);
-
         $repository = $gitHubClient->repository('fprefect', 'hhgttg');
         $repository2 = $gitHubClient->repository('fprefect', 'hhgttg');
 
@@ -82,5 +71,23 @@ class GitHubClientTest extends TestCase
         $this->assertEquals(1337, $repository->stargazers_count);
         $this->assertEquals(1337, $repository2->fork_count);
         $this->assertEquals(1337, $repository2->stargazers_count);
+    }
+
+    /** Get a mocked GitHub client. */
+    private function mockGitHubClient(array $responses): GitHubClient
+    {
+        return new GitHubClient(new Client([
+            'base_uri' => config('services.github.base_uri'),
+            'headers' => [
+                'Authorization' => 'Token NOT_A_REAL_TOKEN'
+            ],
+            'handler' => HandlerStack::create(new MockHandler($responses))
+        ]));
+    }
+
+    /** Get a mocked cached GitHub client. */
+    private function mockCachedGitHubClient(array $responses): CachedGitHubClient
+    {
+        return new CachedGitHubClient($this->mockGitHubClient($responses));
     }
 }
