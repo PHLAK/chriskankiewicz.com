@@ -4,9 +4,9 @@
             <i class="fal fa-home fa-fw fa-lg"></i> Home
         </a>
 
-        <button class="text-white p-4 focus:outline-none hover:bg-gray-700" v-on:click="menuOpen = ! menuOpen" v-cloak>
-            <i class="fal fa-times fa-fw" v-if="menuOpen"></i>
-            <i class="fal fa-bars fa-fw" v-else></i>
+        <button class="text-white p-4 focus:outline-none hover:bg-gray-700" v-on:click="menuOpen = ! menuOpen">
+            <i class="fal fa-bars fa-fw" v-if="menuClosed"></i>
+            <i class="fal fa-times fa-fw" v-else v-cloak></i>
         </button>
     </div>
 
