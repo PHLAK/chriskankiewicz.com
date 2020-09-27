@@ -1,6 +1,6 @@
 ---
 title: The Witness
-tags: ['Games']
+tags: ['Gaming']
 featured_image: /images/blog/the-witness/the-windmill.jpg
 published: 2016-02-01 11:12:13
 ---
