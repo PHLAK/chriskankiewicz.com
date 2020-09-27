@@ -55,7 +55,7 @@ const app = new Vue({
     computed: {
         menuClosed() { return ! this.menuOpen },
         menuStyles() {
-            return { 'flex-col': this.menuOpen, 'hidden': ! this.menuOpen }
+            return { 'flex-col': this.menuOpen, 'hidden': this.menuClosed }
         }
     },
 });
