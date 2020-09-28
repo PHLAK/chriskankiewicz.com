@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="p-6 lg:max-w-2xl">
-        <div id="accomplishments" class="mb-12" {{-- v-show="activeSection == 'accomplishments'" --}}>
+        <div id="accomplishments" class="mb-12">
             <ul class="list-disc list-inside mb-8">
                 @foreach ($accomplishments as $accomplishment)
                     <li class="text-lg mb-2">

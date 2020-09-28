@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="p-6 lg:max-w-2xl">
-        <div id="experience" class="mb-12" {{-- v-show="activeSection == 'experience'" --}}>
+        <div id="experience" class="mb-12">
             @foreach ($experience as $experience)
                 <div class="mb-8">
                     <h3 class="flex flex-wrap items-center text-2xl">
