@@ -4,10 +4,8 @@
     <div class="p-6 lg:max-w-2xl">
         @foreach ($posts as $post)
             <div class="mb-8">
-                <a href="{{ $post->url() }}" class="flex flex-wrap items-start text-2xl">
-                    <span class="font-bold mr-1">
-                        {{ $post->title }}
-                    </span>
+                <a href="{{ $post->url() }}" class="flex flex-wrap items-start font-bold text-2xl">
+                    {{ $post->title }}
                 </a>
 
                 <x-post-metadata :post="$post" />
