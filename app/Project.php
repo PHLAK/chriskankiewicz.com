@@ -3,12 +3,14 @@
 namespace App;
 
 use App\GitHub\Client as GitHubClient;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
 
 class Project extends Model
 {
+    use HasFactory;
     use SoftDeletes;
 
     /** @var array The attributes that are mass assignable. */

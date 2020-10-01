@@ -12,7 +12,7 @@ class PostTest extends TestCase
 
     public function test_it_can_access_a_post(): void
     {
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
 
         $response = $this->get(route('post', ['slug' => $post->slug]));
 

@@ -1,10 +1,20 @@
 <?php
 
-use App\Accomplishment;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-$factory->define(Accomplishment::class, function (Faker $faker) {
-    return [
-        'description' => $faker->sentence()
-    ];
-});
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class AccomplishmentFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'description' => $this->faker->sentence()
+        ];
+    }
+}

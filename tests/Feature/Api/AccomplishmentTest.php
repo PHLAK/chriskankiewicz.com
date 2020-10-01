@@ -13,7 +13,7 @@ class AccomplishmentTest extends TestCase
 
     public function test_it_can_list_all_accomplishment()
     {
-        factory(Accomplishment::class, 3)->create();
+        Accomplishment::factory()->count(3)->create();
 
         $response = $this->json('GET', route('accomplishment.index'));
 
@@ -26,9 +26,9 @@ class AccomplishmentTest extends TestCase
 
     public function test_it_can_get_an_individual_accomplishment()
     {
-        factory(Accomplishment::class)->create();
-        $accomplishment = factory(Accomplishment::class)->create();
-        factory(Accomplishment::class)->create();
+        Accomplishment::factory()->create();
+        $accomplishment = Accomplishment::factory()->create();
+        Accomplishment::factory()->create();
 
         $response = $this->json('GET', route('accomplishment.show', [
             'accomplishment' => $accomplishment
@@ -42,7 +42,7 @@ class AccomplishmentTest extends TestCase
 
     public function test_it_can_create_a_new_accomplishment()
     {
-        $user = factory(User::class)->states('is_admin')->create();
+        $user = User::factory()->admin()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('accomplishment.store'), [
@@ -57,8 +57,8 @@ class AccomplishmentTest extends TestCase
 
     public function test_it_can_update_an_accomplishment()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        $accomplishment = factory(Accomplishment::class)->create();
+        $user = User::factory()->admin()->create();
+        $accomplishment = Accomplishment::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('accomplishment.update', ['accomplishment' => $accomplishment]), [
@@ -78,10 +78,10 @@ class AccomplishmentTest extends TestCase
 
     public function test_it_can_delete_an_accomplishment()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        factory(Accomplishment::class)->create();
-        $accomplishment = factory(Accomplishment::class)->create();
-        factory(Accomplishment::class)->create();
+        $user = User::factory()->admin()->create();
+        Accomplishment::factory()->create();
+        $accomplishment = Accomplishment::factory()->create();
+        Accomplishment::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('DELETE', route('accomplishment.destroy', ['accomplishment' => $accomplishment]));

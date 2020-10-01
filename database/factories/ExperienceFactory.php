@@ -1,14 +1,25 @@
 <?php
 
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-$factory->define(App\Experience::class, function (Faker $faker) {
-    return [
-        'company' => $faker->company(),
-        'title' => $faker->jobTitle(),
-        'description' => $faker->paragraph(3),
-        'start_date' => $faker->date(),
-        'end_date' => $faker->date(),
-        'location' => "{$faker->city()}, {$faker->state()}"
-    ];
-});
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class ExperienceFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'company' => $this->faker->company(),
+            'title' => $this->faker->jobTitle(),
+            'description' => $this->faker->paragraph(3),
+            'start_date' => $this->faker->date(),
+            'end_date' => $this->faker->date(),
+            'location' => "{$this->faker->city()}, {$this->faker->state()}"
+        ];
+    }
+}

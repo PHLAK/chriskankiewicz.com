@@ -12,7 +12,7 @@ class HomeTest extends TestCase
 
     public function test_it_can_access_the_home_page(): void
     {
-        $posts = factory(Post::class, 3)->create();
+        $posts = Post::factory()->count(3)->create();
 
         $response = $this->get(route('home'));
 

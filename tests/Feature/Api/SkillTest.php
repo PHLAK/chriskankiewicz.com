@@ -13,7 +13,7 @@ class SkillTest extends TestCase
 
     public function test_it_can_list_all_skills()
     {
-        factory(Skill::class, 3)->create();
+        Skill::factory()->count(3)->create();
 
         $response = $this->json('GET', route('skill.index'));
 
@@ -26,9 +26,9 @@ class SkillTest extends TestCase
 
     public function test_it_can_get_an_individual_skill()
     {
-        factory(Skill::class)->create();
-        $skill = factory(Skill::class)->create();
-        factory(Skill::class)->create();
+        Skill::factory()->create();
+        $skill = Skill::factory()->create();
+        Skill::factory()->create();
 
         $response = $this->json('GET', route('skill.show', ['skill' => $skill]));
 
@@ -37,7 +37,7 @@ class SkillTest extends TestCase
 
     public function test_it_can_create_a_new_skill()
     {
-        $user = factory(User::class)->states('is_admin')->create();
+        $user = User::factory()->admin()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('skill.store'), [
@@ -58,8 +58,8 @@ class SkillTest extends TestCase
 
     public function test_it_can_update_a_skill()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        $skill = factory(Skill::class)->create();
+        $user = User::factory()->admin()->create();
+        $skill = Skill::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('skill.update', ['skill' => $skill]), [
@@ -79,11 +79,11 @@ class SkillTest extends TestCase
 
     public function test_it_can_delete_a_skill()
     {
-        $user = factory(User::class)->states('is_admin')->create();
+        $user = User::factory()->admin()->create();
 
-        factory(Skill::class)->create();
-        $skill = factory(Skill::class)->create();
-        factory(Skill::class)->create();
+        Skill::factory()->create();
+        $skill = Skill::factory()->create();
+        Skill::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('DELETE', route('skill.destroy', ['skill' => $skill]));

@@ -13,13 +13,13 @@ class TagTest extends TestCase
 
     public function test_it_can_access_the_tag_page(): void
     {
-        $tag = factory(Tag::class)->create();
+        $tag = Tag::factory()->create();
 
-        $posts = factory(Post::class, 3)->create()->each(
+        $posts = Post::factory()->count(3)->create()->each(
             fn (Post $post) => $post->tags()->save($tag)
         );
 
-        $otherPost = factory(Post::class)->create();
+        $otherPost = Post::factory()->create();
 
         $response = $this->get(route('tag', ['slug' => $tag->slug]));
 

@@ -26,7 +26,7 @@ class AuthTest extends TestCase
 
     public function test_it_can_log_in()
     {
-        $user = factory(User::class)->states('is_admin')->create();
+        $user = User::factory()->admin()->create();
 
         $response = $this->post('/login', [
             'email' => $user->email,
@@ -39,7 +39,7 @@ class AuthTest extends TestCase
 
     public function test_it_redirects_to_the_dashboard_when_already_logged_in()
     {
-        $user = factory(User::class)->states('is_admin')->make();
+        $user = User::factory()->admin()->make();
 
         $response = $this->actingAs($user)->get(route('login'));
 

@@ -1,12 +1,23 @@
 <?php
 
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-$factory->define(App\Project::class, function (Faker $faker) {
-    return [
-        'name' => $faker->colorName(),
-        'description' => $faker->sentence(),
-        'project_url' => $faker->url(),
-        'source_url' => 'https://github.com/PHLAK/death-star'
-    ];
-});
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class ProjectFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->colorName(),
+            'description' => $this->faker->sentence(),
+            'project_url' => $this->faker->url(),
+            'source_url' => 'https://github.com/PHLAK/death-star'
+        ];
+    }
+}

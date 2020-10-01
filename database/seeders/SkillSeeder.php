@@ -1,10 +1,12 @@
 <?php
 
-use App\Accomplishment;
+namespace Database\Seeders;
+
+use App\Skill;
 use Illuminate\Database\Seeder;
 use Symfony\Component\Yaml\Yaml;
 
-class AccomplishmentSeeder extends Seeder
+class SkillSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,8 +15,8 @@ class AccomplishmentSeeder extends Seeder
      */
     public function run()
     {
-        Accomplishment::insert(
-            Yaml::parseFile(database_path('seeds/data/accomplishments.yaml'))
+        Skill::insert(
+            Yaml::parseFile(database_path('seeders/data/skills.yaml'))
         );
     }
 }

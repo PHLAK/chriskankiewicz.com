@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Experience;
 use App\Skill;
 use Illuminate\Database\Seeder;
@@ -15,7 +17,7 @@ class ExperienceSeeder extends Seeder
      */
     public function run()
     {
-        $experiences = Yaml::parseFile(database_path('seeds/data/experience.yaml'));
+        $experiences = Yaml::parseFile(database_path('seeders/data/experience.yaml'));
 
         foreach ($experiences as $experience) {
             $experience = Collection::make($experience);

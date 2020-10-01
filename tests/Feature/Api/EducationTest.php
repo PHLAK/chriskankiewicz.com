@@ -13,7 +13,7 @@ class EducationTest extends TestCase
 
     public function test_it_can_list_all_education()
     {
-        factory(Education::class, 3)->create();
+        Education::factory()->count(3)->create();
 
         $response = $this->json('GET', route('education.index'));
 
@@ -26,9 +26,9 @@ class EducationTest extends TestCase
 
     public function test_it_can_get_an_individual_education()
     {
-        factory(Education::class)->create();
-        $education = factory(Education::class)->create();
-        factory(Education::class)->create();
+        Education::factory()->create();
+        $education = Education::factory()->create();
+        Education::factory()->create();
 
         $response = $this->json('GET', route('education.show', ['education' => $education]));
 
@@ -40,7 +40,7 @@ class EducationTest extends TestCase
 
     public function test_it_can_create_a_new_education()
     {
-        $user = factory(User::class)->states('is_admin')->create();
+        $user = User::factory()->admin()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('education.store'), [
@@ -59,8 +59,8 @@ class EducationTest extends TestCase
 
     public function test_it_can_update_an_education()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        $education = factory(Education::class)->create();
+        $user = User::factory()->admin()->create();
+        $education = Education::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('education.update', ['education' => $education]), [
@@ -78,10 +78,10 @@ class EducationTest extends TestCase
 
     public function test_it_can_delete_an_education()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        factory(Education::class)->create();
-        $education = factory(Education::class)->create();
-        factory(Education::class)->create();
+        $user = User::factory()->admin()->create();
+        Education::factory()->create();
+        $education = Education::factory()->create();
+        Education::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('DELETE', route('education.destroy', ['education' => $education]));

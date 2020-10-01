@@ -1,12 +1,23 @@
 <?php
 
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-$factory->define(App\Education::class, function (Faker $faker) {
-    return [
-        'institution' => $faker->company(),
-        'degree' => $faker->jobTitle(),
-        'start_date' => $faker->date(),
-        'end_date' => $faker->date()
-    ];
-});
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class EducationFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'institution' => $this->faker->company(),
+            'degree' => $this->faker->jobTitle(),
+            'start_date' => $this->faker->date(),
+            'end_date' => $this->faker->date()
+        ];
+    }
+}

@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Post;
 use App\Tag;
 use Illuminate\Database\Seeder;
@@ -17,7 +19,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        foreach (glob(database_path('seeds/data/posts/*.md')) as $file) {
+        foreach (glob(database_path('seeders/data/posts/*.md')) as $file) {
             $post = YamlFrontMatter::parseFile($file);
 
             $winkPost = Post::create([

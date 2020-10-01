@@ -13,7 +13,7 @@ class ProjectTest extends TestCase
 
     public function test_it_can_list_all_projects()
     {
-        factory(Project::class, 3)->create();
+        Project::factory()->count(3)->create();
 
         $response = $this->json('GET', route('project.index'));
 
@@ -26,9 +26,9 @@ class ProjectTest extends TestCase
 
     public function test_it_can_get_an_individual_project()
     {
-        factory(Project::class)->create();
-        $project = factory(Project::class)->create();
-        factory(Project::class)->create();
+        Project::factory()->create();
+        $project = Project::factory()->create();
+        Project::factory()->create();
 
         $response = $this->json('GET', route('project.show', ['project' => $project]));
 
@@ -40,7 +40,7 @@ class ProjectTest extends TestCase
 
     public function test_it_can_create_a_new_project()
     {
-        $user = factory(User::class)->states('is_admin')->create();
+        $user = User::factory()->admin()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('project.store'), [
@@ -61,8 +61,8 @@ class ProjectTest extends TestCase
 
     public function test_it_can_update_an_project()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        $project = factory(Project::class)->create();
+        $user = User::factory()->admin()->create();
+        $project = Project::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('project.update', ['project' => $project]), [
@@ -82,10 +82,10 @@ class ProjectTest extends TestCase
 
     public function test_it_can_delete_an_project()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        factory(Project::class)->create();
-        $project = factory(Project::class)->create();
-        factory(Project::class)->create();
+        $user = User::factory()->admin()->create();
+        Project::factory()->create();
+        $project = Project::factory()->create();
+        Project::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('DELETE', route('project.destroy', ['project' => $project]));

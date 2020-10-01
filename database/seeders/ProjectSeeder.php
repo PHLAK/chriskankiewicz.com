@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Project;
 use App\Skill;
 use Illuminate\Database\Seeder;
@@ -15,7 +17,7 @@ class ProjectSeeder extends Seeder
      */
     public function run()
     {
-        $projects = Yaml::parseFile(database_path('seeds/data/projects.yaml'));
+        $projects = Yaml::parseFile(database_path('seeders/data/projects.yaml'));
 
         foreach ($projects as $project) {
             $project = Collection::make($project);

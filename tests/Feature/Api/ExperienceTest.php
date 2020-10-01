@@ -13,7 +13,7 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_list_all_experiences()
     {
-        factory(Experience::class, 3)->create();
+        Experience::factory()->count(3)->create();
 
         $response = $this->json('GET', route('experience.index'));
 
@@ -26,9 +26,9 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_get_an_individual_experience()
     {
-        factory(Experience::class)->create();
-        $experience = factory(Experience::class)->create();
-        factory(Experience::class)->create();
+        Experience::factory()->create();
+        $experience = Experience::factory()->create();
+        Experience::factory()->create();
 
         $response = $this->json('GET', route('experience.show', ['experience' => $experience]));
 
@@ -40,7 +40,7 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_create_a_new_experience()
     {
-        $user = factory(User::class)->states('is_admin')->create();
+        $user = User::factory()->admin()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('experience.store'), [
@@ -63,8 +63,8 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_update_an_experience()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        $experience = factory(Experience::class)->create();
+        $user = User::factory()->admin()->create();
+        $experience = Experience::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('experience.update', ['experience' => $experience]), [
@@ -84,10 +84,10 @@ class ExperienceTest extends TestCase
 
     public function test_it_can_delete_an_experience()
     {
-        $user = factory(User::class)->states('is_admin')->create();
-        factory(Experience::class)->create();
-        $experience = factory(Experience::class)->create();
-        factory(Experience::class)->create();
+        $user = User::factory()->admin()->create();
+        Experience::factory()->create();
+        $experience = Experience::factory()->create();
+        Experience::factory()->create();
 
         $response = $this->actingAs($user, 'api')
             ->json('DELETE', route('experience.destroy', ['experience' => $experience]));

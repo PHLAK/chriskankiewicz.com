@@ -2,11 +2,13 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Experience extends Model
 {
+    use HasFactory;
     use SoftDeletes;
 
     // NOTE: Temporary workaround for broken pluralizer
