@@ -20,7 +20,7 @@ class ProjectTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['name', 'description', 'project_url', 'source_url']
+                ['name', 'description', 'project_url', 'source_url'],
             ]);
     }
 
@@ -34,7 +34,7 @@ class ProjectTest extends TestCase
 
         $response->assertStatus(200)
             ->assertJsonStructure([
-                'name', 'description', 'project_url', 'source_url'
+                'name', 'description', 'project_url', 'source_url',
             ]);
     }
 
@@ -47,7 +47,7 @@ class ProjectTest extends TestCase
                 'name' => 'Death Star',
                 'description' => "That's no moon",
                 'project_url' => 'https://en.wikipedia.org/wiki/Death_Star',
-                'source_url' => 'https://github.com/PHLAK/death-star'
+                'source_url' => 'https://github.com/PHLAK/death-star',
             ]);
 
         $response->assertStatus(201)
@@ -55,7 +55,7 @@ class ProjectTest extends TestCase
                 'name' => 'Death Star',
                 'description' => "That's no moon",
                 'project_url' => 'https://en.wikipedia.org/wiki/Death_Star',
-                'source_url' => 'https://github.com/PHLAK/death-star'
+                'source_url' => 'https://github.com/PHLAK/death-star',
             ]);
     }
 
@@ -66,17 +66,17 @@ class ProjectTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('project.update', ['project' => $project]), [
-                'name' => 'Death Star 2'
+                'name' => 'Death Star 2',
             ]);
 
         $response->assertStatus(200)
             ->assertJson([
-                'name' => 'Death Star 2'
+                'name' => 'Death Star 2',
             ]);
 
         $this->assertDatabaseHas('projects', [
             'id' => $project->id,
-            'name' => 'Death Star 2'
+            'name' => 'Death Star 2',
         ]);
     }
 
@@ -92,7 +92,7 @@ class ProjectTest extends TestCase
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('projects', [
-            'id' => $project->id
+            'id' => $project->id,
         ]);
     }
 }

@@ -9,11 +9,7 @@ use App\Http\Requests\UpdateEducation;
 
 class EducationController extends Controller
 {
-    /**
-     * Create a new Education controller.
-     *
-     * @return void
-     */
+    /** Create a new Education controller. */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -32,8 +28,6 @@ class EducationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreEducation $request
-     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreEducation $request)
@@ -44,8 +38,6 @@ class EducationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Education $education
-     *
      * @return \Illuminate\Http\Response
      */
     public function show(Education $education)
@@ -55,9 +47,6 @@ class EducationController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param \App\Http\Requests\UpdateEducation $request
-     * @param \App\Education                     $education
      *
      * @return \Illuminate\Http\Response
      */
@@ -70,8 +59,6 @@ class EducationController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param \App\Education $education
      *
      * @return \Illuminate\Http\Response
      */

@@ -5,7 +5,7 @@ if (! function_exists('gravatar')) {
      * Get a gravatar image URL for a given email address.
      *
      * @param string $email An email address
-     * @param int    $size  The desired image dimensions
+     * @param int $size The desired image dimensions
      *
      * @return string
      */
@@ -26,8 +26,6 @@ if (! function_exists('markdown')) {
     /**
      * Parse a string of markdown into HTML.
      *
-     * @param string $input
-     *
      * @return string
      */
     function markdown(string $input)
@@ -37,8 +35,6 @@ if (! function_exists('markdown')) {
 
     /**
      * Parse a string of markdown into a line of HTML.
-     *
-     * @param string $input
      *
      * @return string
      */

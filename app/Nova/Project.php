@@ -30,13 +30,11 @@ class Project extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'description'
+        'id', 'name', 'description',
     ];
 
     /**
      * Get the fields displayed by the resource.
-     *
-     * @param \Illuminate\Http\Request $request
      *
      * @return array
      */
@@ -55,14 +53,12 @@ class Project extends Resource
 
             Text::make('Source URL')->rules('max:2000'),
 
-            MorphToMany::make('Skills')
+            MorphToMany::make('Skills'),
         ];
     }
 
     /**
      * Get the cards available for the request.
-     *
-     * @param \Illuminate\Http\Request $request
      *
      * @return array
      */
@@ -74,8 +70,6 @@ class Project extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return array
      */
     public function filters(Request $request)
@@ -86,8 +80,6 @@ class Project extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return array
      */
     public function lenses(Request $request)
@@ -97,8 +89,6 @@ class Project extends Resource
 
     /**
      * Get the actions available for the resource.
-     *
-     * @param \Illuminate\Http\Request $request
      *
      * @return array
      */

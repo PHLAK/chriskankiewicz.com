@@ -17,7 +17,7 @@ class Experience extends Model
 
     /** @var array The attributes that are mass assignable. */
     protected $fillable = [
-        'company', 'title', 'description', 'start_date', 'end_date', 'location'
+        'company', 'title', 'description', 'start_date', 'end_date', 'location',
     ];
 
     /** @var array The attributes that should be mutated to dates. */
@@ -29,9 +29,7 @@ class Experience extends Model
     /** @var array The relations to eager load on every query. */
     protected $with = ['skills'];
 
-    /**
-     * Get the experience's skills.
-     */
+    /** Get the experience's skills. */
     public function skills()
     {
         return $this->morphToMany('App\Skill', 'skillable');

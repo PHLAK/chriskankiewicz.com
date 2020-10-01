@@ -9,11 +9,7 @@ use App\Skill;
 
 class SkillController extends Controller
 {
-    /**
-     * Create a new Skill controller.
-     *
-     * @return void
-     */
+    /** Create a new Skill controller. */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -32,8 +28,6 @@ class SkillController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreSkill $request
-     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreSkill $request)
@@ -44,8 +38,6 @@ class SkillController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Skill $skill
-     *
      * @return \Illuminate\Http\Response
      */
     public function show(Skill $skill)
@@ -55,9 +47,6 @@ class SkillController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param \App\Http\Requests\UpdateSkill $request
-     * @param \App\Skill                     $skill
      *
      * @return \Illuminate\Http\Response
      */
@@ -70,8 +59,6 @@ class SkillController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param \App\Skill $skill
      *
      * @return \Illuminate\Http\Response
      */

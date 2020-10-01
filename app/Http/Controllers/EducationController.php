@@ -7,11 +7,7 @@ use Illuminate\View\View;
 
 class EducationController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @return \Illuminate\View\View
-     */
+    /** Handle the incoming request. */
     public function __invoke(): View
     {
         return view('education', [

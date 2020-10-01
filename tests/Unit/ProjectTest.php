@@ -18,7 +18,7 @@ class ProjectTest extends TestCase
     public function test_it_can_get_the_projects_github_project_id()
     {
         $project = new Project([
-            'source_url' => 'https://github.com/fprefect/hhgttg'
+            'source_url' => 'https://github.com/fprefect/hhgttg',
         ]);
 
         $this->assertEquals('fprefect/hhgttg', $project->github_project_id);
@@ -27,12 +27,12 @@ class ProjectTest extends TestCase
     public function test_it_can_get_the_projects_fork_count()
     {
         $project = new Project([
-            'source_url' => 'https://github.com/fprefect/hhgttg'
+            'source_url' => 'https://github.com/fprefect/hhgttg',
         ]);
 
         $this->mock(GitHubClient::class, function ($gitHubClient) {
             $gitHubClient->shouldReceive('repository')->andReturn((object) [
-                'forks_count' => 1337
+                'forks_count' => 1337,
             ]);
         });
 
@@ -42,12 +42,12 @@ class ProjectTest extends TestCase
     public function test_it_can_get_the_projects_star_count()
     {
         $project = new Project([
-            'source_url' => 'https://github.com/fprefect/hhgttg'
+            'source_url' => 'https://github.com/fprefect/hhgttg',
         ]);
 
         $this->mock(GitHubClient::class, function ($gitHubClient) {
             $gitHubClient->shouldReceive('repository')->andReturn((object) [
-                'stargazers_count' => 1337
+                'stargazers_count' => 1337,
             ]);
         });
 

@@ -20,7 +20,7 @@ class EducationTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['institution', 'degree', 'start_date', 'end_date']
+                ['institution', 'degree', 'start_date', 'end_date'],
             ]);
     }
 
@@ -34,7 +34,7 @@ class EducationTest extends TestCase
 
         $response->assertStatus(200)
             ->assertJsonStructure([
-                'institution', 'degree', 'start_date', 'end_date'
+                'institution', 'degree', 'start_date', 'end_date',
             ]);
     }
 
@@ -46,14 +46,14 @@ class EducationTest extends TestCase
             ->json('POST', route('education.store'), [
                 'institution' => 'Hogwarts School of Witchcraft and Wizardry',
                 'degree' => 'Care of Magical Creatures',
-                'start_date' => '1986-05-20'
+                'start_date' => '1986-05-20',
             ]);
 
         $response->assertStatus(201)
             ->assertJson([
                 'institution' => 'Hogwarts School of Witchcraft and Wizardry',
                 'degree' => 'Care of Magical Creatures',
-                'start_date' => '1986-05-20T00:00:00.000000Z'
+                'start_date' => '1986-05-20T00:00:00.000000Z',
             ]);
     }
 
@@ -64,7 +64,7 @@ class EducationTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('education.update', ['education' => $education]), [
-                'end_date' => '1986-07-06'
+                'end_date' => '1986-07-06',
             ]);
 
         $response->assertStatus(200)
@@ -72,7 +72,7 @@ class EducationTest extends TestCase
 
         $this->assertDatabaseHas('education', [
             'id' => $education->id,
-            'end_date' => '1986-07-06 00:00:00'
+            'end_date' => '1986-07-06 00:00:00',
         ]);
     }
 
@@ -88,7 +88,7 @@ class EducationTest extends TestCase
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('education', [
-            'id' => $education->id
+            'id' => $education->id,
         ]);
     }
 }

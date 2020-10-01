@@ -17,7 +17,7 @@ class ProjectFactory extends Factory
             'name' => $this->faker->colorName(),
             'description' => $this->faker->sentence(),
             'project_url' => $this->faker->url(),
-            'source_url' => 'https://github.com/PHLAK/death-star'
+            'source_url' => 'https://github.com/PHLAK/death-star',
         ];
     }
 }

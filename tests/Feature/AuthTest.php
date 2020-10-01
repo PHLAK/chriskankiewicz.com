@@ -30,7 +30,7 @@ class AuthTest extends TestCase
 
         $response = $this->post('/login', [
             'email' => $user->email,
-            'password' => 'password'
+            'password' => 'password',
         ]);
 
         $response->assertRedirect(route('dashboard'));

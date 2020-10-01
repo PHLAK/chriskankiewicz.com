@@ -20,9 +20,7 @@ class CachedClient extends Client
      * Get a cached repository.
      *
      * @param string $owner The repository owner
-     * @param string $repo  The repository name
-     *
-     * @return object
+     * @param string $repo The repository name
      */
     public function repository(string $owner, string $repo): object
     {

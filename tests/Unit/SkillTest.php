@@ -25,7 +25,7 @@ class SkillTest extends TestCase
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
-            'icon_style' => 'fas'
+            'icon_style' => 'fas',
         ]);
 
         $this->assertEquals('coffee', $skill->icon_name);
@@ -37,7 +37,7 @@ class SkillTest extends TestCase
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
-            'icon_style' => 'fas'
+            'icon_style' => 'fas',
         ]);
 
         $this->assertEquals('fas fa-coffee fa-fw', $skill->iconStyles(['fa-fw']));
@@ -47,7 +47,7 @@ class SkillTest extends TestCase
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
-            'icon_style' => 'fas'
+            'icon_style' => 'fas',
         ]);
 
         $this->assertEquals('<i class="fas fa-coffee"></i>', $skill->iconMarkup());
@@ -58,7 +58,7 @@ class SkillTest extends TestCase
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
-            'icon_style' => 'fas'
+            'icon_style' => 'fas',
         ]);
 
         $this->assertTrue($skill->hasIcon());

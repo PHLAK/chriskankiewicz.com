@@ -17,7 +17,7 @@ class EducationFactory extends Factory
             'institution' => $this->faker->company(),
             'degree' => $this->faker->jobTitle(),
             'start_date' => $this->faker->date(),
-            'end_date' => $this->faker->date()
+            'end_date' => $this->faker->date(),
         ];
     }
 }

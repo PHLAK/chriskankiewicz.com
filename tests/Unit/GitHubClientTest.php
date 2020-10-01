@@ -27,8 +27,8 @@ class GitHubClientTest extends TestCase
             new Response(200, [], json_encode([
                 'id' => 12345,
                 'fork_count' => 1337,
-                'stargazers_count' => 1337
-            ]))
+                'stargazers_count' => 1337,
+            ])),
         ]);
 
         $repository = $gitHubClient->repository('fprefect', 'hhgttg');
@@ -40,7 +40,7 @@ class GitHubClientTest extends TestCase
     public function test_it_returns_an_empty_object_when_it_fails_to_retrieve_repository_details()
     {
         $gitHubClient = $this->mockGitHubClient([
-            new ClientException('Not found', new Request('GET', 'test'), new Response)
+            new ClientException('Not found', new Request('GET', 'test'), new Response),
         ]);
 
         $repository = $gitHubClient->repository('adent', 'another_thing');
@@ -55,12 +55,12 @@ class GitHubClientTest extends TestCase
             new Response(200, [], json_encode([
                 'id' => 12345,
                 'fork_count' => 1337,
-                'stargazers_count' => 1337
+                'stargazers_count' => 1337,
             ])),
             new Response(200, [], json_encode([
                 'id' => 54321,
                 'fork_count' => 7331,
-                'stargazers_count' => 7331
+                'stargazers_count' => 7331,
             ])),
         ]);
 
@@ -79,9 +79,9 @@ class GitHubClientTest extends TestCase
         return new GitHubClient(new Client([
             'base_uri' => config('services.github.base_uri'),
             'headers' => [
-                'Authorization' => 'Token NOT_A_REAL_TOKEN'
+                'Authorization' => 'Token NOT_A_REAL_TOKEN',
             ],
-            'handler' => HandlerStack::create(new MockHandler($responses))
+            'handler' => HandlerStack::create(new MockHandler($responses)),
         ]));
     }
 

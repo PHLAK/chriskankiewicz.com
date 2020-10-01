@@ -16,11 +16,7 @@ class NavItem extends Component
     /** @var string */
     public $icon;
 
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    /** Create a new component instance. */
     public function __construct(string $route, string $section, string $icon)
     {
         $this->route = $route;
@@ -38,11 +34,7 @@ class NavItem extends Component
         return view('components.nav-item');
     }
 
-    /**
-     * Determine if this navigation item is active.
-     *
-     * @return bool
-     */
+    /** Determine if this navigation item is active. */
     public function isActive(): bool
     {
         return $this->route === Route::currentRouteName();

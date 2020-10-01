@@ -26,7 +26,7 @@ class UpdateSkill extends FormRequest
         return [
             'name' => ['string', 'max:255'],
             'icon_name' => ['string', 'max:255'],
-            'icon_style' => ['string', 'max:255']
+            'icon_style' => ['string', 'max:255'],
         ];
     }
 }

@@ -19,7 +19,7 @@ class ExperienceFactory extends Factory
             'description' => $this->faker->paragraph(3),
             'start_date' => $this->faker->date(),
             'end_date' => $this->faker->date(),
-            'location' => "{$this->faker->city()}, {$this->faker->state()}"
+            'location' => "{$this->faker->city()}, {$this->faker->state()}",
         ];
     }
 }

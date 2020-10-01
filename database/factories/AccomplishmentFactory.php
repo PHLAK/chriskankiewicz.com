@@ -14,7 +14,7 @@ class AccomplishmentFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->sentence()
+            'description' => $this->faker->sentence(),
         ];
     }
 }

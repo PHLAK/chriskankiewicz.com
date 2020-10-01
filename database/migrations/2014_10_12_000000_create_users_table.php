@@ -10,11 +10,7 @@ use Illuminate\Support\Str;
 
 class CreateUsersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    /** Run the migrations. */
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -32,21 +28,13 @@ class CreateUsersTable extends Migration
         $this->seed();
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    /** Reverse the migrations. */
     public function down()
     {
         Schema::dropIfExists('users');
     }
 
-    /**
-     * Seed the users table.
-     *
-     * @return void
-     */
+    /** Seed the users table. */
     protected function seed()
     {
         $user = new User([
@@ -56,7 +44,7 @@ class CreateUsersTable extends Migration
             'password' => Hash::make(
                 config('app.env') == 'local' ? 'secret' : Str::random(32)
             ),
-            'api_token' => config('app.env') == 'local' ? 'TEST_TOKEN_PLEASE_IGNORE' : Str::random(60)
+            'api_token' => config('app.env') == 'local' ? 'TEST_TOKEN_PLEASE_IGNORE' : Str::random(60),
         ]);
 
         $user->is_admin = true;

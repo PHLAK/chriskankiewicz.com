@@ -9,11 +9,7 @@ class PostMetadata extends Component
 {
     public Post $post;
 
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    /** Create a new component instance. */
     public function __construct(Post $post)
     {
         $this->post = $post;

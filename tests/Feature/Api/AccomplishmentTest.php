@@ -20,7 +20,7 @@ class AccomplishmentTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['description']
+                ['description'],
             ]);
     }
 
@@ -31,12 +31,12 @@ class AccomplishmentTest extends TestCase
         Accomplishment::factory()->create();
 
         $response = $this->json('GET', route('accomplishment.show', [
-            'accomplishment' => $accomplishment
+            'accomplishment' => $accomplishment,
         ]));
 
         $response->assertStatus(200)
             ->assertJsonStructure([
-                'description'
+                'description',
             ]);
     }
 
@@ -46,12 +46,12 @@ class AccomplishmentTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('accomplishment.store'), [
-                'description' => 'Father of Kaylee.'
+                'description' => 'Father of Kaylee.',
             ]);
 
         $response->assertStatus(201)
             ->assertJson([
-                'description' => 'Father of Kaylee.'
+                'description' => 'Father of Kaylee.',
             ]);
     }
 
@@ -62,17 +62,17 @@ class AccomplishmentTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('accomplishment.update', ['accomplishment' => $accomplishment]), [
-                'description' => 'Father of Kaylee and Victor.'
+                'description' => 'Father of Kaylee and Victor.',
             ]);
 
         $response->assertStatus(200)
             ->assertJson([
-                'description' => 'Father of Kaylee and Victor.'
+                'description' => 'Father of Kaylee and Victor.',
             ]);
 
         $this->assertDatabaseHas('accomplishments', [
             'id' => $accomplishment->id,
-            'description' => 'Father of Kaylee and Victor.'
+            'description' => 'Father of Kaylee and Victor.',
         ]);
     }
 
@@ -88,7 +88,7 @@ class AccomplishmentTest extends TestCase
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('accomplishments', [
-            'id' => $accomplishment->id
+            'id' => $accomplishment->id,
         ]);
     }
 }

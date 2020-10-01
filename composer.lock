@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "54d3f2247468b58003c2d0e528c3550e",
+    "content-hash": "ab864eb484f445f50ba26d34339d8b57",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7838,6 +7838,59 @@
             ],
             "description": "Library for handling version information and constraints",
             "time": "2020-06-27T14:39:04+00:00"
+        },
+        {
+            "name": "phlak/coding-standards",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHLAK/CodingStandards.git",
+                "reference": "ec47c343a7ee6f517dd405e263d62fd127432a38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHLAK/CodingStandards/zipball/ec47c343a7ee6f517dd405e263d62fd127432a38",
+                "reference": "ec47c343a7ee6f517dd405e263d62fd127432a38",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "php": ">=7.2",
+                "phpunit/phpunit": "^9.3",
+                "symfony/var-dumper": "^5.1",
+                "vimeo/psalm": "^3.14"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHLAK\\CodingStandards\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Kankiewicz",
+                    "email": "Chris@ChrisKankiewicz.com"
+                }
+            ],
+            "description": "A pre-defined set of coding standards for PHP CS Fixer.",
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/PHLAK",
+                    "type": "github"
+                },
+                {
+                    "url": "https://paypal.me/ChrisKankiewicz",
+                    "type": "paypal"
+                }
+            ],
+            "time": "2020-09-11T02:43:12+00:00"
         },
         {
             "name": "php-cs-fixer/diff",

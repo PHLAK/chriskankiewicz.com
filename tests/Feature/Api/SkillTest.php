@@ -20,7 +20,7 @@ class SkillTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['name', 'icon_name', 'icon_style']
+                ['name', 'icon_name', 'icon_style'],
             ]);
     }
 
@@ -41,18 +41,18 @@ class SkillTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('POST', route('skill.store'), [
-                'name' => 'Lockpicking'
+                'name' => 'Lockpicking',
             ]);
 
         $response->assertStatus(201)
             ->assertJson([
-                'name' => 'Lockpicking'
+                'name' => 'Lockpicking',
             ]);
 
         $this->assertDatabaseHas('skills', [
             'name' => 'Lockpicking',
             'icon_name' => null,
-            'icon_style' => null
+            'icon_style' => null,
         ]);
     }
 
@@ -63,17 +63,17 @@ class SkillTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('skill.update', ['skill' => $skill]), [
-                'name' => 'Pickpocketing'
+                'name' => 'Pickpocketing',
             ]);
 
         $response->assertStatus(200)
             ->assertJson([
-                'name' => 'Pickpocketing'
+                'name' => 'Pickpocketing',
             ]);
 
         $this->assertDatabaseHas('skills', [
             'id' => $skill->id,
-            'name' => 'Pickpocketing'
+            'name' => 'Pickpocketing',
         ]);
     }
 
@@ -90,7 +90,7 @@ class SkillTest extends TestCase
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('skills', [
-            'id' => $skill->id
+            'id' => $skill->id,
         ]);
     }
 }

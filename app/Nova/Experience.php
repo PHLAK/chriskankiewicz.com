@@ -37,8 +37,6 @@ class Experience extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return array
      */
     public function fields(Request $request)
@@ -58,14 +56,12 @@ class Experience extends Resource
 
             Text::make('Location'),
 
-            MorphToMany::make('Skills')
+            MorphToMany::make('Skills'),
         ];
     }
 
     /**
      * Get the cards available for the request.
-     *
-     * @param \Illuminate\Http\Request $request
      *
      * @return array
      */
@@ -77,8 +73,6 @@ class Experience extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return array
      */
     public function filters(Request $request)
@@ -89,8 +83,6 @@ class Experience extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return array
      */
     public function lenses(Request $request)
@@ -100,8 +92,6 @@ class Experience extends Resource
 
     /**
      * Get the actions available for the resource.
-     *
-     * @param \Illuminate\Http\Request $request
      *
      * @return array
      */

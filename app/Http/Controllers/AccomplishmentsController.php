@@ -16,7 +16,7 @@ class AccomplishmentsController extends Controller
     {
         return view('accomplishments', [
             'accomplishments' => Accomplishment::all(),
-            'title' => 'Accomplishments'
+            'title' => 'Accomplishments',
         ]);
     }
 }

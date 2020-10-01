@@ -25,11 +25,7 @@ class Project extends Model
     /** @var array The relations to eager load on every query. */
     protected $with = ['skills'];
 
-    /**
-     * Return the project's GitHub ID.
-     *
-     * @return string
-     */
+    /** Return the project's GitHub ID. */
     public function getGithubProjectIdAttribute(): string
     {
         preg_match('/https?:\/\/(?:www\.)?github\.com\/(.+)\/(.+)\/?/', $this->source_url, $matches);
@@ -38,9 +34,7 @@ class Project extends Model
         return "{$owner}/{$repo}";
     }
 
-    /**
-     * Get the project's skills.
-     */
+    /** Get the project's skills. */
     public function skills()
     {
         return $this->morphToMany('App\Skill', 'skillable');

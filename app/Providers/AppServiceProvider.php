@@ -10,21 +10,13 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
+    /** Bootstrap any application services. */
     public function boot()
     {
         // ...
     }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
+    /** Register any application services. */
     public function register()
     {
         if ($this->app->environment(['local', 'docker'])) {
@@ -37,9 +29,9 @@ class AppServiceProvider extends ServiceProvider
                     'base_uri' => config('services.github.base_uri'),
                     'connect_timeout' => 5,
                     'headers' => [
-                        'Authorization' => sprintf('Token %s', config('services.github.token'))
+                        'Authorization' => sprintf('Token %s', config('services.github.token')),
                     ],
-                    'timeout' => 10
+                    'timeout' => 10,
                 ])
             );
         });

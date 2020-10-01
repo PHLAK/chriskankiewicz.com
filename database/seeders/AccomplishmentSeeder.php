@@ -8,11 +8,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class AccomplishmentSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    /** Run the database seeds. */
     public function run()
     {
         Accomplishment::insert(

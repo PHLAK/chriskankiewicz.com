@@ -13,7 +13,7 @@ class User extends Authenticatable
 
     /** @var array The attributes that are mass assignable. */
     protected $fillable = [
-        'name', 'email', 'password', 'api_token'
+        'name', 'email', 'password', 'api_token',
     ];
 
     /** @var array The attributes that should be mutated to dates. */
@@ -21,7 +21,7 @@ class User extends Authenticatable
 
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = [
-        'password', 'remember_token', 'admin', 'api_token'
+        'password', 'remember_token', 'admin', 'api_token',
     ];
 
     /** @var array The attributes that should be cast to native types. */

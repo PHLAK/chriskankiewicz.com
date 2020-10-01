@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAccomplishmentsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    /** Run the migrations. */
     public function up()
     {
         Schema::create('accomplishments', function (Blueprint $table) {
@@ -21,11 +17,7 @@ class CreateAccomplishmentsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    /** Reverse the migrations. */
     public function down()
     {
         Schema::dropIfExists('accomplishments');

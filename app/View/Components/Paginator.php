@@ -9,11 +9,7 @@ class Paginator extends Component
 {
     public IlluminatePaginator $paginator;
 
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    /** Create a new component instance. */
     public function __construct(IlluminatePaginator $paginator)
     {
         $this->paginator = $paginator;

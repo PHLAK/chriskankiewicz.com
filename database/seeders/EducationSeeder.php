@@ -8,11 +8,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class EducationSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    /** Run the database seeds. */
     public function run()
     {
         Education::insert(

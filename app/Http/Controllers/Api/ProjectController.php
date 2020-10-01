@@ -9,11 +9,7 @@ use App\Project;
 
 class ProjectController extends Controller
 {
-    /**
-     * Create a new Project controller.
-     *
-     * @return void
-     */
+    /** Create a new Project controller. */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -32,8 +28,6 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreProject $request
-     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreProject $request)
@@ -44,8 +38,6 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Project $project
-     *
      * @return \Illuminate\Http\Response
      */
     public function show(Project $project)
@@ -55,9 +47,6 @@ class ProjectController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param \App\Http\Requests\UpdateProject $request
-     * @param \App\Project                     $project
      *
      * @return \Illuminate\Http\Response
      */
@@ -70,8 +59,6 @@ class ProjectController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param \App\Project $project
      *
      * @return \Illuminate\Http\Response
      */

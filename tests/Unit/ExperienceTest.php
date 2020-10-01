@@ -19,7 +19,7 @@ class ExperienceTest extends TestCase
     {
         $experience = new Experience([
             'start_date' => '1986-05-20',
-            'end_date' => '1986-07-06'
+            'end_date' => '1986-07-06',
         ]);
 
         $this->assertInstanceOf(Carbon::class, $experience->start_date);

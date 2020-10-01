@@ -20,7 +20,7 @@ class ExperienceTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonCount(3)
             ->assertJsonStructure([
-                ['company', 'title', 'description', 'start_date', 'end_date']
+                ['company', 'title', 'description', 'start_date', 'end_date'],
             ]);
     }
 
@@ -34,7 +34,7 @@ class ExperienceTest extends TestCase
 
         $response->assertStatus(200)
             ->assertJsonStructure([
-                'company', 'title', 'description', 'start_date', 'end_date'
+                'company', 'title', 'description', 'start_date', 'end_date',
             ]);
     }
 
@@ -48,7 +48,7 @@ class ExperienceTest extends TestCase
                 'title' => 'Data Janitor',
                 'description' => 'Pushed bits around.',
                 'start_date' => '1986-05-20',
-                'location' => 'San Francisco, California'
+                'location' => 'San Francisco, California',
             ]);
 
         $response->assertStatus(201)
@@ -57,7 +57,7 @@ class ExperienceTest extends TestCase
                 'title' => 'Data Janitor',
                 'description' => 'Pushed bits around.',
                 'start_date' => '1986-05-20T00:00:00.000000Z',
-                'location' => 'San Francisco, California'
+                'location' => 'San Francisco, California',
             ]);
     }
 
@@ -68,17 +68,17 @@ class ExperienceTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('experience.update', ['experience' => $experience]), [
-                'company' => 'Pied Piper'
+                'company' => 'Pied Piper',
             ]);
 
         $response->assertStatus(200)
             ->assertJson([
-                'company' => 'Pied Piper'
+                'company' => 'Pied Piper',
             ]);
 
         $this->assertDatabaseHas('experiences', [
             'id' => $experience->id,
-            'company' => 'Pied Piper'
+            'company' => 'Pied Piper',
         ]);
     }
 
@@ -94,7 +94,7 @@ class ExperienceTest extends TestCase
 
         $response->assertStatus(204);
         $this->assertSoftDeleted('experiences', [
-            'id' => $experience->id
+            'id' => $experience->id,
         ]);
     }
 }

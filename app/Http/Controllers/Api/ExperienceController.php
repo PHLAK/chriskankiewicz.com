@@ -9,11 +9,7 @@ use App\Http\Requests\UpdateExperience;
 
 class ExperienceController extends Controller
 {
-    /**
-     * Create a new Experience controller.
-     *
-     * @return void
-     */
+    /** Create a new Experience controller. */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -32,8 +28,6 @@ class ExperienceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreExperience $request
-     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreExperience $request)
@@ -44,8 +38,6 @@ class ExperienceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Experience $experience
-     *
      * @return \Illuminate\Http\Response
      */
     public function show(Experience $experience)
@@ -55,9 +47,6 @@ class ExperienceController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param \App\Http\Requests\UpdateExperience $request
-     * @param \App\Experience                     $experience
      *
      * @return \Illuminate\Http\Response
      */
@@ -70,8 +59,6 @@ class ExperienceController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param \App\Experience $experience
      *
      * @return \Illuminate\Http\Response
      */

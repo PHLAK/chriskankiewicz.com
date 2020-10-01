@@ -19,7 +19,7 @@ class EducationTest extends TestCase
     {
         $education = new Education([
             'start_date' => '1986-05-20',
-            'end_date' => '1986-07-06'
+            'end_date' => '1986-07-06',
         ]);
 
         $this->assertInstanceOf(Carbon::class, $education->start_date);

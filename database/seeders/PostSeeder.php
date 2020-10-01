@@ -12,11 +12,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class PostSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    /** Run the database seeds. */
     public function run()
     {
         foreach (glob(database_path('seeders/data/posts/*.md')) as $file) {

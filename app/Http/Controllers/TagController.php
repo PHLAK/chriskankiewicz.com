@@ -7,11 +7,7 @@ use Illuminate\View\View;
 
 class TagController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     *
-     * @return \Illuminate\View\View
-     */
+    /** Handle the incoming request. */
     public function __invoke(string $slug): View
     {
         $tag = Tag::where('slug', $slug)->firstOrFail();

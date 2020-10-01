@@ -10,11 +10,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class ExperienceSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    /** Run the database seeds. */
     public function run()
     {
         $experiences = Yaml::parseFile(database_path('seeders/data/experience.yaml'));

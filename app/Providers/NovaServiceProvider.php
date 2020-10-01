@@ -9,21 +9,28 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
+    /** Bootstrap any application services. */
     public function boot()
     {
         parent::boot();
     }
 
     /**
-     * Register the Nova routes.
+     * Get the tools that should be listed in the Nova sidebar.
      *
-     * @return void
+     * @return array
      */
+    public function tools()
+    {
+        return [];
+    }
+
+    /** Register any application services. */
+    public function register()
+    {
+    }
+
+    /** Register the Nova routes. */
     protected function routes()
     {
         Nova::routes()
@@ -36,8 +43,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      * Register the Nova gate.
      *
      * This gate determines who can access Nova in non-local environments.
-     *
-     * @return void
      */
     protected function gate()
     {
@@ -56,24 +61,5 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             new Help,
         ];
-    }
-
-    /**
-     * Get the tools that should be listed in the Nova sidebar.
-     *
-     * @return array
-     */
-    public function tools()
-    {
-        return [];
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
     }
 }

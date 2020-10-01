@@ -9,11 +9,7 @@ use App\Http\Requests\UpdateAccomplishment;
 
 class AccomplishmentController extends Controller
 {
-    /**
-     * Create a new Accomplishment controller.
-     *
-     * @return void
-     */
+    /** Create a new Accomplishment controller. */
     public function __construct()
     {
         $this->middleware('auth:api')->except(['index', 'show']);
@@ -32,8 +28,6 @@ class AccomplishmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\StoreAccomplishment $request
-     *
      * @return \Illuminate\Http\Response
      */
     public function store(StoreAccomplishment $request)
@@ -44,8 +38,6 @@ class AccomplishmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Accomplishment $accomplishment
-     *
      * @return \Illuminate\Http\Response
      */
     public function show(Accomplishment $accomplishment)
@@ -55,9 +47,6 @@ class AccomplishmentController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param \App\Http\Requests\UpdateAccomplishment $request
-     * @param \App\Accomplishment                     $accomplishment
      *
      * @return \Illuminate\Http\Response
      */
@@ -70,8 +59,6 @@ class AccomplishmentController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param \App\Accomplishment $accomplishment
      *
      * @return \Illuminate\Http\Response
      */
