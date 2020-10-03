@@ -14,7 +14,7 @@ class Education extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Education';
+    public static $model = \App\Education::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

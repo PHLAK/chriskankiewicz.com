@@ -3,17 +3,19 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 
-class Skill extends Resource
+class Tag extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Skill::class;
+    public static $model = \App\Tag::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -27,9 +29,7 @@ class Skill extends Resource
      *
      * @var array
      */
-    public static $search = [
-        'id', 'name',
-    ];
+    public static $search = ['id'];
 
     /**
      * Get the fields displayed by the resource.
@@ -39,15 +39,13 @@ class Skill extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            ID::make(__('ID'), 'id')->sortable(),
 
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
+            Text::make('name')->required(),
 
-            Text::make('Icon Name')->rules('max:255'),
+            Slug::make('slug')->from('Name')->hideFromIndex(),
 
-            Text::make('Icon Style')->rules('max:255'),
+            BelongsToMany::make('Posts'),
         ];
     }
 

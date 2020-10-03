@@ -16,7 +16,7 @@ class Experience extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Experience';
+    public static $model = \App\Experience::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
