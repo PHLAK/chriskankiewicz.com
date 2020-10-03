@@ -1,7 +1,7 @@
 ---
 title: Setting Up an Ubuntu Web Server
 tags: ['Linux', 'Ubuntu']
-featured_image: https://images.unsplash.com/photo-1591808216268-ce0b82787efe?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=1000
+featured_image_url: https://images.unsplash.com/photo-1591808216268-ce0b82787efe?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=1000
 featured_image_text: Photo by [Nathan Dumlao](https://unsplash.com/@nate_dumlao?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/server?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
 published: 2012-01-18 22:11:00
 ---

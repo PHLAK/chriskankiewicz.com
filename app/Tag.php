@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * The Tag model.
+ *
+ * @method static \Database\Factories\TagFactory factory(...$parameters)
+ */
 class Tag extends Model
 {
     use HasFactory;

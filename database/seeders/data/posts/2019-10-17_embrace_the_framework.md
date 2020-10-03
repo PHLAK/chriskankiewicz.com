@@ -1,6 +1,6 @@
 ---
 title: Embrace the Framework
-featured_image: https://images.unsplash.com/photo-1465829235810-1f912537f253?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600
+featured_image_url: https://images.unsplash.com/photo-1465829235810-1f912537f253?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600
 featured_image_text: Photo by [Dayne Topkin](https://unsplash.com/@dtopkin1?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/framework?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
 tags: ['Code', 'Frameworks']
 published: 2019-10-17 08:16:32

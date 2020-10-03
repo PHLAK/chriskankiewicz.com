@@ -6,6 +6,8 @@ use App\Education;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEducation;
 use App\Http\Requests\UpdateEducation;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Response;
 
 class EducationController extends Controller
 {
@@ -15,54 +17,34 @@ class EducationController extends Controller
         $this->middleware('auth:api')->except(['index', 'show']);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    /** Display a listing of the resource. */
+    public function index(): Collection
     {
         return Education::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreEducation $request)
+    /** Store a newly created resource in storage. */
+    public function store(StoreEducation $request): Education
     {
         return Education::create($request->validated());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Education $education)
+    /** Display the specified resource. */
+    public function show(Education $education): Education
     {
         return $education;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateEducation $request, Education $education)
+    /** Update the specified resource in storage. */
+    public function update(UpdateEducation $request, Education $education): Education
     {
         $education->update($request->validated());
 
         return $education;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Education $education)
+    /** Remove the specified resource from storage. */
+    public function destroy(Education $education): Response
     {
         $education->delete();
 

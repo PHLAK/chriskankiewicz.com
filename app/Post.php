@@ -7,13 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * The Post model.
+ *
+ * @method static \Database\Factories\PostFactory factory(...$parameters)
+ */
 class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     /** @var array The attributes that are mass assignable. */
-    protected $fillable = ['slug', 'title', 'body', 'featured_image'];
+    protected $fillable = [
+        'slug', 'title', 'body', 'featured_image_url', 'featured_image_text', 'published_at',
+    ];
 
     /** @var array The attributes that should be mutated to dates. */
     protected $dates = ['published_at'];

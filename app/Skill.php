@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * The Skill model.
+ *
+ * @method static \Database\Factories\SkillFactory factory(...$parameters)
+ */
 class Skill extends Model
 {
     use HasFactory;

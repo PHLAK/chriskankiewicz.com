@@ -14,7 +14,7 @@ class CreatePostsTable extends Migration
             $table->string('slug')->unique();
             $table->string('title');
             $table->longText('body');
-            $table->string('featured_image', 2048)->nullable();
+            $table->string('featured_image_url', 2048)->nullable();
             $table->string('featured_image_text', 2048)->nullable();
             $table->dateTime('published_at')->nullable();
             $table->timestamps();

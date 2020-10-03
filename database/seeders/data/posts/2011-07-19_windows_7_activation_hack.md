@@ -1,7 +1,7 @@
 ---
 title: Windows 7 Activation Hack
 tags: ['Microsoft', 'Windows']
-featured_image: https://images.unsplash.com/photo-1573867975080-15a3d9445345?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=1000
+featured_image_url: https://images.unsplash.com/photo-1573867975080-15a3d9445345?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=1000
 featured_image_text: Photo by [Halacious](https://unsplash.com/@halacious?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
 published: 2011-07-19 12:34:56
 ---

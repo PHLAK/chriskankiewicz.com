@@ -1,7 +1,7 @@
 ---
 title: The 3-2-1 Backup Rule
 tags: ['Backups']
-featured_image: /images/blog/hard-drives.jpeg
+featured_image_url: /images/blog/hard-drives.jpeg
 published: 2011-07-13 13:37:42
 ---
 

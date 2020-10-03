@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * The Experience model.
+ *
+ * @method static \Database\Factories\ExperienceFactory factory(...$parameters)
+ */
 class Experience extends Model
 {
     use HasFactory;

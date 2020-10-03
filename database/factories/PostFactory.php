@@ -18,7 +18,7 @@ class PostFactory extends Factory
             'title' => $title = $this->faker->sentence(),
             'slug' => Str::slug($title),
             'body' => $this->faker->text(),
-            'featured_image' => $this->faker->imageUrl(),
+            'featured_image_url' => $this->faker->imageUrl(),
             'featured_image_text' => $this->faker->sentence(),
             'published_at' => $this->faker->dateTime(),
         ];

@@ -16,19 +16,19 @@ class PostSeeder extends Seeder
     public function run()
     {
         foreach (glob(database_path('seeders/data/posts/*.md')) as $file) {
-            $post = YamlFrontMatter::parseFile($file);
+            $parsed = YamlFrontMatter::parseFile($file);
 
-            $winkPost = Post::create([
-                'slug' => Str::slug($post->title),
-                'title' => $post->title,
-                'body' => $post->body(),
-                'published_at' => Carbon::parse($post->published),
-                'featured_image' => $post->featured_image,
-                'featured_image_text' => $post->featured_image_text,
+            $post = Post::create([
+                'slug' => Str::slug($parsed->title),
+                'title' => $parsed->title,
+                'body' => $parsed->body(),
+                'published_at' => Carbon::parse($parsed->published),
+                'featured_image_url' => $parsed->featured_image_url,
+                'featured_image_text' => $parsed->featured_image_text,
             ]);
 
-            if (is_array($post->tags)) {
-                $winkPost->tags()->saveMany(Collection::make($post->tags)->map(
+            if (is_array($parsed->tags)) {
+                $post->tags()->saveMany(Collection::make($parsed->tags)->map(
                     fn (string $tag) => Tag::firstOrCreate(['slug' => Str::slug($tag)], ['name' => $tag])
                 ));
             }

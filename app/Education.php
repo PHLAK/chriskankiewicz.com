@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * The Education model.
+ *
+ * @method static \Database\Factories\EducationFactory factory(...$parameters)
+ */
 class Education extends Model
 {
     use HasFactory;

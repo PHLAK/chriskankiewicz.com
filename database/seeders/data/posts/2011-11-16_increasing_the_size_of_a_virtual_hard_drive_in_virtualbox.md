@@ -1,7 +1,7 @@
 ---
 title: Increasing the Size of a Virtual Hard Drive in VirtualBox
 tags: ['Linux']
-featured_image: https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=1000
+featured_image_url: https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&h=1000
 featured_image_text: Photo by [benjamin lehman](https://unsplash.com/@benjaminlehman?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/hard-drive?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
 published: 2011-11-16 19:45:13
 ---

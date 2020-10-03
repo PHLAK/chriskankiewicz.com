@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProject;
 use App\Http\Requests\UpdateProject;
 use App\Project;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Response;
 
 class ProjectController extends Controller
 {
@@ -15,54 +17,34 @@ class ProjectController extends Controller
         $this->middleware('auth:api')->except(['index', 'show']);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    /** Display a listing of the resource. */
+    public function index(): Collection
     {
         return Project::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreProject $request)
+    /** Store a newly created resource in storage. */
+    public function store(StoreProject $request): Project
     {
         return Project::create($request->validated());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Project $project)
+    /** Display the specified resource. */
+    public function show(Project $project): Project
     {
         return $project;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateProject $request, Project $project)
+    /** Update the specified resource in storage. */
+    public function update(UpdateProject $request, Project $project): Project
     {
         $project->update($request->validated());
 
         return $project;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Project $project)
+    /** Remove the specified resource from storage. */
+    public function destroy(Project $project): Response
     {
         $project->delete();
 

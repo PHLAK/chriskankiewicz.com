@@ -10,7 +10,7 @@
 
         <x-post-metadata :post="$post" />
 
-        @isset($post->featured_image)
+        @isset($post->featured_image_url)
             <x-featured-image :post="$post" />
         @endisset
 

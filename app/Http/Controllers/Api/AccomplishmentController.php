@@ -6,6 +6,8 @@ use App\Accomplishment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAccomplishment;
 use App\Http\Requests\UpdateAccomplishment;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Response;
 
 class AccomplishmentController extends Controller
 {
@@ -15,54 +17,34 @@ class AccomplishmentController extends Controller
         $this->middleware('auth:api')->except(['index', 'show']);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    /** Display a listing of the resource. */
+    public function index(): Collection
     {
         return Accomplishment::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreAccomplishment $request)
+    /** Store a newly created resource in storage. */
+    public function store(StoreAccomplishment $request): Accomplishment
     {
         return Accomplishment::create($request->validated());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Accomplishment $accomplishment)
+    /** Display the specified resource. */
+    public function show(Accomplishment $accomplishment): Accomplishment
     {
         return $accomplishment;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateAccomplishment $request, Accomplishment $accomplishment)
+    /** Update the specified resource in storage. */
+    public function update(UpdateAccomplishment $request, Accomplishment $accomplishment): Accomplishment
     {
         $accomplishment->update($request->validated());
 
         return $accomplishment;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Accomplishment $accomplishment)
+    /** Remove the specified resource from storage. */
+    public function destroy(Accomplishment $accomplishment): Response
     {
         $accomplishment->delete();
 

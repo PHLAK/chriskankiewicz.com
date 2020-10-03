@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
 
+/**
+ * The Project model.
+ *
+ * @method static \Database\Factories\ProjectFactory factory(...$parameters)
+ */
 class Project extends Model
 {
     use HasFactory;

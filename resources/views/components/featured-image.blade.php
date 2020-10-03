@@ -1,6 +1,6 @@
 <div class="my-4">
     <img {{ $attributes }}
-        src="{{ $post->featured_image }}"
+        src="{{ $post->featured_image_url }}"
         alt="{{ strip_tags(markdownInline($post->featured_image_text ?? '')) }}"
     >
 

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSkill;
 use App\Http\Requests\UpdateSkill;
 use App\Skill;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Response;
 
 class SkillController extends Controller
 {
@@ -15,54 +17,34 @@ class SkillController extends Controller
         $this->middleware('auth:api')->except(['index', 'show']);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    /** Display a listing of the resource. */
+    public function index(): Collection
     {
         return Skill::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreSkill $request)
+    /** Store a newly created resource in storage. */
+    public function store(StoreSkill $request): Skill
     {
         return Skill::create($request->validated());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Skill $skill)
+    /** Display the specified resource. */
+    public function show(Skill $skill): Skill
     {
         return $skill;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateSkill $request, Skill $skill)
+    /** Update the specified resource in storage. */
+    public function update(UpdateSkill $request, Skill $skill): Skill
     {
         $skill->update($request->validated());
 
         return $skill;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Skill $skill)
+    /** Remove the specified resource from storage. */
+    public function destroy(Skill $skill): Response
     {
         $skill->delete();
 

@@ -13,8 +13,8 @@ class CreateEducationTable extends Migration
             $table->bigIncrements('id');
             $table->string('institution');
             $table->string('degree')->nullable();
-            $table->datetime('start_date');
-            $table->datetime('end_date')->nullable();
+            $table->dateTime('start_date');
+            $table->dateTime('end_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
