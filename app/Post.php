@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -38,5 +39,13 @@ class Post extends Model
     public function url(): string
     {
         return route('post', $this->slug);
+    }
+
+    /** The "booted" method of the model. */
+    protected static function booted(): void
+    {
+        static::addGlobalScope('published', function (Builder $builder) {
+            $builder->orderBy('published_at', 'DESC');
+        });
     }
 }

@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function __invoke(): View
     {
         return view('blog.index', [
-            'posts' => Post::with('tags')->orderBy('published_at', 'DESC')->simplePaginate(5),
+            'posts' => Post::with('tags')->simplePaginate(5),
         ]);
     }
 }
