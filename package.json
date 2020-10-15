@@ -10,17 +10,17 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "@fortawesome/fontawesome-pro": "^5.15.0",
+        "@fortawesome/fontawesome-pro": "^5.15.1",
         "@fullhuman/postcss-purgecss": "^2.3.0",
         "axios": "^0.19.2",
         "cross-env": "^7.0.2",
-        "laravel-mix": "^5.0.5",
+        "laravel-mix": "^5.0.7",
         "laravel-mix-purgecss": "^4.2.0",
         "lodash": "^4.17.20",
-        "prismjs": "^1.21.0",
-        "sass": "^1.26.11",
+        "prismjs": "^1.22.0",
+        "sass": "^1.27.0",
         "sass-loader": "^8.0.2",
-        "tailwindcss": "^1.8.10",
+        "tailwindcss": "^1.9.2",
         "vue": "^2.6.12",
         "vue-template-compiler": "^2.6.12"
     }
