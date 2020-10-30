@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -45,7 +46,7 @@ class Post extends Model
     protected static function booted(): void
     {
         static::addGlobalScope('published', function (Builder $builder) {
-            $builder->orderBy('published_at', 'DESC');
+            $builder->whereDate('published_at', '<=', Carbon::now())->orderBy('published_at', 'DESC');
         });
     }
 }
