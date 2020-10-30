@@ -15,7 +15,7 @@
         "axios": "^0.19.2",
         "cross-env": "^7.0.2",
         "laravel-mix": "^5.0.7",
-        "laravel-mix-purgecss": "^4.2.0",
+        "laravel-mix-purgecss": "^5.0.0",
         "lodash": "^4.17.20",
         "prismjs": "^1.22.0",
         "sass": "^1.28.0",
