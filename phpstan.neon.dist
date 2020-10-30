@@ -24,6 +24,7 @@ parameters:
     checkFunctionNameCase: true
     # checkMissingClosureNativeReturnTypehintRule: true
     checkMissingIterableValueType: false
+    checkModelProperties: true
     # checkTooWideReturnTypesInProtectedAndPublicMethods: true
     checkUninitializedProperties: true
 
