@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@fortawesome/fontawesome-pro": "^5.15.1",
-        "@fullhuman/postcss-purgecss": "^2.3.0",
+        "@fullhuman/postcss-purgecss": "^3.0.0",
         "axios": "^0.19.2",
         "cross-env": "^7.0.2",
         "laravel-mix": "^5.0.7",
