@@ -1,4 +1,6 @@
 /node_modules
+/public/css/*
+/public/js/*
 /public/hot
 /public/storage
 /public/mix-manifest.json
@@ -17,5 +19,3 @@ yarn-error.log
 .env
 .phpunit.result.cache
 .php_cs.cache
-/public/css/*
-public/js/*
