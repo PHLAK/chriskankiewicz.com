@@ -15,8 +15,8 @@ services:
       LOG_CHANNEL: 'stderr'
       DB_HOST: 'chriskankiewicz-dot-com-mysql'
       DB_PORT: 3306
-      DB_DATABASE: ${DB_DATABASE:-homestead}
-      DB_USERNAME: ${DB_USERNAME:-homestead}
+      DB_DATABASE: ${DB_DATABASE:-app}
+      DB_USERNAME: ${DB_USERNAME:-laravel}
       DB_PASSWORD: ${DB_PASSWORD:-secret}
       CACHE_DRIVER: 'redis'
       REDIS_HOST: 'chriskankiewicz-dot-com-redis'
@@ -30,13 +30,13 @@ services:
 
   mysql:
     container_name: chriskankiewicz-dot-com-mysql
-    image: mysql:5.7
+    image: mysql:8.0
     ports:
       - ${DB_PORT:-3306}:3306
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
-      MYSQL_DATABASE: ${DB_DATABASE:-homestead}
-      MYSQL_USER: ${DB_USERNAME:-homestead}
+      MYSQL_DATABASE: ${DB_DATABASE:-app}
+      MYSQL_USER: ${DB_USERNAME:-laravel}
       MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
     restart: on-failure
 
