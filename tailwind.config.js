@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
     future: {
         removeDeprecatedGapUtilities: true,
@@ -18,22 +20,8 @@ module.exports = {
                 "solid-gray-900": "4px 4px 0 #1A202C"
             },
             fontFamily: {
-                montserrat: ["Montserrat", "Lato", "sans-serif"],
-                sans: [
-                    "Lato",
-                    "-apple-system",
-                    "BlinkMacSystemFont",
-                    '"Segoe UI"',
-                    "Roboto",
-                    '"Helvetica Neue"',
-                    "Arial",
-                    '"Noto Sans"',
-                    "sans-serif",
-                    '"Apple Color Emoji"',
-                    '"Segoe UI Emoji"',
-                    '"Segoe UI Symbol"',
-                    '"Noto Color Emoji"'
-                ]
+                montserrat: ['Montserrat', 'Lato', ...defaultTheme.fontFamily.sans],
+                sans: ['Lato', ...defaultTheme.fontFamily.sans]
             },
             inset: {
                 "1": "0.25rem",
