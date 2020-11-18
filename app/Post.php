@@ -30,6 +30,14 @@ class Post extends Model
     /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
+    /** The "booted" method of the model. */
+    protected static function booted(): void
+    {
+        static::addGlobalScope('published', function (Builder $builder) {
+            $builder->whereDate('published_at', '<=', Carbon::now())->orderBy('published_at', 'DESC');
+        });
+    }
+
     /** The tags that belong to the post. */
     public function tags(): BelongsToMany
     {
@@ -40,13 +48,5 @@ class Post extends Model
     public function url(): string
     {
         return route('post', $this->slug);
-    }
-
-    /** The "booted" method of the model. */
-    protected static function booted(): void
-    {
-        static::addGlobalScope('published', function (Builder $builder) {
-            $builder->whereDate('published_at', '<=', Carbon::now())->orderBy('published_at', 'DESC');
-        });
     }
 }
