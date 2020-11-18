@@ -9,6 +9,6 @@
 
 <title>{{ isset($title) ? sprintf('%s • ', $title) : null }}Chris Kankiewicz</title>
 
-<div id="app" class="font-sans">
+<div id="app" class="font-sans antialiased">
     @yield('content')
 </div>
