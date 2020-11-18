@@ -11,7 +11,7 @@ services:
         FONT_AWESOME_TOKEN: ${FONT_AWESOME_TOKEN?Not set or empty}
       target: development
     environment:
-      APP_ENV: 'docker'
+      APP_ENV: 'local'
       LOG_CHANNEL: 'stderr'
       DB_HOST: 'chriskankiewicz-dot-com-mysql'
       DB_PORT: 3306
