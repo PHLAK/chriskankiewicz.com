@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex content-center justify-center items-center h-screen bg-gray-200">
+    <div class="flex content-center justify-center items-center h-screen bg-gray-100">
         @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}

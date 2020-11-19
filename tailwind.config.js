@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
@@ -19,8 +20,12 @@ module.exports = {
                 "solid-gray-800": "4px 4px 0 #2D3748",
                 "solid-gray-900": "4px 4px 0 #1A202C"
             },
+            colors: {
+                gray: colors.blueGray,
+                teal: colors.teal,
+            },
             fontFamily: {
-                montserrat: ['Montserrat', 'Lato', ...defaultTheme.fontFamily.sans],
+                montserrat: ['Montserrat',   ...defaultTheme.fontFamily.sans],
                 sans: ['Lato', ...defaultTheme.fontFamily.sans]
             },
             inset: {

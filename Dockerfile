@@ -1,5 +1,5 @@
 # Install PHP dependencies
-FROM composer:1.10 AS php-dependencies
+FROM composer:2.0 AS php-dependencies
 ARG NOVA_USERNAME
 ARG NOVA_PASSWORD
 COPY . /app
@@ -8,7 +8,7 @@ RUN composer install --working-dir /app --ignore-platform-reqs \
     --no-cache --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Install and compile JavaScript assets
-FROM node:13.2 AS js-dependencies
+FROM node:14.0 AS js-dependencies
 ARG FONT_AWESOME_TOKEN
 COPY --from=php-dependencies /app /app
 RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/

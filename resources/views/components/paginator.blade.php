@@ -1,5 +1,5 @@
 @if($paginator->hasPages())
-    <div class="flex justify-between border-t-2 border-gray-200 pt-4">
+    <div class="flex justify-between border-t-2 border-gray-100 pt-4">
         <div>
             @unless($paginator->onFirstPage())
                 <a href="{{ $paginator->previousPageUrl() }}" class="inline-block border-r-4 border-transparent pr-2 hover:border-teal-600">

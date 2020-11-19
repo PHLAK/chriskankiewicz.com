@@ -47,7 +47,7 @@
 
                     <div class="flex flex-wrap items-center mb-8">
                         @foreach ($project->skills as $skill)
-                            <span class="inline-block bg-gray-200 text-gray-800 px-2 py-1 m-1 rounded">
+                            <span class="inline-block bg-gray-100 text-gray-800 px-2 py-1 m-1 rounded">
                                 @if($skill->hasIcon())
                                     {!! $skill->iconMarkup(['mr-1']) !!}
                                 @endif
