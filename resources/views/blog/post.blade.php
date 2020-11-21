@@ -1,21 +1,17 @@
-@extends('layouts.app-with-nav')
+@extends('layouts.app')
 
 @section('content')
-    <div id="content" class="p-6 lg:max-w-2xl">
-        <h3 class="flex flex-wrap items-start text-2xl">
-            <span class="font-bold mr-1">
-                {{ $post->title }}
-            </span>
-        </h3>
+    <h3 class="font-lato font-bold text-2xl sm:text-3xl">
+        {{ $post->title }}
+    </h3>
 
-        <x-post-metadata :post="$post" />
+    <x-post-metadata :post="$post" />
 
-        @isset($post->featured_image_url)
-            <x-featured-image :post="$post" />
-        @endisset
+    @isset($post->featured_image_url)
+        <x-featured-image :post="$post" />
+    @endisset
 
-        <div class="my-4">
-            {!! markdown($post->body) !!}
-        </div>
+    <div class="my-4">
+        {!! markdown($post->body) !!}
     </div>
 @endsection

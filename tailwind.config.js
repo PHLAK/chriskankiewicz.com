@@ -25,8 +25,10 @@ module.exports = {
                 teal: colors.teal,
             },
             fontFamily: {
-                montserrat: ['Montserrat',   ...defaultTheme.fontFamily.sans],
-                sans: ['Lato', ...defaultTheme.fontFamily.sans]
+                lato: ['Lato', ...defaultTheme.fontFamily.sans],
+                mono: ['Source Code Pro', ...defaultTheme.fontFamily.mono],
+                montserrat: ['Montserrat', ...defaultTheme.fontFamily.sans],
+                sans: ['Nunito', ...defaultTheme.fontFamily.sans]
             },
             inset: {
                 "1": "0.25rem",
