@@ -95,7 +95,7 @@
 - company: Roave
   title: Freelance Software Developer
   description: |-
-    - PHP software development.
+    - Freelance PHP software development, testing and consultation for global-scale clients.
   start_date: '2019-09-30'
   end_date: '2020-08-07'
   location: Remote
@@ -107,9 +107,10 @@
 - company: ClearChecks
   title: Senior Software Engineer
   description: |-
-    - Developed and maintained ClearChecks application
-    - Refactored legacy code to support PHP 7.4
-    - Updated application from Laravel 5.6 to Laravel 8
+    - Developed, designed and maintained ClearChecks background checks SaaS application.
+    - Implemented development workfolw featuring continuous integration testing and analysis.
+    - Refactored legacy SaaS application code to support PHP 7.4.
+    - Updated application from Laravel 5.6 to Laravel 8 and maintained regular dependency updates.
   start_date: '2020-08-10'
   end_date: null
   location: Phoenix, Arizona
