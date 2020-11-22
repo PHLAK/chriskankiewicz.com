@@ -1,4 +1,4 @@
-<div id="navigation" class="bg-gray-800 sticky top-0">
+<div id="navigation" class="bg-gray-800 sticky top-0 z-50">
     <div class="flex flex-col justify-between mx-auto sm:container sm:flex-row">
         <div class="flex justify-between flex-grow">
             <a href="{{ route('home') }}" class="flex items-center font-montserrat whitespace-nowrap text-xl text-gray-100 tracking-wide p-4 hover:underline">
