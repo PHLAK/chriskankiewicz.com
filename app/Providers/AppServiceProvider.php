@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     /** Register any application services. */
     public function register()
     {
-        $this->app->bind(GitHubClient::class, function (Application $app): GitHubClient {
+        $this->app->bind(GitHubClient::class, function (): GitHubClient {
             return new GitHubClient(
                 new Client([
                     'base_uri' => config('services.github.base_uri'),
@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
             );
         });
 
-        $this->app->extend(GitHubClient::class, function (GitHubClient $client, Application $app) {
+        $this->app->extend(GitHubClient::class, function (GitHubClient $client) {
             return new CachedGitHubClient($client);
         });
     }
