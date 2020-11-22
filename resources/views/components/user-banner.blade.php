@@ -1,4 +1,4 @@
-<div id="user-card" class="bg-gray-400 bg-cover bg-center mb-24 px-4 py-8 sm:mb-32 sm:px-6" style="background-image: url('{{ asset('images/user_bg_blurred.jpg') }}');">
+<div id="user-card" class="bg-gray-200 bg-cover bg-center mb-24 px-4 py-8 sm:mb-32 sm:px-6" style="background-image: url('{{ asset('images/user_bg_blurred.jpg') }}');">
     <div class="container mx-auto text-center">
         <div class="mb-8">
             <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 space-y-4 text-gray-800 p-8 sm:text-xl md:text-2xl">
