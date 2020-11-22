@@ -84,18 +84,6 @@
     - Semantic Versioning
     - Git Version Control
 
-- name: 'azPHP Presentation: PsySh'
-  description: |-
-    My presentation on psysh, a terminal-based interactive PHP debugger and REPL
-    for the azPHP June, 2019 meeting.
-
-    <https://www.meetup.com/azPHPUG/events/rrzlqqyzjbhc/>
-  project_url: https://www.youtube.com/watch?v=lblQtfwlVls
-  source_url: https://github.com/PHLAK/psysh-demo
-  skills:
-    - PHP
-    - PsySH
-
 - name: Stash
   description: |-
     Simple, fluent PHP caching library.
