@@ -35,7 +35,9 @@ First, set up a Gmail account, note the user name and password for later.
 
     [smtp.gmail.com]:587 [username]@gmail.com:[password]
 
-Be sure to replace `[username]` and `[password]` with your account user name and password.
+<div class="info">
+    <p>Be sure to replace <code>[username]</code> and <code>[password]</code> with your account user name and password.</p>
+</div>
 
 ### Modify file permissions and generate `sasl_passwd.db`
 

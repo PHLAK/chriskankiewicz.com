@@ -63,9 +63,10 @@ it will not rank well.
      etc). Building good customer relations through social marketing will help
      build your sites reputation.
 
-**Note:** You will never get over-night results from SEO optimization. Be
-patient. It could be several weeks or more before you notice any change in
-ranking.
+<div class="info">
+    <p>You will never get over-night results from SEO optimization. Be patient. It could be several weeks or more before you notice any change in ranking.</p>
+</div>
+
 
 -----
 

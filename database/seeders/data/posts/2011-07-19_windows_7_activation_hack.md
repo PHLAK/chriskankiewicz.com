@@ -6,11 +6,13 @@ featured_image_text: Photo by [Halacious](https://unsplash.com/@halacious?utm_so
 published: 2011-07-19 12:34:56
 ---
 
-> **Still using Windows 7?** As of January 2020 Windows 7 has been discontinued
-> and will no longer receive new features or security patches.
-> 
-> **Don't want to upgrade to Windows 10?** [Give Ubuntu a try!](https://ubuntu.com/download/desktop)
-> It's 100% free, more secure and runs better on the same hardware than Windows.
+<div class="danger">
+    <p><strong>Still using Windows 7?</strong> As of January 2020 Windows 7 has been discontinued and will no longer receive new features or security patches.</p>
+</div>
+
+<div class="info">
+    <p><strong>Don't want to upgrade to Windows 10?</strong> <a href="https://ubuntu.com/download/esktop">Give Ubuntu a try!</a> It's 100% free, more secure and runs better on the same hardware than Windows.</p>
+</div>
 
 <!-- excerpt -->
 When installing Windows 7 it's very picky about which installation disc you use
@@ -44,5 +46,6 @@ Windows 7 installation with a legitimate key, try the following registry hack:
   8. Run the Activate Windows utility (Start → search for "Activate Windows"),
      enter your upgrade product key and activate Windows.
 
-**NOTE:** This activation hack will only work if you have a legitimate key. This
-method wont help if you have a pirated copy of Windows.
+<div class="info">
+    <p>This activation hack will only work if you have a legitimate key. This method wont help if you have a pirated copy of Windows.</p>
+</div>

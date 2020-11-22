@@ -27,5 +27,6 @@ it! Your disk will now be resized.
 
 This also works from a Windows host, you just have to locate and use `VBoxManage.exe`.
 
-**NOTE:** This method only allows you to INCREASE the size of a virtual disk. You
-cannot shrink one with this method.
+<div class="info">
+    <p>This method only allows you to INCREASE the size of a virtual disk. You cannot shrink one with this method.</p>
+</div>

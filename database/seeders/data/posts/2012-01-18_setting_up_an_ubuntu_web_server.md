@@ -24,8 +24,9 @@ and install it to your server.
   * For Ubuntu go to [http://www.ubuntu.com/download/server/download](http://www.ubuntu.com/download/server/download)
   * For Debian go to [http://www.debian.org/distrib/](http://www.debian.org/distrib/)
 
-**Note:** It is strongly recommended that you choose the LTS (Long Term Service)
-release if you decide to go with Ubuntu.
+<div class="info">
+    <p>It is strongly recommended that you choose the LTS (Long Term Service) release if you decide to go with Ubuntu.</p>
+</div>
 
 The installation process is relatively straight forward, so I will not be going
 over that here, simply boot to the disc and follow the on-screen instructions.
@@ -320,12 +321,16 @@ System updates are released frequently and while manually installing these
 updates usually only takes a few minutes a day, automating these updates is
 easy.
 
-**WARNING:** Applying any updates can potentially break your system and
-automating these may leave your system broken without your knowledge. However,
-in the several years I've been administering servers I've never personally seen
-an update do any damage. I also feel the benefits of automating security updates
-outweighs the potential downsides of missing a critical update that may leave
-your system vulnerable to attack.
+<div class="warning">
+    <p>
+        Applying any updates can potentially break your system and automating
+        these may leave your system broken without your knowledge. However, in
+        the several years I've been administering servers I've never personally
+        seen an update do any damage. I also feel the benefits of automating
+        security updates outweighs the potential downsides of missing a critical
+        update that may leave your system vulnerable to attack.
+    </p>
+</div>
 
 ### Install Unattended Upgrades:
 
@@ -416,8 +421,9 @@ While secure, this method of logging in has some significant weaknesses and is
 generally inconvenient. To remedy the situation generate an SSH key and
 associate it with your server for future authentication.
 
-**NOTE:** The following assumes you are using a derivative of Linux on your
-client workstation.
+<div class="info">
+    <p>The following assumes you are using a derivative of Linux on your client workstation.</p>
+</div>
 
 Run these commands from your workstation, NOT the server.
 

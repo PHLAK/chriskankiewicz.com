@@ -33,4 +33,8 @@ also backup to local folders and external drives and (with a little hacking)
 network drives as well. For a (reasonable) price, CrashPlan also supports
 limited and unlimited online backup plans. Clients are available for Windows,
 Linux and Mac operating systems, so it should work for any system you currently
-own. For more info and to download CrashPlan go to <http://www.crashplan.com>.
+own.
+
+<div class="info">
+    <p>For more info and to download CrashPlan go to <http://www.crashplan.com>.</p>
+</div>

@@ -12,13 +12,11 @@ challenge. You can grab the SpookiLeaks-VM here and try the challenge yourself
 before reading the solution.
 <!-- endexcerpt -->
 
----
+<div class="warning">
+    <h2>!!! WARNING: SPOILERS BELOW !!!</h2>
+</div>
 
-## !!! WARNING: SPOILERS BELOW !!!
-
----
-
-The First Clue
+## The First Clue
 
 The first clue to solving the challenge is hidden in plain sight. Before even
 logging in if we scan the pre-loaded images on the Spooky Images page there's

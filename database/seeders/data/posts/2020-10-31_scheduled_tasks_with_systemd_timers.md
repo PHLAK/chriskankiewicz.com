@@ -81,7 +81,11 @@ command and consider it successful after a successful run (that is when it exits
 with an exit code of `0`) and not to worry about it after that since it's not a
 persistent service.
 
-> ℹ️ See the [systemd.service documentation](https://www.freedesktop.org/software/systemd/man/systemd.service.html) for additional information on services.
+<div class="info">
+    <p>
+        See the <a href="https://www.freedesktop.org/software/systemd/man/systemd.service.html">systemd.service documentation</a> for additional information on services.
+    </p>
+</div>
 
 Let's check on the status of our service now.
 
@@ -168,8 +172,11 @@ Lastly, let's use the `Persistent=true` option to have our task run as soon as
 possible if a scheduled run was missed. This is useful if your system doesn't
 run 24/7 and might be off during a previously scheduled run.
 
-> ℹ️ See the [systemd.timer documentation](https://www.freedesktop.org/software/systemd/man/systemd.timer.html)
-for additional information on timers.
+<div class="info">
+    <p>
+        See the <a href="https://www.freedesktop.org/software/systemd/man/systemd.timer.html">systemd.timer documentation</a> for additional information on timers.
+    </p>
+</div>
 
 ### Enable the Schedule
 
@@ -201,4 +208,9 @@ Mon 2020-11-02 00:00:00 MST 2 days left n/a                         n/a       co
 And that's it! We now have our scheduled task running and it will work in the
 background automatically.
 
-> ℹ️ For additional information about systemd check out the [man pages](https://www.freedesktop.org/software/systemd/man/index.html).
+<div class="info">
+    <p>
+        For additional information about systemd check out the
+        <a href="https://www.freedesktop.org/software/systemd/man/index.html">man pages</a>.
+    </p>
+</div>

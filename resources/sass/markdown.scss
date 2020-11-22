@@ -63,6 +63,54 @@
         }
     }
 
+    .note, .info, .warning, .danger {
+        @apply relative border-l-4 my-4 p-6 pl-16;
+
+        &:before {
+            @apply absolute top-0 left-0 p-6 text-xl;
+        }
+
+        > *:first-child {
+            @apply mt-0;
+        }
+
+        > *:last-child {
+            @apply mb-0;
+        }
+    }
+
+    .note {
+        @apply bg-gray-50 border-gray-400;
+
+        &:before {
+            content: "🗒️";
+        }
+    }
+
+    .info {
+        @apply bg-blue-50 border-blue-400;
+
+        &:before {
+            content: "ℹ️";
+        }
+    }
+
+    .warning {
+        @apply bg-yellow-50 border-yellow-400;
+
+        &:before {
+            content: "⚠️";
+        }
+    }
+
+    .danger {
+        @apply bg-red-50 border-red-400;
+
+        &:before {
+            content: "⛔";
+        }
+    }
+
     .video {
         @apply relative h-0 z-0;
         padding-bottom: 56.25%; /* 16:9 */
