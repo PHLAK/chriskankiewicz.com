@@ -4,11 +4,11 @@
     <div id="education">
         @foreach ($education as $education)
             <div class="mb-8">
-                <h3 class="font-lato font-bold text-2xl">
+                <h3 class="font-lato font-bold text-2xl md:text-3xl">
                     {{ $education->institution }}
                 </h3>
 
-                <div class="text-sm text-gray-600">
+                <div class="text-sm text-gray-600 mt-1">
                     <i class="fal fa-calendar-day fa-fw"></i>
                     {{ $education->start_date->format('F Y') }}
                     - {{ optional($education->end_date)->format('F Y') ?? 'Current' }}

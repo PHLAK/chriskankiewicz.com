@@ -4,12 +4,12 @@
     <div id="experience">
         @foreach ($experience as $experience)
             <div class="mb-8">
-                <h3 class="flex flex-wrap items-center text-2xl">
-                    <span class="font-lato font-bold mr-1">
+                <h3 class="flex flex-wrap items-center">
+                    <span class="font-lato font-bold text-2xl md:text-3xl mr-1">
                         {{ $experience->title }}
                     </span>
 
-                    <span class="text-lg text-gray-800">
+                    <span class="text-gray-800 text-lg md:text-xl">
                         @ {{ $experience->company }}
                     </span>
                 </h3>

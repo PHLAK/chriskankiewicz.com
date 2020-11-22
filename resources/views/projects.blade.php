@@ -4,11 +4,11 @@
     <div id="projects">
         @foreach ($projects as $project)
             <div class="mb-8">
-                <h3 class="font-lato font-bold text-2xl">
+                <h3 class="font-lato font-bold text-2xl md:text-3xl">
                     {{ $project->name }}
                 </h3>
 
-                <div class="text-sm text-gray-600">
+                <div class="text-sm text-gray-600 mt-1">
                     <a href="{{ $project->source_url }}" class="group inline-block mr-2">
                         <i class="fab fa-github fa-fw"></i>
                         <span class="group-hover:text-teal-700 group-hover:underline">

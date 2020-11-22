@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="font-lato font-bold text-2xl sm:text-3xl">
+    <h3 class="font-lato font-bold text-2xl md:text-3xl">
         {{ $post->title }}
     </h3>
 
