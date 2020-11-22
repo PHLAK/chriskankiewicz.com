@@ -4,19 +4,19 @@
     }
 
     h1 {
-        @apply text-3xl font-bold mb-4;
+        @apply text-3xl font-lato font-bold mb-4;
     }
 
     h2 {
-        @apply text-2xl font-bold mb-4;
+        @apply text-2xl font-lato font-bold mb-4;
     }
 
     h3 {
-        @apply text-lg font-bold mb-4;
+        @apply text-lg font-lato font-bold mb-4;
     }
 
     h4 {
-        @apply text-base mb-4;
+        @apply text-base font-lato mb-4;
     }
 
     img {
@@ -36,7 +36,7 @@
     }
 
     code {
-        @apply bg-gray-100 rounded text-sm p-1;
+        @apply bg-gray-100 rounded p-1;
     }
 
     pre {

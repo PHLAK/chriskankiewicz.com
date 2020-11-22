@@ -5,7 +5,7 @@
         @foreach ($experience as $experience)
             <div class="mb-8">
                 <h3 class="flex flex-wrap items-center text-2xl">
-                    <span class="font-bold mr-1">
+                    <span class="font-lato font-bold mr-1">
                         {{ $experience->title }}
                     </span>
 

@@ -4,10 +4,8 @@
     <div id="projects">
         @foreach ($projects as $project)
             <div class="mb-8">
-                <h3 class="text-2xl">
-                    <span class="font-bold">
-                        {{ $project->name }}
-                    </span>
+                <h3 class="font-lato font-bold text-2xl">
+                    {{ $project->name }}
                 </h3>
 
                 <div class="text-sm text-gray-600">

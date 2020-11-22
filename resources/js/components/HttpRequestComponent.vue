@@ -5,7 +5,7 @@
                 GET {{ requestPath }}
             </span>
 
-            <button v-on:click="makeRequest" class="bg-teal-600 px-4 py-2 rounded text-white hover:bg-teal-700">
+            <button v-on:click="makeRequest" class="bg-teal-600 px-4 py-2 rounded text-white transform transition-transform hover:scale-110 focus:bg-teal-700">
                 Send
             </button>
         </div>

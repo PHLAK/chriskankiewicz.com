@@ -4,10 +4,8 @@
     <div id="education">
         @foreach ($education as $education)
             <div class="mb-8">
-                <h3 class="text-2xl">
-                    <span class="font-bold">
-                        {{ $education->institution }}
-                    </span>
+                <h3 class="font-lato font-bold text-2xl">
+                    {{ $education->institution }}
                 </h3>
 
                 <div class="text-sm text-gray-600">

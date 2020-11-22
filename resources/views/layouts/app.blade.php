@@ -15,10 +15,8 @@
     @yield('before-content')
 
     <div class="px-4 py-8 sm:px-6">
-        <div id="content" class="container mx-auto">
-            <div class="lg:max-w-3xl mx-auto">
-                @yield('content')
-            </div>
+        <div id="content" class="container mx-auto lg:max-w-3xl">
+            @yield('content')
         </div>
     </div>
 
