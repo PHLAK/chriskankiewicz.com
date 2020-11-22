@@ -34,4 +34,4 @@ install:
 script:
   - php-cs-fixer fix --diff --dry-run
   - phpstan analyze
-  - phpunit --coverage-text
+  - phpunit
