@@ -1,6 +1,9 @@
 os: linux
-dist: bionic
+dist: focal
 language: php
+
+env:
+  - PATH="app/vendor/bin:${PATH}"
 
 php:
   - 7.4
@@ -25,9 +28,9 @@ before_install:
 
 install:
   - composer install --no-suggest
-  - npm ci && npm run development
+  - npm ci && npm run production --verbose
 
 script:
-  - vendor/bin/php-cs-fixer fix --diff --dry-run
-  - vendor/bin/phpstan analyze
-  - vendor/bin/phpunit --coverage-text
+  - php-cs-fixer fix --diff --dry-run
+  - phpstan analyze
+  - phpunit --coverage-text
