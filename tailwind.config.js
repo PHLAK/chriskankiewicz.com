@@ -6,7 +6,20 @@ module.exports = {
         removeDeprecatedGapUtilities: true,
         purgeLayersByDefault: true
     },
-    purge: false,
+    purge: {
+        enabled: true,
+        content: [
+            "resources/**/*.js",
+            "resources/**/*.php",
+            "resources/**/*.scss",
+            "resources/**/*.vue"
+        ],
+        options: {
+            whitelist: ['html', 'body', 'main', 'fab', 'fal'],
+            whitelistPatterns: [/^fa\-/],
+            whitelistPatternsChildren: [/^markdown/, /^token/]
+        }
+    },
     theme: {
         extend: {
             boxShadow: {

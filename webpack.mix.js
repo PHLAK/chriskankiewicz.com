@@ -25,9 +25,3 @@ mix.options({
     processCssUrls: false,
     postCss: [tailwindcss("tailwind.config.js")]
 });
-
-mix.purgeCss({
-    whitelist: ["html", "body", "code", "pre", "fab", "far", "fas", "fal", "fad"],
-    whitelistPatterns: [/^fa\-/],
-    whitelistPatternsChildren: [/^markdown/, /^token/]
-});
