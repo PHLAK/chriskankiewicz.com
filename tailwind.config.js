@@ -22,15 +22,16 @@ module.exports = {
     theme: {
         extend: {
             boxShadow: {
-                "solid-gray-100": "4px 4px 0 #F7FAFC",
-                "solid-gray-200": "4px 4px 0 #EDF2F7",
-                "solid-gray-300": "4px 4px 0 #E2E8F0",
-                "solid-gray-400": "4px 4px 0 #CBD5E0",
-                "solid-gray-500": "4px 4px 0 #A0AEC0",
-                "solid-gray-600": "4px 4px 0 #718096",
-                "solid-gray-700": "4px 4px 0 #4A5568",
-                "solid-gray-800": "4px 4px 0 #2D3748",
-                "solid-gray-900": "4px 4px 0 #1A202C"
+                "solid-gray-50": '4px 4px 0 #f8fafc',
+                "solid-gray-100": '4px 4px 0 #f1f5f9',
+                "solid-gray-200": '4px 4px 0 #e2e8f0',
+                "solid-gray-300": '4px 4px 0 #cbd5e1',
+                "solid-gray-400": '4px 4px 0 #94a3b8',
+                "solid-gray-500": '4px 4px 0 #64748b',
+                "solid-gray-600": '4px 4px 0 #475569',
+                "solid-gray-700": '4px 4px 0 #334155',
+                "solid-gray-800": '4px 4px 0 #1e293b',
+                "solid-gray-900": '4px 4px 0 #0f172a'
             },
             colors: {
                 gray: colors.blueGray,
