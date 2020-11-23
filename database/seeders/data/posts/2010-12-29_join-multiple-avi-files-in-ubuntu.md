@@ -13,13 +13,13 @@ solution I could find was via avimerge. Here's how I did it.
 ### Install avimerge
 
 ```shell
-sudo apt-get update sudo apt-get install transcode-utils
+$ sudo apt-get update sudo apt-get install transcode-utils
 ```
 
 ### Merge your files
 
 ```shell
-avimerge -i input_file1.avi input_file2.avi -o output_file.avi
+$ avimerge -i input_file1.avi input_file2.avi -o output_file.avi
 ```
 
 It's as simple as that. I did this in Ubuntu 10.10, but this should work for

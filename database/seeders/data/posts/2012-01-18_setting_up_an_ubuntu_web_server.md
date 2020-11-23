@@ -45,15 +45,21 @@ on your installation some of the following may already be configured.
 
 ### Create a user account for yourself:
 
-    # adduser <user_name>
+```shell
+# adduser <user_name>
+```
 
 ### Install sudo:
 
-    # apt-get install sudo
+```shell
+# apt-get install sudo
+```
 
 ### Add the newly created user to the sudoers file by running:
 
-    # visudo
+```shell
+# visudo
+```
 
 ### Add your username under the existing `root` entry:
 
@@ -72,9 +78,11 @@ latest patches.
 
 ### Run system updates:
 
-    $ sudo apt-get update
-    $ sudo apt-get upgrade
-    $ sudo apt-get dist-upgrade
+```shell
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get dist-upgrade
+```
 
 Once all updates are complete, restart your system.
 
@@ -89,15 +97,21 @@ server if not configured properly.
 
 ### Set the Hostname:
 
-    $ sudo nano /etc/hostname
+```shell
+$ sudo nano /etc/hostname
+```
 
 Add your new hostname to this file and save it, then run:
 
-    $ sudo /etc/init.d/hostname start
+```shell
+$ sudo /etc/init.d/hostname start
+```
 
 ### Edit the hosts file:
 
-    $ sudo nano /etc/hosts
+```shell
+$ sudo nano /etc/hosts
+```
 
 Add the following if not already present:
 
@@ -106,7 +120,9 @@ Add the following if not already present:
 
 ### Set the Timezone:
 
-    $ sudo dpkg-reconfigure tzdata
+```shell
+$ sudo dpkg-reconfigure tzdata
+```
 
 -----
 
@@ -117,17 +133,23 @@ following commands to get everything installed.
 
 ### Install LAMP stack on Ubuntu:
 
-    $ sudo apt-get install lamp-server\^ php-apc phpmyadmin
+```shell
+$ sudo apt-get install lamp-server\^ php-apc phpmyadmin
+```
 
 ### Install LAMP stack on Debian:
 
-    $ sudo apt-get install apache2 mysql-server php5 php-pear php5-mysql php-apc phpmyadmin
+```shell
+$ sudo apt-get install apache2 mysql-server php5 php-pear php5-mysql php-apc phpmyadmin
+```
 
 We will also need a mail server to handle outgoing email requests.
 
 ### Insatll Postfix Mail Server:
 
-    $ sudo apt-get install postfix
+```shell
+$ sudo apt-get install postfix
+```
 
 When installing postfix you'll go through some configuration screens. The
 defaults should be fine for a basic web server setup.
@@ -142,11 +164,15 @@ be set, but it's a good idea to check them all anyway.
 
 ### Enable mod_rewrite:
 
-    $ sudo a2enmod rewrite
+```shell
+$ sudo a2enmod rewrite
+```
 
 ### Configure PHP:
 
-    $ sudo nano /etc/php5/apache2/php.ini
+```shell
+$ sudo nano /etc/php5/apache2/php.ini
+```
 
 Now locate and modify the following values:
 
@@ -162,7 +188,9 @@ Now locate and modify the following values:
 
 ### Edit your APC config:
 
-    $ sudo nano /etc/php5/conf.d/apc.ini
+```shell
+$ sudo nano /etc/php5/conf.d/apc.ini
+```
 
 Add the following:
 
@@ -171,7 +199,9 @@ Add the following:
 
 ### Restart Apache:
 
-    $ sudo /etc/init.d/apache2 restart
+```shell
+$ sudo /etc/init.d/apache2 restart
+```
 
 -----
 
@@ -185,24 +215,34 @@ forcing all new files/folders to have the same group permissions.
 
 ### Create a new group:
 
-    $ sudo addgroup webdev
+```shell
+$ sudo addgroup webdev
+```
 
 ### Change the group of your web directory:
 
-    $ sudo chgrp -R webdev /var/www/
-    $ sudo chmod -R g+rw /var/www/
+```shell
+$ sudo chgrp -R webdev /var/www/
+$ sudo chmod -R g+rw /var/www/
+```
 
 ### Set the guid bit on all folders in your web directory:
 
-    $ sudo find /var/www -type d -exec chmod +s {} \\;
+```shell
+$ sudo find /var/www -type d -exec chmod +s {} \\;
+```
 
 ### Add Apache to the webdev group:
 
-    $ sudo usermod -a -G webdev www-data
+```shell
+$ sudo usermod -a -G webdev www-data
+```
 
 ### Add your user to the webdev group:
 
-    $ sudo usermod -a -G webdev <user_name>
+```shell
+$ sudo usermod -a -G webdev <user_name>
+```
 
 -----
 
@@ -215,11 +255,15 @@ monitor and define the actions to be taken.
 
 ### Install Monit:
 
-    $ sudo apt-get install monit
+```shell
+$ sudo apt-get install monit
+```
 
 ### Edit the monitrc file:
 
-    $ sudo nano /etc/monit/monitrc
+```shell
+$ sudo nano /etc/monit/monitrc
+```
 
 Copy/paste the following configuration file and change values where you need to.
 
@@ -278,7 +322,9 @@ Copy/paste the following configuration file and change values where you need to.
 
 ### Edit the monit config file:
 
-    $ /etc/default/monit
+```shell
+$ /etc/default/monit
+```
 
 Enable Monit by setting the following:
 
@@ -287,7 +333,9 @@ Enable Monit by setting the following:
 
 ### Start Monit:
 
-    $ sudo /etc/init.d/monit start
+```shell
+$ sudo /etc/init.d/monit start
+```
 
 -----
 
@@ -299,19 +347,25 @@ Firewall (UFW), a simplified front-end for iptables.
 
 ### Install UFW:
 
-    $ sudo apt-get install ufw
+```shell
+$ sudo apt-get install ufw
+```
 
 ### Configure UFW:
 
-    $ sudo ufw allow 22
-    $ sudo ufw allow 80
-    $ sudo ufw allow 443
-    $ sudo ufw allow 2812
-    $ sudo ufw default deny
+```shell
+$ sudo ufw allow 22
+$ sudo ufw allow 80
+$ sudo ufw allow 443
+$ sudo ufw allow 2812
+$ sudo ufw default deny
+```
 
 ### Enable UFW:
 
-    $ sudo ufw enable
+```shell
+$ sudo ufw enable
+```
 
 -----
 
@@ -334,15 +388,21 @@ easy.
 
 ### Install Unattended Upgrades:
 
-    $ sudo apt-get install unattended-upgrades
+```shell
+$ sudo apt-get install unattended-upgrades
+```
 
 ### Run the first time configuration:
 
-    $ sudo dpkg-reconfigure unattended-upgrades
+```shell
+$ sudo dpkg-reconfigure unattended-upgrades
+```
 
 ### Configure other settings:
 
-    $ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+```shell
+$ sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+```
 
 Edit the following:
 
@@ -380,7 +440,9 @@ Edit the following:
 
 ### Enable Unattended Upgrades:
 
-    $ sudo nano /etc/apt/apt.conf.d/10periodic
+```shell
+$ sudo nano /etc/apt/apt.conf.d/10periodic
+```
 
 Modify the following:
 
@@ -400,7 +462,9 @@ into with your non-privileged user account and running `sudo su`.
 
 ### Edit your SSH config:
 
-    $ sudo nano /etc/ssh/sshd_config
+```shell
+$ sudo nano /etc/ssh/sshd_config
+```
 
 ### Uncomment the following line:
 
@@ -410,7 +474,9 @@ Save and exit this file.
 
 ### Restart the SSH daemon:
 
-    $ sudo /etc/init.d/sshd restart
+```shell
+$ sudo /etc/init.d/sshd restart
+```
 
 -----
 
@@ -429,18 +495,26 @@ Run these commands from your workstation, NOT the server.
 
 ### Generate your SSH key pair:
 
-    $ ssh-keygen -t rsa -C <your_email_address>
+```shell
+$ ssh-keygen -t rsa -C <your_email_address>
+```
 
 ### Copy your public key to the server:
 
-    $ ssh-copy-id user@example.com
+```shell
+$ ssh-copy-id user@example.com
+```
 
 Now try and log into your server:
 
-    $ ssh user@example.com
+```shell
+$ ssh user@example.com
+```
 
 -----
 
 ## Install Some Other Useful Tools:
 
-    $ sudo apt-get install bwm-ng htop pastebinit whois
+```shell
+$ sudo apt-get install bwm-ng htop pastebinit whois
+```

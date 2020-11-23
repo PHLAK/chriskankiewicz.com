@@ -19,7 +19,9 @@ First, set up a Gmail account, note the user name and password for later.
 
 ### Install postfix
 
-    $ sudo apt-get install postfix
+```shell
+$ sudo apt-get install postfix
+```
 
 ### Add the following to `/etc/postfix/main.cnf`
 
@@ -41,16 +43,22 @@ First, set up a Gmail account, note the user name and password for later.
 
 ### Modify file permissions and generate `sasl_passwd.db`
 
-    $ cd /etc/postfix
-    $ postmap sasl_passwd
-    $ chmod 600 sasl_passwd sasl_passwd.db
+```shell
+$ cd /etc/postfix
+$ postmap sasl_passwd
+$ chmod 600 sasl_passwd sasl_passwd.db
+```
 
 ### Restart postfix service
 
-    $ sudo service postfix restart
+```shell
+$ sudo service postfix restart
+```
 
 ### Send a test email
 
-    $ sudo apt-get install mailutils $ echo 'Success!' | mailx -s 'Test Message' [email_address]
+```shell
+$ sudo apt-get install mailutils $ echo 'Success!' | mailx -s 'Test Message' [email_address]
+```
 
 Replace `[email_address]` with your email address to receive a test message.

@@ -32,7 +32,6 @@ code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-    padding: 0;
     overflow: auto;
 }
 
@@ -49,8 +48,17 @@ pre[class*="language-"] {
     color: $gray;
 }
 
+.token.attr-value {
+    color: $white;
+}
+
 .token.function {
     color: $blue;
+}
+
+.token.class-name,
+.token.scope {
+    color: $yellow;
 }
 
 .token.punctuation {
@@ -69,10 +77,6 @@ pre[class*="language-"] {
     color: $orange;
 }
 
-.token.property {
-    color: $orange;
-}
-
 .token.tag {
     color: $blue;
 }
@@ -82,6 +86,10 @@ pre[class*="language-"] {
 }
 
 .token.selector {
+    color: $blue;
+}
+
+.token.constant {
     color: $purple;
 }
 
@@ -96,7 +104,6 @@ pre[class*="language-"] {
     color: $green;
 }
 
-.token.attr-value,
 .token.keyword,
 .token.control,
 .token.directive,
@@ -111,7 +118,9 @@ pre[class*="language-"] {
 }
 
 .token.placeholder,
-.token.variable {
+.token.variable,
+.token.property,
+.token.this {
     color: $red;
 }
 

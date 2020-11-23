@@ -17,7 +17,9 @@ disk.
 
 First, shut down your VM then run the following command from your host PC:
 
-    $ VBoxManage modifyhd /path/to/guest.vdi --resize <size_in_mb>
+```shell
+$ VBoxManage modifyhd /path/to/guest.vdi --resize <size_in_mb>
+```
 
 Once completed, boot into your VM and (for Windows) open up Control Panel →
 Administrative Tools → Computer Management. In Computer Management navigate to
