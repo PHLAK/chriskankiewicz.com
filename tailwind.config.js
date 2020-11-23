@@ -7,7 +7,6 @@ module.exports = {
         purgeLayersByDefault: true
     },
     purge: {
-        enabled: true,
         content: [
             "resources/**/*.js",
             "resources/**/*.php",
