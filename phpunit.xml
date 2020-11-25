@@ -15,23 +15,18 @@
         <include>
             <directory suffix=".php">./app</directory>
         </include>
-        <exclude>
-            <directory>./app/Nova</directory>
-            <file>./app/Providers/BroadcastServiceProvider.php</file>
-            <file>./app/Providers/TelescopeServiceProvider.php</file>
-        </exclude>
     </coverage>
     <php>
-        <server name="APP_ENV" value="testing"/>
-        <server name="APP_TIMEZONE" value="UTC"/>
-        <server name="BCRYPT_ROUNDS" value="4"/>
-        <server name="CACHE_DRIVER" value="array"/>
-        <server name="DB_CONNECTION" value="sqlite"/>
-        <server name="DB_DATABASE" value=":memory:"/>
-        <server name="GITHUB_TOKEN" value="NOT_A_REAL_TOKEN"/>
-        <server name="MAIL_MAILER" value="array"/>
-        <server name="QUEUE_CONNECTION" value="sync"/>
-        <server name="SESSION_DRIVER" value="array"/>
-        <server name="TELESCOPE_ENABLED" value="false"/>
+        <server name="APP_ENV" value="testing" />
+        <server name="APP_TIMEZONE" value="UTC" />
+        <server name="BCRYPT_ROUNDS" value="4" />
+        <server name="CACHE_DRIVER" value="array" />
+        <server name="DB_CONNECTION" value="sqlite" />
+        <server name="DB_DATABASE" value=":memory:" />
+        <server name="GITHUB_TOKEN" value="NOT_A_REAL_TOKEN" />
+        <server name="MAIL_MAILER" value="array" />
+        <server name="QUEUE_CONNECTION" value="sync" />
+        <server name="SESSION_DRIVER" value="array" />
+        <server name="TELESCOPE_ENABLED" value="false" />
     </php>
 </phpunit>
