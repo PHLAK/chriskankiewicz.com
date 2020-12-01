@@ -1,46 +1,22 @@
-# Install PHP dependencies
-FROM composer:2.0 AS php-dependencies
-ARG NOVA_USERNAME
-ARG NOVA_PASSWORD
-COPY . /app
-RUN composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
-RUN composer install --working-dir /app --ignore-platform-reqs \
-    --no-cache --no-dev --no-interaction --prefer-dist --optimize-autoloader
-
-# Install and compile JavaScript assets
-FROM node:14.0 AS js-dependencies
-ARG FONT_AWESOME_TOKEN
-COPY --from=php-dependencies /app /app
-RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-RUN npm config set "//npm.fontawesome.com/:_authToken" ${FONT_AWESOME_TOKEN}
-RUN cd /app && npm install && npm run production
-
-# Build application image
-FROM php:7.4-apache as application
+FROM php:7.4-apache
 LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
-COPY --from=js-dependencies /app /var/www/html
+COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
+COPY --from=node:15.0 /usr/local/bin/node /usr/local/bin/node
+COPY --from=node:15.0 /usr/local/bin/npm /usr/local/bin/npm
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
+ENV COMPOSER_HOME="/tmp"
+ENV PATH="vendor/bin:${PATH}"
+
+COPY ./.docker/php/config/php.ini /usr/local/etc/php/php.ini
+COPY ./.docker/apache2/config/000-default.conf /etc/apache2/sites-available/000-default.conf
+
+RUN a2enmod rewrite
 
 RUN apt-get update && apt-get install -y libxml2-dev zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install bcmath pdo_mysql \
-    && pecl install redis && docker-php-ext-enable redis
+RUN docker-php-ext-install bcmath opcache pdo_mysql \
+    && pecl install redis xdebug && docker-php-ext-enable redis xdebug
 
-RUN a2enmod rewrite
-
-# Build (local) development image
-FROM application as development
-
-COPY ./.docker/php/config/php.dev.ini /usr/local/etc/php/php.ini
-COPY ./.docker/apache2/config/000-default.dev.conf /etc/apache2/sites-available/000-default.conf
-
-RUN pecl install xdebug && docker-php-ext-enable xdebug
-
-# Build production image
-FROM application as production
-
-COPY ./.docker/php/config/php.prd.ini /usr/local/etc/php/php.ini
-COPY ./.docker/apache2/config/000-default.prd.conf /etc/apache2/sites-available/000-default.conf
-
-RUN docker-php-ext-install opcache

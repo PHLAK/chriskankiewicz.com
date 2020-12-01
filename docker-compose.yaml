@@ -3,13 +3,7 @@ version: '3.4'
 services:
   app:
     container_name: chriskankiewicz-dot-com-app
-    build:
-      context: .
-      args:
-        NOVA_USERNAME: ${NOVA_USERNAME?Not set or empty}
-        NOVA_PASSWORD: ${NOVA_PASSWORD?Not set or empty}
-        FONT_AWESOME_TOKEN: ${FONT_AWESOME_TOKEN?Not set or empty}
-      target: development
+    build: .
     environment:
       APP_ENV: 'local'
       LOG_CHANNEL: 'stderr'
@@ -24,8 +18,8 @@ services:
       VIRTUAL_HOST: chriskankiewicz.local
     volumes:
       - ./:/var/www/html
-      - ./.docker/php/config/php.dev.ini:/usr/local/etc/php/php.ini
-      - ./.docker/apache2/config/000-default.dev.conf:/etc/apache2/sites-available/000-default.conf
+      - ./.docker/php/config/php.ini:/usr/local/etc/php/php.ini
+      - ./.docker/apache2/config/000-default.conf:/etc/apache2/sites-available/000-default.conf
     restart: on-failure
 
   mysql:
@@ -42,7 +36,7 @@ services:
 
   redis:
     container_name: chriskankiewicz-dot-com-redis
-    image: redis:5.0
+    image: redis:6.0
     ports:
       - ${REDIS_PORT:-6379}:6379
     restart: on-failure
