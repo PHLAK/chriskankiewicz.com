@@ -28,7 +28,7 @@ before_install:
   - npm config set "//npm.fontawesome.com/:_authToken" $FONT_AWESOME_TOKEN
 
 install:
-  - composer install --no-suggest
+  - composer install
   - npm ci && npm run production --verbose
 
 script:
