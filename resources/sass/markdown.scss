@@ -1,6 +1,18 @@
 .markdown {
+    p {
+        @apply leading-8 my-4;
+    }
+
+    blockquote {
+        @apply border-l-4 border-gray-200 pl-2 ml-2;
+    }
+
     a {
         @apply underline;
+
+        &:hover {
+            @apply text-gray-600;
+        }
     }
 
     h1 {
@@ -21,14 +33,6 @@
 
     img {
         @apply max-w-full;
-    }
-
-    p {
-        @apply my-4;
-    }
-
-    blockquote {
-        @apply border-l-4 border-gray-200 pl-2 ml-2;
     }
 
     hr {
@@ -67,7 +71,7 @@
         @apply relative border-l-4 my-4 p-6 pl-16;
 
         &:before {
-            @apply absolute top-0 left-0 text-xl leading-6 py-6 pl-6;
+            @apply absolute top-0 left-0 text-xl py-6 pl-6;
         }
 
         > *:first-child {
