@@ -1,6 +1,6 @@
 ---
 title: Scheduled Tasks with Systemd Timers
-featured_image_url: https://images.unsplash.com/photo-1501139083538-0139583c060f?&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600
+featured_image_url: https://images.unsplash.com/photo-1501139083538-0139583c060f?ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&w=1600
 featured_image_text: Photo by [Aron Visuals](https://unsplash.com/@aronvisuals?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
 tags: ['Linux']
 published: 2020-10-31 06:06:06
