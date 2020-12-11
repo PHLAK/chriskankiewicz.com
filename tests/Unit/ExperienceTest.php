@@ -8,14 +8,16 @@ use Tests\TestCase;
 
 class ExperienceTest extends TestCase
 {
-    public function test_it_can_instantiate_an_experience()
+    /** @test */
+    public function it_can_instantiate_an_experience()
     {
         $experience = new Experience();
 
         $this->assertInstanceOf(Experience::class, $experience);
     }
 
-    public function test_it_casts_start_and_end_dates_to_carbon_instances()
+    /** @test */
+    public function it_casts_start_and_end_dates_to_carbon_instances()
     {
         $experience = new Experience([
             'start_date' => '1986-05-20',

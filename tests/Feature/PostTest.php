@@ -10,7 +10,8 @@ class PostTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_access_a_post(): void
+    /** @test */
+    public function it_can_access_a_post(): void
     {
         $post = Post::factory()->create();
 

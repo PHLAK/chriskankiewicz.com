@@ -11,7 +11,8 @@ class ExperienceTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_list_all_experiences()
+    /** @test */
+    public function it_can_list_all_experiences()
     {
         Experience::factory()->count(3)->create();
 
@@ -24,7 +25,8 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    public function test_it_can_get_an_individual_experience()
+    /** @test */
+    public function it_can_get_an_individual_experience()
     {
         Experience::factory()->create();
         $experience = Experience::factory()->create();
@@ -38,7 +40,8 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    public function test_it_can_create_a_new_experience()
+    /** @test */
+    public function it_can_create_a_new_experience()
     {
         $user = User::factory()->admin()->create();
 
@@ -61,7 +64,8 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    public function test_it_can_update_an_experience()
+    /** @test */
+    public function it_can_update_an_experience()
     {
         $user = User::factory()->admin()->create();
         $experience = Experience::factory()->create();
@@ -82,7 +86,8 @@ class ExperienceTest extends TestCase
         ]);
     }
 
-    public function test_it_can_delete_an_experience()
+    /** @test */
+    public function it_can_delete_an_experience()
     {
         $user = User::factory()->admin()->create();
         Experience::factory()->create();

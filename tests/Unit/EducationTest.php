@@ -8,14 +8,16 @@ use Tests\TestCase;
 
 class EducationTest extends TestCase
 {
-    public function test_it_can_instantiate_an_education()
+    /** @test */
+    public function it_can_instantiate_an_education()
     {
         $education = new Education();
 
         $this->assertInstanceOf(Education::class, $education);
     }
 
-    public function test_it_casts_start_and_end_dates_to_carbon_instances()
+    /** @test */
+    public function it_casts_start_and_end_dates_to_carbon_instances()
     {
         $education = new Education([
             'start_date' => '1986-05-20',

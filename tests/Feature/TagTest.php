@@ -11,7 +11,8 @@ class TagTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_access_the_tag_page(): void
+    /** @test */
+    public function it_can_access_the_tag_page(): void
     {
         $tag = Tag::factory()->create();
 

@@ -11,7 +11,8 @@ class SkillTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_list_all_skills()
+    /** @test */
+    public function it_can_list_all_skills()
     {
         Skill::factory()->count(3)->create();
 
@@ -24,7 +25,8 @@ class SkillTest extends TestCase
             ]);
     }
 
-    public function test_it_can_get_an_individual_skill()
+    /** @test */
+    public function it_can_get_an_individual_skill()
     {
         Skill::factory()->create();
         $skill = Skill::factory()->create();
@@ -35,7 +37,8 @@ class SkillTest extends TestCase
         $response->assertStatus(200)->assertJsonStructure(['name', 'icon_name', 'icon_style']);
     }
 
-    public function test_it_can_create_a_new_skill()
+    /** @test */
+    public function it_can_create_a_new_skill()
     {
         $user = User::factory()->admin()->create();
 
@@ -56,7 +59,8 @@ class SkillTest extends TestCase
         ]);
     }
 
-    public function test_it_can_update_a_skill()
+    /** @test */
+    public function it_can_update_a_skill()
     {
         $user = User::factory()->admin()->create();
         $skill = Skill::factory()->create();
@@ -77,7 +81,8 @@ class SkillTest extends TestCase
         ]);
     }
 
-    public function test_it_can_delete_a_skill()
+    /** @test */
+    public function it_can_delete_a_skill()
     {
         $user = User::factory()->admin()->create();
 

@@ -11,7 +11,8 @@ class AccomplishmentTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_list_all_accomplishment()
+    /** @test */
+    public function it_can_list_all_accomplishment()
     {
         Accomplishment::factory()->count(3)->create();
 
@@ -24,7 +25,8 @@ class AccomplishmentTest extends TestCase
             ]);
     }
 
-    public function test_it_can_get_an_individual_accomplishment()
+    /** @test */
+    public function it_can_get_an_individual_accomplishment()
     {
         Accomplishment::factory()->create();
         $accomplishment = Accomplishment::factory()->create();
@@ -40,7 +42,8 @@ class AccomplishmentTest extends TestCase
             ]);
     }
 
-    public function test_it_can_create_a_new_accomplishment()
+    /** @test */
+    public function it_can_create_a_new_accomplishment()
     {
         $user = User::factory()->admin()->create();
 
@@ -55,7 +58,8 @@ class AccomplishmentTest extends TestCase
             ]);
     }
 
-    public function test_it_can_update_an_accomplishment()
+    /** @test */
+    public function it_can_update_an_accomplishment()
     {
         $user = User::factory()->admin()->create();
         $accomplishment = Accomplishment::factory()->create();
@@ -76,7 +80,8 @@ class AccomplishmentTest extends TestCase
         ]);
     }
 
-    public function test_it_can_delete_an_accomplishment()
+    /** @test */
+    public function it_can_delete_an_accomplishment()
     {
         $user = User::factory()->admin()->create();
         Accomplishment::factory()->create();

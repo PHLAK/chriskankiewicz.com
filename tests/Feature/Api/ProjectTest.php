@@ -11,7 +11,8 @@ class ProjectTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_list_all_projects()
+    /** @test */
+    public function it_can_list_all_projects()
     {
         Project::factory()->count(3)->create();
 
@@ -24,7 +25,8 @@ class ProjectTest extends TestCase
             ]);
     }
 
-    public function test_it_can_get_an_individual_project()
+    /** @test */
+    public function it_can_get_an_individual_project()
     {
         Project::factory()->create();
         $project = Project::factory()->create();
@@ -38,7 +40,8 @@ class ProjectTest extends TestCase
             ]);
     }
 
-    public function test_it_can_create_a_new_project()
+    /** @test */
+    public function it_can_create_a_new_project()
     {
         $user = User::factory()->admin()->create();
 
@@ -59,7 +62,8 @@ class ProjectTest extends TestCase
             ]);
     }
 
-    public function test_it_can_update_an_project()
+    /** @test */
+    public function it_can_update_an_project()
     {
         $user = User::factory()->admin()->create();
         $project = Project::factory()->create();
@@ -80,7 +84,8 @@ class ProjectTest extends TestCase
         ]);
     }
 
-    public function test_it_can_delete_an_project()
+    /** @test */
+    public function it_can_delete_an_project()
     {
         $user = User::factory()->admin()->create();
         Project::factory()->create();

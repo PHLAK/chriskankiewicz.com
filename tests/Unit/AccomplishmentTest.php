@@ -7,7 +7,8 @@ use Tests\TestCase;
 
 class AccomplishmentTest extends TestCase
 {
-    public function test_it_can_instantiate_an_accomplishment()
+    /** @test */
+    public function it_can_instantiate_an_accomplishment()
     {
         $accomplishment = new Accomplishment();
 

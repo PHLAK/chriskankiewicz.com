@@ -7,21 +7,24 @@ use Tests\TestCase;
 
 class SkillTest extends TestCase
 {
-    public function test_it_can_instantiate_a_skill()
+    /** @test */
+    public function it_can_instantiate_a_skill()
     {
         $skill = new Skill();
 
         $this->assertInstanceOf(Skill::class, $skill);
     }
 
-    public function test_it_can_get_a_skills_name()
+    /** @test */
+    public function it_can_get_a_skills_name()
     {
         $skill = new Skill(['name' => 'Lockpicking']);
 
         $this->assertEquals('Lockpicking', $skill->name);
     }
 
-    public function test_it_can_get_a_skills_icon_styles()
+    /** @test */
+    public function it_can_get_a_skills_icon_styles()
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
@@ -33,7 +36,8 @@ class SkillTest extends TestCase
         $this->assertEquals('fas fa-coffee', $skill->iconStyles());
     }
 
-    public function test_it_can_get_a_skills_icon_styles_with_extra_classes()
+    /** @test */
+    public function it_can_get_a_skills_icon_styles_with_extra_classes()
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
@@ -43,7 +47,8 @@ class SkillTest extends TestCase
         $this->assertEquals('fas fa-coffee fa-fw', $skill->iconStyles(['fa-fw']));
     }
 
-    public function test_it_can_get_a_skills_icon_markup()
+    /** @test */
+    public function it_can_get_a_skills_icon_markup()
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
@@ -54,7 +59,8 @@ class SkillTest extends TestCase
         $this->assertEquals('<i class="fas fa-coffee fa-fw"></i>', $skill->iconMarkup(['fa-fw']));
     }
 
-    public function test_it_can_determine_if_a_skill_has_an_icon()
+    /** @test */
+    public function it_can_determine_if_a_skill_has_an_icon()
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
@@ -64,7 +70,8 @@ class SkillTest extends TestCase
         $this->assertTrue($skill->hasIcon());
     }
 
-    public function test_it_can_determine_if_a_skill_does_not_have_an_icon()
+    /** @test */
+    public function it_can_determine_if_a_skill_does_not_have_an_icon()
     {
         $skill1 = new Skill();
         $skill2 = new Skill(['icon_name' => 'coffee']);

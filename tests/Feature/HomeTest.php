@@ -10,7 +10,8 @@ class HomeTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_access_the_home_page(): void
+    /** @test */
+    public function it_can_access_the_home_page(): void
     {
         $posts = Post::factory()->count(3)->create();
 

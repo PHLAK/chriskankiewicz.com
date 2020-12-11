@@ -11,7 +11,8 @@ class EducationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_it_can_list_all_education()
+    /** @test */
+    public function it_can_list_all_education()
     {
         Education::factory()->count(3)->create();
 
@@ -24,7 +25,8 @@ class EducationTest extends TestCase
             ]);
     }
 
-    public function test_it_can_get_an_individual_education()
+    /** @test */
+    public function it_can_get_an_individual_education()
     {
         Education::factory()->create();
         $education = Education::factory()->create();
@@ -38,7 +40,8 @@ class EducationTest extends TestCase
             ]);
     }
 
-    public function test_it_can_create_a_new_education()
+    /** @test */
+    public function it_can_create_a_new_education()
     {
         $user = User::factory()->admin()->create();
 
@@ -57,7 +60,8 @@ class EducationTest extends TestCase
             ]);
     }
 
-    public function test_it_can_update_an_education()
+    /** @test */
+    public function it_can_update_an_education()
     {
         $user = User::factory()->admin()->create();
         $education = Education::factory()->create();
@@ -76,7 +80,8 @@ class EducationTest extends TestCase
         ]);
     }
 
-    public function test_it_can_delete_an_education()
+    /** @test */
+    public function it_can_delete_an_education()
     {
         $user = User::factory()->admin()->create();
         Education::factory()->create();
