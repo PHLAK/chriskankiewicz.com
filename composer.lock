@@ -7941,16 +7941,16 @@
         },
         {
             "name": "phlak/coding-standards",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHLAK/CodingStandards.git",
-                "reference": "e6b3d8c7fe5ac6c8a607ef2521c10f6785c062e7"
+                "reference": "d0ac0625a5c3a85950974afe060e17095ff061a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHLAK/CodingStandards/zipball/e6b3d8c7fe5ac6c8a607ef2521c10f6785c062e7",
-                "reference": "e6b3d8c7fe5ac6c8a607ef2521c10f6785c062e7",
+                "url": "https://api.github.com/repos/PHLAK/CodingStandards/zipball/d0ac0625a5c3a85950974afe060e17095ff061a4",
+                "reference": "d0ac0625a5c3a85950974afe060e17095ff061a4",
                 "shasum": ""
             },
             "require-dev": {
@@ -7979,7 +7979,7 @@
             "description": "A pre-defined set of coding standards for PHP CS Fixer.",
             "support": {
                 "issues": "https://github.com/PHLAK/CodingStandards/issues",
-                "source": "https://github.com/PHLAK/CodingStandards/tree/1.2.0"
+                "source": "https://github.com/PHLAK/CodingStandards/tree/1.2.1"
             },
             "funding": [
                 {
@@ -7991,7 +7991,7 @@
                     "type": "paypal"
                 }
             ],
-            "time": "2020-12-08T15:57:48+00:00"
+            "time": "2020-12-11T05:43:16+00:00"
         },
         {
             "name": "php-cs-fixer/diff",
