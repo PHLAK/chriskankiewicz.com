@@ -2,9 +2,6 @@ os: linux
 dist: focal
 language: php
 
-env:
-  - PATH="vendor/bin:${PATH}"
-
 php:
   - 7.4
   - nightly
@@ -32,6 +29,6 @@ install:
   - npm ci && npm run production --verbose
 
 script:
-  - php-cs-fixer fix --diff --dry-run
-  - phpstan analyze
-  - phpunit
+  - vendor/bin/php-cs-fixer fix --diff --dry-run
+  - vendor/bin/phpstan analyze
+  - vendor/bin/phpunit --coverage-text
