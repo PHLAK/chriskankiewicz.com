@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex content-center justify-center items-center h-screen bg-gray-100">
+    <div class="flex content-center justify-center items-center min-h-full">
         <form method="POST" action="{{ route('password.update') }}" class="bg-white border-2 border-gray-800 shadow-solid-gray-800 m-4 p-6 w-full max-w-xl">
             @csrf
             <input type="hidden" name="token" value="{{ $token }}">
