@@ -27,18 +27,18 @@
                 @endif
             </div>
 
-            <div class="flex flex-row justify-between">
-                <div class="py-2 sm:block">
-                    <input type="checkbox" name="remember" id="remember" class="align-middle" {{ old('remember') ? 'checked' : null }}>
+            <div class="flex flex-col justify-between items-center xs:flex-row xs:space-x-2">
+                <div class="space-x-1 order-last pt-4 xs:order-first xs:pt-0">
+                    <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : null }}>
 
                     <label for="remember" class="text-sm text-gray-600">
                         {{ __('Remember Me') }}
                     </label>
                 </div>
 
-                <div class="sm:block">
+                <div class="flex justify-between items-center w-full order-first xs:space-x-4 xs:order-last xs:w-auto">
                     @if (Route::has('password.request'))
-                        <a class="text-sm text-gray-600 px-4 py-2 hover:underline" href="{{ route('password.request') }}">
+                        <a class="text-sm text-gray-600 hover:underline" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif
