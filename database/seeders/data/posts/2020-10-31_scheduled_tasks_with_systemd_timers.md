@@ -162,7 +162,8 @@ Persistent=true
 Again we'll start by adding a `Description`.
 
 Next, in order for systemd to configure our timers on boot we need to add the
-`WantedBy=timers.target` line to the `[Install]` section. This is an important
+`WantedBy=timers.target` line to the `[Install]` section. This will create the
+proper symlinks required when we enable our timer later on and is an important
 piece so don't forget it.
 
 We can then define when to run the task with the `OnCalendar=weekly` option in
@@ -192,13 +193,13 @@ $ systemctl --user enable composer-update.timer
 
 Running `systemctl enable` tells systemd to automatically start the timer on
 boot. Since our system is already running it hasn't been started yet. We _could_
-reboot to get the timer running but let's just manually start it instead.
+reboot to get the timer running but let's manually start it instead.
 
 ```shell
 $ systemctl --user start composer-update.timer
 ```
 
-Now if we view our timers again we should see now see our timer in the list.
+Now if we view our timers again we should see our timer in the list.
 
 ```
 NEXT                        LEFT        LAST                        PASSED    UNIT                  ACTIVATES              
