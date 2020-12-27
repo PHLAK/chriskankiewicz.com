@@ -14,8 +14,8 @@
             @endisset
 
             <div class="my-4">
-                @if(Str::of($post->body)->containsAll(['<!-- excerpt -->', '<!-- endexcerpt -->']))
-                    {!! markdown(Str::of($post->body)->between('<!-- excerpt -->', '<!-- endexcerpt -->')) !!}
+                @if($post->hasExcerpt())
+                    {!! markdown($post->excerpt()) !!}
                 @else
                     {!! markdown(Str::of($post->body)->limit(360)) !!}
                 @endif

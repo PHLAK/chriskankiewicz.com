@@ -26,3 +26,5 @@ Route::get('/accomplishments', Controllers\AccomplishmentsController::class)->na
 Route::get('/dashboard', [Controllers\DashboardController::class, 'index'])->name('dashboard');
 
 Route::view('/docs', 'docs')->name('docs');
+
+Route::feeds();
