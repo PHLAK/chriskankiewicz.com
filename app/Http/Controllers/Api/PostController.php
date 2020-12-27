@@ -35,11 +35,7 @@ class PostController extends Controller
         return $post;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    /** Update the specified resource in storage. */
     public function update(UpdatePost $request, Post $post): Post
     {
         $post->update($request->validated());
