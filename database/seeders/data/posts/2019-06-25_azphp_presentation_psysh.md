@@ -4,7 +4,7 @@ tags: ['Presentation', 'PHP', 'Code']
 published: 2019-06-25 22:22:22
 ---
 
-<!-- excerpt -->
+<excerpt>
 My presentation from the June 2019 [azPHP](https://www.meetup.com/azPHPUG)
 meeting on [PsySH](https://psysh.org/), the terminal-based interactive PHP
 debugger and REPL.
@@ -12,7 +12,7 @@ debugger and REPL.
 <div class="video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/lblQtfwlVls?start=540" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<!-- endexcerpt -->
+</excerpt>
 
 [Demo Code](https://github.com/PHLAK/psysh-demo)
 • [Meeting Info](https://www.meetup.com/azPHPUG/events/rrzlqqyzjbhc/)

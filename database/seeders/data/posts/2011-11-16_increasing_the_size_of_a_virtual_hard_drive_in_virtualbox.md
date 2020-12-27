@@ -6,14 +6,14 @@ featured_image_text: Photo by [benjamin lehman](https://unsplash.com/@benjaminle
 published: 2011-11-16 19:45:13
 ---
 
-<!-- excerpt -->
+<excerpt>
 I work in Linux primarily but run a Windows 7 virtual machine in VirtualBox so I
 can use Photoshop and do some necessary testing. Today my VM ran out of space.
 Silly me thought 20GB would be enough, but after installing service pack 1,
 dozens of Windows updates and a few programs I had less than 1GB of space left.
 After a little searching I found an easy way to increase the size of a virtual
 disk.
-<!-- endexcerpt -->
+</excerpt>
 
 First, shut down your VM then run the following command from your host PC:
 

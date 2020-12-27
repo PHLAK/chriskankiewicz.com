@@ -4,7 +4,7 @@ tags: ['Linux', 'Ubuntu', 'Gmail']
 published: 2012-07-06 15:35:42
 ---
 
-<!-- excerpt -->
+<excerpt>
 I maintain several Linux servers at any given moment. Every server has postfix
 installed for sending emails, usually notifications or warning messages of some
 sort and most of these servers are professionally hosted allowing outbound
@@ -13,7 +13,7 @@ home server lies behind my ISP and they block all outbound emails citing SPAM as
 the reason. Regardless of their reasoning I had to find a workaround to allow me
 to send email notifications from behind my ISP. Well, it turns out this is
 rather painless with postfix and a Gmail account.
-<!-- endexcerpt -->
+</excerpt>
 
 First, set up a Gmail account, note the user name and password for later.
 

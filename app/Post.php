@@ -56,13 +56,13 @@ class Post extends Model implements Feedable
     /** Get the excerpt for the post. */
     public function excerpt(): string
     {
-        return Str::of($this->body)->between('<!-- excerpt -->', '<!-- endexcerpt -->');
+        return Str::of($this->body)->between('<excerpt>', '</excerpt>');
     }
 
     /** Determine if the post has an excerpt. */
     public function hasExcerpt(): bool
     {
-        return Str::of($this->body)->containsAll(['<!-- excerpt -->', '<!-- endexcerpt -->']);
+        return Str::of($this->body)->containsAll(['<excerpt>', '</excerpt>']);
     }
 
     /** Get the URL for the post. */

@@ -6,14 +6,14 @@ featured_image_text: Photo by [Nathan Dumlao](https://unsplash.com/@nate_dumlao?
 published: 2012-01-18 22:11:00
 ---
 
-<!-- excerpt -->
+<excerpt>
 Having set up several Debian and Ubuntu web servers in the past I thought it
 would be a good idea to share my process. The following is a relatively
 comprehensive guide to installing and configuring an Apache based web server
 with some optimizations and basic resource monitoring. I primarily work with
 Ubuntu servers, but most of the commands here should work exactly the same in
 Debian or Ubuntu. I've tried to note where differences may occur.
-<!-- endexcerpt -->
+</excerpt>
 
 ## Download and Install the OS
 

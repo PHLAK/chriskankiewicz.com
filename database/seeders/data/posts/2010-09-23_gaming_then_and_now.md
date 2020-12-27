@@ -4,7 +4,7 @@ tags: ['Gaming']
 published: 2010-09-23 14:53:00
 ---
 
-<!-- excerpt -->
+<excerpt>
 My brother is currently attending the DigiPen School of Technology working on a
 degree in video game programming / design. He's an avid gamer but has missed
 some of (IMO) the best games of all time, specifically, the Half-Life saga.
@@ -13,7 +13,7 @@ at the very least, giving him a better understanding of some of the good games
 he's missed out on and where the industry came from. I even offered to buy the
 games for him if he didn't want to pay for them himself. Well, he acquired the
 first Half-Life game and started playing it. This was his response:
-<!-- endexcerpt -->
+</excerpt>
 
 > Hey Chris, just wanted to let you know that I tried out Half-Life today.  I'm
 > sorry, but that game just sucks in my opinion.  I know a lot of people loved

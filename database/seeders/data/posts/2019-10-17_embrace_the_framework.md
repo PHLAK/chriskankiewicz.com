@@ -6,7 +6,7 @@ tags: ['Code', 'Frameworks']
 published: 2019-10-17 08:16:32
 ---
 
-<!-- excerpt -->
+<excerpt>
 Frameworks are among the most important tools we developers have and yet they
 are often taken for granted. The way I see it is a framework has two primary
 benefits: 1) saving individual developers time by providing predefined solutions
@@ -14,7 +14,7 @@ to common problems and 2) allowing teams to work more efficiently by giving them
 a common model for coding standards, file organization, design language and
 more. However, these benefits quickly break down when framework conventions are
 broken or ignored, intentionally or otherwise.
-<!-- endexcerpt -->
+</excerpt>
 
 Picture the following: You find out that you'll be taking over a project built
 by another person or team. It's mentioned that the project is built on a

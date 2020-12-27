@@ -4,12 +4,12 @@ tags: ['SEO', 'Web Development']
 published: 2010-04-14 00:00
 ---
 
-<!-- excerpt -->
+<excerpt>
 Search engine ranking and your web sites traffic are directly influenced by four
 main areas:
 
 ## Content, Links, Popularity and Reputation
-<!-- endexcerpt -->
+</excerpt>
 
 **Content:** The more unique, well-versed content a site has, the better it will
 rank. Content primarily consists of the text on your site, but also includes

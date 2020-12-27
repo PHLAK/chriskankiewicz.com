@@ -6,11 +6,11 @@ featured_image_text: Photo by [Markus Spiske](https://unsplash.com/@markusspiske
 published: 2014-04-15 21:12:42
 ---
 
-<!-- excerpt -->
+<excerpt>
 This is a write up to the 2014 CactusCon web application (SpookiLeaks)
 challenge. You can grab the SpookiLeaks-VM here and try the challenge yourself
 before reading the solution.
-<!-- endexcerpt -->
+</excerpt>
 
 <div class="warning">
     <h2>!!! WARNING: SPOILERS BELOW !!!</h2>

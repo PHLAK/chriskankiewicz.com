@@ -4,11 +4,11 @@ tags: ['Linux', 'Ubuntu']
 published: 2010-12-29 00:00:00
 ---
 
-<!-- excerpt -->
+<excerpt>
 I was just in a bit of a pickle and needed to join two .avi files together while
 in Ubuntu. There are a number of solutions out there, but the most simple
 solution I could find was via avimerge. Here's how I did it.
-<!-- endexcerpt -->
+</excerpt>
 
 ### Install avimerge
 

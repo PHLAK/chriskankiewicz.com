@@ -6,12 +6,12 @@ tags: ['Linux']
 published: 2020-10-31 06:06:06
 ---
 
-<!-- excerpt -->
+<excerpt>
 Use a Linux system long enough and eventually you'll need to schedule a
 recurring task. Of course the defacto scheduler is cron (and there's nothing
 inherently wrong with it) but I've grown to like the flexibility and features of
 systemd timers. Some of the benefits they provide over cron include:
-<!-- endexcerpt -->
+</excerpt>
 
   - Easily enable/disable/run individual tasks
   - Logging included (with `journalctl`)

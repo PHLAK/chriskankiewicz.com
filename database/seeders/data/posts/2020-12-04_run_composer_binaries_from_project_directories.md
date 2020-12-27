@@ -6,9 +6,9 @@ tags: ['Linux', 'PHP']
 published: 2020-12-04 09:00:00
 ---
 
-<!-- excerpt -->
+<excerpt>
 As a PHP developer I often find myself having to run executable files installed to a project via Composer (e.g. `php-cs-fixer`, `phpunit`, `psysh`, etc.). These binary files typically reside in `vendor/bin` relative to the root of a project and in order to run these binary files from the project root I would need to `cd` into the `vendor/bin` directory first or type out the relative path (e.g. `vendor/bin/php-cs-fixer fix`) every time I wanted to run one of these executables.
-<!-- endexcerpt -->
+</excerpt>
 
 Similarly, I have several Composer executables installed globally in `~/.config/composer/vendor/bin`. To run these I would have to type the **full** path to these files (e.g. `~/.config/composer/phpunit`) with each invocation.
 
