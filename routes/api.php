@@ -19,3 +19,5 @@ Route::apiResource('education', Api\EducationController::class);
 Route::apiResource('experience', Api\ExperienceController::class);
 Route::apiResource('project', Api\ProjectController::class);
 Route::apiResource('skill', Api\SkillController::class);
+
+Route::apiResource('post', Api\PostController::class);
