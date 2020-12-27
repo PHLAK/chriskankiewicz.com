@@ -4,7 +4,6 @@ language: php
 
 php:
   - 7.4
-  - 8.0
   - nightly
 
 jobs:
@@ -30,6 +29,6 @@ install:
   - npm ci && npm run production --verbose
 
 script:
-  - '[[ ${TRAVIS_PHP_VERSION:0:1} == "7" ]] && vendor/bin/php-cs-fixer fix --diff --dry-run || echo "Skipping coding standards check"'
+  - vendor/bin/php-cs-fixer fix --diff --dry-run
   - vendor/bin/phpstan analyze
   - vendor/bin/phpunit --coverage-text
