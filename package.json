@@ -20,7 +20,7 @@
         "lodash": "^4.17.20",
         "postcss": "^8.2.1",
         "prismjs": "^1.22.0",
-        "sass": "^1.30.0",
+        "sass": "^1.32.0",
         "sass-loader": "^10.1.0",
         "tailwindcss": "^2.0.2",
         "vue": "^2.6.12",
