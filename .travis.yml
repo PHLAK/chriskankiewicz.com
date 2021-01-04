@@ -2,8 +2,12 @@ os: linux
 dist: focal
 language: php
 
+env:
+  - PHP_CS_FIXER_IGNORE_ENV="true"
+
 php:
   - 7.4
+  - 8.0
   - nightly
 
 jobs:
