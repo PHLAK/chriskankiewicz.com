@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <ul class="w-full sm:flex sm:flex-row sm:w-auto" v-bind:class="menuStyles" v-cloak>
+        <ul class="w-full sm:flex sm:flex-row sm:w-auto" v-bind:class="{ 'flex-col': this.menuOpen, 'hidden': this.menuClosed }" v-cloak>
             <x-nav-item route="projects" section="projects" icon="fa-coffee" />
             <x-nav-item route="experience" section="experience" icon="fa-briefcase" />
             <x-nav-item route="education" section="education" icon="fa-graduation-cap" />

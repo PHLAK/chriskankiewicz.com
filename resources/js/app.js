@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -6,7 +8,6 @@
 
 window._ = require('lodash');
 window.axios = require('axios');
-window.Vue = require('vue');
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -26,27 +27,14 @@ if (token) {
     );
 }
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+/** Import Vue components */
+import HttpRequestComponent from "./components/HttpRequestComponent.vue";
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-Vue.component('http-request-component', require('./components/HttpRequestComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
+/** Create root Vue instance */
 const app = new Vue({
     el: '#app',
+
+    components: { HttpRequestComponent },
 
     data: () => ({
         menuOpen: false
@@ -54,15 +42,10 @@ const app = new Vue({
 
     computed: {
         menuClosed() { return ! this.menuOpen },
-        menuStyles() {
-            return { 'flex-col': this.menuOpen, 'hidden': this.menuClosed }
-        }
     },
 });
 
-/*
- * Prism.js
- */
+/** Prism.js */
 import Prism from "prismjs";
 import "prismjs/components/prism-markup-templating";
 import "prismjs/components/prism-bash";
