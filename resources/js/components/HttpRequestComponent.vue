@@ -21,26 +21,28 @@
 </template>
 
 <script>
-    export default {
-        data: function () {
-            return {
-                responseBody: this.$slots.default[0].text.trim()
-            }
-        },
-        computed: {
-            docsHref() {
-                return `/docs#tag/${this.title}`;
-            }
-        },
-        props: ['request-path', 'title'],
-        methods: {
-            makeRequest() {
-                axios.get(this.requestPath).then(
-                    response => this.responseBody = JSON.stringify(response.data, null, 2)
-                ).catch(
-                    response => console.log(response)
-                );
-            }
+import axios from 'axios';
+
+export default {
+    data: function () {
+        return {
+            responseBody: this.$slots.default[0].text.trim()
+        };
+    },
+    computed: {
+        docsHref() {
+            return `/docs#tag/${this.title}`;
+        }
+    },
+    props: ['request-path', 'title'],
+    methods: {
+        makeRequest() {
+            axios.get(this.requestPath).then(
+                response => this.responseBody = JSON.stringify(response.data, null, 2)
+            ).catch(
+                response => console.log(response)
+            );
         }
     }
+};
 </script>

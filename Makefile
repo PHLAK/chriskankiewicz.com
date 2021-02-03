@@ -17,10 +17,20 @@ update upgrade: # Update application dependencies and publish dependency assets
 	@$(COMPOSER_BIN) update && php artisan nova:publish && php artisan telescope:publish
 	@npm update && npm install && npm audit fix
 
-analyze: # Run coding standards/static analysis checks
-	@vendor/bin/php-cs-fixer fix --diff --dry-run && vendor/bin/phpstan analyze
+php-cs-fixer: # Check PHP coding standards with PHP Coding Standards Fixer
+	@vendor/bin/php-cs-fixer fix --diff --dry-run
 
-test: analyze # Run coding standards/static analysis checks and tests
+eslint: # Check JavaScript coding standards with ESLint
+	@node_modules/.bin/eslint resources/js/**/*.{js,vue}
+
+static-analysis: # Run static analysis checks
+	@vendor/bin/phpstan analyze
+
+coding-standards: php-cs-fixer eslint # Check coding standards
+
+analyze: coding-standards static-analysis # Run coding standards and static analysis checks
+
+test: analyze # Run coding standards and static analysis checks and tests
 	@vendor/bin/phpunit
 
 coverage: # Generate HTML coverage report

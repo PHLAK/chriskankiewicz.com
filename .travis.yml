@@ -29,6 +29,7 @@ install:
   - npm ci && npm run production --verbose
 
 script:
+  - node_modules/.bin/eslint resources/js/**/*.{js,vue}
   - vendor/bin/php-cs-fixer fix --diff --dry-run
   - vendor/bin/phpstan analyze
   - vendor/bin/phpunit --coverage-text
