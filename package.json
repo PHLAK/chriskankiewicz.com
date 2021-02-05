@@ -24,7 +24,7 @@
         "postcss": "^8.2.4",
         "prismjs": "^1.23.0",
         "sass": "^1.32.6",
-        "sass-loader": "^10.1.1",
+        "sass-loader": "^11.0.0",
         "tailwindcss": "^2.0.2",
         "vue": "^2.6.12",
         "vue-loader": "^15.9.6",
