@@ -53,6 +53,12 @@ class Post extends Model implements Feedable
         return $this->belongsToMany(Tag::class);
     }
 
+    /** Transform and return the body attribute. */
+    public function getBodyAttribute(string $body): string
+    {
+        return preg_replace('/<\/?excerpt>/', '', $body);
+    }
+
     /** Get the excerpt for the post. */
     public function excerpt(): string
     {
