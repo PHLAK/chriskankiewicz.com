@@ -68,10 +68,10 @@
     }
 
     .note, .info, .warning, .danger {
-        @apply relative border-l-4 my-4 p-6 pl-16;
+        @apply relative border-l-4 leading-8 my-4 p-6 pl-16;
 
         &:before {
-            @apply absolute top-0 left-0 text-xl py-6 pl-6;
+            @apply absolute top-0 left-0 text-xl leading-8 py-6 pl-6;
         }
 
         > *:first-child {
