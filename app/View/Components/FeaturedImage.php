@@ -8,11 +8,13 @@ use Illuminate\View\Component;
 class FeaturedImage extends Component
 {
     public Post $post;
+    public bool $withText;
 
     /** Create a new component instance. */
-    public function __construct(Post $post)
+    public function __construct(Post $post, bool $withText = true)
     {
         $this->post = $post;
+        $this->withText = $withText;
     }
 
     /**

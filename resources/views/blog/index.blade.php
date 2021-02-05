@@ -10,7 +10,7 @@
             <x-post-metadata :post="$post" />
 
             @isset($post->featured_image_url)
-                <x-featured-image :post="$post" class="h-40 w-full object-cover" />
+                <x-featured-image :post="$post" :with-text="false" class="h-40 w-full object-cover" />
             @endisset
 
             <div class="my-4">
