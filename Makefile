@@ -33,5 +33,8 @@ analyze: coding-standards static-analysis # Run coding standards and static anal
 test: analyze # Run coding standards and static analysis checks and tests
 	@vendor/bin/phpunit
 
+tunnel: # Expose the application via secure tunnel
+	@composer exec expose share chriskankiewicz.local
+
 coverage: # Generate HTML coverage report
 	@vendor/bin/phpunit --coverage-html .coverage
