@@ -104,8 +104,7 @@ $redis->get($key);
 
 In summary, configuration closures give the end-user full control of the 
 configuration of complex objects, eliminates the need to pre-define options, 
-future proofs our configuration, requires less application code and (bonus) is
-type safe!
+future proofs our configuration, requires less code and (bonus) is type safe!
 
 ---
 
