@@ -2,8 +2,36 @@ name: ChrisKankiewciz.com Test Suite
 on: [push]
 
 jobs:
-  php:
-    name: Application Test Suite
+  coding-standards:
+    name: Coding Standards
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install PHP Dependencies
+        run: composer update
+
+      - name: Verify Coding Standards
+        run: vendor/bin/php-cs-fixer fix --diff --dry-run
+
+  static-analysis:
+    name: Static Analysis
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install PHP Dependencies
+        run: composer update
+
+      - name: Run Static Analysis
+        run: vendor/bin/phpstan analyze
+
+  tests:
+    name: Tests
     runs-on: 'ubuntu-latest'
 
     env:
@@ -53,9 +81,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
 
-      - name: Validate Composer Files
-        run: composer validate
-
       - name: Install PHP Dependencies
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
@@ -69,17 +94,12 @@ jobs:
           npm config set "//npm.fontawesome.com/:_authToken" $FONT_AWESOME_TOKEN
           npm ci
 
-      - name: Compile Assets
-        run: npm run production --verbose
-
       - name: Lint JavaScript Files
         run: npx eslint resources/js/**/*.{js,vue}
 
-      - name: Verify Coding Standards
-        run: vendor/bin/php-cs-fixer fix --diff --dry-run
+      - name: Compile Assets
+        run: npm run production --verbose
 
-      - name: Run Static Analysis
-        run: vendor/bin/phpstan analyze
       - name: Run Tests
         env:
           APP_DEBUG: true
