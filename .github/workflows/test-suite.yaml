@@ -1,4 +1,4 @@
-name: ChrisKankiewciz.com Test Suite
+name: ChrisKankiewicz.com Test Suite
 on: [push]
 
 jobs:
