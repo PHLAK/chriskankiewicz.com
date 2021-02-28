@@ -15,6 +15,8 @@ class PostController extends Controller
         return view('blog.post', [
             'post' => $post,
             'title' => $post->title,
+            'next' => Post::where('published_at', '>', $post->published_at)->orderBy('published_at', 'asc')->first(),
+            'previous' => Post::where('published_at', '<', $post->published_at)->orderBy('published_at', 'desc')->first(),
         ]);
     }
 }

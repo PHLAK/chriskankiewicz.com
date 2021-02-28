@@ -71,20 +71,6 @@ class Post extends Model implements Feedable
         return Str::of($this->attributes['body'])->containsAll(['<excerpt>', '</excerpt>']);
     }
 
-    /** Get the previous published post chronologically. */
-    public function getPreviousAttribute(): ?self
-    {
-        return self::where('published_at', '<', $this->published_at)
-            ->orderBy('published_at', 'desc')->first();
-    }
-
-    /** Get the next published post chronologically. */
-    public function getNextAttribute(): ?self
-    {
-        return self::where('published_at', '>', $this->published_at)
-            ->orderBy('published_at', 'asc')->first();
-    }
-
     /** Get the URL for the post. */
     public function url(): string
     {
