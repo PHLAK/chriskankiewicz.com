@@ -84,7 +84,7 @@ class Post extends Model implements Feedable
             'id' => $this->id,
             'slug' => $this->slug,
             'title' => $this->title,
-            'summary' => $this->excerpt(),
+            'summary' => $this->excerpt() . "<br><br><a href=\"{$this->url()}\">Read More</a>",
             'updated' => $this->published_at,
             'link' => $this->url(),
             'author' => 'Chris Kankiewicz',
