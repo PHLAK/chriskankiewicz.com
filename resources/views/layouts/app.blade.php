@@ -22,6 +22,8 @@
         </div>
     </div>
 
+    @yield('after-content')
+
     <x-footer />
 </div>
 

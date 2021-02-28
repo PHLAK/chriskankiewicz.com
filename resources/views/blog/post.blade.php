@@ -15,3 +15,25 @@
         {!! markdown($post->body) !!}
     </div>
 @endsection
+
+@section('after-content')
+    <div class="border-t-2 border-teal-600 px-4 py-6 sm:px-6">
+        <div class="container flex justify-between text-sm mx-auto lg:max-w-3xl">
+            <div>
+                @isset($post->next)
+                    <a href="{{ $post->next->url() }}" class="inline-block border-r-4 border-transparent pr-2 hover:border-teal-600">
+                        <i class="fal fa-long-arrow-left"></i> {{ $post->next->title }}
+                    </a>
+                @endisset
+            </div>
+
+            <div>
+                @isset($post->previous)
+                    <a href="{{ $post->previous->url() }}" class="inline-block border-l-4 border-transparent pl-2 hover:border-teal-600">
+                        {{ $post->previous->title }} <i class="fal fa-long-arrow-right"></i>
+                    </a>
+                @endisset
+            </div>
+        </div>
+    </div>
+@endsection
