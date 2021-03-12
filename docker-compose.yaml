@@ -22,6 +22,7 @@ services:
     depends_on:
       - mysql
       - redis
+      - node
       # - selenium
   # selenium:
   #   image: 'selenium/standalone-chrome'
@@ -53,12 +54,21 @@ services:
       - "sailredis:/data"
     networks:
       - sail
+
   # memcached:
   #   image: 'memcached:alpine'
   #   ports:
   #     - '11211:11211'
   #   networks:
   #     - sail
+
+  node:
+    image: node:14.16
+    volumes:
+      - ".:/var/www/html"
+    working_dir: /var/www/html
+    command: npm run watch
+
   mailhog:
     image: "mailhog/mailhog:latest"
     ports:
