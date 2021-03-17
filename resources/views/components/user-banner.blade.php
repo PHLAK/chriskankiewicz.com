@@ -1,9 +1,30 @@
 <div id="user-card" class="bg-gray-200 bg-cover bg-center mb-24 px-4 py-8 sm:mb-32 sm:px-6" style="background-image: url('{{ asset('images/user_bg_blurred.jpg') }}');">
     <div class="container mx-auto text-center">
         <div class="mb-8">
-            <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 space-y-4 text-gray-800 p-8 sm:text-xl md:text-2xl">
-                <p>Passionate PHP developer, Linux junkie, gamer and coffee aficionado.</p>
-                <p>Dedicated husband and father of two.</p>
+            <div class="flex flex-wrap justify-center text-gray-800 max-w-5xl mx-auto sm:text-xl md:text-2xl">
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                    👨‍💻 Passionate PHP developer
+                </div>
+
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                    🐧 Linux junkie
+                </div>
+
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                    🖥️ Avid PC gamer
+                </div>
+
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                    ☕ Coffee aficionado
+                </div>
+
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                    👫 Dedicated husband
+                </div>
+
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                    👨‍👧‍👦 Proud father of two
+                </div>
             </div>
         </div>
 
