@@ -2,28 +2,28 @@
     <div class="container mx-auto text-center">
         <div class="mb-8">
             <div class="flex flex-wrap justify-center text-gray-800 max-w-5xl mx-auto sm:text-xl md:text-2xl">
-                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
-                    👨‍💻 Passionate PHP developer
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 p-2 m-1 sm:px-4 sm:m-2">
+                    👨‍💻 <span class="hidden xs:inline-block">Passionate</span> PHP developer
                 </div>
 
-                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 p-2 m-1 sm:px-4 sm:m-2">
                     🐧 Linux junkie
                 </div>
 
-                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
-                    🖥️ Avid PC gamer
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 p-2 m-1 sm:px-4 sm:m-2">
+                    🖥️ <span class="hidden xs:inline-block">Avid</span> PC gamer
                 </div>
 
-                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 p-2 m-1 sm:px-4 sm:m-2">
                     ☕ Coffee aficionado
                 </div>
 
-                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 p-2 m-1 sm:px-4 sm:m-2">
                     👫 Dedicated husband
                 </div>
 
-                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 px-4 py-2 m-1 sm:m-2">
-                    👨‍👧‍👦 Proud father of two
+                <div class="inline-block shadow rounded-lg bg-gray-200 bg-opacity-75 p-2 m-1 sm:px-4 sm:m-2">
+                    👨‍👧‍👦 Proud father <span class="hidden xs:inline-block">of two</span>
                 </div>
             </div>
         </div>
