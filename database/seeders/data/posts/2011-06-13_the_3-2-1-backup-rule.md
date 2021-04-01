@@ -36,5 +36,5 @@ Linux and Mac operating systems, so it should work for any system you currently
 own.
 
 <div class="info">
-    <p>For more info and to download CrashPlan go to <http://www.crashplan.com>.</p>
+    <p>For more info and to download CrashPlan visit <a href="http://www.crashplan.com">crashplan.com</a>.</p>
 </div>
