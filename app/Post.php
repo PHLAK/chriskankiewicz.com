@@ -16,6 +16,8 @@ use Spatie\Feed\FeedItem;
  * The Post model.
  *
  * @method static \Database\Factories\PostFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder publishedBefore(Carbon $date)
+ * @method static \Illuminate\Database\Eloquent\Builder publishedAfter(Carbon $date)
  */
 class Post extends Model implements Feedable
 {
@@ -45,6 +47,18 @@ class Post extends Model implements Feedable
     public static function forFeed()
     {
         return self::all();
+    }
+
+    /** Scope the query to posts published before a specified date. */
+    public function scopePublishedBefore(Builder $query, Carbon $date): Builder
+    {
+        return $query->where('published_at', '<', $date);
+    }
+
+    /** Scope the query to posts published after a specified date. */
+    public function scopePublishedAfter(Builder $query, CArbon $date): Builder
+    {
+        return $query->where('published_at', '>', $date);
     }
 
     /** The tags that belong to the post. */
