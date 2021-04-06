@@ -29,19 +29,11 @@ Requirements
 Setting up a Local Development Environment
 ------------------------------------------
 
-### Create the Docker `development` Network
-
-    docker network create development
-
-### Run the `jwilder/nginx-proxy` Container
-
-    docker run -d -p 80:80 --network development --restart unless-stopped --volume /var/run/docker.sock:/tmp/docker.sock:ro --name dev-proxy jwilder/nginx-proxy
-
 ### Configure the Hostnames
 
 Add the following entry to `/etc/hosts`:
 
-    127.0.0.1  chriskankiewicz.local chriskankiewicz-dot-com-mysql chriskankiewicz-dot-com-redis
+    127.0.0.1  chriskankiewicz.local mysql redis
 
 ### Set Environment Variables
 
