@@ -7,11 +7,9 @@ published: 2011-07-19 12:34:56
 ---
 
 <div class="danger">
-    <p><strong>Still using Windows 7?</strong> As of January 2020 Windows 7 has been discontinued and will no longer receive new features or security patches.</p>
-</div>
+    <p><strong>Still using Windows 7?</strong> As of January 2020 Windows 7 has been discontinued and will no longer receive new features or security updates.</p>
 
-<div class="info">
-    <p><strong>Don't want to upgrade to Windows 10?</strong> <a href="https://ubuntu.com/download/esktop">Give Ubuntu a try!</a> It's 100% free, more secure and runs better on the same hardware than Windows.</p>
+    <p><strong>Don't want to upgrade to Windows 10?</strong> <a href="https://ubuntu.com/desktop/features">Give Ubuntu a try!</a> It's 100% free, simple, fast and secure. It even runs better on the same hardware than Windows.</p>
 </div>
 
 <excerpt>
