@@ -25,3 +25,5 @@ mix.options({
 if (mix.inProduction()) {
     mix.version();
 }
+
+mix.disableSuccessNotifications();
