@@ -1,78 +1,60 @@
-# For more information: https://laravel.com/docs/sail
-version: '3'
+version: '3.4'
 
 services:
-  laravel:
-    build:
-      context: ./vendor/laravel/sail/runtimes/8.0
-      dockerfile: Dockerfile
-      args:
-        WWWGROUP: '${WWWGROUP}'
-    image: sail-8.0/app
-    ports:
-      - '${APP_PORT:-80}:80'
-    environment:
-      WWWUSER: '${WWWUSER}'
-      LARAVEL_SAIL: 1
-      VIRTUAL_HOST: chriskankiewicz.local
-    volumes:
-      - '.:/var/www/html'
-    networks:
-      - sail
+  app:
+    container_name: chriskankiewicz-app
+    build: .
+    image: phlak/dev-env:local
     depends_on:
-      - mysql
       - redis
-      - node
+    environment:
+      APP_ENV: local
+      LOG_CHANNEL: stderr
+      DB_HOST: ${DB_HOST:-chriskankiewicz-mysql}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_DATABASE: ${DB_DATABASE:-app}
+      DB_USERNAME: ${DB_USERNAME:-laravel}
+      DB_PASSWORD: ${DB_PASSWORD:-secret}
+      CACHE_DRIVER: redis
+      REDIS_HOST: chriskankiewicz-redis
+      REDIS_PORT: 6379
+    ports:
+      - ${APP_PORT:-80}:80
+    extra_hosts:
+      - chriskankiewicz.local:127.0.0.1
+    user: ${HOST_USER_ID:-0}:${HOST_GROUP_ID:-0}
+    volumes:
+      - ./:/var/www/html
+      - ./.docker/php/config/php.ini:/usr/local/etc/php/php.ini
+      - ./.docker/apache2/config/000-default.conf:/etc/apache2/sites-available/000-default.conf
 
   mysql:
-    image: 'mysql:8.0'
+    container_name: chriskankiewicz-mysql
+    image: mysql:8.0
     ports:
-      - '${FORWARD_DB_PORT:-3306}:3306'
+      - ${DB_PORT:-3306}:3306
     environment:
-      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
-      MYSQL_DATABASE: '${DB_DATABASE}'
-      MYSQL_USER: '${DB_USERNAME}'
-      MYSQL_PASSWORD: '${DB_PASSWORD}'
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: ${DB_DATABASE:-app}
+      MYSQL_USER: ${DB_USERNAME:-laravel}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
     volumes:
-      - "sailmysql:/var/lib/mysql"
-    networks:
-      - sail
-    healthcheck:
-          test: ["CMD", "mysqladmin", "ping"]
+      - mysql-data:/var/lib/mysql
 
   redis:
-    image: 'redis:alpine'
+    container_name: chriskankiewicz-redis
+    image: redis:6.0
     ports:
-      - '${FORWARD_REDIS_PORT:-6379}:6379'
-    volumes:
-      - 'sailredis:/data'
-    networks:
-      - sail
-    healthcheck:
-        test: ["CMD", "redis-cli", "ping"]
+      - ${REDIS_PORT:-6379}:6379
 
-  node:
-    image: node:14.16
+  npm:
+    container_name: chriskankiewicz-npm
+    image: phlak/dev-env:local
     volumes:
-      - '.:/var/www/html'
-    working_dir: /var/www/html
+      - ./:/var/www/html
+    user: ${HOST_USER_ID:-0}:${HOST_GROUP_ID:-0}
     command: npm run watch
 
-  mailhog:
-    image: 'mailhog/mailhog:latest'
-    ports:
-      - '${FORWARD_MAILHOG_PORT:-1025}:1025'
-      - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
-    networks:
-      - sail
-
-networks:
-  sail:
-    driver: bridge
-
 volumes:
-  sailmysql:
-    driver: local
-  sailredis:
+  mysql-data:
     driver: local
