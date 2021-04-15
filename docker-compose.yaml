@@ -6,6 +6,7 @@ services:
     build: .
     image: phlak/dev-env:local
     depends_on:
+      - mysql
       - redis
     environment:
       APP_ENV: local
