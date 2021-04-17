@@ -9,8 +9,9 @@ RUN ln --symbolic ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
 RUN ln --symbolic ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
 
 ENV HOME="/tmp"
-ENV COMPOSER_ALLOW_SUPERUSER=1
+ENV COMPOSER_ALLOW_SUPERUSER="1"
 ENV COMPOSER_HOME="/tmp"
+ENV XDG_CONFIG_HOME="/tmp/.config"
 
 RUN a2enmod rewrite
 
