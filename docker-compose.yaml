@@ -17,7 +17,7 @@ services:
       DB_USERNAME: ${DB_USERNAME:-laravel}
       DB_PASSWORD: ${DB_PASSWORD:-secret}
       CACHE_DRIVER: redis
-      REDIS_HOST: chriskankiewicz-redis
+      REDIS_HOST: redis
       REDIS_PORT: 6379
     ports:
       - ${APP_PORT:-80}:80
