@@ -1,5 +1,8 @@
 RUN := docker-compose run --rm app
 
+FG_BLUE := "$$(tput setaf 4)"
+RESET_FORMAT := "$$(tput sgr0)"
+
 all: dev env # Install and build dependencies and bring up the dev environment
 
 dev development: # Install and build application developemnt dependencies
@@ -16,6 +19,12 @@ env environment: # Bring up the development environment
 update upgrade: # Update application dependencies and publish dependency assets
 	@$(RUN) composer update && php artisan nova:publish && php artisan telescope:publish
 	@$(RUN) npm update && npm install && npm audit fix
+
+outdated: # Check for outdated PHP and JavaScript dependencies
+	@echo "$(FG_BLUE)>>>$(RESET_FORMAT) Checking for outdated PHP packages"
+	@$(RUN) composer show --direct --outdated
+	@echo "$(FG_BLUE)>>>$(RESET_FORMAT) Checking for outdated JavaScript packages"
+	@$(RUN) npm outdated
 
 php-cs-fixer: # Check PHP coding standards with PHP Coding Standards Fixer
 	@$(RUN) vendor/bin/php-cs-fixer fix --diff --dry-run
