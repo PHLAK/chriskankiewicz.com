@@ -27,5 +27,22 @@ parameters:
     checkModelProperties: true
     # checkTooWideReturnTypesInProtectedAndPublicMethods: true
     checkUninitializedProperties: true
+    implicitThrows: false
 
     reportUnmatchedIgnoredErrors: false
+
+    exceptions:
+      check:
+        missingCheckedExceptionInThrows: true
+        tooWideThrowType: true
+
+      uncheckedExceptionRegexes:
+      - '/^GuzzleHttp\\Exception\\GuzzleException$/'
+
+      uncheckedExceptionClasses:
+        - 'InvalidArgumentException'
+        - 'LogicException'
+        - 'Illuminate\Contracts\Container\BindingResolutionException'
+        - 'Symfony\Component\HttpKernel\Exception\HttpException'
+        - 'Symfony\Component\Yaml\Exception\ParseException'
+        - 'PHPUnit\Framework\Exception'

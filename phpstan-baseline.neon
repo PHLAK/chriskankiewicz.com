@@ -1,6 +1,16 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Method App\\\\GitHub\\\\Client\\:\\:repository\\(\\) throws checked exception JsonException but it's missing from the PHPDoc @throws tag\\.$#"
+			count: 1
+			path: app/GitHub/Client.php
+
+		-
+			message: "#^Method App\\\\GitHub\\\\Client\\:\\:repository\\(\\) throws checked exception RuntimeException but it's missing from the PHPDoc @throws tag\\.$#"
+			count: 1
+			path: app/GitHub/Client.php
+
+		-
 			message: "#^Parameter \\$query of method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid typehint type Laravel\\\\Scout\\\\Builder\\.$#"
 			count: 1
 			path: app/Nova/Resource.php
