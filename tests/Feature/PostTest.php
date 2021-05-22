@@ -15,7 +15,7 @@ class PostTest extends TestCase
     {
         $post = Post::factory()->create();
 
-        $response = $this->get(route('post', ['slug' => $post->slug]));
+        $response = $this->get(route('post', ['post' => $post]));
 
         $response->assertOk()->assertViewIs('blog.post')->assertSee($post->title);
     }

@@ -22,7 +22,7 @@ class TagTest extends TestCase
 
         $otherPost = Post::factory()->create();
 
-        $response = $this->get(route('tag', ['slug' => $tag->slug]));
+        $response = $this->get(route('tag', ['tag' => $tag]));
 
         $response->assertOk()->assertViewIs('blog.index')->assertViewHas('title', $tag->name);
 

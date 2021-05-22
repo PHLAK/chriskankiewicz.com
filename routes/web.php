@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', Controllers\HomeController::class)->name('home');
-Route::get('/post/{slug}', Controllers\PostController::class)->name('post');
-Route::get('/tag/{slug}', Controllers\TagController::class)->name('tag');
+Route::get('/post/{post:slug}', Controllers\PostController::class)->name('post');
+Route::get('/tag/{tag:slug}', Controllers\TagController::class)->name('tag');
 
 Route::get('/experience', Controllers\ExperienceController::class)->name('experience');
 Route::get('/projects', Controllers\ProjectsController::class)->name('projects');

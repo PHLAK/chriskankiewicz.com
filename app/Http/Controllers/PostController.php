@@ -8,10 +8,8 @@ use Illuminate\View\View;
 class PostController extends Controller
 {
     /** Handle the incoming request. */
-    public function __invoke(string $slug): View
+    public function __invoke(Post $post): View
     {
-        $post = Post::with('tags')->where('slug', $slug)->firstOrFail();
-
         return view('blog.post', [
             'post' => $post,
             'title' => $post->title,
