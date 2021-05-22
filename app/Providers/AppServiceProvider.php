@@ -5,7 +5,6 @@ namespace App\Providers;
 use App\GitHub\CachedClient as CachedGitHubClient;
 use App\GitHub\Client as GitHubClient;
 use GuzzleHttp\Client;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
