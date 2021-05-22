@@ -19,6 +19,7 @@ services:
       CACHE_DRIVER: redis
       REDIS_HOST: redis
       REDIS_PORT: 6379
+      COMPOSER_AUTH: ${COMPOSER_AUTH}
     ports:
       - ${APP_PORT:-80}:80
     extra_hosts:
