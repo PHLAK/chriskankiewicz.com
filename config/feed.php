@@ -14,7 +14,7 @@ return [
             'items' => 'App\Post@forFeed',
 
             // The feed will be available on this url.
-            'url' => '/feed',
+            'url' => '',
 
             'title' => "Chris Kankiewicz's Blog",
             'description' => 'The incoherent ramblings of Chris Kankiewicz.',
