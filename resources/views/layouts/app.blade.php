@@ -7,7 +7,8 @@
 <link rel="icon" href="{{ asset('favicon.png') }}">
 <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-@include('feed::links')
+{{-- TODO: Re-enable when spatie/laravel-feed is working again --}}
+{{-- @include('feed::links') --}}
 
 <title>{{ isset($title) ? sprintf('%s • ', $title) : null }}Chris Kankiewicz</title>
 

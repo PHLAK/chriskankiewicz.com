@@ -27,4 +27,5 @@ Route::get('/dashboard', [Controllers\DashboardController::class, 'index'])->nam
 
 Route::view('/docs', 'docs')->name('docs');
 
-Route::feeds();
+// TODO: Re-enable when spatie/laravel-feed is working again
+// Route::feeds();

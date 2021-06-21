@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
 /**
@@ -19,7 +18,7 @@ use Spatie\Feed\FeedItem;
  * @method static \Illuminate\Database\Eloquent\Builder publishedBefore(Carbon $date)
  * @method static \Illuminate\Database\Eloquent\Builder publishedAfter(Carbon $date)
  */
-class Post extends Model implements Feedable
+class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -91,17 +90,21 @@ class Post extends Model implements Feedable
         return route('post', $this->slug);
     }
 
-    /** Return the model as a feed item. */
-    public function toFeedItem(): FeedItem
-    {
-        return FeedItem::create([
-            'id' => $this->id,
-            'slug' => $this->slug,
-            'title' => $this->title,
-            'summary' => $this->excerpt() . "<br><br><a href=\"{$this->url()}\">Read More</a>",
-            'updated' => $this->published_at,
-            'link' => $this->url(),
-            'authorName' => 'Chris Kankiewicz',
-        ]);
-    }
+    /**
+     * Return the model as a feed item.
+     *
+     * TODO: Re-enable when spatie/laravel-feed is working again
+     */
+    // public function toFeedItem(): FeedItem
+    // {
+    //     return FeedItem::create([
+    //         'id' => $this->id,
+    //         'slug' => $this->slug,
+    //         'title' => $this->title,
+    //         'summary' => $this->excerpt() . "<br><br><a href=\"{$this->url()}\">Read More</a>",
+    //         'updated' => $this->published_at,
+    //         'link' => $this->url(),
+    //         'authorName' => 'Chris Kankiewicz',
+    //     ]);
+    // }
 }
