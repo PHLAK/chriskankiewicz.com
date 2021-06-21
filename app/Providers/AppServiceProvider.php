@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\GitHub\CachedClient as CachedGitHubClient;
 use App\GitHub\Client as GitHubClient;
 use GuzzleHttp\Client;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -12,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
     /** Bootstrap any application services. */
     public function boot()
     {
-        // ...
+        if ($this->app->environment(['local', 'testing'])) {
+            Model::preventLazyLoading();
+        }
     }
 
     /** Register any application services. */
