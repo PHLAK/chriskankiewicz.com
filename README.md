@@ -14,7 +14,7 @@
 Requirements
 ------------
 
-  - [PHP](https://secure.php.net/) >= 7.4
+  - [PHP](https://secure.php.net/) >= 8.0
   - [MySQL](https://www.mysql.com/) >= 5.7
   - [Node.js](https://nodejs.org) >= 14.0
 
