@@ -47,4 +47,8 @@ return [
     'unsplash' => [
         'key' => env('UNSPLASH_ACCESS_KEY'),
     ],
+
+    'google_analytics' => [
+        'tracking_id' => env('GOOGLE_ANALYTICS_TRACKING_ID'),
+    ],
 ];

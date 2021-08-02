@@ -10,6 +10,8 @@
 {{-- TODO: Re-enable when spatie/laravel-feed is working again --}}
 {{-- @include('feed::links') --}}
 
+@includeWhen(config('services.google_analytics.tracking_id'), 'components.analytics')
+
 <title>{{ isset($title) ? sprintf('%s • ', $title) : null }}Chris Kankiewicz</title>
 
 <div id="app" class="flex flex-col min-h-screen font-sans antialiased">
