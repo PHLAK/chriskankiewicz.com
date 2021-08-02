@@ -15,6 +15,8 @@ parameters:
 
     ignoreErrors:
         - '/^Call to an undefined method Faker\\Generator::[A-Za-z]+\(\)\.$/'
+        - '/^Call to an undefined method Faker\\UniqueGenerator::[A-Za-z]+\(\)\.$/'
+        - '/^Access to an undefined property Faker\\UniqueGenerator::\$[A-Za-z]+\.$/'
         - '/^Access to an undefined property Spatie\\YamlFrontMatter\\Document::\$[a-z_]+.$/'
 
     checkAlwaysTrueCheckTypeFunctionCall: true
