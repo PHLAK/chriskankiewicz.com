@@ -4,7 +4,7 @@ services:
   app:
     container_name: chriskankiewicz-app
     build: .
-    image: phlak/dev-env:local
+    image: phlak/chriskankiewicz-app:dev
     depends_on:
       - mysql
       - redis
@@ -51,7 +51,7 @@ services:
 
   npm:
     container_name: chriskankiewicz-npm
-    image: phlak/dev-env:local
+    image: phlak/chriskankiewicz-app:dev
     volumes:
       - ./:/var/www/html
     profiles: [npm]
