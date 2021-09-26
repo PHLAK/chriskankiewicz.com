@@ -153,3 +153,7 @@
 - name: Packagist
   icon_name: null
   icon_style: null
+
+- name: Regular Expressions
+  icon_name: asterisk
+  icon_style: far

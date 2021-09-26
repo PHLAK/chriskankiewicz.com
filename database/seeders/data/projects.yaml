@@ -44,6 +44,26 @@
     - Git Version Control
     - Travis CI
 
+- name: Splat
+  description: |-
+    Glob-like file and pattern matching utility.
+
+    **Example:**
+
+    ```php
+    use PHLAK\Splat\Pattern;
+
+    Pattern::make('foo/bar.txt')->toRegex(); // '#^foo/bar\.txt$#'
+    Pattern::make('file.{yml,yaml}')->toRegex(); // '#^file\.(yml|yaml)$#'
+
+    Glob::match('*.txt', 'foo.txt'); // true
+    Glob::match('*.txt', 'foo.log'); // false
+    ```
+  source_url: https://github.com/PHLAK/Splat
+  skills:
+    - PHP
+    - Regular Expressions
+
 - name: vueColorClock
   description: |-
     A color changing clock, the background color changes with every hour,
