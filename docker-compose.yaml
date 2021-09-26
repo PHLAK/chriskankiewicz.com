@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.9'
 
 services:
   app:
@@ -54,6 +54,7 @@ services:
     image: phlak/dev-env:local
     volumes:
       - ./:/var/www/html
+    profiles: [npm]
     user: ${HOST_USER_ID:-0}:${HOST_GROUP_ID:-0}
     command: npm run watch
 
