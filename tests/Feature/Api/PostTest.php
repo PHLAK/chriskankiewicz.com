@@ -6,11 +6,12 @@ use App\Post;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
+use Kirschbaum\OpenApiValidator\ValidatesOpenApiSpec;
 use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, ValidatesOpenApiSpec;
 
     /** @test */
     public function it_can_list_all_posts()

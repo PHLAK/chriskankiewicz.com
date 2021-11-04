@@ -16,16 +16,148 @@ info:
     url: https://github.com/PHLAK/chriskankiewicz.com
 
 tags:
+  - name: Accomplishments
+    description: Miscellaneous accomplishments.
   - name: Education
     description: Schools attended and degrees earned.
   - name: Experience
     description: Porfessional work history.
   - name: Projects
     description: Personal and professional projects.
+  - name: Posts
+    description: Blog posts.
   - name: Skills
     description: Skills and areas of knowledge.
 
 paths:
+  /accomplishment:
+    get:
+      summary: List Accomplishments
+      description: Returns a list of all accomplishments.
+      tags:
+        - Accomplishments
+      responses:
+        '200':
+          description: A list of accomplishments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/id'
+                    - $ref: '#/components/schemas/Accomplishment'
+
+    post:
+      summary: Create Accomplishment
+      description: Creates a new accomplishment.
+      tags:
+        - Accomplishments
+      security:
+        - BearrerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Accomplishment'
+      responses:
+        '201':
+          description: The created accomplishment
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/id'
+                  - $ref: '#/components/schemas/Accomplishment'
+        '401':
+          $ref: '#/components/responses/401'
+        '422':
+          $ref: '#/components/responses/422'
+
+  /accomplishment/{id}:
+    get:
+      summary: Fetch Accomplishment
+      description: Returns a single accomplishments.
+      tags:
+        - Accomplishments
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '200':
+          description: A single accomplishment
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/id'
+                  - $ref: '#/components/schemas/Accomplishment'
+        '404':
+          $ref: '#/components/responses/404'
+
+    patch:
+      summary: Update Accomplishment
+      description: Updates an accomplishment.
+      tags:
+        - Accomplishments
+      security:
+        - BearrerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 1337
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Accomplishment'
+      responses:
+        '200':
+          description: The updated accomplishment
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/id'
+                  - $ref: '#/components/schemas/Accomplishment'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+
+    delete:
+      summary: Delete Accomplishment
+      description: Deletes an accomplishment.
+      tags:
+        - Accomplishments
+      security:
+        - BearrerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+
   /education:
     get:
       summary: List Education
@@ -410,6 +542,134 @@ paths:
         '404':
           $ref: '#/components/responses/404'
 
+  /post:
+    get:
+      summary: List Posts
+      description: Returns a list of all posts.
+      tags:
+        - Posts
+      responses:
+        '200':
+          description: A list of posts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '#/components/schemas/id'
+                    - $ref: '#/components/schemas/Post'
+
+    post:
+      summary: Create Post
+      description: Creates a new post.
+      tags:
+        - Posts
+      security:
+        - BearrerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '201':
+          description: The created post
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/id'
+                  - $ref: '#/components/schemas/Post'
+        '401':
+          $ref: '#/components/responses/401'
+        '422':
+          $ref: '#/components/responses/422'
+
+  /post/{id}:
+    get:
+      summary: Fetch Post
+      description: Returns a single post.
+      tags:
+        - Posts
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '200':
+          description: A single post
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/id'
+                  - $ref: '#/components/schemas/Post'
+        '404':
+          $ref: '#/components/responses/404'
+
+    patch:
+      summary: Update Post
+      description: Updates a post.
+      tags:
+        - Posts
+      security:
+        - BearrerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 1337
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '200':
+          description: The updated post
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/id'
+                  - $ref: '#/components/schemas/Post'
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+        '422':
+          $ref: '#/components/responses/422'
+
+    delete:
+      summary: Delete Post
+      description: Deletes a post.
+      tags:
+        - Posts
+      security:
+        - BearrerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+            example: 1337
+      responses:
+        '204':
+          description: No Content
+        '401':
+          $ref: '#/components/responses/401'
+        '404':
+          $ref: '#/components/responses/404'
+
   /skill:
     get:
       summary: List Skills
@@ -540,6 +800,13 @@ paths:
 
 components:
   schemas:
+    Accomplishment:
+      type: object
+      properties:
+        description:
+          type: string
+          example: 2nd place, national hot dog eating contest
+
     Education:
       type: object
       properties:
@@ -610,6 +877,33 @@ components:
       required:
         - name
 
+    Post:
+      type: object
+      properties:
+        slug:
+          type: string
+          example: test-post-please-ignore
+        title:
+          type: string
+          example: Test post; please ignore
+        body:
+          type: string
+          example: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        featured_image_url:
+          type: string
+          example: https://images.example.com/some-image.png
+        featured_image_text:
+          type: string
+          example: Photo by [Arthur Dent](https://example.com)
+        published_at:
+          type: string
+          example: '1986-05-20 00:00:00'
+      required:
+        - slug
+        - title
+        - body
+        - published_at
+
     Skill:
       type: object
       properties:
@@ -619,9 +913,11 @@ components:
         icon_name:
           type: string
           example: lock
+          nullable: true
         icon_style:
           type: string
           example: fal
+          nullable: true
       required:
         - name
 

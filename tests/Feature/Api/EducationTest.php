@@ -5,11 +5,12 @@ namespace Tests\Feature\Api;
 use App\Education;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Kirschbaum\OpenApiValidator\ValidatesOpenApiSpec;
 use Tests\TestCase;
 
 class EducationTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, ValidatesOpenApiSpec;
 
     /** @test */
     public function it_can_list_all_education()
@@ -68,14 +69,24 @@ class EducationTest extends TestCase
 
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('education.update', ['education' => $education]), [
+                'institution' => 'Hogwarts School of Witchcraft and Wizardry',
+                'degree' => 'Care of Magical Creatures',
+                'start_date' => '1986-05-20',
                 'end_date' => '1986-07-06',
             ]);
 
-        $response->assertStatus(200)
-            ->assertJson(['end_date' => '1986-07-06T00:00:00.000000Z']);
+        $response->assertStatus(200)->assertJson([
+            'institution' => 'Hogwarts School of Witchcraft and Wizardry',
+            'degree' => 'Care of Magical Creatures',
+            'start_date' => '1986-05-20T00:00:00.000000Z',
+            'end_date' => '1986-07-06T00:00:00.000000Z',
+        ]);
 
         $this->assertDatabaseHas('education', [
             'id' => $education->id,
+            'institution' => 'Hogwarts School of Witchcraft and Wizardry',
+            'degree' => 'Care of Magical Creatures',
+            'start_date' => '1986-05-20 00:00:00',
             'end_date' => '1986-07-06 00:00:00',
         ]);
     }

@@ -5,11 +5,12 @@ namespace Tests\Feature\Api;
 use App\Experience;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Kirschbaum\OpenApiValidator\ValidatesOpenApiSpec;
 use Tests\TestCase;
 
 class ExperienceTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, ValidatesOpenApiSpec;
 
     /** @test */
     public function it_can_list_all_experiences()
@@ -73,16 +74,27 @@ class ExperienceTest extends TestCase
         $response = $this->actingAs($user, 'api')
             ->json('PATCH', route('experience.update', ['experience' => $experience]), [
                 'company' => 'Pied Piper',
+                'title' => 'Data Janitor',
+                'description' => 'Pushed bits around.',
+                'start_date' => '1986-05-20',
+                'location' => 'San Francisco, California',
             ]);
 
-        $response->assertStatus(200)
-            ->assertJson([
-                'company' => 'Pied Piper',
-            ]);
+        $response->assertStatus(200)->assertJson([
+            'company' => 'Pied Piper',
+            'title' => 'Data Janitor',
+            'description' => 'Pushed bits around.',
+            'start_date' => '1986-05-20T00:00:00.000000Z',
+            'location' => 'San Francisco, California',
+        ]);
 
         $this->assertDatabaseHas('experiences', [
             'id' => $experience->id,
             'company' => 'Pied Piper',
+            'title' => 'Data Janitor',
+            'description' => 'Pushed bits around.',
+            'start_date' => '1986-05-20 00:00:00',
+            'location' => 'San Francisco, California',
         ]);
     }
 
