@@ -11,12 +11,12 @@ parameters:
 			path: app/GitHub/Client.php
 
 		-
-			message: "#^Parameter \\$query of method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid typehint type Laravel\\\\Scout\\\\Builder\\.$#"
+			message: "#^Method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid return type Laravel\\\\Scout\\\\Builder\\.$#"
 			count: 1
 			path: app/Nova/Resource.php
 
 		-
-			message: "#^Return typehint of method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid type Laravel\\\\Scout\\\\Builder\\.$#"
+			message: "#^Parameter \\$query of method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid type Laravel\\\\Scout\\\\Builder\\.$#"
 			count: 1
 			path: app/Nova/Resource.php
 

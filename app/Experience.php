@@ -20,18 +20,14 @@ class Experience extends Model
     /** @var string The table associated with the model. */
     protected $table = 'experiences';
 
-    /** @var array The attributes that are mass assignable. */
     protected $fillable = [
         'company', 'title', 'description', 'start_date', 'end_date', 'location',
     ];
 
-    /** @var array The attributes that should be mutated to dates. */
     protected $dates = ['start_date', 'end_date'];
 
-    /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
-    /** @var array The relations to eager load on every query. */
     protected $with = ['skills'];
 
     /** Get the experience's skills. */

@@ -23,16 +23,19 @@ class Post extends Model
     use HasFactory;
     use SoftDeletes;
 
-    /** @var array The attributes that are mass assignable. */
     protected $fillable = [
         'slug', 'title', 'body', 'featured_image_url', 'featured_image_text', 'published_at',
     ];
 
-    /** @var array The attributes that should be mutated to dates. */
     protected $dates = ['published_at'];
 
-    /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
+
+    /** Return a list of posts for the feed. */
+    public static function forFeed()
+    {
+        return self::all();
+    }
 
     /** The "booted" method of the model. */
     protected static function booted(): void
@@ -40,12 +43,6 @@ class Post extends Model
         static::addGlobalScope('published', function (Builder $builder) {
             $builder->whereDate('published_at', '<=', Carbon::now())->orderBy('published_at', 'DESC');
         });
-    }
-
-    /** Return a list of posts for the feed. */
-    public static function forFeed()
-    {
-        return self::all();
     }
 
     /** Scope the query to posts published before a specified date. */

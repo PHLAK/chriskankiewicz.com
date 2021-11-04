@@ -29,11 +29,12 @@ parameters:
     checkModelProperties: true
     # checkTooWideReturnTypesInProtectedAndPublicMethods: true
     checkUninitializedProperties: true
-    implicitThrows: false
 
     reportUnmatchedIgnoredErrors: false
 
     exceptions:
+      implicitThrows: false
+
       check:
         missingCheckedExceptionInThrows: true
         tooWideThrowType: true

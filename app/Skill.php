@@ -16,10 +16,8 @@ class Skill extends Model
     use HasFactory;
     use SoftDeletes;
 
-    /** @var array The attributes that are mass assignable. */
     protected $fillable = ['name', 'icon_name', 'icon_style'];
 
-    /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['pivot', 'created_at', 'updated_at', 'deleted_at'];
 
     /** Get all of the experiences that are assigned this skill. */

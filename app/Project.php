@@ -18,16 +18,12 @@ class Project extends Model
     use HasFactory;
     use SoftDeletes;
 
-    /** @var array The attributes that are mass assignable. */
     protected $fillable = ['name', 'description', 'project_url', 'source_url'];
 
-    /** @var array The accessors to append to the model's array form. */
     protected $appends = ['github_project_id'];
 
-    /** @var array The attributes that should be hidden for arrays. */
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
-    /** @var array The relations to eager load on every query. */
     protected $with = ['skills'];
 
     /** Return the project's GitHub ID. */
@@ -52,7 +48,7 @@ class Project extends Model
      */
     public function forks()
     {
-        return $this->repository()->forks_count ?? 'UNKNOWN';
+        return $this->repository()->forks_count ?? null;
     }
 
     /**
@@ -62,7 +58,7 @@ class Project extends Model
      */
     public function stars()
     {
-        return $this->repository()->stargazers_count ?? 'UNKNOWN';
+        return $this->repository()->stargazers_count ?? null;
     }
 
     /**
