@@ -25,7 +25,7 @@ outdated: # Check for outdated PHP and JavaScript dependencies
 	@npm outdated
 
 php-cs-fixer: # Check PHP coding standards with PHP Coding Standards Fixer
-	@vendor/bin/php-cs-fixer fix --diff --dry-run
+	@composer exec php-cs-fixer fix --diff --dry-run
 
 eslint: # Check JavaScript coding standards with ESLint
 	@npm run cs
@@ -33,12 +33,12 @@ eslint: # Check JavaScript coding standards with ESLint
 coding-standards: php-cs-fixer eslint # Check coding standards
 
 static-analysis: # Run static analysis checks
-	@vendor/bin/phpstan analyze
+	@composer exec phpstan analyze
 
 analyze: coding-standards static-analysis # Run coding standards and static analysis checks
 
 test: # Run tests
-	@vendor/bin/phpunit
+	@composer exec phpunit
 
 suite: analyze test # Run coding standards and static analysis checks and tests
 
@@ -46,4 +46,4 @@ tunnel: # Expose the application via secure tunnel
 	@composer exec expose share chriskankiewicz.local
 
 coverage: # Generate HTML coverage report
-	@vendor/bin/phpunit --coverage-html .coverage
+	@composer exec phpunit --coverage-html .coverage
