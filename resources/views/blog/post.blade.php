@@ -14,6 +14,22 @@
     <div class="my-4">
         {!! markdown($post->body) !!}
     </div>
+
+    <div class="flex justify-between items-center space-x-4 border border-gray-200 rounded-lg text-sm p-4 mt-12 md:text-base">
+        <div class="flex items-center">
+            <i class="fal fa-comment-alt-lines fa-2x text-teal-600 pr-4 hidden xs:block sm:block"></i>
+
+            <div>
+                <span class="hidden sm:inline">Let me know what you think.</span>
+                Send comments to
+                <a href="https://twitter.com/intent/tweet?text={{ urlencode(sprintf("@PHLAK [%s] ", $post->title)) }}" class="underline hover:text-teal-700">@PHLAK</a>.
+            </div>
+        </div>
+
+        <a href="https://github.com/sponsors/PHLAK" class="flex justify-center items-center bg-gray-200 px-4 py-2 rounded transform transition-transform hover:scale-110 focus:bg-gray-300">
+            <i class="fas fa-heart text-pink-500 mr-2"></i> Sponsor
+        </a>
+    </div>
 @endsection
 
 @section('after-content')
