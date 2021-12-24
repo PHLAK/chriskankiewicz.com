@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <a href="https://github.com/sponsors/PHLAK" class="flex justify-center items-center bg-gray-200 px-4 py-2 rounded transform transition-transform hover:scale-110 focus:bg-gray-300">
+        <a href="https://github.com/sponsors/PHLAK" class="flex justify-center items-center bg-gray-200 px-4 py-2 rounded transition-transform hover:scale-110 focus:bg-gray-300">
             <i class="fas fa-heart text-pink-500 mr-2"></i> Sponsor
         </a>
     </div>

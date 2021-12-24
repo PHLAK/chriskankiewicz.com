@@ -19,7 +19,7 @@
 
     @yield('before-content')
 
-    <div class="flex flex-grow px-4 py-8 sm:px-6">
+    <div class="flex grow px-4 py-8 sm:px-6">
         <div id="content" class="container min-h-full mx-auto lg:max-w-3xl">
             @yield('content')
         </div>

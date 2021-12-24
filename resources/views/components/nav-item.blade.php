@@ -1,4 +1,4 @@
-<li {{ $attributes->merge(['class' => 'flex-grow lg:flex-initial']) }}>
+<li {{ $attributes->merge(['class' => 'grow lg:flex-initial']) }}>
     <a href="{{ route($route) }}"
         class="flex justify-center items-center h-full border-l-4 border-transparent
             font-mono text-gray-300 uppercase py-4 pr-1
