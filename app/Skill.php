@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -20,16 +21,24 @@ class Skill extends Model
 
     protected $hidden = ['pivot', 'created_at', 'updated_at', 'deleted_at'];
 
-    /** Get all of the experiences that are assigned this skill. */
-    public function experiences()
+    /**
+     * Get all of the experiences that are assigned this skill.
+     *
+     * @return MorphToMany<Experience>
+     */
+    public function experiences(): MorphToMany
     {
-        return $this->morphedByMany('App\Experience', 'skillable');
+        return $this->morphedByMany(Experience::class, 'skillable');
     }
 
-    /** Get all of the projects that are assigned this skill. */
-    public function projects()
+    /**
+     * Get all of the projects that are assigned this skill.
+     *
+     * @return MorphToMany<Project>
+     */
+    public function projects(): MorphToMany
     {
-        return $this->morphedByMany('App\Project', 'skillable');
+        return $this->morphedByMany(Project::class, 'skillable');
     }
 
     /** Determine if this skill has an icon. */

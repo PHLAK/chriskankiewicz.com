@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -30,9 +31,13 @@ class Experience extends Model
 
     protected $with = ['skills'];
 
-    /** Get the experience's skills. */
-    public function skills()
+    /**
+     * Get the experience's skills.
+     *
+     * @return MorphToMany<Skill>
+     */
+    public function skills(): MorphToMany
     {
-        return $this->morphToMany('App\Skill', 'skillable');
+        return $this->morphToMany(Skill::class, 'skillable');
     }
 }

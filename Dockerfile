@@ -15,7 +15,7 @@ ENV XDG_CONFIG_HOME="/tmp/.config"
 RUN a2enmod rewrite
 
 RUN apt-get update && apt-get --assume-yes install libicu-dev libzip-dev \
-    sqlite3 tzdata && rm -rf /var/lib/apt/lists/*
+    mariadb-client tzdata && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure intl \
     && docker-php-ext-install bcmath intl pdo_mysql zip \

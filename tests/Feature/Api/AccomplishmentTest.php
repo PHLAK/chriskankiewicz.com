@@ -4,15 +4,12 @@ namespace Tests\Feature\Api;
 
 use App\Accomplishment;
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class AccomplishmentTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
-    public function it_can_list_all_accomplishment()
+    public function it_can_list_all_accomplishment(): void
     {
         Accomplishment::factory()->count(3)->create();
 
@@ -26,7 +23,7 @@ class AccomplishmentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_an_individual_accomplishment()
+    public function it_can_get_an_individual_accomplishment(): void
     {
         Accomplishment::factory()->create();
         $accomplishment = Accomplishment::factory()->create();
@@ -43,7 +40,7 @@ class AccomplishmentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_create_a_new_accomplishment()
+    public function it_can_create_a_new_accomplishment(): void
     {
         $user = User::factory()->admin()->create();
 
@@ -59,7 +56,7 @@ class AccomplishmentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_update_an_accomplishment()
+    public function it_can_update_an_accomplishment(): void
     {
         $user = User::factory()->admin()->create();
         $accomplishment = Accomplishment::factory()->create();
@@ -81,7 +78,7 @@ class AccomplishmentTest extends TestCase
     }
 
     /** @test */
-    public function it_can_delete_an_accomplishment()
+    public function it_can_delete_an_accomplishment(): void
     {
         $user = User::factory()->admin()->create();
         Accomplishment::factory()->create();

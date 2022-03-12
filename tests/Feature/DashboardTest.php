@@ -3,15 +3,12 @@
 namespace Tests\Feature;
 
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class DashboardTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
-    public function it_can_see_the_dashboard_when_logged_in()
+    public function it_can_see_the_dashboard_when_logged_in(): void
     {
         $user = User::factory()->admin()->create();
 

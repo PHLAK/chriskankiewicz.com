@@ -4,16 +4,13 @@ namespace Tests\Feature\Api;
 
 use App\Post;
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
 use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
-    public function it_can_list_all_posts()
+    public function it_can_list_all_posts(): void
     {
         Post::factory()->count(3)->create();
 
@@ -27,7 +24,7 @@ class PostTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_an_individual_post()
+    public function it_can_get_an_individual_post(): void
     {
         Post::factory()->create();
         $post = Post::factory()->create();
@@ -44,7 +41,7 @@ class PostTest extends TestCase
     }
 
     /** @test */
-    public function it_can_create_a_new_post()
+    public function it_can_create_a_new_post(): void
     {
         $user = User::factory()->admin()->create();
 
@@ -70,7 +67,7 @@ class PostTest extends TestCase
     }
 
     /** @test */
-    public function it_can_update_a_post()
+    public function it_can_update_a_post(): void
     {
         $user = User::factory()->admin()->create();
         $post = Post::factory()->create();
@@ -107,7 +104,7 @@ class PostTest extends TestCase
     }
 
     /** @test */
-    public function it_can_delete_an_post()
+    public function it_can_delete_an_post(): void
     {
         $user = User::factory()->admin()->create();
         Post::factory()->create();

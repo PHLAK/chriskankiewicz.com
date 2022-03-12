@@ -4,13 +4,10 @@ namespace Tests\Feature;
 
 use App\Post;
 use App\Tag;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class TagTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
     public function it_can_access_the_tag_page(): void
     {

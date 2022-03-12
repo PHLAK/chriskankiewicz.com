@@ -15,7 +15,7 @@ use Tests\TestCase;
 class GitHubClientTest extends TestCase
 {
     /** @test */
-    public function it_can_be_instantiated_from_the_service_container()
+    public function it_can_be_instantiated_from_the_service_container(): void
     {
         $gitHub = $this->app->make(GitHubClient::class);
 
@@ -23,7 +23,7 @@ class GitHubClientTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_repository_details()
+    public function it_can_get_repository_details(): void
     {
         $gitHubClient = $this->mockGitHubClient([
             new Response(200, [], json_encode([
@@ -40,7 +40,7 @@ class GitHubClientTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_an_empty_object_when_it_fails_to_retrieve_repository_details()
+    public function it_returns_an_empty_object_when_it_fails_to_retrieve_repository_details(): void
     {
         $gitHubClient = $this->mockGitHubClient([
             new ClientException('Not found', new Request('GET', 'test'), new Response),
@@ -53,7 +53,7 @@ class GitHubClientTest extends TestCase
     }
 
     /** @test */
-    public function it_can_cache_repository_details()
+    public function it_can_cache_repository_details(): void
     {
         $gitHubClient = $this->mockCachedGitHubClient([
             new Response(200, [], json_encode([

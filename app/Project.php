@@ -5,6 +5,7 @@ namespace App;
 use App\GitHub\Client as GitHubClient;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\App;
 
@@ -35,38 +36,30 @@ class Project extends Model
         return "{$owner}/{$repo}";
     }
 
-    /** Get the project's skills. */
-    public function skills()
+    /**
+     * Get the project's skills.
+     *
+     * @return MorphToMany<Skill>
+     */
+    public function skills(): MorphToMany
     {
-        return $this->morphToMany('App\Skill', 'skillable');
+        return $this->morphToMany(Skill::class, 'skillable');
     }
 
-    /**
-     * Return the number of GitHub stars the project has.
-     *
-     * @return int|null
-     */
-    public function forks()
+    /** Return the number of GitHub stars the project has. */
+    public function forks(): ?int
     {
         return $this->repository()->forks_count ?? null;
     }
 
-    /**
-     * Return the number of GitHub stars the project has.
-     *
-     * @return int|null
-     */
-    public function stars()
+    /** Return the number of GitHub stars the project has. */
+    public function stars(): ?int
     {
         return $this->repository()->stargazers_count ?? null;
     }
 
-    /**
-     * Get the projects repository information.
-     *
-     * @return object
-     */
-    protected function repository()
+    /** Get the projects repository information. */
+    protected function repository(): object
     {
         [$owner, $repo] = explode('/', $this->github_project_id);
 

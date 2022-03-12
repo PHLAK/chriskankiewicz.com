@@ -10,7 +10,7 @@ use Laravel\Nova\NovaApplicationServiceProvider;
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
     /** Bootstrap any application services. */
-    public function boot()
+    public function boot(): void
     {
         parent::boot();
     }
@@ -26,7 +26,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     }
 
     /** Register any application services. */
-    public function register()
+    public function register(): void
     {
     }
 

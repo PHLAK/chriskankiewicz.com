@@ -3,13 +3,10 @@
 namespace Tests\Feature;
 
 use App\Post;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
     public function it_can_access_a_post(): void
     {

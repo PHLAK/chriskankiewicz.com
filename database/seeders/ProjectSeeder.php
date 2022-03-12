@@ -11,7 +11,7 @@ use Symfony\Component\Yaml\Yaml;
 class ProjectSeeder extends Seeder
 {
     /** Run the database seeds. */
-    public function run()
+    public function run(): void
     {
         $projects = Yaml::parseFile(database_path('seeders/data/projects.yaml'));
 

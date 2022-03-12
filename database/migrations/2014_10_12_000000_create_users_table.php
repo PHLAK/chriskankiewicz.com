@@ -8,10 +8,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
-class CreateUsersTable extends Migration
-{
+return new class extends Migration {
     /** Run the migrations. */
-    public function up()
+    public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -29,13 +28,13 @@ class CreateUsersTable extends Migration
     }
 
     /** Reverse the migrations. */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('users');
     }
 
     /** Seed the users table. */
-    protected function seed()
+    protected function seed(): void
     {
         $user = new User([
             'name' => 'Chris Kankiewicz',
@@ -51,4 +50,4 @@ class CreateUsersTable extends Migration
 
         $user->save();
     }
-}
+};

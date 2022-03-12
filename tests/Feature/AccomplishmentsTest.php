@@ -2,13 +2,10 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class AccomplishmentsTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
     public function it_can_access_the_accomplishments_page(): void
     {

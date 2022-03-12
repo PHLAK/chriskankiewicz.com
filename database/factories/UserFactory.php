@@ -11,7 +11,7 @@ class UserFactory extends Factory
     /**
      * Define the model's default state.
      *
-     * @return array
+     * @return array<string,mixed>
      */
     public function definition()
     {
@@ -30,5 +30,11 @@ class UserFactory extends Factory
     public function admin(): self
     {
         return $this->state(fn (array $attributes) => ['is_admin' => true]);
+    }
+
+    /** Indicate that the model's email address should be unverified. */
+    public function unverified(): static
+    {
+        return $this->state(fn (array $attributes) => ['email_verified_at' => null]);
     }
 }

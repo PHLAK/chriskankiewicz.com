@@ -9,7 +9,7 @@ use Tests\TestCase;
 class ProjectTest extends TestCase
 {
     /** @test */
-    public function it_can_instantiate_an_project()
+    public function it_can_instantiate_an_project(): void
     {
         $project = new Project();
 
@@ -17,7 +17,7 @@ class ProjectTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_the_projects_github_project_id()
+    public function it_can_get_the_projects_github_project_id(): void
     {
         $project = new Project([
             'source_url' => 'https://github.com/fprefect/hhgttg',
@@ -27,7 +27,7 @@ class ProjectTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_the_projects_fork_count()
+    public function it_can_get_the_projects_fork_count(): void
     {
         $project = new Project([
             'source_url' => 'https://github.com/fprefect/hhgttg',
@@ -43,7 +43,7 @@ class ProjectTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_the_projects_star_count()
+    public function it_can_get_the_projects_star_count(): void
     {
         $project = new Project([
             'source_url' => 'https://github.com/fprefect/hhgttg',

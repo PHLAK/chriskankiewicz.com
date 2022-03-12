@@ -11,7 +11,7 @@ parameters:
         - routes
         - tests
 
-    level: 5 # 0 - 8 (higher = more strict)
+    level: 6 # 0 - 8 (higher = more strict)
 
     ignoreErrors:
         - '/^Call to an undefined method Faker\\Generator::[A-Za-z]+\(\)\.$/'

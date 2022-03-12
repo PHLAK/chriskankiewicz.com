@@ -4,15 +4,12 @@ namespace Tests\Feature\Api;
 
 use App\Experience;
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ExperienceTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
-    public function it_can_list_all_experiences()
+    public function it_can_list_all_experiences(): void
     {
         Experience::factory()->count(3)->create();
 
@@ -26,7 +23,7 @@ class ExperienceTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_an_individual_experience()
+    public function it_can_get_an_individual_experience(): void
     {
         Experience::factory()->create();
         $experience = Experience::factory()->create();
@@ -41,7 +38,7 @@ class ExperienceTest extends TestCase
     }
 
     /** @test */
-    public function it_can_create_a_new_experience()
+    public function it_can_create_a_new_experience(): void
     {
         $user = User::factory()->admin()->create();
 
@@ -65,7 +62,7 @@ class ExperienceTest extends TestCase
     }
 
     /** @test */
-    public function it_can_update_an_experience()
+    public function it_can_update_an_experience(): void
     {
         $user = User::factory()->admin()->create();
         $experience = Experience::factory()->create();
@@ -98,7 +95,7 @@ class ExperienceTest extends TestCase
     }
 
     /** @test */
-    public function it_can_delete_an_experience()
+    public function it_can_delete_an_experience(): void
     {
         $user = User::factory()->admin()->create();
         Experience::factory()->create();

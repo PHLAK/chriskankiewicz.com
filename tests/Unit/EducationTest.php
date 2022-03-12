@@ -9,7 +9,7 @@ use Tests\TestCase;
 class EducationTest extends TestCase
 {
     /** @test */
-    public function it_can_instantiate_an_education()
+    public function it_can_instantiate_an_education(): void
     {
         $education = new Education();
 
@@ -17,7 +17,7 @@ class EducationTest extends TestCase
     }
 
     /** @test */
-    public function it_casts_start_and_end_dates_to_carbon_instances()
+    public function it_casts_start_and_end_dates_to_carbon_instances(): void
     {
         $education = new Education([
             'start_date' => '1986-05-20',

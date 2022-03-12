@@ -78,7 +78,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePokemonTable extends Migration
+return new class extends Migration
 {
     /** @var array Array of Pokemon */
     protected $pokemon = [

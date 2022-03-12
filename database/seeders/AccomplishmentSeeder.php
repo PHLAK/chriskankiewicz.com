@@ -9,7 +9,7 @@ use Symfony\Component\Yaml\Yaml;
 class AccomplishmentSeeder extends Seeder
 {
     /** Run the database seeds. */
-    public function run()
+    public function run(): void
     {
         Accomplishment::insert(
             Yaml::parseFile(database_path('seeders/data/accomplishments.yaml'))

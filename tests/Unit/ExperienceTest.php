@@ -9,7 +9,7 @@ use Tests\TestCase;
 class ExperienceTest extends TestCase
 {
     /** @test */
-    public function it_can_instantiate_an_experience()
+    public function it_can_instantiate_an_experience(): void
     {
         $experience = new Experience();
 
@@ -17,7 +17,7 @@ class ExperienceTest extends TestCase
     }
 
     /** @test */
-    public function it_casts_start_and_end_dates_to_carbon_instances()
+    public function it_casts_start_and_end_dates_to_carbon_instances(): void
     {
         $experience = new Experience([
             'start_date' => '1986-05-20',

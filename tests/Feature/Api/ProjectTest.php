@@ -4,15 +4,12 @@ namespace Tests\Feature\Api;
 
 use App\Project;
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ProjectTest extends TestCase
 {
-    use RefreshDatabase;
-
     /** @test */
-    public function it_can_list_all_projects()
+    public function it_can_list_all_projects(): void
     {
         Project::factory()->count(3)->create();
 
@@ -26,7 +23,7 @@ class ProjectTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_an_individual_project()
+    public function it_can_get_an_individual_project(): void
     {
         Project::factory()->create();
         $project = Project::factory()->create();
@@ -41,7 +38,7 @@ class ProjectTest extends TestCase
     }
 
     /** @test */
-    public function it_can_create_a_new_project()
+    public function it_can_create_a_new_project(): void
     {
         $user = User::factory()->admin()->create();
 
@@ -63,7 +60,7 @@ class ProjectTest extends TestCase
     }
 
     /** @test */
-    public function it_can_update_an_project()
+    public function it_can_update_an_project(): void
     {
         $user = User::factory()->admin()->create();
         $project = Project::factory()->create();
@@ -85,7 +82,7 @@ class ProjectTest extends TestCase
     }
 
     /** @test */
-    public function it_can_delete_an_project()
+    public function it_can_delete_an_project(): void
     {
         $user = User::factory()->admin()->create();
         Project::factory()->create();

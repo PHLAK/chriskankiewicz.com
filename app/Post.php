@@ -4,6 +4,7 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -20,8 +21,7 @@ use Spatie\Feed\FeedItem;
  */
 class Post extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'slug', 'title', 'body', 'featured_image_url', 'featured_image_text', 'published_at',
@@ -32,7 +32,7 @@ class Post extends Model
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     /** Return a list of posts for the feed. */
-    public static function forFeed()
+    public static function forFeed(): Collection
     {
         return self::all();
     }

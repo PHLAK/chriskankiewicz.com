@@ -8,7 +8,7 @@ use Tests\TestCase;
 class SkillTest extends TestCase
 {
     /** @test */
-    public function it_can_instantiate_a_skill()
+    public function it_can_instantiate_a_skill(): void
     {
         $skill = new Skill();
 
@@ -16,7 +16,7 @@ class SkillTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_a_skills_name()
+    public function it_can_get_a_skills_name(): void
     {
         $skill = new Skill(['name' => 'Lockpicking']);
 
@@ -24,7 +24,7 @@ class SkillTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_a_skills_icon_styles()
+    public function it_can_get_a_skills_icon_styles(): void
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
@@ -37,7 +37,7 @@ class SkillTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_a_skills_icon_styles_with_extra_classes()
+    public function it_can_get_a_skills_icon_styles_with_extra_classes(): void
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
@@ -48,7 +48,7 @@ class SkillTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_a_skills_icon_markup()
+    public function it_can_get_a_skills_icon_markup(): void
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
@@ -60,7 +60,7 @@ class SkillTest extends TestCase
     }
 
     /** @test */
-    public function it_can_determine_if_a_skill_has_an_icon()
+    public function it_can_determine_if_a_skill_has_an_icon(): void
     {
         $skill = new Skill([
             'icon_name' => 'coffee',
@@ -71,7 +71,7 @@ class SkillTest extends TestCase
     }
 
     /** @test */
-    public function it_can_determine_if_a_skill_does_not_have_an_icon()
+    public function it_can_determine_if_a_skill_does_not_have_an_icon(): void
     {
         $skill1 = new Skill();
         $skill2 = new Skill(['icon_name' => 'coffee']);

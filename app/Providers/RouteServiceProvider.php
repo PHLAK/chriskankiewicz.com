@@ -26,18 +26,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const DASHBOARD = '/dashboard';
 
-    /**
-     * The controller namespace for the application.
-     *
-     * When present, controller route declarations will automatically be
-     * prefixed with this namespace.
-     *
-     * @var string|null
-     */
-    protected $namespace = null;
-
     /** Define your route model bindings, pattern filters, etc. */
-    public function boot()
+    public function boot(): void
     {
         $this->configureRateLimiting();
 
@@ -49,10 +39,10 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /** Configure the rate limiters for the application. */
-    protected function configureRateLimiting()
+    protected function configureRateLimiting(): void
     {
         RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60);
+            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
     }
 }
