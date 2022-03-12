@@ -5,12 +5,11 @@ namespace Tests\Feature\Api;
 use App\Education;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Kirschbaum\OpenApiValidator\ValidatesOpenApiSpec;
 use Tests\TestCase;
 
 class EducationTest extends TestCase
 {
-    use RefreshDatabase, ValidatesOpenApiSpec;
+    use RefreshDatabase;
 
     /** @test */
     public function it_can_list_all_education()
