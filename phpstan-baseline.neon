@@ -11,6 +11,71 @@ parameters:
 			path: app/GitHub/Client.php
 
 		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\AccomplishmentController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: app/Http/Controllers/Api/AccomplishmentController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\EducationController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: app/Http/Controllers/Api/EducationController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\ExperienceController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: app/Http/Controllers/Api/ExperienceController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\PostController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: app/Http/Controllers/Api/PostController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\ProjectController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: app/Http/Controllers/Api/ProjectController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\SkillController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: app/Http/Controllers/Api/SkillController.php
+
+		-
+			message: "#^Method App\\\\Http\\\\Middleware\\\\RedirectIfAuthenticated\\:\\:handle\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: app/Http/Middleware/RedirectIfAuthenticated.php
+
+		-
+			message: "#^Method App\\\\Nova\\\\Resource\\:\\:detailQuery\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Nova/Resource.php
+
+		-
+			message: "#^Method App\\\\Nova\\\\Resource\\:\\:detailQuery\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Nova/Resource.php
+
+		-
+			message: "#^Method App\\\\Nova\\\\Resource\\:\\:indexQuery\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Nova/Resource.php
+
+		-
+			message: "#^Method App\\\\Nova\\\\Resource\\:\\:indexQuery\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Nova/Resource.php
+
+		-
+			message: "#^Method App\\\\Nova\\\\Resource\\:\\:relatableQuery\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Nova/Resource.php
+
+		-
+			message: "#^Method App\\\\Nova\\\\Resource\\:\\:relatableQuery\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Nova/Resource.php
+
+		-
 			message: "#^Method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid return type Laravel\\\\Scout\\\\Builder\\.$#"
 			count: 1
 			path: app/Nova/Resource.php
@@ -19,4 +84,74 @@ parameters:
 			message: "#^Parameter \\$query of method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid type Laravel\\\\Scout\\\\Builder\\.$#"
 			count: 1
 			path: app/Nova/Resource.php
+
+		-
+			message: "#^Method App\\\\Post\\:\\:forFeed\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			count: 1
+			path: app/Post.php
+
+		-
+			message: "#^Method App\\\\Post\\:\\:scopePublishedAfter\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Post.php
+
+		-
+			message: "#^Method App\\\\Post\\:\\:scopePublishedAfter\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Post.php
+
+		-
+			message: "#^Method App\\\\Post\\:\\:scopePublishedBefore\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Post.php
+
+		-
+			message: "#^Method App\\\\Post\\:\\:scopePublishedBefore\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
+			count: 1
+			path: app/Post.php
+
+		-
+			message: "#^Method App\\\\Post\\:\\:tags\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: app/Post.php
+
+		-
+			message: "#^Method Database\\\\Factories\\\\SkillFactory\\:\\:definition\\(\\) throws checked exception OverflowException but it's missing from the PHPDoc @throws tag\\.$#"
+			count: 1
+			path: database/factories/SkillFactory.php
+
+		-
+			message: "#^Method Database\\\\Factories\\\\TagFactory\\:\\:definition\\(\\) throws checked exception OverflowException but it's missing from the PHPDoc @throws tag\\.$#"
+			count: 1
+			path: database/factories/TagFactory.php
+
+		-
+			message: "#^Method Database\\\\Factories\\\\UserFactory\\:\\:definition\\(\\) throws checked exception OverflowException but it's missing from the PHPDoc @throws tag\\.$#"
+			count: 1
+			path: database/factories/UserFactory.php
+
+		-
+			message: "#^Return type \\(array\\<string, mixed\\>\\) of method Database\\\\Factories\\\\UserFactory\\:\\:definition\\(\\) should be compatible with return type \\(array\\<string, mixed\\>\\) of method Illuminate\\\\Database\\\\Eloquent\\\\Factories\\\\Factory\\<App\\\\User\\>\\:\\:definition\\(\\)$#"
+			count: 1
+			path: database/factories/UserFactory.php
+
+		-
+			message: "#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			count: 1
+			path: database/seeders/ExperienceSeeder.php
+
+		-
+			message: "#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			count: 1
+			path: database/seeders/ExperienceSeeder.php
+
+		-
+			message: "#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			count: 1
+			path: database/seeders/ProjectSeeder.php
+
+		-
+			message: "#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			count: 1
+			path: database/seeders/ProjectSeeder.php
 
