@@ -60,6 +60,8 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
+            "@php artisan nova:publish",
+            "@php artisan telescope:publish",
             "@php artisan ide-helper:generate",
             "@php artisan ide-helper:models --nowrite"
         ],
