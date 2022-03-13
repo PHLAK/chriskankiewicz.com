@@ -6,6 +6,6 @@
             lg:text-base lg:px-4 hover:bg-gray-700 focus:outline-none
             {{ $isActive() ? 'border-teal-600' : null }}"
     >
-        <i class="fal {{ $icon }} fa-fw fa-lg inline-block mr-2 sm:hidden md:inline-block"></i> {{ ucfirst($section) }}
+        <x-icon :name="$icon" height="20" class="fa fa-fw fa-lg inline-block mr-2 stroke-white sm:hidden md:inline-block" /> {{ ucfirst($section) }}
     </a>
 </li>
