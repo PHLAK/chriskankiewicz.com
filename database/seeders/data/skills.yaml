@@ -79,8 +79,8 @@
   icon_style: null
 
 - name: CakePHP
-  icon_name: cake
-  icon_style: fab
+  icon_name: null
+  icon_style: null
 
 - name: Travis CI
   icon_name: null
