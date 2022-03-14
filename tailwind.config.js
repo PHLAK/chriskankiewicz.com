@@ -44,7 +44,7 @@ module.exports = {
                 '8': '2rem'
             },
             textColor: {
-                github: '#171515',
+                github: '#24292F',
                 keybase: '#FF6F21',
                 linkedin: '#2977C9',
                 reddit: '#FF4500',
