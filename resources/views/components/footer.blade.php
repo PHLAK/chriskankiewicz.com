@@ -9,8 +9,8 @@
                 <i class="fab fa-twitter fa-fw fa-2x"></i>
             </a>
 
-            <a href="https://medium.com/chriskankiewicz" title="Medium" class="text-medium transition-all hover:scale-125">
-                <i class="fab fa-medium fa-fw fa-2x"></i>
+            <a href="https://www.reddit.com/user/PHLAK" title="Reddit" class="text-reddit transition-all hover:scale-125">
+                <i class="fab fa-reddit fa-fw fa-2x"></i>
             </a>
 
             <a href="https://www.linkedin.com/in/chriskankiewicz/" title="LinkedIn" class="text-linkedin transition-all hover:scale-125">

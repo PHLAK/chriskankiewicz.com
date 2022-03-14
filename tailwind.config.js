@@ -46,8 +46,8 @@ module.exports = {
             textColor: {
                 github: '#171515',
                 keybase: '#FF6F21',
-                linkedin: '#2977C9', // #4875B4
-                medium: '#1F1F1F',
+                linkedin: '#2977C9',
+                reddit: '#FF4500',
                 steam: '#3B3B38',
                 twitter: '#1DA1F2'
             }
