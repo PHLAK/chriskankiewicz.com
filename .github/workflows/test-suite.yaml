@@ -119,6 +119,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: 'ubuntu-latest'
+    if: github.ref == 'refs/heads/master'
     needs: [coding-standards, static-analysis, tests]
 
     steps:
