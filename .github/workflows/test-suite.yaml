@@ -1,5 +1,11 @@
 name: ChrisKankiewicz.com Test Suite
-on: [push]
+on: [push, workflow_dispatch]
+
+env:
+  APP_DEBUG: true
+  DB_CONNECTION: mysql
+  DB_DATABASE: testing
+  DB_USERNAME: root
 
 jobs:
   coding-standards:
@@ -39,8 +45,7 @@ jobs:
     runs-on: 'ubuntu-latest'
 
     env:
-      DB_DATABASE: app
-      DB_USERNAME: root
+      APP_ENV: testing
 
     services:
       mysql:
@@ -107,7 +112,6 @@ jobs:
       - name: Run Tests
         env:
           APP_DEBUG: true
-          APP_ENV: testing
           APP_KEY: ${{ secrets.APP_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: vendor/bin/phpunit --coverage-text
