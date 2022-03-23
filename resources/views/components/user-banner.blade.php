@@ -29,7 +29,7 @@
         </div>
 
         <div>
-            <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 300) }}" alt="Profile Photo" class="inline-block w-48 rounded-full border-white border-8 font-bold mx-auto -mb-32 sm:w-64 sm:-mb-40">
+            <img src="{{ gravatar('Chris@ChrisKankiewicz.com', 480) }}" alt="Profile Photo" class="inline-block w-48 rounded-full border-white border-8 font-bold mx-auto -mb-32 sm:w-64 sm:-mb-40">
         </div>
     </div>
 </div>
