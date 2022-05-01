@@ -20,7 +20,7 @@
         "eslint-plugin-vue": "^8.2.0",
         "laravel-mix": "^6.0.13",
         "lodash": "^4.17.21",
-        "postcss": "^8.4.5",
+        "postcss": "^8.4.13",
         "prismjs": "^1.23.0",
         "sass": "^1.32.8",
         "sass-loader": "^12.1.0",
