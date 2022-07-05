@@ -19,7 +19,7 @@ RUN apt-get update && apt-get --assume-yes install libicu-dev libzip-dev \
 
 RUN docker-php-ext-configure intl \
     && docker-php-ext-install bcmath intl pdo_mysql zip \
-    && pecl install redis && docker-php-ext-enable redis
+    && pecl install redis xdebug && docker-php-ext-enable redis xdebug
 
 COPY ./.docker/php/config/php.ini /usr/local/etc/php/php.ini
 COPY ./.docker/apache2/config/000-default.conf /etc/apache2/sites-available/000-default.conf
