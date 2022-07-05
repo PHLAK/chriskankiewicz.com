@@ -22,6 +22,7 @@
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.8",
         "beyondcode/laravel-dump-server": "^1.0",
+        "brianium/paratest": "^6.4",
         "captainhook/captainhook": "^5.10",
         "captainhook/plugin-composer": "^5.3",
         "fakerphp/faker": "^1.9.1",
