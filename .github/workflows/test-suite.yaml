@@ -19,7 +19,7 @@ jobs:
       - name: Install PHP Dependencies
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-        run: composer update
+        run: composer install
 
       - name: Verify Coding Standards
         run: vendor/bin/php-cs-fixer fix --diff --dry-run
@@ -35,7 +35,7 @@ jobs:
       - name: Install PHP Dependencies
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-        run: composer update
+        run: composer install
 
       - name: Run Static Analysis
         run: vendor/bin/phpstan analyze
@@ -77,14 +77,14 @@ jobs:
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
       - name: Cache PHP Dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Cache JavaScript Dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -93,7 +93,7 @@ jobs:
       - name: Install PHP Dependencies
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-        run: composer update
+        run: composer install --no-interaction --no-progress --no-scripts --prefer-dist
 
       - name: Install JavaScript Dependencies
         env:
