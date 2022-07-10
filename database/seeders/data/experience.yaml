@@ -108,7 +108,7 @@
   title: Senior Software Engineer
   description: |-
     - Developed, designed and maintained ClearChecks background checks SaaS application.
-    - Implemented development workfolw featuring continuous integration testing and analysis.
+    - Implemented development workflow featuring continuous integration testing and analysis.
     - Refactored legacy SaaS application code to support PHP 7.4.
     - Updated application from Laravel 5.6 to Laravel 8 and maintained regular dependency updates.
   start_date: '2020-08-10'
