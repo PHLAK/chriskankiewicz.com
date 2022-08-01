@@ -12,7 +12,7 @@
         "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.0",
-        "laravel/nova": "^3.0",
+        "laravel/nova": "^4.12",
         "laravel/telescope": "^4.0",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.0",
