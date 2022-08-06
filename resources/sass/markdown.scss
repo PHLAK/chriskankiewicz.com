@@ -32,7 +32,7 @@
     }
 
     img {
-        @apply max-w-full;
+        @apply max-w-full border border-gray-800 shadow-solid-gray-800;
     }
 
     hr {
