@@ -15,7 +15,7 @@ env environment: # Bring up the development environment
 	@docker-compose up -d && php artisan migrate:fresh --seed
 
 update upgrade: # Update application dependencies and publish dependency assets
-	@composer update && php artisan nova:publish && php artisan telescope:publish
+	@composer update && php artisan telescope:publish
 	@npm update && npm install && npm audit fix
 
 outdated: # Check for outdated PHP and JavaScript dependencies
