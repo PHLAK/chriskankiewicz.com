@@ -46,46 +46,6 @@ parameters:
 			path: app/Http/Middleware/RedirectIfAuthenticated.php
 
 		-
-			message: "#^Method App\\\\Nova\\\\Resource\\:\\:detailQuery\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
-			count: 1
-			path: app/Nova/Resource.php
-
-		-
-			message: "#^Method App\\\\Nova\\\\Resource\\:\\:detailQuery\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
-			count: 1
-			path: app/Nova/Resource.php
-
-		-
-			message: "#^Method App\\\\Nova\\\\Resource\\:\\:indexQuery\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
-			count: 1
-			path: app/Nova/Resource.php
-
-		-
-			message: "#^Method App\\\\Nova\\\\Resource\\:\\:indexQuery\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
-			count: 1
-			path: app/Nova/Resource.php
-
-		-
-			message: "#^Method App\\\\Nova\\\\Resource\\:\\:relatableQuery\\(\\) has parameter \\$query with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder but does not specify its types\\: TModelClass$#"
-			count: 1
-			path: app/Nova/Resource.php
-
-		-
-			message: "#^Method App\\\\Nova\\\\Resource\\:\\:relatableQuery\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Builder does not specify its types\\: TModelClass$#"
-			count: 1
-			path: app/Nova/Resource.php
-
-		-
-			message: "#^Method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid return type Laravel\\\\Scout\\\\Builder\\.$#"
-			count: 1
-			path: app/Nova/Resource.php
-
-		-
-			message: "#^Parameter \\$query of method App\\\\Nova\\\\Resource\\:\\:scoutQuery\\(\\) has invalid type Laravel\\\\Scout\\\\Builder\\.$#"
-			count: 1
-			path: app/Nova/Resource.php
-
-		-
 			message: "#^Method App\\\\Post\\:\\:forFeed\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
 			count: 1
 			path: app/Post.php
