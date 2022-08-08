@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Accomplishment;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreAccomplishment;
-use App\Http\Requests\UpdateAccomplishment;
+use App\Http\Requests\AccomplishmentRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
 
@@ -24,7 +23,7 @@ class AccomplishmentController extends Controller
     }
 
     /** Store a newly created resource in storage. */
-    public function store(StoreAccomplishment $request): Accomplishment
+    public function store(AccomplishmentRequest $request): Accomplishment
     {
         return Accomplishment::create($request->validated());
     }
@@ -36,7 +35,7 @@ class AccomplishmentController extends Controller
     }
 
     /** Update the specified resource in storage. */
-    public function update(UpdateAccomplishment $request, Accomplishment $accomplishment): Accomplishment
+    public function update(AccomplishmentRequest $request, Accomplishment $accomplishment): Accomplishment
     {
         $accomplishment->update($request->validated());
 

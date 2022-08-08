@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Education;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreEducation;
-use App\Http\Requests\UpdateEducation;
+use App\Http\Requests\EducationRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
 
@@ -24,7 +23,7 @@ class EducationController extends Controller
     }
 
     /** Store a newly created resource in storage. */
-    public function store(StoreEducation $request): Education
+    public function store(EducationRequest $request): Education
     {
         return Education::create($request->validated());
     }
@@ -36,7 +35,7 @@ class EducationController extends Controller
     }
 
     /** Update the specified resource in storage. */
-    public function update(UpdateEducation $request, Education $education): Education
+    public function update(EducationRequest $request, Education $education): Education
     {
         $education->update($request->validated());
 

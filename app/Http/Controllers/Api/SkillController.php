@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreSkill;
-use App\Http\Requests\UpdateSkill;
+use App\Http\Requests\SkillRequest;
 use App\Skill;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
@@ -24,7 +23,7 @@ class SkillController extends Controller
     }
 
     /** Store a newly created resource in storage. */
-    public function store(StoreSkill $request): Skill
+    public function store(SkillRequest $request): Skill
     {
         return Skill::create($request->validated());
     }
@@ -36,7 +35,7 @@ class SkillController extends Controller
     }
 
     /** Update the specified resource in storage. */
-    public function update(UpdateSkill $request, Skill $skill): Skill
+    public function update(SkillRequest $request, Skill $skill): Skill
     {
         $skill->update($request->validated());
 

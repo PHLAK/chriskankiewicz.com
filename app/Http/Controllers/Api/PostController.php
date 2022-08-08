@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorePost;
-use App\Http\Requests\UpdatePost;
+use App\Http\Requests\PostRequest;
 use App\Post;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
@@ -24,7 +23,7 @@ class PostController extends Controller
     }
 
     /** Store a newly created resource in storage. */
-    public function store(StorePost $request): Post
+    public function store(PostRequest $request): Post
     {
         return Post::create($request->validated());
     }
@@ -36,7 +35,7 @@ class PostController extends Controller
     }
 
     /** Update the specified resource in storage. */
-    public function update(UpdatePost $request, Post $post): Post
+    public function update(PostRequest $request, Post $post): Post
     {
         $post->update($request->validated());
 

@@ -3,28 +3,19 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class UpdateProject extends FormRequest
+class ProjectRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
+    public function authorize(): bool
     {
         return $this->user()->is_admin;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'name' => ['string', 'max:255'],
+            'name' => ['string', 'max:255', Rule::when($this->method() === 'POST', 'required')],
             'description' => ['string', 'max:10000'],
             'project_url' => ['url', 'max:255'],
             'source_url' => ['url', 'max:255', 'regex:/https?:\/\/(?:www\.)?github\.com\/(.+)\/(.+)\/?/'],
