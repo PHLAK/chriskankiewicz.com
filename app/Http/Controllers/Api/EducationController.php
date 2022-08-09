@@ -47,6 +47,6 @@ class EducationController extends Controller
     {
         $education->delete();
 
-        return response(null, 204);
+        return response()->noContent();
     }
 }

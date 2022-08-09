@@ -47,6 +47,6 @@ class ExperienceController extends Controller
     {
         $experience->delete();
 
-        return response(null, 204);
+        return response()->noContent();
     }
 }

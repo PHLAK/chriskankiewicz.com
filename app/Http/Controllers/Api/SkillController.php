@@ -47,6 +47,6 @@ class SkillController extends Controller
     {
         $skill->delete();
 
-        return response(null, 204);
+        return response()->noContent();
     }
 }

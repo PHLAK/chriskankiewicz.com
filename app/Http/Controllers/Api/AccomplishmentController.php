@@ -47,6 +47,6 @@ class AccomplishmentController extends Controller
     {
         $accomplishment->delete();
 
-        return response(null, 204);
+        return response()->noContent();
     }
 }

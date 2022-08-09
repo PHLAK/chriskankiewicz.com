@@ -47,6 +47,6 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return response(null, 204);
+        return response()->noContent();
     }
 }
