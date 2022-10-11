@@ -1,3 +1,3 @@
-require('./bootstrap');
-require('./vue');
-require('./prism');
+import './bootstrap';
+import './vue';
+import './prism';
