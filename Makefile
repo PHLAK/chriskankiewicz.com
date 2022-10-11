@@ -9,7 +9,7 @@ dev development: # Install and build application developemnt dependencies
 
 prod production: # Install and build application production dependencies
 	@composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
-	@npm install --no-save && npm run production && npm prune --production
+	@npm install --no-save && npm run build && npm prune --production
 
 env environment: # Bring up the development environment
 	@docker-compose up -d && php artisan migrate:fresh --seed

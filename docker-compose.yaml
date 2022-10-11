@@ -44,7 +44,7 @@ services:
     volumes:
       - ./:/var/www/html
     user: ${HOST_USER_ID:-0}:${HOST_GROUP_ID:-0}
-    command: npm run watch
+    command: npm run dev
 
   artisan:
     container_name: chriskankiewicz-artisan

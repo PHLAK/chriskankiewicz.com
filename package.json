@@ -2,13 +2,8 @@
     "private": true,
     "scripts": {
         "cs": "npx eslint resources/js/**/*.{js,vue} || true",
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
+        "dev": "vite",
+        "build": "vite build"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-pro": "^6.0.0",

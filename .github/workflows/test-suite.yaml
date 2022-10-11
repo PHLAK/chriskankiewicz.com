@@ -107,7 +107,7 @@ jobs:
         run: npx eslint resources/js/**/*.{js,vue}
 
       - name: Compile Assets
-        run: npm run production --verbose
+        run: npm run build --verbose
 
       - name: Run Tests
         env:
