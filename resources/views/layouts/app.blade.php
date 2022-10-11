@@ -5,7 +5,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="icon" href="{{ asset('favicon.png') }}">
-<link rel="stylesheet" href="{{ mix('css/app.css') }}">
+@vite('resources/css/app.css')
 
 {{-- TODO: Re-enable when spatie/laravel-feed is working again --}}
 {{-- @include('feed::links') --}}
@@ -30,4 +30,4 @@
     <x-footer />
 </div>
 
-<script src="{{ mix('js/app.js') }}" defer></script>
+@vite('resources/js/app.js')
