@@ -77,7 +77,7 @@ or from within the Docker container:
 > You can watch for changes to assets and re-compile automatically during
 > development by running:
 > 
->     npm run watch
+>     npm run dev
 
 ### Initialize the Database
 

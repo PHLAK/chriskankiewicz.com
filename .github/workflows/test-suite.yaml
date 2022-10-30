@@ -8,13 +8,44 @@ env:
   DB_USERNAME: root
 
 jobs:
-  coding-standards:
-    name: Coding Standards
-    runs-on: 'ubuntu-latest'
+  js-coding-standards:
+    name: JavaScript Coding Standards
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Cache JavaScript Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Install JavaScript Dependencies
+        env:
+          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN}}
+        run: |
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set "//npm.fontawesome.com/:_authToken" $FONT_AWESOME_TOKEN
+          npm ci --no-audit --no-fund
+
+      - name: Lint JavaScript Files
+        run: npx eslint --quiet --ext .js,.vue resources/js/
+
+  php-coding-standards:
+    name: PHP Coding Standards
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install PHP Dependencies
+        env:
+          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+        run: composer install --no-interaction --no-progress --no-scripts --prefer-dist
 
       - name: Install PHP Dependencies
         env:
@@ -26,11 +57,11 @@ jobs:
 
   static-analysis:
     name: Static Analysis
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install PHP Dependencies
         env:
@@ -42,7 +73,7 @@ jobs:
 
   tests:
     name: Tests
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-22.04
 
     env:
       APP_ENV: testing
@@ -63,7 +94,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -101,13 +132,13 @@ jobs:
         run: |
           npm config set "@fortawesome:registry" https://npm.fontawesome.com/
           npm config set "//npm.fontawesome.com/:_authToken" $FONT_AWESOME_TOKEN
-          npm ci
+          npm ci --no-audit --no-fund
 
       - name: Lint JavaScript Files
         run: npx eslint resources/js/**/*.{js,vue}
 
       - name: Compile Assets
-        run: npm run production --verbose
+        run: npm run build --verbose
 
       - name: Run Tests
         env:
@@ -118,9 +149,9 @@ jobs:
 
   deploy:
     name: Deploy
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-22.04
     if: github.ref == 'refs/heads/master'
-    needs: [coding-standards, static-analysis, tests]
+    needs: [js-coding-standards, php-coding-standards, static-analysis, tests]
 
     steps:
       - name: Call Deployment Hook
