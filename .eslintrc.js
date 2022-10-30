@@ -7,7 +7,7 @@ module.exports = {
     },
     'extends': [
         'eslint:recommended',
-        'plugin:vue/essential'
+        'plugin:vue/recommended'
     ],
     'parserOptions': {
         'ecmaVersion': 12,
@@ -20,5 +20,8 @@ module.exports = {
         'no-multi-spaces': ['error'],
         'quotes': ['error', 'single'],
         'semi': ['error', 'always', { 'omitLastInOneLineBlock': true }],
+        'vue/html-indent': ['error', 4],
+        'vue/html-quotes': ['error', 'double', { 'avoidEscape': true }],
+        'vue/max-attributes-per-line': ['error', { 'singleline': { 'max': 99 }, 'multiline': { 'max': 1 } }],
     }
 };
