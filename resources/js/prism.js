@@ -8,11 +8,14 @@ import 'prismjs/components/prism-shell-session';
 import 'prismjs/plugins/show-language/prism-show-language';
 import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 
-Prism.plugins.NormalizeWhitespace.setDefaults({
-    'remove-trailing': true,
-    'remove-indent': true,
-    'left-trim': true,
-    'right-trim': true
-});
+export function prismInit() {
+    Prism.plugins.NormalizeWhitespace.setDefaults({
+        'remove-trailing': true,
+        'remove-indent': true,
+        'left-trim': true,
+        'right-trim': true
+    });
 
-Prism.highlightAll();
+    Prism.highlightAll();
+}
+

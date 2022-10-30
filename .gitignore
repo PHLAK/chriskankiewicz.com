@@ -1,8 +1,7 @@
 /node_modules
-/public/css/*
-/public/js/*
-/public/mix-manifest.json
+/public/build/*
 /public/storage
+/public/hot
 /storage/*.key
 /vendor
 _ide_helper_models.php
@@ -14,5 +13,3 @@ _ide_helper.php
 .phpunit.result.cache
 docker-compose.override.yaml
 npm-debug.log
-
-/public/build
