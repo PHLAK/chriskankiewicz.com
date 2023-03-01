@@ -28,7 +28,7 @@
         "filp/whoops": "^2.0",
         "kirschbaum-development/laravel-openapi-validator": "^0.2.0",
         "mockery/mockery": "^1.3.1",
-        "nunomaduro/collision": "^6.1",
+        "nunomaduro/collision": "^7.0",
         "nunomaduro/larastan": "^2.1",
         "phlak/coding-standards": "^2.0",
         "phpunit/phpunit": "^9.5",
