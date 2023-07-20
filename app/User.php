@@ -20,13 +20,12 @@ class User extends Authenticatable
         'name', 'email', 'password', 'api_token',
     ];
 
-    protected $dates = ['email_verified_at'];
+    protected $casts = [
+        'is_admin' => 'boolean',
+        'email_verified_at' => 'datetime',
+    ];
 
     protected $hidden = [
         'password', 'remember_token', 'admin', 'api_token',
-    ];
-
-    protected $casts = [
-        'is_admin' => 'boolean',
     ];
 }

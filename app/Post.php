@@ -27,7 +27,9 @@ class Post extends Model
         'slug', 'title', 'body', 'featured_image_url', 'featured_image_text', 'published_at',
     ];
 
-    protected $dates = ['published_at'];
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
 
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 

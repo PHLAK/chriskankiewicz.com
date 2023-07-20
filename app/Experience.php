@@ -25,7 +25,10 @@ class Experience extends Model
         'company', 'title', 'description', 'start_date', 'end_date', 'location',
     ];
 
-    protected $dates = ['start_date', 'end_date'];
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
+    ];
 
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
