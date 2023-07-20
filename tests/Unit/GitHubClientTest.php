@@ -35,8 +35,8 @@ class GitHubClientTest extends TestCase
 
         $repository = $gitHubClient->repository('fprefect', 'hhgttg');
 
-        $this->assertObjectHasAttribute('fork_count', $repository);
-        $this->assertObjectHasAttribute('stargazers_count', $repository);
+        $this->assertObjectHasProperty('fork_count', $repository);
+        $this->assertObjectHasProperty('stargazers_count', $repository);
     }
 
     /** @test */

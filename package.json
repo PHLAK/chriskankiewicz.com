@@ -1,5 +1,6 @@
 {
     "private": true,
+    "type": "module",
     "scripts": {
         "cs": "npx eslint --ext .js,.vue resources/js/",
         "dev": "vite",
@@ -13,9 +14,7 @@
         "cross-env": "^7.0.3",
         "eslint": "^8.5.0",
         "eslint-plugin-vue": "^9.6.0",
-        "laravel-vite-plugin": "^0.7.0",
-        "lodash": "^4.17.21",
-        "postcss": "^8.4.5",
+        "laravel-vite-plugin": "^0.7.5",
         "prismjs": "^1.23.0",
         "sass": "^1.55.0",
         "sass-loader": "^13.1.0",

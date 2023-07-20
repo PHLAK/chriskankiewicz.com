@@ -10,6 +10,7 @@ _ide_helper.php
 .env.*
 .npmrc
 .php-cs-fixer.cache
+.phpunit.cache
 .phpunit.result.cache
 docker-compose.override.yaml
 npm-debug.log
