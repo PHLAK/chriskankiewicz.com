@@ -10,7 +10,7 @@ class AccomplishmentTest extends TestCase
     /** @test */
     public function it_can_instantiate_an_accomplishment(): void
     {
-        $accomplishment = new Accomplishment();
+        $accomplishment = new Accomplishment;
 
         $this->assertInstanceOf(Accomplishment::class, $accomplishment);
     }

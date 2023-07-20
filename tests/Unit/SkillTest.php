@@ -10,7 +10,7 @@ class SkillTest extends TestCase
     /** @test */
     public function it_can_instantiate_a_skill(): void
     {
-        $skill = new Skill();
+        $skill = new Skill;
 
         $this->assertInstanceOf(Skill::class, $skill);
     }
@@ -73,7 +73,7 @@ class SkillTest extends TestCase
     /** @test */
     public function it_can_determine_if_a_skill_does_not_have_an_icon(): void
     {
-        $skill1 = new Skill();
+        $skill1 = new Skill;
         $skill2 = new Skill(['icon_name' => 'coffee']);
         $skill3 = new Skill(['icon_style' => 'fas']);
 

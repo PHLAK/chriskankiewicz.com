@@ -11,7 +11,7 @@ class ProjectTest extends TestCase
     /** @test */
     public function it_can_instantiate_an_project(): void
     {
-        $project = new Project();
+        $project = new Project;
 
         $this->assertInstanceOf(Project::class, $project);
     }

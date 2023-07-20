@@ -11,7 +11,7 @@ class ExperienceTest extends TestCase
     /** @test */
     public function it_can_instantiate_an_experience(): void
     {
-        $experience = new Experience();
+        $experience = new Experience;
 
         $this->assertInstanceOf(Experience::class, $experience);
     }

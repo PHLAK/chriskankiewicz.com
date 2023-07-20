@@ -11,7 +11,7 @@ class EducationTest extends TestCase
     /** @test */
     public function it_can_instantiate_an_education(): void
     {
-        $education = new Education();
+        $education = new Education;
 
         $this->assertInstanceOf(Education::class, $education);
     }
