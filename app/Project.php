@@ -63,6 +63,9 @@ class Project extends Model
     {
         [$owner, $repo] = explode('/', $this->github_project_id);
 
-        return App::make(GitHubClient::class)->repository($owner, $repo);
+        /** @var GitHubClient $gitHub */
+        $gitHub = App::make(GitHubClient::class);
+
+        return $gitHub->repository($owner, $repo);
     }
 }

@@ -46,6 +46,7 @@ parameters:
         - 'InvalidArgumentException'
         - 'LogicException'
         - 'Illuminate\Contracts\Container\BindingResolutionException'
+        - 'PHPUnit\Framework\Exception'
+        - 'RuntimeException'
         - 'Symfony\Component\HttpKernel\Exception\HttpException'
         - 'Symfony\Component\Yaml\Exception\ParseException'
-        - 'PHPUnit\Framework\Exception'
