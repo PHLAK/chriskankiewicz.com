@@ -1,5 +1,5 @@
 includes:
-    - vendor/nunomaduro/larastan/extension.neon
+    - vendor/larastan/larastan/extension.neon
     - phpstan-baseline.neon
 
 parameters:
@@ -11,7 +11,7 @@ parameters:
         - routes
         - tests
 
-    level: 6 # 0 - 8 (higher = more strict)
+    level: 7 # 0 - 8 (higher = more strict)
 
     ignoreErrors:
         - '/^Call to an undefined method Faker\\Generator::[A-Za-z]+\(\)\.$/'
@@ -25,7 +25,6 @@ parameters:
     checkExplicitMixedMissingReturn: true
     checkFunctionNameCase: true
     # checkMissingClosureNativeReturnTypehintRule: true
-    checkMissingIterableValueType: false
     checkModelProperties: true
     # checkTooWideReturnTypesInProtectedAndPublicMethods: true
     checkUninitializedProperties: true
