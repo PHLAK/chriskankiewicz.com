@@ -26,7 +26,7 @@ class GitHubClientTest extends TestCase
     public function it_can_get_repository_details(): void
     {
         $gitHubClient = $this->mockGitHubClient([
-            new Response(200, [], json_encode([
+            new Response(200, [], (string) json_encode([
                 'id' => 12345,
                 'fork_count' => 1337,
                 'stargazers_count' => 1337,
@@ -56,12 +56,12 @@ class GitHubClientTest extends TestCase
     public function it_can_cache_repository_details(): void
     {
         $gitHubClient = $this->mockCachedGitHubClient([
-            new Response(200, [], json_encode([
+            new Response(200, [], (string) json_encode([
                 'id' => 12345,
                 'fork_count' => 1337,
                 'stargazers_count' => 1337,
             ])),
-            new Response(200, [], json_encode([
+            new Response(200, [], (string) json_encode([
                 'id' => 54321,
                 'fork_count' => 7331,
                 'stargazers_count' => 7331,

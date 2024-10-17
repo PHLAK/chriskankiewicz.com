@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,6 +22,7 @@ use Spatie\Feed\FeedItem;
  */
 class Post extends Model
 {
+    /** @use HasFactory<PostFactory> */
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
@@ -47,19 +49,35 @@ class Post extends Model
         });
     }
 
-    /** Scope the query to posts published before a specified date. */
+    /**
+     * Scope the query to posts published before a specified date.
+     *
+     * @param Builder<self> $query
+     *
+     * @return Builder<self>
+     */
     public function scopePublishedBefore(Builder $query, Carbon $date): Builder
     {
         return $query->where('published_at', '<', $date);
     }
 
-    /** Scope the query to posts published after a specified date. */
+    /**
+     * Scope the query to posts published after a specified date.
+     *
+     * @param Builder<self> $query
+     *
+     * @return Builder<self>
+     */
     public function scopePublishedAfter(Builder $query, CArbon $date): Builder
     {
         return $query->where('published_at', '>', $date);
     }
 
-    /** The tags that belong to the post. */
+    /**
+     * The tags that belong to the post.
+     *
+     * @return BelongsToMany<Tag, self>
+     */
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);

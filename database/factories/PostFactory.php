@@ -8,12 +8,7 @@ use Illuminate\Support\Str;
 /** @extends Factory<\App\Post> */
 class PostFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition()
+    public function definition(): array
     {
         return [
             'title' => $title = $this->faker->sentence(),

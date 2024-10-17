@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Database\Factories\TagFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -14,8 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Tag extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
+    /** @use HasFactory<TagFactory> */
+    use HasFactory, SoftDeletes;
 
     protected $fillable = ['slug', 'name'];
 
@@ -24,7 +25,7 @@ class Tag extends Model
     /**
      * The posts that belong to the tag.
      *
-     * @return BelongsToMany<Post>
+     * @return BelongsToMany<Post, self>
      */
     public function posts(): BelongsToMany
     {

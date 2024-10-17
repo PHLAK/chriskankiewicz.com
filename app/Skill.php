@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Database\Factories\SkillFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -14,8 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Skill extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
+    /** @use HasFactory<SkillFactory> */
+    use HasFactory, SoftDeletes;
 
     protected $fillable = ['name', 'icon_name', 'icon_style'];
 
@@ -24,7 +25,7 @@ class Skill extends Model
     /**
      * Get all of the experiences that are assigned this skill.
      *
-     * @return MorphToMany<Experience>
+     * @return MorphToMany<Experience, self>
      */
     public function experiences(): MorphToMany
     {
@@ -34,7 +35,7 @@ class Skill extends Model
     /**
      * Get all of the projects that are assigned this skill.
      *
-     * @return MorphToMany<Project>
+     * @return MorphToMany<Project, self>
      */
     public function projects(): MorphToMany
     {
@@ -50,7 +51,7 @@ class Skill extends Model
     /**
      * Get the skill's icon style classes.
      *
-     * @param array $extraStyles Array of extra style class names
+     * @param array<string> $extraStyles Array of extra style class names
      */
     public function iconStyles(array $extraStyles = []): string
     {
@@ -66,7 +67,7 @@ class Skill extends Model
     /**
      * Get the skill's icon markup.
      *
-     * @param array $extraStyles Array of extra style class names
+     * @param array<string> $extraStyles Array of extra style class names
      */
     public function iconMarkup(array $extraStyles = []): string
     {

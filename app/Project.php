@@ -3,6 +3,7 @@
 namespace App;
 
 use App\GitHub\Client as GitHubClient;
+use Database\Factories\ProjectFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -16,8 +17,8 @@ use Illuminate\Support\Facades\App;
  */
 class Project extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
+    /** @use HasFactory<ProjectFactory> */
+    use HasFactory, SoftDeletes;
 
     protected $fillable = ['name', 'description', 'project_url', 'source_url'];
 
@@ -39,7 +40,7 @@ class Project extends Model
     /**
      * Get the project's skills.
      *
-     * @return MorphToMany<Skill>
+     * @return MorphToMany<Skill, self>
      */
     public function skills(): MorphToMany
     {

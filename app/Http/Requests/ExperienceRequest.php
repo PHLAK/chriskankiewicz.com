@@ -12,6 +12,7 @@ class ExperienceRequest extends FormRequest
         return $this->user()->is_admin;
     }
 
+    /** @return array<string, array<mixed>> */
     public function rules(): array
     {
         return [

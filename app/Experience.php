@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Database\Factories\ExperienceFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -14,8 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Experience extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
+    /** @use HasFactory<ExperienceFactory> */
+    use HasFactory, SoftDeletes;
 
     // NOTE: Temporary workaround for broken pluralizer
     /** @var string The table associated with the model. */
@@ -37,7 +38,7 @@ class Experience extends Model
     /**
      * Get the experience's skills.
      *
-     * @return MorphToMany<Skill>
+     * @return MorphToMany<Skill, self>
      */
     public function skills(): MorphToMany
     {
