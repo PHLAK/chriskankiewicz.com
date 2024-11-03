@@ -3,7 +3,7 @@
 namespace App\GitHub;
 
 use App\GitHub\Client as GitHubClient;
-use Illuminate\Support\Carbon;
+use Carbon\CarbonInterval;
 use Illuminate\Support\Facades\Cache;
 
 class CachedClient extends Client
@@ -24,9 +24,9 @@ class CachedClient extends Client
      */
     public function repository(string $owner, string $repo): object
     {
-        return Cache::remember(
+        return Cache::flexible(
             sprintf('repository:%s:%s', $owner, $repo),
-            Carbon::now()->addHours(6)->addMinutes(rand(-120, 120)),
+            [CarbonInterval::hours(4), CarbonInterval::hour(8)],
             fn () => $this->client->repository($owner, $repo)
         );
     }
