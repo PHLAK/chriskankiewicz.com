@@ -44,9 +44,11 @@ module.exports = {
                 '8': '2rem'
             },
             textColor: {
+                bluesky: '#0886FE',
                 github: '#24292F',
                 keybase: '#FF6F21',
                 linkedin: '#2977C9',
+                mastodon: '#6364FF',
                 reddit: '#FF4500',
                 steam: '#3B3B38',
                 twitter: '#1DA1F2'

@@ -5,12 +5,20 @@
                 <i class="fab fa-github fa-fw fa-2x"></i>
             </a>
 
-            <a href="https://twitter.com/PHLAK" title="Twitter" class="text-twitter transition-all hover:scale-125">
-                <i class="fab fa-twitter fa-fw fa-2x"></i>
+            <a href="https://bsky.app/profile/phlak.dev" title="Bluesky" class="text-bluesky transition-all hover:scale-125">
+                <i class="fab fa-bluesky fa-fw fa-2x"></i>
+            </a>
+
+            <a href="https://mastodon.social/@PHLAK" title="Mastodon" class="text-mastodon transition-all hover:scale-125">
+                <i class="fab fa-mastodon fa-fw fa-2x"></i>
             </a>
 
             <a href="https://www.reddit.com/user/PHLAK" title="Reddit" class="text-reddit transition-all hover:scale-125">
                 <i class="fab fa-reddit fa-fw fa-2x"></i>
+            </a>
+
+            <a href="https://twitter.com/PHLAK" title="Twitter" class="text-twitter transition-all hover:scale-125">
+                <i class="fab fa-twitter fa-fw fa-2x"></i>
             </a>
 
             <a href="https://www.linkedin.com/in/chriskankiewicz/" title="LinkedIn" class="text-linkedin transition-all hover:scale-125">
