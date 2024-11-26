@@ -1,9 +1,1 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google_analytics.tracking_id') }}"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '{{ config('services.google_analytics.tracking_id') }}');
-</script>
+<script defer src="https://analytics.phlak.net/script.js" data-website-id="ece5ba8f-dc29-4883-abf1-004158c8140f"></script>

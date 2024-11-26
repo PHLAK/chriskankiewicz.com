@@ -7,10 +7,10 @@
 <link rel="icon" href="{{ asset('favicon.png') }}">
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+@includeWhen(app()->isProduction(), 'components.analytics')
+
 {{-- TODO: Re-enable when spatie/laravel-feed is working again --}}
 {{-- @include('feed::links') --}}
-
-@includeWhen(config('services.google_analytics.tracking_id'), 'components.analytics')
 
 <title>{{ isset($title) ? sprintf('%s • ', $title) : null }}Chris Kankiewicz</title>
 
