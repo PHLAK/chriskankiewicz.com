@@ -52,6 +52,7 @@
 
     ```php
     use PHLAK\Splat\Pattern;
+    use PHLAK\Splat\Glob;
 
     Pattern::make('foo/bar.txt')->toRegex(); // '#^foo/bar\.txt$#'
     Pattern::make('file.{yml,yaml}')->toRegex(); // '#^file\.(yml|yaml)$#'
