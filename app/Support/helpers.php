@@ -5,11 +5,11 @@ if (! function_exists('gravatar')) {
      * Get a gravatar image URL for a given email address.
      *
      * @param string $email An email address
-     * @param int $size The desired image dimensions
+     * @param ?int $size The desired image dimensions
      *
      * @return string
      */
-    function gravatar(string $email, int $size = null)
+    function gravatar(string $email, ?int $size = null)
     {
         $hash = md5(strtolower(trim($email)));
         $queryString = http_build_query(['s' => $size]);
