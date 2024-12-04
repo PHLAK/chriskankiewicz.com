@@ -1,4 +1,4 @@
-FROM php:8.3-apache
+FROM php:8.4-apache
 LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
 COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
