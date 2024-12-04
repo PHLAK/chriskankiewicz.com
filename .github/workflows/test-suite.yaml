@@ -38,6 +38,9 @@ jobs:
     name: PHP Coding Standards
     runs-on: ubuntu-22.04
 
+    env:
+      PHP_CS_FIXER_IGNORE_ENV: 1
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
