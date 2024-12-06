@@ -13,17 +13,16 @@
 Requirements
 ------------
 
-  - [PHP](https://secure.php.net/) >= 8.0
-  - [MySQL](https://www.mysql.com/) >= 5.7
-  - [Node.js](https://nodejs.org) >= 14.0
+  - [PHP](https://secure.php.net/)
+  - [MySQL](https://www.mysql.com/)
+  - [Node.js](https://nodejs.org)
 
 #### For development
 
   - [Composer](https://getcomposer.org/)
   - [Docker](https://www.docker.com/)
     - [Docker Compose](https://docs.docker.com/compose/)
-  - [SQLite](https://www.sqlite.org/index.html)
-    - `php-sqlite3` PHP extension
+  - [SQLite](https://www.sqlite.org/index.html) (i.e. `php-sqlite3` extension)
 
 Setting up a Local Development Environment
 ------------------------------------------
@@ -55,35 +54,13 @@ following from the project's root directory:
 
     composer install
 
-or from within the Docker container:
+## Install JavaScript Assets
 
-    docker run -it --rm --env-file ${PWD}/.env --user $(id -u):$(id -g) --volume ${PWD}:/app composer:1.9 \
-        composer config --global http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD} \
-        && composer install --working-dir /app --ignore-platform-reqs --no-cache --no-interaction --no-scripts
+    npm install
 
-## Install and Compile CSS and JavaScript Assets
+### Initialize and Seed the Database
 
-    npm install && npm run dev
-
-or from within the Docker container:
-
-    docker run -it --rm --env-file ${PWD}/.env --user $(id -u):$(id -g) --volume ${PWD}:/app node:12.10 \
-        npm config set "@fortawesome:registry" https://npm.fontawesome.com/ \
-        && npm config set "//npm.fontawesome.com/:_authToken" ${FONT_AWESOME_TOKEN} \
-        && npm install && npm run dev
-
-> #### ℹ️ Watching for Changes
->
-> You can watch for changes to assets and re-compile automatically during
-> development by running:
-> 
->     npm run dev
-
-### Initialize the Database
-
-Run the migrations and seed the database.
-
-    docker-compose exec php artisan migrate
+    artisan migrate:fresh --seed
 
 ### Accessing the Development Site
 
