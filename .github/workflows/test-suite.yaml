@@ -160,7 +160,7 @@ jobs:
       - name: Run Tests
         env:
           APP_DEBUG: true
-          APP_KEY: ${{ secrets.APP_KEY }}
+          APP_KEY: base64:MCSxE7Ubok9BevQ0zbeWsosyYZjVgIdoK1p7WrDA3TI=
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: vendor/bin/phpunit --coverage-text
 
