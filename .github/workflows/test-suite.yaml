@@ -32,7 +32,7 @@ jobs:
           npm ci --no-audit --no-fund
 
       - name: Lint JavaScript Files
-        run: npx eslint --quiet --ext .js,.vue resources/js/
+        run: npx eslint --quiet resources/js/
 
   php-coding-standards:
     name: PHP Coding Standards
@@ -152,7 +152,7 @@ jobs:
           npm ci --no-audit --no-fund
 
       - name: Lint JavaScript Files
-        run: npx eslint resources/js/**/*.{js,vue}
+        run: npx eslint --quiet resources/js/
 
       - name: Compile Assets
         run: npm run build --verbose
