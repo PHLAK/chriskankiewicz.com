@@ -1,182 +1,488 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method App\\\\Experience\\:\\:skills\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany\\<App\\\\Skill, App\\\\Experience\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany\\<App\\\\Skill, \\$this\\(App\\\\Experience\\)\\>\\.$#"
+			message: '#^Method App\\Experience\:\:skills\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, App\\Experience\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, \$this\(App\\Experience\)\>\.$#'
+			identifier: return.type
 			count: 1
 			path: app/Experience.php
 
 		-
-			message: "#^Method App\\\\GitHub\\\\Client\\:\\:repository\\(\\) throws checked exception JsonException but it's missing from the PHPDoc @throws tag\\.$#"
+			message: '#^Method App\\GitHub\\CachedClient\:\:repository\(\) should return object but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: app/GitHub/CachedClient.php
+
+		-
+			message: '#^Method App\\GitHub\\Client\:\:repository\(\) should return object but returns mixed\.$#'
+			identifier: return.type
 			count: 1
 			path: app/GitHub/Client.php
 
 		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\AccomplishmentController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			message: '#^Method App\\GitHub\\Client\:\:repository\(\) throws checked exception JsonException but it''s missing from the PHPDoc @throws tag\.$#'
+			identifier: missingType.checkedException
+			count: 1
+			path: app/GitHub/Client.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Api\\AccomplishmentController\:\:index\(\) return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types\: TKey, TModel$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/Http/Controllers/Api/AccomplishmentController.php
 
 		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\EducationController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			message: '#^Method App\\Http\\Controllers\\Api\\EducationController\:\:index\(\) return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types\: TKey, TModel$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/Http/Controllers/Api/EducationController.php
 
 		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\ExperienceController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			message: '#^Method App\\Http\\Controllers\\Api\\ExperienceController\:\:index\(\) return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types\: TKey, TModel$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/Http/Controllers/Api/ExperienceController.php
 
 		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\PostController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			message: '#^Method App\\Http\\Controllers\\Api\\PostController\:\:index\(\) return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types\: TKey, TModel$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/Http/Controllers/Api/PostController.php
 
 		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\ProjectController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			message: '#^Method App\\Http\\Controllers\\Api\\ProjectController\:\:index\(\) return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types\: TKey, TModel$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/Http/Controllers/Api/ProjectController.php
 
 		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\Api\\\\SkillController\\:\\:index\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			message: '#^Method App\\Http\\Controllers\\Api\\SkillController\:\:index\(\) return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types\: TKey, TModel$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/Http/Controllers/Api/SkillController.php
 
 		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\Auth\\\\RegisterController\\:\\:create\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Http\\Controllers\\Auth\\RegisterController\:\:create\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: app/Http/Controllers/Auth/RegisterController.php
 
 		-
-			message: "#^Method App\\\\Http\\\\Controllers\\\\Auth\\\\RegisterController\\:\\:validator\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method App\\Http\\Controllers\\Auth\\RegisterController\:\:validator\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: app/Http/Controllers/Auth/RegisterController.php
 
 		-
-			message: "#^Method App\\\\Post\\:\\:forFeed\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Collection does not specify its types\\: TKey, TModel$#"
+			message: '#^Parameter \#1 \$value of static method Illuminate\\Support\\Facades\\Hash\:\:make\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Auth/RegisterController.php
+
+		-
+			message: '#^Parameter \#1 \$date of static method Illuminate\\Database\\Eloquent\\Builder\<App\\Post\>\:\:publishedAfter\(\) expects Carbon\\Carbon, Carbon\\Carbon\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Parameter \#1 \$date of static method Illuminate\\Database\\Eloquent\\Builder\<App\\Post\>\:\:publishedBefore\(\) expects Carbon\\Carbon, Carbon\\Carbon\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/PostController.php
+
+		-
+			message: '#^Cannot access property \$is_admin on App\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Requests/AccomplishmentRequest.php
+
+		-
+			message: '#^Cannot access property \$is_admin on App\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Requests/EducationRequest.php
+
+		-
+			message: '#^Cannot access property \$is_admin on App\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Requests/ExperienceRequest.php
+
+		-
+			message: '#^Cannot access property \$is_admin on App\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Requests/PostRequest.php
+
+		-
+			message: '#^Cannot access property \$is_admin on App\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Requests/ProjectRequest.php
+
+		-
+			message: '#^Cannot access property \$is_admin on App\\User\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Requests/SkillRequest.php
+
+		-
+			message: '#^Method App\\Post\:\:forFeed\(\) return type with generic class Illuminate\\Database\\Eloquent\\Collection does not specify its types\: TKey, TModel$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/Post.php
 
 		-
-			message: "#^Method App\\\\Post\\:\\:tags\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany\\<App\\\\Tag, App\\\\Post\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany\\<App\\\\Tag, \\$this\\(App\\\\Post\\)\\>\\.$#"
+			message: '#^Method App\\Post\:\:getBodyAttribute\(\) should return string but returns string\|null\.$#'
+			identifier: return.type
 			count: 1
 			path: app/Post.php
 
 		-
-			message: "#^Method App\\\\Project\\:\\:skills\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany\\<App\\\\Skill, App\\\\Project\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany\\<App\\\\Skill, \\$this\\(App\\\\Project\\)\\>\\.$#"
+			message: '#^Method App\\Post\:\:tags\(\) should return Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Tag, App\\Post\> but returns Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Tag, \$this\(App\\Post\)\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^PHPDoc tag @method for method App\\Post\:\:publishedAfter\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^PHPDoc tag @method for method App\\Post\:\:publishedBefore\(\) return type contains generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Parameter \#1 \$string of static method Illuminate\\Support\\Str\:\:of\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Post.php
+
+		-
+			message: '#^Method App\\Project\:\:forks\(\) should return int\|null but returns mixed\.$#'
+			identifier: return.type
 			count: 1
 			path: app/Project.php
 
 		-
-			message: "#^Offset 0 does not exist on array\\{0\\?\\: string, 1\\?\\: non\\-empty\\-string, 2\\?\\: non\\-empty\\-string\\}\\.$#"
+			message: '#^Method App\\Project\:\:skills\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, App\\Project\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, \$this\(App\\Project\)\>\.$#'
+			identifier: return.type
 			count: 1
 			path: app/Project.php
 
 		-
-			message: "#^Offset 1 does not exist on array\\{0\\?\\: string, 1\\?\\: non\\-empty\\-string, 2\\?\\: non\\-empty\\-string\\}\\.$#"
+			message: '#^Method App\\Project\:\:stars\(\) should return int\|null but returns mixed\.$#'
+			identifier: return.type
 			count: 1
 			path: app/Project.php
 
 		-
-			message: "#^Offset 2 does not exist on array\\{0\\?\\: string, 1\\?\\: non\\-empty\\-string, 2\\?\\: non\\-empty\\-string\\}\\.$#"
+			message: '#^Offset 0 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string\}\.$#'
+			identifier: offsetAccess.notFound
 			count: 1
 			path: app/Project.php
 
 		-
-			message: "#^Method App\\\\Skill\\:\\:experiences\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany\\<App\\\\Experience, App\\\\Skill\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany\\<App\\\\Experience, \\$this\\(App\\\\Skill\\)\\>\\.$#"
+			message: '#^Offset 1 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Project.php
+
+		-
+			message: '#^Offset 2 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Project.php
+
+		-
+			message: '#^Parameter \#2 \$subject of function preg_match expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Project.php
+
+		-
+			message: '#^Parameter \#2 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: '#^Cannot access property \$is_admin on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Providers/TelescopeServiceProvider.php
+
+		-
+			message: '#^Method App\\Skill\:\:experiences\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Experience, App\\Skill\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Experience, \$this\(App\\Skill\)\>\.$#'
+			identifier: return.type
 			count: 1
 			path: app/Skill.php
 
 		-
-			message: "#^Method App\\\\Skill\\:\\:projects\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany\\<App\\\\Project, App\\\\Skill\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany\\<App\\\\Project, \\$this\\(App\\\\Skill\\)\\>\\.$#"
+			message: '#^Method App\\Skill\:\:projects\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Project, App\\Skill\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Project, \$this\(App\\Skill\)\>\.$#'
+			identifier: return.type
 			count: 1
 			path: app/Skill.php
 
 		-
-			message: "#^Method App\\\\Tag\\:\\:posts\\(\\) should return Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany\\<App\\\\Post, App\\\\Tag\\> but returns Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany\\<App\\\\Post, \\$this\\(App\\\\Tag\\)\\>\\.$#"
+			message: '#^Binary operation "\." between ''\<article class\=…'' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: app/Support/helpers.php
+
+		-
+			message: '#^Binary operation "\." between ''\<span class\=…'' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: app/Support/helpers.php
+
+		-
+			message: '#^Method App\\Tag\:\:posts\(\) should return Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Post, App\\Tag\> but returns Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Post, \$this\(App\\Tag\)\>\.$#'
+			identifier: return.type
 			count: 1
 			path: app/Tag.php
 
 		-
-			message: "#^Method App\\\\View\\\\Components\\\\Paginator\\:\\:__construct\\(\\) has parameter \\$paginator with generic class Illuminate\\\\Pagination\\\\Paginator but does not specify its types\\: TValue$#"
+			message: '#^Method App\\View\\Components\\Paginator\:\:__construct\(\) has parameter \$paginator with generic class Illuminate\\Pagination\\Paginator but does not specify its types\: TValue$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/View/Components/Paginator.php
 
 		-
-			message: "#^Property App\\\\View\\\\Components\\\\Paginator\\:\\:\\$paginator with generic class Illuminate\\\\Pagination\\\\Paginator does not specify its types\\: TValue$#"
+			message: '#^Property App\\View\\Components\\Paginator\:\:\$paginator with generic class Illuminate\\Pagination\\Paginator does not specify its types\: TValue$#'
+			identifier: missingType.generics
 			count: 1
 			path: app/View/Components/Paginator.php
 
 		-
-			message: "#^Parameter \\#2 \\$string of function explode expects string, bool\\|string given\\.$#"
+			message: '#^Parameter \#1 \$providers of method Illuminate\\Support\\DefaultProviders\:\:merge\(\) expects array, mixed given\.$#'
+			identifier: argument.type
 			count: 1
 			path: config/app.php
 
 		-
-			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, bool\\|string given\\.$#"
+			message: '#^Parameter \#2 \$string of function explode expects string, bool\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: config/app.php
+
+		-
+			message: '#^Parameter \#1 \$title of static method Illuminate\\Support\\Str\:\:slug\(\) expects string, bool\|string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: config/cache.php
 
 		-
-			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, bool\\|string given\\.$#"
+			message: '#^Parameter \#1 \$title of static method Illuminate\\Support\\Str\:\:slug\(\) expects string, bool\|string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: config/database.php
 
 		-
-			message: "#^Parameter \\#2 \\$string of function explode expects string, bool\\|string given\\.$#"
+			message: '#^Parameter \#2 \$string of function explode expects string, bool\|string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: config/logging.php
 
 		-
-			message: "#^Parameter \\#1 \\$url of function parse_url expects string, bool\\|string given\\.$#"
+			message: '#^Parameter \#1 \$url of function parse_url expects string, bool\|string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: config/mail.php
 
 		-
-			message: "#^Parameter \\#1 \\$title of static method Illuminate\\\\Support\\\\Str\\:\\:slug\\(\\) expects string, bool\\|string given\\.$#"
+			message: '#^Parameter \#1 \$title of static method Illuminate\\Support\\Str\:\:slug\(\) expects string, bool\|string given\.$#'
+			identifier: argument.type
 			count: 1
 			path: config/session.php
 
 		-
-			message: "#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			message: '#^Part \$this\-\>faker\-\>state\(\) \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 1
+			path: database/factories/ExperienceFactory.php
+
+		-
+			message: '#^Method Illuminate\\Database\\Migrations\\Migration@anonymous/database/migrations/2018_08_08_100000_create_telescope_entries_table\.php\:7\:\:getConnection\(\) should return string\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: database/migrations/2018_08_08_100000_create_telescope_entries_table.php
+
+		-
+			message: '#^Parameter \#1 \$values of static method Illuminate\\Database\\Eloquent\\Builder\<App\\Accomplishment\>\:\:insert\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/AccomplishmentSeeder.php
+
+		-
+			message: '#^Parameter \#1 \$values of static method Illuminate\\Database\\Eloquent\\Builder\<App\\Education\>\:\:insert\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/EducationSeeder.php
+
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
 			count: 1
 			path: database/seeders/ExperienceSeeder.php
 
 		-
-			message: "#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			message: '#^Parameter \#1 \$attributes of static method Illuminate\\Database\\Eloquent\\Builder\<App\\Experience\>\:\:create\(\) expects array\<model property of App\\Experience, mixed\>, array\<mixed\> given\.$#'
+			identifier: argument.type
 			count: 1
 			path: database/seeders/ExperienceSeeder.php
 
 		-
-			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			message: '#^Parameter \#1 \$items of static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\) expects Illuminate\\Contracts\\Support\\Arrayable\<\(int\|string\), mixed\>\|iterable\<\(int\|string\), mixed\>\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/ExperienceSeeder.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/ExperienceSeeder.php
+
+		-
+			message: '#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: database/seeders/ExperienceSeeder.php
+
+		-
+			message: '#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: database/seeders/ExperienceSeeder.php
+
+		-
+			message: '#^Argument of an invalid type list\<string\>\|false supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
 			count: 1
 			path: database/seeders/PostSeeder.php
 
 		-
-			message: "#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) expects callable\(mixed, int\|string\)\: App\\Tag, Closure\(string\)\: App\\Tag given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/PostSeeder.php
+
+		-
+			message: '#^Parameter \#1 \$time of static method Carbon\\Carbon\:\:parse\(\) expects Carbon\\Month\|Carbon\\WeekDay\|DateTimeInterface\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/PostSeeder.php
+
+		-
+			message: '#^Parameter \#1 \$title of static method Illuminate\\Support\\Str\:\:slug\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/PostSeeder.php
+
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
 			count: 1
 			path: database/seeders/ProjectSeeder.php
 
 		-
-			message: "#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\\\Support\\\\Collection\\<\\(int\\|string\\),mixed\\>\\:\\:make\\(\\)$#"
+			message: '#^Parameter \#1 \$attributes of static method Illuminate\\Database\\Eloquent\\Builder\<App\\Project\>\:\:create\(\) expects array\<model property of App\\Project, mixed\>, array\<mixed\> given\.$#'
+			identifier: argument.type
 			count: 1
 			path: database/seeders/ProjectSeeder.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$fork_count\\.$#"
+			message: '#^Parameter \#1 \$items of static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\) expects Illuminate\\Contracts\\Support\\Arrayable\<\(int\|string\), mixed\>\|iterable\<\(int\|string\), mixed\>\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/ProjectSeeder.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/ProjectSeeder.php
+
+		-
+			message: '#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: database/seeders/ProjectSeeder.php
+
+		-
+			message: '#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			identifier: argument.templateType
+			count: 1
+			path: database/seeders/ProjectSeeder.php
+
+		-
+			message: '#^Parameter \#1 \$values of static method Illuminate\\Database\\Eloquent\\Builder\<App\\Skill\>\:\:insert\(\) expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/SkillSeeder.php
+
+		-
+			message: '#^Cannot access property \$id on mixed\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: routes/channels.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 2
+			path: routes/channels.php
+
+		-
+			message: '#^Access to an undefined property object\:\:\$fork_count\.$#'
+			identifier: property.notFound
 			count: 2
 			path: tests/Unit/GitHubClientTest.php
 
 		-
-			message: "#^Access to an undefined property object\\:\\:\\$stargazers_count\\.$#"
+			message: '#^Access to an undefined property object\:\:\$stargazers_count\.$#'
+			identifier: property.notFound
 			count: 2
 			path: tests/Unit/GitHubClientTest.php
 
 		-
-			message: "#^Method Tests\\\\Unit\\\\GitHubClientTest\\:\\:mockCachedGitHubClient\\(\\) has parameter \\$responses with no value type specified in iterable type array\\.$#"
+			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertIsObject\(\) with object will always evaluate to true\.$#'
+			identifier: method.alreadyNarrowedType
 			count: 1
 			path: tests/Unit/GitHubClientTest.php
 
 		-
-			message: "#^Method Tests\\\\Unit\\\\GitHubClientTest\\:\\:mockGitHubClient\\(\\) has parameter \\$responses with no value type specified in iterable type array\\.$#"
+			message: '#^Method Tests\\Unit\\GitHubClientTest\:\:mockCachedGitHubClient\(\) has parameter \$responses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: tests/Unit/GitHubClientTest.php
+
+		-
+			message: '#^Method Tests\\Unit\\GitHubClientTest\:\:mockGitHubClient\(\) has parameter \$responses with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: tests/Unit/GitHubClientTest.php
+
+		-
+			message: '#^Parameter \#1 \$queue of class GuzzleHttp\\Handler\\MockHandler constructor expects array\<int, mixed\>\|null, array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: tests/Unit/GitHubClientTest.php
+
+		-
+			message: '#^Cannot call method andReturn\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: tests/Unit/ProjectTest.php
+
+		-
+			message: '#^Cannot call method shouldReceive\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: tests/Unit/ProjectTest.php
 
