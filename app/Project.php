@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\App;
 class Project extends Model
 {
     /** @use HasFactory<ProjectFactory> */
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = ['name', 'description', 'project_url', 'source_url'];
 

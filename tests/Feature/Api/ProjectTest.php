@@ -11,7 +11,7 @@ class ProjectTest extends TestCase
 {
     use ValidatesOpenApiSpec;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_list_all_projects(): void
     {
         Project::factory()->count(3)->create();
@@ -25,7 +25,7 @@ class ProjectTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_an_individual_project(): void
     {
         Project::factory()->create();
@@ -40,7 +40,7 @@ class ProjectTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_create_a_new_project(): void
     {
         $user = User::factory()->admin()->create();
@@ -62,7 +62,7 @@ class ProjectTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_update_an_project(): void
     {
         $user = User::factory()->admin()->create();
@@ -84,7 +84,7 @@ class ProjectTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_delete_an_project(): void
     {
         $user = User::factory()->admin()->create();

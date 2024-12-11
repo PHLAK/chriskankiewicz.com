@@ -11,7 +11,7 @@ class ExperienceTest extends TestCase
 {
     use ValidatesOpenApiSpec;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_list_all_experiences(): void
     {
         Experience::factory()->count(3)->create();
@@ -25,7 +25,7 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_an_individual_experience(): void
     {
         Experience::factory()->create();
@@ -40,7 +40,7 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_create_a_new_experience(): void
     {
         $user = User::factory()->admin()->create();
@@ -64,7 +64,7 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_update_an_experience(): void
     {
         $user = User::factory()->admin()->create();
@@ -97,7 +97,7 @@ class ExperienceTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_delete_an_experience(): void
     {
         $user = User::factory()->admin()->create();

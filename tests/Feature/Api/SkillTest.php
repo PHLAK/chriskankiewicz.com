@@ -11,7 +11,7 @@ class SkillTest extends TestCase
 {
     use ValidatesOpenApiSpec;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_list_all_skills(): void
     {
         Skill::factory()->count(3)->create();
@@ -25,7 +25,7 @@ class SkillTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_an_individual_skill(): void
     {
         Skill::factory()->create();
@@ -37,7 +37,7 @@ class SkillTest extends TestCase
         $response->assertStatus(200)->assertJsonStructure(['name', 'icon_name', 'icon_style']);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_create_a_new_skill(): void
     {
         $user = User::factory()->admin()->create();
@@ -59,7 +59,7 @@ class SkillTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_update_a_skill(): void
     {
         $user = User::factory()->admin()->create();
@@ -81,7 +81,7 @@ class SkillTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_delete_a_skill(): void
     {
         $user = User::factory()->admin()->create();

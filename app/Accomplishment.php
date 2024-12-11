@@ -15,7 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Accomplishment extends Model
 {
     /** @use HasFactory<AccomplishmentFactory> */
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = ['description'];
 

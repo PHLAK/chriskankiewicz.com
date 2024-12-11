@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class SkillTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_instantiate_a_skill(): void
     {
         $skill = new Skill;
@@ -15,7 +15,7 @@ class SkillTest extends TestCase
         $this->assertInstanceOf(Skill::class, $skill);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_a_skills_name(): void
     {
         $skill = new Skill(['name' => 'Lockpicking']);
@@ -23,7 +23,7 @@ class SkillTest extends TestCase
         $this->assertEquals('Lockpicking', $skill->name);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_a_skills_icon_styles(): void
     {
         $skill = new Skill([
@@ -36,7 +36,7 @@ class SkillTest extends TestCase
         $this->assertEquals('fas fa-coffee', $skill->iconStyles());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_a_skills_icon_styles_with_extra_classes(): void
     {
         $skill = new Skill([
@@ -47,7 +47,7 @@ class SkillTest extends TestCase
         $this->assertEquals('fas fa-coffee fa-fw', $skill->iconStyles(['fa-fw']));
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_a_skills_icon_markup(): void
     {
         $skill = new Skill([
@@ -59,7 +59,7 @@ class SkillTest extends TestCase
         $this->assertEquals('<i class="fas fa-coffee fa-fw"></i>', $skill->iconMarkup(['fa-fw']));
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_determine_if_a_skill_has_an_icon(): void
     {
         $skill = new Skill([
@@ -70,7 +70,7 @@ class SkillTest extends TestCase
         $this->assertTrue($skill->hasIcon());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_determine_if_a_skill_does_not_have_an_icon(): void
     {
         $skill1 = new Skill;

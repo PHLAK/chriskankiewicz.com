@@ -11,7 +11,7 @@ class EducationTest extends TestCase
 {
     use ValidatesOpenApiSpec;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_list_all_education(): void
     {
         Education::factory()->count(3)->create();
@@ -25,7 +25,7 @@ class EducationTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_an_individual_education(): void
     {
         Education::factory()->create();
@@ -40,7 +40,7 @@ class EducationTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_create_a_new_education(): void
     {
         $user = User::factory()->admin()->create();
@@ -60,7 +60,7 @@ class EducationTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_update_an_education(): void
     {
         $user = User::factory()->admin()->create();
@@ -90,7 +90,7 @@ class EducationTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_delete_an_education(): void
     {
         $user = User::factory()->admin()->create();

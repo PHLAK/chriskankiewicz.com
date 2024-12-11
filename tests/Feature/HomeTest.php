@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class HomeTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_access_the_home_page(): void
     {
         $posts = Post::factory()->count(3)->create();

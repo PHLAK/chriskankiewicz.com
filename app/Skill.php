@@ -16,7 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Skill extends Model
 {
     /** @use HasFactory<SkillFactory> */
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = ['name', 'icon_name', 'icon_style'];
 

@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class DashboardTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_see_the_dashboard_when_logged_in(): void
     {
         $user = User::factory()->admin()->create();

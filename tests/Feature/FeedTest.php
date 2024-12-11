@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class FeedTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_access_the_feed(): void
     {
         $this->markTestSkipped();

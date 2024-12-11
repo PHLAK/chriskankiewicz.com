@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bdc540403984fae38100240ba7aa460",
+    "content-hash": "6cb07db15a7ec9a7916b21ce5044ae73",
     "packages": [
         {
             "name": "brick/math",
@@ -8520,16 +8520,16 @@
         },
         {
             "name": "phlak/coding-standards",
-            "version": "3.1.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHLAK/CodingStandards.git",
-                "reference": "869d4137be0e6edff04343f59ebff3ffd3dcad20"
+                "reference": "a42fa618f317cf964c3bed43bce6ef9d6d4565e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHLAK/CodingStandards/zipball/869d4137be0e6edff04343f59ebff3ffd3dcad20",
-                "reference": "869d4137be0e6edff04343f59ebff3ffd3dcad20",
+                "url": "https://api.github.com/repos/PHLAK/CodingStandards/zipball/a42fa618f317cf964c3bed43bce6ef9d6d4565e5",
+                "reference": "a42fa618f317cf964c3bed43bce6ef9d6d4565e5",
                 "shasum": ""
             },
             "require": {
@@ -8566,7 +8566,7 @@
             "description": "A pre-defined set of coding standards for PHP CS Fixer.",
             "support": {
                 "issues": "https://github.com/PHLAK/CodingStandards/issues",
-                "source": "https://github.com/PHLAK/CodingStandards/tree/3.1.0"
+                "source": "https://github.com/PHLAK/CodingStandards/tree/4.0.0"
             },
             "funding": [
                 {
@@ -8578,7 +8578,7 @@
                     "type": "paypal"
                 }
             ],
-            "time": "2024-12-11T03:22:16+00:00"
+            "time": "2024-12-11T03:59:52+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

@@ -16,7 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Experience extends Model
 {
     /** @use HasFactory<ExperienceFactory> */
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     // NOTE: Temporary workaround for broken pluralizer
     /** @var string The table associated with the model. */

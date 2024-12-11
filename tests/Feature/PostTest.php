@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_access_a_post(): void
     {
         $post = Post::factory()->create();

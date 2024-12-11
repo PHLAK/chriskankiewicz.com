@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class EducationTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_instantiate_an_education(): void
     {
         $education = new Education;
@@ -16,7 +16,7 @@ class EducationTest extends TestCase
         $this->assertInstanceOf(Education::class, $education);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_casts_start_and_end_dates_to_carbon_instances(): void
     {
         $education = new Education([

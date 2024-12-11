@@ -16,7 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Tag extends Model
 {
     /** @use HasFactory<TagFactory> */
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = ['slug', 'name'];
 

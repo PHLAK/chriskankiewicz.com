@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class ProjectTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_instantiate_an_project(): void
     {
         $project = new Project;
@@ -16,7 +16,7 @@ class ProjectTest extends TestCase
         $this->assertInstanceOf(Project::class, $project);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_the_projects_github_project_id(): void
     {
         $project = new Project([
@@ -26,7 +26,7 @@ class ProjectTest extends TestCase
         $this->assertEquals('fprefect/hhgttg', $project->github_project_id);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_the_projects_fork_count(): void
     {
         $project = new Project([
@@ -42,7 +42,7 @@ class ProjectTest extends TestCase
         $this->assertEquals(1337, $project->forks());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_the_projects_star_count(): void
     {
         $project = new Project([

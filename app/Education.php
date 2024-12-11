@@ -15,7 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Education extends Model
 {
     /** @use HasFactory<EducationFactory> */
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'institution', 'degree', 'start_date', 'end_date',

@@ -14,7 +14,7 @@ use Tests\TestCase;
 
 class GitHubClientTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_be_instantiated_from_the_service_container(): void
     {
         $gitHub = $this->app->make(GitHubClient::class);
@@ -22,7 +22,7 @@ class GitHubClientTest extends TestCase
         $this->assertInstanceOf(CachedGitHubClient::class, $gitHub);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_repository_details(): void
     {
         $gitHubClient = $this->mockGitHubClient([
@@ -39,7 +39,7 @@ class GitHubClientTest extends TestCase
         $this->assertObjectHasProperty('stargazers_count', $repository);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_an_empty_object_when_it_fails_to_retrieve_repository_details(): void
     {
         $gitHubClient = $this->mockGitHubClient([
@@ -52,7 +52,7 @@ class GitHubClientTest extends TestCase
         $this->assertEmpty((array) $repository);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_cache_repository_details(): void
     {
         $gitHubClient = $this->mockCachedGitHubClient([

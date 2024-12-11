@@ -23,7 +23,8 @@ use Spatie\Feed\FeedItem;
 class Post extends Model
 {
     /** @use HasFactory<PostFactory> */
-    use HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     protected $fillable = [
         'slug', 'title', 'body', 'featured_image_url', 'featured_image_text', 'published_at',
