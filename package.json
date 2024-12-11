@@ -13,7 +13,7 @@
         "cross-env": "^7.0.3",
         "eslint": "^8.45.0",
         "eslint-plugin-vue": "^9.15.1",
-        "laravel-vite-plugin": "^0.7.8",
+        "laravel-vite-plugin": "^1.1.1",
         "prismjs": "^1.29.0",
         "sass": "^1.64.0",
         "sass-loader": "^13.3.2",
