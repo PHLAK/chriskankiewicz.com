@@ -1,5 +1,6 @@
 {
     "private": true,
+    "type": "module",
     "scripts": {
         "cs": "npx eslint --ext .js,.vue resources/js/",
         "dev": "vite",
