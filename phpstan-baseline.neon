@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Method App\\Experience\:\:skills\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, App\\Experience\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, \$this\(App\\Experience\)\>\.$#'
+			message: '#^Method App\\Experience\:\:skills\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, App\\Experience, Illuminate\\Database\\Eloquent\\Relations\\MorphPivot, ''pivot''\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, \$this\(App\\Experience\), Illuminate\\Database\\Eloquent\\Relations\\MorphPivot, ''pivot''\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/Experience.php
@@ -139,7 +139,7 @@ parameters:
 			path: app/Post.php
 
 		-
-			message: '#^Method App\\Post\:\:tags\(\) should return Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Tag, App\\Post\> but returns Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Tag, \$this\(App\\Post\)\>\.$#'
+			message: '#^Method App\\Post\:\:tags\(\) should return Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Tag, App\\Post, Illuminate\\Database\\Eloquent\\Relations\\Pivot, ''pivot''\> but returns Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Tag, \$this\(App\\Post\), Illuminate\\Database\\Eloquent\\Relations\\Pivot, ''pivot''\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/Post.php
@@ -169,7 +169,7 @@ parameters:
 			path: app/Project.php
 
 		-
-			message: '#^Method App\\Project\:\:skills\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, App\\Project\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, \$this\(App\\Project\)\>\.$#'
+			message: '#^Method App\\Project\:\:skills\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, App\\Project, Illuminate\\Database\\Eloquent\\Relations\\MorphPivot, ''pivot''\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Skill, \$this\(App\\Project\), Illuminate\\Database\\Eloquent\\Relations\\MorphPivot, ''pivot''\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/Project.php
@@ -177,24 +177,6 @@ parameters:
 		-
 			message: '#^Method App\\Project\:\:stars\(\) should return int\|null but returns mixed\.$#'
 			identifier: return.type
-			count: 1
-			path: app/Project.php
-
-		-
-			message: '#^Offset 0 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: app/Project.php
-
-		-
-			message: '#^Offset 1 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string\}\.$#'
-			identifier: offsetAccess.notFound
-			count: 1
-			path: app/Project.php
-
-		-
-			message: '#^Offset 2 might not exist on array\{0\?\: string, 1\?\: non\-empty\-string, 2\?\: non\-empty\-string\}\.$#'
-			identifier: offsetAccess.notFound
 			count: 1
 			path: app/Project.php
 
@@ -217,13 +199,13 @@ parameters:
 			path: app/Providers/TelescopeServiceProvider.php
 
 		-
-			message: '#^Method App\\Skill\:\:experiences\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Experience, App\\Skill\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Experience, \$this\(App\\Skill\)\>\.$#'
+			message: '#^Method App\\Skill\:\:experiences\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Experience, App\\Skill, Illuminate\\Database\\Eloquent\\Relations\\MorphPivot, ''pivot''\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Experience, \$this\(App\\Skill\), Illuminate\\Database\\Eloquent\\Relations\\MorphPivot, ''pivot''\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/Skill.php
 
 		-
-			message: '#^Method App\\Skill\:\:projects\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Project, App\\Skill\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Project, \$this\(App\\Skill\)\>\.$#'
+			message: '#^Method App\\Skill\:\:projects\(\) should return Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Project, App\\Skill, Illuminate\\Database\\Eloquent\\Relations\\MorphPivot, ''pivot''\> but returns Illuminate\\Database\\Eloquent\\Relations\\MorphToMany\<App\\Project, \$this\(App\\Skill\), Illuminate\\Database\\Eloquent\\Relations\\MorphPivot, ''pivot''\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/Skill.php
@@ -241,19 +223,19 @@ parameters:
 			path: app/Support/helpers.php
 
 		-
-			message: '#^Method App\\Tag\:\:posts\(\) should return Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Post, App\\Tag\> but returns Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Post, \$this\(App\\Tag\)\>\.$#'
+			message: '#^Method App\\Tag\:\:posts\(\) should return Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Post, App\\Tag, Illuminate\\Database\\Eloquent\\Relations\\Pivot, ''pivot''\> but returns Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany\<App\\Post, \$this\(App\\Tag\), Illuminate\\Database\\Eloquent\\Relations\\Pivot, ''pivot''\>\.$#'
 			identifier: return.type
 			count: 1
 			path: app/Tag.php
 
 		-
-			message: '#^Method App\\View\\Components\\Paginator\:\:__construct\(\) has parameter \$paginator with generic class Illuminate\\Pagination\\Paginator but does not specify its types\: TValue$#'
+			message: '#^Method App\\View\\Components\\Paginator\:\:__construct\(\) has parameter \$paginator with generic class Illuminate\\Pagination\\Paginator but does not specify its types\: TKey, TValue$#'
 			identifier: missingType.generics
 			count: 1
 			path: app/View/Components/Paginator.php
 
 		-
-			message: '#^Property App\\View\\Components\\Paginator\:\:\$paginator with generic class Illuminate\\Pagination\\Paginator does not specify its types\: TValue$#'
+			message: '#^Property App\\View\\Components\\Paginator\:\:\$paginator with generic class Illuminate\\Pagination\\Paginator does not specify its types\: TKey, TValue$#'
 			identifier: missingType.generics
 			count: 1
 			path: app/View/Components/Paginator.php
