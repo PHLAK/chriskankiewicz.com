@@ -11,6 +11,7 @@
     - PHP
     - Slim Framework
     - Vue.js
+    - Vite
     - Tailwind CSS
 
 - name: Twine
@@ -42,7 +43,6 @@
     - Composer
     - Packagist
     - Git Version Control
-    - Travis CI
 
 - name: Splat
   description: |-
@@ -75,10 +75,10 @@
   source_url: https://github.com/PHLAK/vueColorClock
   skills:
     - Vue.js
+    - Vite
     - Tailwind CSS
-    - Sass / SCSS
     - Git Version Control
-    - Netlify
+    - CloudFlare Workers
 
 - name: SemVer
   description: |-
@@ -139,8 +139,6 @@
   skills:
     - Vue.js
     - Tailwind CSS
-    - Jigsaw
-    - Netlify
 
 - name: Config
   description: |-
@@ -185,11 +183,3 @@
     - PHP
     - Composer
     - Packagist
-
-- name: Uber Gallery
-  description: |-
-    An easy to use, simple to manage, web photo gallery written in PHP.
-  project_url: https://www.ubergallery.net
-  source_url: https://github.com/UberGallery/UberGallery
-  skills:
-    - PHP

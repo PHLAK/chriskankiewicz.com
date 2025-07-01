@@ -82,14 +82,6 @@
   icon_name: null
   icon_style: null
 
-- name: Travis CI
-  icon_name: null
-  icon_style: null
-
-- name: Jenkins
-  icon_name: jenkins
-  icon_style: fab
-
 - name: Windows
   icon_name: windows
   icon_style: fab
@@ -157,3 +149,7 @@
 - name: Regular Expressions
   icon_name: asterisk
   icon_style: far
+
+- name: Cloudflare
+  icon_name: cloudflare
+  icon_style: fab
