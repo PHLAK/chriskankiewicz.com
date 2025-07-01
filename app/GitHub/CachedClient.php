@@ -26,7 +26,7 @@ class CachedClient extends Client
     {
         return Cache::flexible(
             sprintf('repository:%s:%s', $owner, $repo),
-            [CarbonInterval::hours(4), CarbonInterval::hour(24)],
+            [CarbonInterval::hours(6), CarbonInterval::days(4)],
             fn () => $this->client->repository($owner, $repo)
         );
     }
