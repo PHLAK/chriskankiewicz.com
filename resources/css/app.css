@@ -10,10 +10,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@300&family=Nunito:wght@300;400;700&family=Source+Code+Pro&display=swap');
 
 // Markdown Formatting
-@import "markdown.scss";
+@import "markdown.css";
 
 // Prism.js Theme
-@import "prism.scss";
+@import "prism.css";
 
 // Vue.js
 [v-cloak] {

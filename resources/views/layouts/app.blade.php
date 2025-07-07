@@ -5,7 +5,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="icon" href="{{ asset('favicon.png') }}">
-@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 
 @includeWhen(app()->isProduction(), 'components.analytics')
 
