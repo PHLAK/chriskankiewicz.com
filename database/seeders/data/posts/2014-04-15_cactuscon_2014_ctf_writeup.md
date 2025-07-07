@@ -8,7 +8,7 @@ published: 2014-04-15 21:12:42
 
 <excerpt>
 This is a write up to the 2014 CactusCon web application (SpookiLeaks)
-challenge. You can grab the SpookiLeaks-VM here and try the challenge yourself
+challenge. You can grab the SpookiLeaks-VM ~~here~~ and try the challenge yourself
 before reading the solution.
 </excerpt>
 
@@ -25,7 +25,7 @@ one image with the following comment:
     01110010011011110110001001101111011101000111001100101110011101000111100001110100
 
 Binary should be a red flag in any CTF. By doing a simple binary to ASCII
-conversion we get the following output:
+conversion we get the following output: `robots.txt`
 
 Ah-ha! [robots.txt](http://www.robotstxt.org/robotstxt.html)... By checking 
 `/robots.txt` we find the following:
