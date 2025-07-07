@@ -8,17 +8,14 @@
     },
     "devDependencies": {
         "@fortawesome/fontawesome-pro": "^6.4.0",
+        "@tailwindcss/vite": "^4.1.11",
         "@vitejs/plugin-vue": "^5.2.1",
-        "autoprefixer": "^10.4.14",
         "axios": "^1.4.0",
-        "cross-env": "^7.0.3",
         "eslint": "^8.45.0",
         "eslint-plugin-vue": "^9.15.1",
         "laravel-vite-plugin": "^1.1.1",
         "prismjs": "^1.29.0",
-        "sass": "^1.64.0",
-        "sass-loader": "^16.0.4",
-        "tailwindcss": "^3.3.3",
+        "tailwindcss": "^4.1.11",
         "vite": "^6.0.3",
         "vue": "^3.2.41"
     }

@@ -9,12 +9,12 @@
                         {{ $experience->title }}
                     </span>
 
-                    <span class="text-gray-800 text-lg md:text-xl">
+                    <span class="text-slate-800 text-lg md:text-xl">
                         @ {{ $experience->company }}
                     </span>
                 </h3>
 
-                <div class="text-sm text-gray-600 mt-1">
+                <div class="text-sm text-slate-600 mt-1">
                     <span class="mr-2">
                         <i class="fal fa-calendar-day fa-fw"></i>
                         {{ $experience->start_date->format('F Y') }} -
@@ -33,7 +33,7 @@
 
                 <div class="flex flex-wrap items-center mb-8">
                     @foreach ($experience->skills as $skill)
-                        <span class="inline-block bg-gray-100 text-gray-800 px-2 py-1 m-1 rounded">
+                        <span class="inline-block bg-slate-100 text-slate-800 px-2 py-1 m-1 rounded-sm">
                             @if($skill->hasIcon())
                                 {!! $skill->iconMarkup(['mr-1']) !!}
                             @endif

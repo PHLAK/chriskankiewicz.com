@@ -1,4 +1,4 @@
-<div class="text-sm text-gray-600 mt-1">
+<div class="text-sm text-slate-600 mt-1">
     <span class="mr-2" title="{{ $post->published_at->toDayDateTimeString() }}">
         <i class="fal fa-calendar-day fa-fw"></i>
 

@@ -1,11 +1,9 @@
-/* Converted from markdown.scss */
-
 .markdown p {
     @apply leading-8 my-4;
 }
 
 .markdown blockquote {
-    @apply border-l-4 border-gray-200 pl-2 ml-2;
+    @apply border-l-4 border-slate-200 pl-2 ml-2;
 }
 
 .markdown a {
@@ -13,7 +11,7 @@
 }
 
 .markdown a:hover {
-    @apply text-gray-600;
+    @apply text-slate-600;
 }
 
 .markdown h1 {
@@ -33,7 +31,7 @@
 }
 
 .markdown img {
-    @apply max-w-full border border-gray-800 shadow-solid-gray-800;
+    @apply max-w-full border border-slate-800 shadow-solid-800;
 }
 
 .markdown hr {
@@ -41,11 +39,11 @@
 }
 
 .markdown code {
-    @apply bg-gray-100 rounded p-1;
+    @apply bg-slate-100 rounded-sm p-1;
 }
 
 .markdown pre {
-    @apply block border-2 border-gray-800 shadow-solid-gray-800 max-w-full my-4;
+    @apply block border-2 border-slate-800 shadow-solid-800 max-w-full my-4;
 }
 
 .markdown pre code {
@@ -97,7 +95,7 @@
 }
 
 .markdown .note {
-    @apply bg-gray-50 border-gray-400;
+    @apply bg-slate-50 border-slate-400;
 }
 
 .markdown .note:before {

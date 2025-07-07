@@ -8,7 +8,7 @@
                     {{ $project->name }}
                 </h3>
 
-                <div class="text-sm text-gray-600 mt-1">
+                <div class="text-sm text-slate-600 mt-1">
                     <a href="{{ $project->source_url }}" class="group inline-block mr-2">
                         <i class="fab fa-github fa-fw"></i>
                         <span class="group-hover:text-teal-700 group-hover:underline">
@@ -44,7 +44,7 @@
 
                 <div class="flex flex-wrap items-center mb-8">
                     @foreach ($project->skills as $skill)
-                        <span class="inline-block bg-gray-100 text-gray-800 px-2 py-1 m-1 rounded">
+                        <span class="inline-block bg-slate-100 text-slate-800 px-2 py-1 m-1 rounded-sm">
                             @if($skill->hasIcon())
                                 {!! $skill->iconMarkup(['mr-1']) !!}
                             @endif

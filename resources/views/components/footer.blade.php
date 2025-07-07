@@ -1,5 +1,5 @@
 <footer>
-    <div class="bg-gray-100 px-4 py-8 sm:px-6">
+    <div class="bg-slate-100 px-4 py-8 sm:px-6">
         <div class="container flex justify-center space-x-4 sm:space-x-6 mx-auto">
             <a href="https://github.com/PHLAK" title="GitHub" class="text-github transition-all hover:scale-125" data-umami-event="github-link">
                 <i class="fab fa-github fa-fw fa-2x"></i>
@@ -35,8 +35,8 @@
         </div>
     </div>
 
-    <div class="bg-gray-800 px-4 py-8 sm:px-6">
-        <div class="container text-center text-gray-300 space-y-2 mx-auto">
+    <div class="bg-slate-800 px-4 py-8 sm:px-6">
+        <div class="container text-center text-slate-300 space-y-2 mx-auto">
             <div>
                 <a href="mailto:Chris@ChrisKankiewicz.com" class="inline-block hover:underline" data-umami-event="email-link">
                     Chris@ChrisKankiewicz.com

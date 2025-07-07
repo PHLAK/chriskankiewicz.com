@@ -19,7 +19,7 @@
                 &bull; <a href="{{ route('nova.login') }}" class="hover:underline">Nova</a>
             </div>
 
-            <button type="submit" class="absolute top-0 right-0 rounded bg-teal-600 text-white px-4 py-2 m-4 hover:shadow-md">
+            <button type="submit" class="absolute top-0 right-0 rounded-sm bg-teal-600 text-white px-4 py-2 m-4 hover:shadow-md">
                 Logout
             </button>
         </form>

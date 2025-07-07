@@ -7,22 +7,10 @@ use Illuminate\View\Component;
 
 class NavItem extends Component
 {
-    /** @var string */
-    public $route;
-
-    /** @var string */
-    public $section;
-
-    /** @var string */
-    public $icon;
-
-    /** Create a new component instance. */
-    public function __construct(string $route, string $section, string $icon)
-    {
-        $this->route = $route;
-        $this->section = $section;
-        $this->icon = $icon;
-    }
+    public function __construct(
+        public string $name,
+        public string $icon
+    ) {}
 
     /**
      * Get the view / contents that represent the component.
@@ -37,6 +25,6 @@ class NavItem extends Component
     /** Determine if this navigation item is active. */
     public function isActive(): bool
     {
-        return $this->route === Route::currentRouteName();
+        return $this->name === Route::currentRouteName();
     }
 }
