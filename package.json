@@ -9,7 +9,7 @@
     "devDependencies": {
         "@fortawesome/fontawesome-pro": "^6.4.0",
         "@tailwindcss/vite": "^4.1.11",
-        "@vitejs/plugin-vue": "^5.2.1",
+        "@vitejs/plugin-vue": "^6.0.0",
         "axios": "^1.4.0",
         "eslint": "^8.45.0",
         "eslint-plugin-vue": "^9.15.1",
