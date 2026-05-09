@@ -1,48 +1,41 @@
-includes:
-    - vendor/larastan/larastan/extension.neon
-    - phpstan-baseline.neon
-
 parameters:
+  level: max
+  paths: [app, config, database, routes, tests]
 
-    paths:
-        - app
-        - config
-        - database
-        - routes
-        - tests
+  tmpDir: .cache/phpstan
 
-    level: max
+  ignoreErrors:
+    - '/^Call to an undefined method Faker\\Generator::[A-Za-z]+\(\)\.$/'
+    - '/^Call to an undefined method Faker\\UniqueGenerator::[A-Za-z]+\(\)\.$/'
+    - '/^Access to an undefined property Faker\\UniqueGenerator::\$[A-Za-z]+\.$/'
+    - '/^Access to an undefined property Spatie\\YamlFrontMatter\\Document::\$[a-z_]+.$/'
 
-    ignoreErrors:
-        - '/^Call to an undefined method Faker\\Generator::[A-Za-z]+\(\)\.$/'
-        - '/^Call to an undefined method Faker\\UniqueGenerator::[A-Za-z]+\(\)\.$/'
-        - '/^Access to an undefined property Faker\\UniqueGenerator::\$[A-Za-z]+\.$/'
-        - '/^Access to an undefined property Spatie\\YamlFrontMatter\\Document::\$[a-z_]+.$/'
+  checkExplicitMixedMissingReturn: true
+  checkFunctionNameCase: true
+  checkModelProperties: true
+  checkUninitializedProperties: true
 
-    checkExplicitMixedMissingReturn: true
-    checkFunctionNameCase: true
-    # checkMissingClosureNativeReturnTypehintRule: true
-    checkModelProperties: true
-    # checkTooWideReturnTypesInProtectedAndPublicMethods: true
-    checkUninitializedProperties: true
+  reportUnmatchedIgnoredErrors: false
 
-    reportUnmatchedIgnoredErrors: false
+  exceptions:
+    implicitThrows: false
 
-    exceptions:
-      implicitThrows: false
+    check:
+      missingCheckedExceptionInThrows: true
+      tooWideThrowType: true
 
-      check:
-        missingCheckedExceptionInThrows: true
-        tooWideThrowType: true
-
-      uncheckedExceptionRegexes:
+    uncheckedExceptionRegexes:
       - '/^GuzzleHttp\\Exception\\GuzzleException$/'
 
-      uncheckedExceptionClasses:
-        - 'InvalidArgumentException'
-        - 'LogicException'
-        - 'Illuminate\Contracts\Container\BindingResolutionException'
-        - 'PHPUnit\Framework\Exception'
-        - 'RuntimeException'
-        - 'Symfony\Component\HttpKernel\Exception\HttpException'
-        - 'Symfony\Component\Yaml\Exception\ParseException'
+    uncheckedExceptionClasses:
+      - InvalidArgumentException
+      - LogicException
+      - Illuminate\Contracts\Container\BindingResolutionException
+      - PHPUnit\Framework\Exception
+      - RuntimeException
+      - Symfony\Component\HttpKernel\Exception\HttpException
+      - Symfony\Component\Yaml\Exception\ParseException
+
+includes:
+  - vendor/larastan/larastan/extension.neon
+  - phpstan-baseline.neon

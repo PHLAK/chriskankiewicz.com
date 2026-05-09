@@ -14,4 +14,6 @@ return PHLAK\CodingStandards\ConfigFactory::make($finder, [
     'php_unit_test_annotation' => [
         'style' => 'annotation',
     ],
-])->setRiskyAllowed(true);
+])->setCacheFile(
+    implode(DIRECTORY_SEPARATOR, [__DIR__, '.cache', 'php-cs-fixer.cache'])
+)->setRiskyAllowed(true);
