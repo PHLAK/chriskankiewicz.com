@@ -17,7 +17,7 @@ return [
 
     'default' => env('CACHE_STORE', 'database'),
 
-    'serializable_classes' => false,
+    'serializable_classes' => [stdClass::class],
 
     /*
     |--------------------------------------------------------------------------
