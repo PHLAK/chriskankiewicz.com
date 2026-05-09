@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c7b91348caebd4f1cb43013f65f91fd",
+    "content-hash": "0788f6e9dd9582d76962da162db448d6",
     "packages": [
         {
             "name": "brick/math",
@@ -6194,28 +6194,27 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v7.4.10",
+            "version": "v8.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "c660d6538545a3e8e65a5621ee3d7a6d352892c7"
+                "reference": "aa9ee60c41d9b20a2468c41ff0a32e2a7405ac05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/c660d6538545a3e8e65a5621ee3d7a6d352892c7",
-                "reference": "c660d6538545a3e8e65a5621ee3d7a6d352892c7",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/aa9ee60c41d9b20a2468c41ff0a32e2a7405ac05",
+                "reference": "aa9ee60c41d9b20a2468c41ff0a32e2a7405ac05",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2",
-                "symfony/deprecation-contracts": "^2.5|^3",
+                "php": ">=8.4",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
-                "symfony/console": "<6.4"
+                "symfony/console": "<7.4"
             },
             "require-dev": {
-                "symfony/console": "^6.4|^7.0|^8.0"
+                "symfony/console": "^7.4|^8.0"
             },
             "bin": [
                 "Resources/bin/yaml-lint"
@@ -6246,7 +6245,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.4.10"
+                "source": "https://github.com/symfony/yaml/tree/v8.0.10"
             },
             "funding": [
                 {
@@ -6266,7 +6265,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-05T08:01:55+00:00"
+            "time": "2026-05-05T08:10:04+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -8918,26 +8917,26 @@
         },
         {
             "name": "phlak/coding-standards",
-            "version": "4.1.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHLAK/CodingStandards.git",
-                "reference": "ac5906c1b7918e0af5300aa39eee2ac4720be454"
+                "reference": "a2e1b531cddb91070512a6886d3e7ef890771f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHLAK/CodingStandards/zipball/ac5906c1b7918e0af5300aa39eee2ac4720be454",
-                "reference": "ac5906c1b7918e0af5300aa39eee2ac4720be454",
+                "url": "https://api.github.com/repos/PHLAK/CodingStandards/zipball/a2e1b531cddb91070512a6886d3e7ef890771f11",
+                "reference": "a2e1b531cddb91070512a6886d3e7ef890771f11",
                 "shasum": ""
             },
             "require": {
                 "friendsofphp/php-cs-fixer": "^3.0",
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "require-dev": {
                 "phpstan/phpstan": "^2.0",
-                "symfony/var-dumper": "^6.0 || ^7.0 || ^8.0",
-                "yoast/phpunit-polyfills": "^3.0"
+                "symfony/var-dumper": "^7.0 || ^8.0",
+                "yoast/phpunit-polyfills": "^4.0"
             },
             "suggest": {
                 "symfony/console": "Required for initialize command"
@@ -8964,7 +8963,7 @@
             "description": "A pre-defined set of coding standards for PHP CS Fixer.",
             "support": {
                 "issues": "https://github.com/PHLAK/CodingStandards/issues",
-                "source": "https://github.com/PHLAK/CodingStandards/tree/4.1.0"
+                "source": "https://github.com/PHLAK/CodingStandards/tree/5.0.0"
             },
             "funding": [
                 {
@@ -8976,7 +8975,7 @@
                     "type": "paypal"
                 }
             ],
-            "time": "2026-02-27T04:48:01+00:00"
+            "time": "2026-02-28T03:26:38+00:00"
         },
         {
             "name": "phpstan/phpstan",
