@@ -72,6 +72,9 @@
             "@php artisan ide-helper:generate || true",
             "@php artisan ide-helper:models --nowrite || true"
         ],
+        "post-update-cmd": [
+            "test ! -f boost.json && true || php artisan boost:update --ansi --discover"
+        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
