@@ -10,3 +10,6 @@
 | simple approach to interacting with each command's IO methods.
 |
 */
+
+Schedule::command('cache:prune-stale-tags')->hourly();
+Schedule::command('telescope:prune')->daily();
