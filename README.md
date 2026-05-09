@@ -31,7 +31,7 @@ Setting up a Local Development Environment
 
 Add the following entry to `/etc/hosts`:
 
-    127.0.0.1  chriskankiewicz.local mysql redis
+    127.0.0.1  local.chriskankiewicz.com mysql redis
 
 ### Set Environment Variables
 
@@ -64,7 +64,7 @@ following from the project's root directory:
 
 ### Accessing the Development Site
 
-You can access the development site at <http://chriskankiewicz.local>.
+You can access the development site at <http://local.chriskankiewicz.com>.
 
 ## Debugging
 
@@ -75,7 +75,7 @@ environments for debugging. Telescope provides insight into the requests coming
 into your application, exceptions, log entries, database queries, queued jobs,
 mail, notifications, cache operations, scheduled tasks, variable dumps and more.
 
-You can access Telescope via <http://chriskankiewicz.local/telescope>
+You can access Telescope via <http://local.chriskankiewicz.com/telescope>
 
 ### Tailing Application Logs
 

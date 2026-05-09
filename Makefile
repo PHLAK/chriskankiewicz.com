@@ -43,7 +43,7 @@ test: # Run tests
 suite: analyze test # Run coding standards and static analysis checks and tests
 
 tunnel: # Expose the application via secure tunnel
-	@composer exec expose share chriskankiewicz.local
+	@composer exec expose share local.chriskankiewicz.com
 
 coverage: # Generate HTML coverage report
 	@composer exec phpunit --coverage-html .coverage
