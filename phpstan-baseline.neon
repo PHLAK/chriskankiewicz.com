@@ -7,12 +7,6 @@ parameters:
 			path: app/Experience.php
 
 		-
-			message: '#^Method App\\GitHub\\CachedClient\:\:repository\(\) should return object but returns mixed\.$#'
-			identifier: return.type
-			count: 1
-			path: app/GitHub/CachedClient.php
-
-		-
 			message: '#^Method App\\GitHub\\Client\:\:repository\(\) should return object but returns mixed\.$#'
 			identifier: return.type
 			count: 1
@@ -181,6 +175,24 @@ parameters:
 			path: app/Project.php
 
 		-
+			message: '#^Offset 0 might not exist on array\{\}\|array\{non\-falsy\-string, non\-empty\-string, non\-empty\-string\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Project.php
+
+		-
+			message: '#^Offset 1 might not exist on array\{\}\|array\{non\-falsy\-string, non\-empty\-string, non\-empty\-string\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Project.php
+
+		-
+			message: '#^Offset 2 might not exist on array\{\}\|array\{non\-falsy\-string, non\-empty\-string, non\-empty\-string\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: app/Project.php
+
+		-
 			message: '#^Parameter \#2 \$subject of function preg_match expects string, string\|null given\.$#'
 			identifier: argument.type
 			count: 1
@@ -241,7 +253,7 @@ parameters:
 			path: app/View/Components/Paginator.php
 
 		-
-			message: '#^Parameter \#1 \$providers of method Illuminate\\Support\\DefaultProviders\:\:merge\(\) expects array, mixed given\.$#'
+			message: '#^Parameter \#1 \$providers of method Illuminate\\Support\\DefaultProviders\:\:merge\(\) expects array\<class\-string\>, mixed given\.$#'
 			identifier: argument.type
 			count: 1
 			path: config/app.php
@@ -331,13 +343,13 @@ parameters:
 			path: database/seeders/ExperienceSeeder.php
 
 		-
-			message: '#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			message: '#^Unable to resolve the template type TMakeKey in call to static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
 			identifier: argument.templateType
 			count: 1
 			path: database/seeders/ExperienceSeeder.php
 
 		-
-			message: '#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			message: '#^Unable to resolve the template type TMakeValue in call to static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
 			identifier: argument.templateType
 			count: 1
 			path: database/seeders/ExperienceSeeder.php
@@ -391,13 +403,13 @@ parameters:
 			path: database/seeders/ProjectSeeder.php
 
 		-
-			message: '#^Unable to resolve the template type TMakeKey in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			message: '#^Unable to resolve the template type TMakeKey in call to static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
 			identifier: argument.templateType
 			count: 1
 			path: database/seeders/ProjectSeeder.php
 
 		-
-			message: '#^Unable to resolve the template type TMakeValue in call to method static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
+			message: '#^Unable to resolve the template type TMakeValue in call to static method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:make\(\)$#'
 			identifier: argument.templateType
 			count: 1
 			path: database/seeders/ProjectSeeder.php
