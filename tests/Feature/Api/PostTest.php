@@ -6,13 +6,16 @@ use App\Post;
 use App\User;
 use Illuminate\Support\Carbon;
 use Kirschbaum\OpenApiValidator\ValidatesOpenApiSpec;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(Post::class)]
 class PostTest extends TestCase
 {
     use ValidatesOpenApiSpec;
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_list_all_posts(): void
     {
         Post::factory()->count(3)->create();
@@ -26,7 +29,7 @@ class PostTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_an_individual_post(): void
     {
         Post::factory()->create();
@@ -43,7 +46,7 @@ class PostTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_create_a_new_post(): void
     {
         $user = User::factory()->admin()->create();
@@ -69,7 +72,7 @@ class PostTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_update_a_post(): void
     {
         $user = User::factory()->admin()->create();
@@ -106,7 +109,7 @@ class PostTest extends TestCase
         ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_delete_an_post(): void
     {
         $user = User::factory()->admin()->create();

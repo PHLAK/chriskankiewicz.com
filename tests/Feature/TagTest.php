@@ -2,13 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\TagController;
 use App\Post;
 use App\Tag;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(TagController::class)]
 class TagTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_access_the_tag_page(): void
     {
         $tag = Tag::factory()->create();

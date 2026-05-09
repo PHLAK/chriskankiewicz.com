@@ -2,11 +2,14 @@
 
 namespace Tests\Unit;
 
+use PHPUnit\Framework\Attributes\CoversFunction;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversFunction('gravatar'), CoversFunction('markdown'), CoversFunction('markdownInline')]
 class HelpersTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_a_gravatar_url_from_an_email_address(): void
     {
         $gravatarUrl = gravatar('arthur.dent@hhgttg.net');
@@ -14,7 +17,7 @@ class HelpersTest extends TestCase
         $this->assertEquals('https://www.gravatar.com/avatar/dfb966909d35b070bc5d5888d091f63f', $gravatarUrl);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_convert_markdown_to_html(): void
     {
         $html = markdown("# Heading\nParagraph text.\n  - Bulleted list item");
@@ -25,7 +28,7 @@ class HelpersTest extends TestCase
         );
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_convert_markdown_to_inline_html(): void
     {
         $html = markdownInline('Some `inline` text');

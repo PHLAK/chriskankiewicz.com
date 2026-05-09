@@ -5,13 +5,16 @@ namespace Tests\Feature\Api;
 use App\Experience;
 use App\User;
 use Kirschbaum\OpenApiValidator\ValidatesOpenApiSpec;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(Experience::class)]
 class ExperienceTest extends TestCase
 {
     use ValidatesOpenApiSpec;
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_list_all_experiences(): void
     {
         Experience::factory()->count(3)->create();
@@ -25,7 +28,7 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_an_individual_experience(): void
     {
         Experience::factory()->create();
@@ -40,7 +43,7 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_create_a_new_experience(): void
     {
         $user = User::factory()->admin()->create();
@@ -64,7 +67,7 @@ class ExperienceTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_update_an_experience(): void
     {
         $user = User::factory()->admin()->create();
@@ -97,7 +100,7 @@ class ExperienceTest extends TestCase
         ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_delete_an_experience(): void
     {
         $user = User::factory()->admin()->create();

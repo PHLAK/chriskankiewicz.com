@@ -10,11 +10,15 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(GitHubClient::class)]
+#[CoversClass(CachedGitHubClient::class)]
 class GitHubClientTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_be_instantiated_from_the_service_container(): void
     {
         $gitHub = $this->app->make(GitHubClient::class);
@@ -22,7 +26,7 @@ class GitHubClientTest extends TestCase
         $this->assertInstanceOf(CachedGitHubClient::class, $gitHub);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_repository_details(): void
     {
         $gitHubClient = $this->mockGitHubClient([
@@ -39,7 +43,7 @@ class GitHubClientTest extends TestCase
         $this->assertObjectHasProperty('stargazers_count', $repository);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_returns_an_empty_object_when_it_fails_to_retrieve_repository_details(): void
     {
         $gitHubClient = $this->mockGitHubClient([
@@ -52,7 +56,7 @@ class GitHubClientTest extends TestCase
         $this->assertEmpty((array) $repository);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_cache_repository_details(): void
     {
         $gitHubClient = $this->mockCachedGitHubClient([

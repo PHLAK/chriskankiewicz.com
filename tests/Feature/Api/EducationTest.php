@@ -5,13 +5,16 @@ namespace Tests\Feature\Api;
 use App\Education;
 use App\User;
 use Kirschbaum\OpenApiValidator\ValidatesOpenApiSpec;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(Education::class)]
 class EducationTest extends TestCase
 {
     use ValidatesOpenApiSpec;
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_list_all_education(): void
     {
         Education::factory()->count(3)->create();
@@ -25,7 +28,7 @@ class EducationTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_an_individual_education(): void
     {
         Education::factory()->create();
@@ -40,7 +43,7 @@ class EducationTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_create_a_new_education(): void
     {
         $user = User::factory()->admin()->create();
@@ -60,7 +63,7 @@ class EducationTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_update_an_education(): void
     {
         $user = User::factory()->admin()->create();
@@ -90,7 +93,7 @@ class EducationTest extends TestCase
         ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_delete_an_education(): void
     {
         $user = User::factory()->admin()->create();

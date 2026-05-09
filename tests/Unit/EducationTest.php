@@ -4,11 +4,14 @@ namespace Tests\Unit;
 
 use App\Education;
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(Education::class)]
 class EducationTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_instantiate_an_education(): void
     {
         $education = new Education;
@@ -16,7 +19,7 @@ class EducationTest extends TestCase
         $this->assertInstanceOf(Education::class, $education);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_casts_start_and_end_dates_to_carbon_instances(): void
     {
         $education = new Education([

@@ -4,11 +4,14 @@ namespace Tests\Unit;
 
 use App\GitHub\Client as GitHubClient;
 use App\Project;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(Project::class)]
 class ProjectTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_instantiate_an_project(): void
     {
         $project = new Project;
@@ -16,7 +19,7 @@ class ProjectTest extends TestCase
         $this->assertInstanceOf(Project::class, $project);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_the_projects_github_project_id(): void
     {
         $project = new Project([
@@ -26,7 +29,7 @@ class ProjectTest extends TestCase
         $this->assertEquals('fprefect/hhgttg', $project->github_project_id);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_the_projects_fork_count(): void
     {
         $project = new Project([
@@ -42,7 +45,7 @@ class ProjectTest extends TestCase
         $this->assertEquals(1337, $project->forks());
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_the_projects_star_count(): void
     {
         $project = new Project([

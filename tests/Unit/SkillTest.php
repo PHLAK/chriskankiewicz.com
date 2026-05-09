@@ -3,11 +3,14 @@
 namespace Tests\Unit;
 
 use App\Skill;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(Skill::class)]
 class SkillTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_instantiate_a_skill(): void
     {
         $skill = new Skill;
@@ -15,7 +18,7 @@ class SkillTest extends TestCase
         $this->assertInstanceOf(Skill::class, $skill);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_a_skills_name(): void
     {
         $skill = new Skill(['name' => 'Lockpicking']);
@@ -23,7 +26,7 @@ class SkillTest extends TestCase
         $this->assertEquals('Lockpicking', $skill->name);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_a_skills_icon_styles(): void
     {
         $skill = new Skill([
@@ -36,7 +39,7 @@ class SkillTest extends TestCase
         $this->assertEquals('fas fa-coffee', $skill->iconStyles());
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_a_skills_icon_styles_with_extra_classes(): void
     {
         $skill = new Skill([
@@ -47,7 +50,7 @@ class SkillTest extends TestCase
         $this->assertEquals('fas fa-coffee fa-fw', $skill->iconStyles(['fa-fw']));
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_a_skills_icon_markup(): void
     {
         $skill = new Skill([
@@ -59,7 +62,7 @@ class SkillTest extends TestCase
         $this->assertEquals('<i class="fas fa-coffee fa-fw"></i>', $skill->iconMarkup(['fa-fw']));
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_determine_if_a_skill_has_an_icon(): void
     {
         $skill = new Skill([
@@ -70,7 +73,7 @@ class SkillTest extends TestCase
         $this->assertTrue($skill->hasIcon());
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_determine_if_a_skill_does_not_have_an_icon(): void
     {
         $skill1 = new Skill;

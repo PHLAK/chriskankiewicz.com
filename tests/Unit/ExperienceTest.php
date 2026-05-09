@@ -4,11 +4,14 @@ namespace Tests\Unit;
 
 use App\Experience;
 use Illuminate\Support\Carbon;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(Experience::class)]
 class ExperienceTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_instantiate_an_experience(): void
     {
         $experience = new Experience;
@@ -16,7 +19,7 @@ class ExperienceTest extends TestCase
         $this->assertInstanceOf(Experience::class, $experience);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_casts_start_and_end_dates_to_carbon_instances(): void
     {
         $experience = new Experience([

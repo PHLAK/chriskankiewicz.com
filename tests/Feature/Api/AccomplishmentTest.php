@@ -5,13 +5,16 @@ namespace Tests\Feature\Api;
 use App\Accomplishment;
 use App\User;
 use Kirschbaum\OpenApiValidator\ValidatesOpenApiSpec;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
+#[CoversClass(Accomplishment::class)]
 class AccomplishmentTest extends TestCase
 {
     use ValidatesOpenApiSpec;
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_list_all_accomplishment(): void
     {
         Accomplishment::factory()->count(3)->create();
@@ -25,7 +28,7 @@ class AccomplishmentTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_get_an_individual_accomplishment(): void
     {
         Accomplishment::factory()->create();
@@ -42,7 +45,7 @@ class AccomplishmentTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_create_a_new_accomplishment(): void
     {
         $user = User::factory()->admin()->create();
@@ -58,7 +61,7 @@ class AccomplishmentTest extends TestCase
             ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_update_an_accomplishment(): void
     {
         $user = User::factory()->admin()->create();
@@ -80,7 +83,7 @@ class AccomplishmentTest extends TestCase
         ]);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_can_delete_an_accomplishment(): void
     {
         $user = User::factory()->admin()->create();
