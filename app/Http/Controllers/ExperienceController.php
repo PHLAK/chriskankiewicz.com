@@ -11,7 +11,7 @@ class ExperienceController extends Controller
     public function __invoke(): View
     {
         return view('experience', [
-            'experience' => Experience::orderBy('start_date', 'DESC')->get(),
+            'experience' => Experience::orderBy('start_date', 'desc')->get(),
             'title' => 'Experience',
         ]);
     }

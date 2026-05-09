@@ -46,7 +46,7 @@ class Post extends Model
     protected static function booted(): void
     {
         static::addGlobalScope('published', function (Builder $builder) {
-            $builder->whereDate('published_at', '<=', Carbon::now())->orderBy('published_at', 'DESC');
+            $builder->whereDate('published_at', '<=', Carbon::now())->orderBy('published_at', 'desc');
         });
     }
 
@@ -69,7 +69,7 @@ class Post extends Model
      *
      * @return Builder<self>
      */
-    public function scopePublishedAfter(Builder $query, CArbon $date): Builder
+    public function scopePublishedAfter(Builder $query, Carbon $date): Builder
     {
         return $query->where('published_at', '>', $date);
     }

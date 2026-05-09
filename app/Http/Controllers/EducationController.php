@@ -11,7 +11,7 @@ class EducationController extends Controller
     public function __invoke(): View
     {
         return view('education', [
-            'education' => Education::orderBy('start_date', 'DESC')->get(),
+            'education' => Education::orderBy('start_date', 'desc')->get(),
             'title' => 'Education',
         ]);
     }
