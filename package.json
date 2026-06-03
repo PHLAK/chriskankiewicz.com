@@ -18,7 +18,7 @@
         "laravel-vite-plugin": "^3.1.0",
         "prismjs": "^1.29.0",
         "tailwindcss": "^4.1.11",
-        "vite": "^8.0.11",
+        "vite": "^8.0.16",
         "vue": "^3.2.41"
     }
 }
