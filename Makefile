@@ -1,49 +1,19 @@
-FG_BLUE := "$$(tput setaf 4)"
-RESET_FORMAT := "$$(tput sgr0)"
-
-all: dev env # Install and build dependencies and bring up the dev environment
-
 dev development: # Install and build application developemnt dependencies
-	@composer install --no-interaction
-	@npm install && npm run dev
+	@composer install --no-interaction --ignore-platform-reqs
+	@npm install --no-audit --no-fund
 
-prod production: # Install and build application production dependencies
+prod production: # Build application for production
 	@composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
-	@npm install --no-save && npm run build && npm prune --production
+	@npm install --no-audit --no-fund --no-save && npm run build && npm prune --production
 
-env environment: # Bring up the development environment
-	@docker-compose up -d && php artisan migrate:fresh --seed
+update upgrade: # Update application dependencies
+	@composer update && npm update && npm install && npm audit fix
 
-update upgrade: # Update application dependencies and publish dependency assets
-	@composer update && php artisan telescope:publish
-	@npm update && npm install && npm audit fix
+coverage: # Generate an HTML coverage report
+	@phpunit --coverage-html .coverage
 
-outdated: # Check for outdated PHP and JavaScript dependencies
-	@echo "$(FG_BLUE)>>>$(RESET_FORMAT) Checking for outdated PHP packages"
-	@composer show --direct --outdated
-	@echo "$(FG_BLUE)>>>$(RESET_FORMAT) Checking for outdated JavaScript packages"
-	@npm outdated
+clear-build: # Clear the compiled build assets
+	@rm --recursive --force --verbose public/build/*
 
-php-cs-fixer: # Check PHP coding standards with PHP Coding Standards Fixer
-	@composer exec php-cs-fixer fix --diff --dry-run
-
-eslint: # Check JavaScript coding standards with ESLint
-	@npm run cs
-
-coding-standards: php-cs-fixer eslint # Check coding standards
-
-static-analysis: # Run static analysis checks
-	@composer exec phpstan analyze
-
-analyze: coding-standards static-analysis # Run coding standards and static analysis checks
-
-test: # Run tests
-	@composer exec phpunit
-
-suite: analyze test # Run coding standards and static analysis checks and tests
-
-tunnel: # Expose the application via secure tunnel
-	@composer exec expose share local.chriskankiewicz.com
-
-coverage: # Generate HTML coverage report
-	@composer exec phpunit --coverage-html .coverage
+clear-cache: # Clear the application cache
+	@rm --recursive --force --verbose cache/app/* cache/views/* cache/*.php

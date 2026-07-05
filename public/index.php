@@ -1,17 +1,25 @@
 <?php
 
-use Illuminate\Http\Request;
+declare(strict_types=1);
 
-define('LARAVEL_START', microtime(true));
+use App\Bootstrap\Builder;
+use Dotenv\Dotenv;
+use Slim\App;
 
-// Determine if the application is in maintenance mode...
-if (file_exists($maintenance = __DIR__ . '/../storage/framework/maintenance.php')) {
-    require $maintenance;
-}
+// Import the autoloader
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-// Register the Composer autoloader...
-require __DIR__ . '/../vendor/autoload.php';
+// Initialize environment variable handler
+Dotenv::createUnsafeImmutable(dirname(__DIR__))->safeLoad();
 
-// Bootstrap Laravel and handle the request...
-(require_once __DIR__ . '/../bootstrap/app.php')
-    ->handleRequest(Request::capture());
+// Create the DI container
+$container = Builder::createContainer(
+    dirname(__DIR__) . '/config',
+    dirname(__DIR__) . '/cache'
+);
+
+// Create the application
+$app = $container->get(App::class);
+
+// Engage!
+$app->run();

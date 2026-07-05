@@ -1,110 +1,116 @@
 <?php
 
-use Illuminate\Support\Str;
+declare(strict_types=1);
+
+use DI\Container;
+
+use function DI\env;
+use function DI\string;
+use function DI\value;
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Default Cache Store
-    |--------------------------------------------------------------------------
-    |
-    | This option controls the default cache store that will be used by the
-    | framework. This connection is utilized if another isn't explicitly
-    | specified when running a cache operation inside the application.
-    |
-    */
+    /**
+     * The application cache driver. Setting this value to 'array' will disable
+     * the cache across requests. Additional driver-specific options may require
+     * configuration below.
+     *
+     * Possible values: apcu, array, file, memcached, redis, php-file, valkey
+     *
+     * Default value: 'file'
+     */
+    'cache_driver' => env('CACHE_DRIVER', 'file'),
 
-    'default' => env('CACHE_STORE', 'database'),
+    /**
+     * The app cache lifetime (in seconds). If set to 0, cache indefinitely.
+     *
+     * Default value: 0
+     */
+    'cache_lifetime' => env('CACHE_LIFETIME', 0),
 
-    'serializable_classes' => [stdClass::class],
+    /**
+     * Some cache drivers require manually pruning the cache periodically to
+     * remove expired items. This is the percentage chance (out of 100) of a
+     * request "winning" the lottery causing the cache to be pruned.
+     *
+     * Default value: 2
+     */
+    'cache_lottery' => env('CACHE_LOTTERY', 2),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Cache Stores
-    |--------------------------------------------------------------------------
-    |
-    | Here you may define all of the cache "stores" for your application as
-    | well as their drivers. You may even define multiple stores for the
-    | same cache driver to group types of items stored in your caches.
-    |
-    | Supported drivers: "array", "database", "file", "memcached",
-    |                    "redis", "dynamodb", "octane", "null"
-    |
-    */
+    /**
+     * Path to the view cache directory. Set to 'false' to disable view caching
+     * entirely. The view cache is separate from the application cache defined
+     * above.
+     *
+     * Default value: '{cache_path}/views'
+     */
+    'view_cache' => env('VIEW_CACHE', string('{cache_path}/views')),
 
-    'stores' => [
+    /**
+     * The Memcached server hostname or IP address.
+     *
+     * Default value: 'localhost'
+     */
+    'memcached_host' => env('MEMCACHED_HOST', 'localhost'),
 
-        'array' => [
-            'driver' => 'array',
-            'serialize' => false,
-        ],
+    /**
+     * The Memcached server port.
+     *
+     * Default value: 11211
+     */
+    'memcached_port' => env('MEMCACHED_PORT', 11211),
 
-        'database' => [
-            'driver' => 'database',
-            'connection' => env('DB_CACHE_CONNECTION'),
-            'table' => env('DB_CACHE_TABLE', 'cache'),
-            'lock_connection' => env('DB_CACHE_LOCK_CONNECTION'),
-            'lock_table' => env('DB_CACHE_LOCK_TABLE'),
-        ],
+    /**
+     * The Memcached configuration closure. This option is used when the
+     * 'cache_driver' configuration option is set to 'memcached'. The closure
+     * receives a Memcached object as it's only parameter. You can use this
+     * object to configure the Memcached connection. At a minimum you must
+     * connect to one or more Memcached servers via the 'addServer()' or
+     * 'addServers()' methods.
+     *
+     * Reference the PHP Memcached documentation for Memcached configuration
+     * options: https://secure.php.net/manual/en/book.memcached.php
+     *
+     * Default value: Connects to a server at localhost:11211
+     */
+    'memcached_config' => value(function (Memcached $memcached, Container $container): void {
+        $memcached->addServer(
+            (string) $container->get('memcached_host'),
+            (int) $container->get('memcached_port')
+        );
+    }),
 
-        'file' => [
-            'driver' => 'file',
-            'path' => storage_path('framework/cache/data'),
-            'lock_path' => storage_path('framework/cache/data'),
-        ],
+    /**
+     * The Redis server hostname or IP address.
+     *
+     * Default value: 'localhost'
+     */
+    'redis_host' => env('REDIS_HOST', 'localhost'),
 
-        'memcached' => [
-            'driver' => 'memcached',
-            'persistent_id' => env('MEMCACHED_PERSISTENT_ID'),
-            'sasl' => [
-                env('MEMCACHED_USERNAME'),
-                env('MEMCACHED_PASSWORD'),
-            ],
-            'options' => [
-                // Memcached::OPT_CONNECT_TIMEOUT => 2000,
-            ],
-            'servers' => [
-                [
-                    'host' => env('MEMCACHED_HOST', '127.0.0.1'),
-                    'port' => env('MEMCACHED_PORT', 11211),
-                    'weight' => 100,
-                ],
-            ],
-        ],
+    /**
+     * The Redis server port.
+     *
+     * Default value: 6379
+     */
+    'redis_port' => env('REDIS_PORT', 6379),
 
-        'redis' => [
-            'driver' => 'redis',
-            'connection' => env('REDIS_CACHE_CONNECTION', 'cache'),
-            'lock_connection' => env('REDIS_CACHE_LOCK_CONNECTION', 'default'),
-        ],
-
-        'dynamodb' => [
-            'driver' => 'dynamodb',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-            'table' => env('DYNAMODB_CACHE_TABLE', 'cache'),
-            'endpoint' => env('DYNAMODB_ENDPOINT'),
-        ],
-
-        'octane' => [
-            'driver' => 'octane',
-        ],
-
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Cache Key Prefix
-    |--------------------------------------------------------------------------
-    |
-    | When utilizing the APC, database, memcached, Redis, and DynamoDB cache
-    | stores, there might be other applications using the same cache. For
-    | that reason, you may prefix every cache key to avoid collisions.
-    |
-    */
-
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_cache_'),
+    /**
+     * The Redis configuration closure. This option is used when the
+     * 'cache_driver' configuration option is set to 'redis'. The closure
+     * receives a Redis object as it's only parameter. You can use this object
+     * to configure the Redis connection. At a minimum you must connect to one
+     * or more Redis servers via the 'connect()' or 'pconnect()' methods.
+     *
+     * Reference the phpredis documentation for Redis configuration options:
+     * https://github.com/phpredis/phpredis#readme
+     *
+     * Default value: Connects to a server at localhost:6379
+     */
+    'redis_config' => DI\value(function (Redis $redis, Container $container): void {
+        $redis->pconnect(
+            (string) $container->get('redis_host'),
+            (int) $container->get('redis_port')
+        );
+    }),
 
 ];

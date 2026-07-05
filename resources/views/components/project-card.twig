@@ -1,0 +1,36 @@
+<li class="project-card flex flex-col gap-2">
+    {% if project.homepage %}
+        <a href="{{ project.homepage }}" class="flex justify-between items-center gap-1 hover:underline">
+            <h3 class="font-semibold text-xl">{{ project.name }}</h3>
+
+            <div>
+                {{ svg('regular/arrow-up-right-from-square', ['text-zinc-400', 'fill-current', 'size-4']) }}
+            </div>
+        </a>
+    {% else %}
+        <h3 class="font-semibold text-xl">{{ project.name }}</h3>
+    {% endif %}
+
+    <div class="flex flex-wrap gap-2 font-mono text-sm text-zinc-500">
+        <a href="{{ project.source_url }}" class="flex-none flex items-center gap-1 hover:underline">
+            {{ svg('brands/github', ['fill-current', 'size-4']) }}
+
+            {{ project.full_name }}
+        </a>
+
+        <div class="flex items-center gap-1">
+            {{ svg('regular/star', ['fill-current', 'size-4']) }}
+
+            {{ project.stargazers_count }}
+        </div>
+
+        <div class="flex items-center gap-1">
+            {{ svg('regular/code-branch', ['fill-current', 'size-4']) }}
+
+            {{ project.forks_count }}
+        </div>
+    </div>
+
+
+    <p class="text-lg">{{ project.description }}</p>
+</li>

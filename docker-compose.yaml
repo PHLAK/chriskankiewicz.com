@@ -1,65 +1,39 @@
 services:
+
   app:
-    container_name: chriskankiewicz-app
-    build: .
+    build:
+      context: .
+      target: dev
     image: phlak/chriskankiewicz-app:dev
-    depends_on:
-      - mysql
-      - redis
+    depends_on: [memcached, valkey]
+    extra_hosts:
+      - host.docker.internal:host-gateway
     ports:
       - ${APP_PORT:-80}:80
-    extra_hosts:
-      - local.chriskankiewicz.com:127.0.0.1
-    user: ${HOST_USER_ID:-0}:${HOST_GROUP_ID:-0}
     volumes:
       - ./:/var/www/html
-      - ./.docker/php/config/php.ini:/usr/local/etc/php/php.ini
-      - ./.docker/apache2/config/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./.docker/php/config/php.dev.ini:/usr/local/etc/php/php.ini
+      - ./.docker/apache2/config/000-default.dev.conf:/etc/apache2/sites-available/000-default.conf
+    user: ${HOST_USER_ID:-1000}:${HOST_GROUP_ID:-1000}
 
-  mysql:
-    container_name: chriskankiewicz-mysql
-    image: mysql:8.4
+  memcached:
+    image: memcached:1.6
     ports:
-      - ${DB_PORT:-3306}:3306
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      MYSQL_DATABASE: app
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
-    volumes:
-      - mysql-data:/var/lib/mysql
-      - ./.docker/mysql/:/docker-entrypoint-initdb.d
+      - ${MEMCACHED_PORT:-11211}:11211
 
-  redis:
-    container_name: chriskankiewicz-redis
-    image: redis:6.0
+  valkey:
+    image: valkey/valkey:9.0
     ports:
-      - ${REDIS_PORT:-6379}:6379
+      - ${VALKEY_PORT:-6379}:6379
 
   npm:
-    container_name: chriskankiewicz-npm
+    build:
+      context: .
+      target: dev
     image: phlak/chriskankiewicz-app:dev
-    volumes:
-      - ./:/var/www/html
-    ports:
-      - ${APP_PORT:-5173}:5173
-    user: ${HOST_USER_ID:-0}:${HOST_GROUP_ID:-0}
     command: npm run dev
-
-  artisan:
-    container_name: chriskankiewicz-artisan
-    image: phlak/chriskankiewicz-app:dev
-    entrypoint: php artisan
-    depends_on:
-      - mysql
-      - redis
-    profiles: [artisan]
+    ports:
+      - ${NPM_PORT:-5173}:5173
     volumes:
       - ./:/var/www/html
-      - ./.docker/php/config/php.ini:/usr/local/etc/php/php.ini
-      - ./.docker/apache2/config/000-default.conf:/etc/apache2/sites-available/000-default.conf
-    user: ${HOST_USER_ID:-0}:${HOST_GROUP_ID:-0}
-
-volumes:
-  mysql-data:
-    driver: local
+    user: ${HOST_USER_ID:-1000}:${HOST_GROUP_ID:-1000}

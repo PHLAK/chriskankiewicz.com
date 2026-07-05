@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8">
+<meta name="description" content="Home page of Chris Kankiewicz">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="/images/favicon.png">
+
+{{ vite(['resources/css/app.css']) }}
+
+<title>Chris Kankiewicz • {{ sub_title }}</title>
+
+<div id="app" class="h-screen w-full">
+    {% include 'sections/navigation.twig' %}
+
+    {% include 'sections/bio.twig' %}
+
+    {% include 'sections/projects.twig' %}
+
+    {% include 'sections/blog.twig' %}
+
+    {% include 'sections/footer.twig' %}
+</div>

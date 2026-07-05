@@ -1,0 +1,11 @@
+<div id="projects" class="bg-zinc-800 text-white w-full">
+    <div class="container py-8 sm:py-16">
+        <h2 class="text-lg text-zinc-600 text-center uppercase mb-8">Projects</h2>
+
+        <ul class="list-none grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+            {% for project in projects %}
+                {% include 'components/project-card.twig' with { project: project } %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

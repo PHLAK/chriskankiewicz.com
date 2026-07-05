@@ -1,46 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@300&family=Nunito:wght@300;400;700&family=Source+Code+Pro&display=swap');
-
 @import "tailwindcss";
 
-@import "../../node_modules/@fortawesome/fontawesome-pro/css/all.css";
-
-@import "./markdown.css";
-@import "./prism.css";
-
-@theme {
-    --breakpoint-xs: 30rem;
-
-    --color-bluesky: #0886FE;
-    --color-github: #24292F;
-    --color-keybase: #FF6F21;
-    --color-linkedin: #2977C9;
-    --color-mastodon: #6364FF;
-    --color-reddit: #FF4500;
-    --color-steam: #3B3B38;
-    --color-twitter: #1DA1F2;
-
-    --font-lato: Lato, sans-serif;
-    --font-mono: Source Code Pro, mono;
-    --font-montserrat: Montserrat, mono;
-    --font-sans: Nunito, mono;
-
-    --shadow-solid-50: 4px 4px 0 #f8fafc;
-    --shadow-solid-100: 4px 4px 0 #f1f5f9;
-    --shadow-solid-200: 4px 4px 0 #e2e8f0;
-    --shadow-solid-300: 4px 4px 0 #cbd5e1;
-    --shadow-solid-400: 4px 4px 0 #94a3b8;
-    --shadow-solid-500: 4px 4px 0 #64748b;
-    --shadow-solid-600: 4px 4px 0 #475569;
-    --shadow-solid-700: 4px 4px 0 #334155;
-    --shadow-solid-800: 4px 4px 0 #1e293b;
-    --shadow-solid-900: 4px 4px 0 #0f172a;
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat.woff2") format("woff2");
 }
 
-/* @utility container {
-    margin-inline: auto;
-    padding-inline: 2rem;
-} */
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("/fonts/SourceCodePro.woff2") format("woff2");
+}
 
-[v-cloak] {
-    display: none;
+@theme {
+    --font-sans: Montserrat;
+    --font-mono: Source Code Pro;
+}
+
+.container {
+    @apply w-full max-w-6xl mx-auto px-4;
+}
+
+.nav-link {
+    @apply rounded-lg px-4 py-2 hover:bg-zinc-100;
+}
+
+.user-tag {
+    @apply bg-slate-200/75 rounded-lg shadow-sm font-medium text-sm p-2 sm:text-base sm:px-4;
+}
+
+.social-link {
+    @apply transition-all hover:scale-125;
+}
+
+.social-icon {
+    @apply drop-shadow-sm fill-current size-10 md:size-12;
+}
+
+.project-card {
+    @apply bg-white rounded-xl text-zinc-800 p-6 transition-all hover:scale-105;
+}
+
+.blog-card {
+    @apply bg-white rounded-xl text-zinc-800 p-6 transition-all hover:scale-105;
+}
+
+.cc-icon {
+    @apply fill-current size-8;
+}
+
+.video {
+    @apply aspect-video w-full;
 }

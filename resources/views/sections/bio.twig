@@ -1,0 +1,81 @@
+<div id="bio" class="w-full">
+    <div class="container py-8 sm:py-16">
+        <div class="bg-[url(/images/user-bg.jpg)] bg-cover bg-center rounded-4xl overflow-clip">
+            <div class="bg-black/25 backdrop-blur-xs p-8 sm:p-16">
+                <div class="flex flex-col items-center gap-8 text-white lg:flex-row">
+                    <img src="{{ gravatar('Chris@Kankiewicz.com', 480)}}" class="rounded-full size-64 border-8 border-white">
+
+                    <div class="flex flex-col gap-6">
+                        <h1 class="text-5xl text-shadow-sm text-center lg:text-left">
+                            Chris Kankiewicz
+                        </h1>
+
+                        <div class="flex flex-wrap justify-center gap-2 text-zinc-800 lg:justify-start">
+                            <div class="user-tag">
+                                👨‍💻 <span class="hidden sm:inline-block">Passionate</span> PHP developer
+                            </div>
+
+                            <div class="user-tag">
+                                🐧 Linux junkie
+                            </div>
+
+                            <div class="user-tag">
+                                🖥️ <span class="hidden sm:inline-block">Avid</span> PC gamer
+                            </div>
+
+                            <div class="user-tag">
+                                ☕️ Coffee aficionado
+                            </div>
+
+                            <div class="user-tag">
+                                👫 Dedicated husband
+                            </div>
+
+                            <div class="user-tag">
+                                👨‍👧‍👦 Proud father <span class="hidden sm:inline-block">of two</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap justify-center gap-2 lg:justify-start">
+                            <a href="https://github.com/PHLAK" title="GitHub" class="social-link" data-umami-event="github-link">
+                                {{ svg('brands/github', ['social-icon']) }}
+                            </a>
+
+                            <a href="https://codeberg.org/PHLAK" title="Codeberg" class="social-link" data-umami-event="codeberg-link">
+                                {{ svg('brands/codeberg', ['social-icon']) }}
+                            </a>
+
+                            <a href="https://bsky.app/profile/phlak.dev" title="Bluesky" class="social-link" data-umami-event="bluesky-link">
+                                {{ svg('brands/bluesky', ['social-icon']) }}
+                            </a>
+
+                            <a href="https://mastodon.social/@PHLAK" title="Mastodon" class="social-link" data-umami-event="mastodon-link">
+                                {{ svg('brands/mastodon', ['social-icon']) }}
+                            </a>
+
+                            <a href="https://www.reddit.com/user/PHLAK" title="Reddit" class="social-link" data-umami-event="reddit-link">
+                                {{ svg('brands/reddit', ['social-icon']) }}
+                            </a>
+
+                            <a href="https://twitter.com/PHLAK" title="X / Twitter" class="social-link" data-umami-event="twitter-link">
+                                {{ svg('brands/x-twitter', ['social-icon']) }}
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/chriskankiewicz/" title="LinkedIn" class="social-link" data-umami-event="linkedin-link">
+                                {{ svg('brands/linkedin', ['social-icon']) }}
+                            </a>
+
+                            <a href="https://keybase.io/chriskankiewicz" title="Keybase" class="social-link" data-umami-event="keybase-link">
+                                {{ svg('brands/keybase', ['social-icon']) }}
+                            </a>
+
+                            <a href="https://steamcommunity.com/id/phlak" title="Steam" class="social-link" data-umami-event="steam-link">
+                                {{ svg('brands/steam', ['social-icon']) }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
