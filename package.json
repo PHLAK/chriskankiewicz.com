@@ -10,7 +10,7 @@
         "@eslint/js": "^10.0.1",
         "@fortawesome/fontawesome-pro": "^7.2.0",
         "@tailwindcss/vite": "^4.1.11",
-        "@vitejs/plugin-vue": "^6.0.0",
+        "@vitejs/plugin-vue": "^6.0.7",
         "axios": "^1.4.0",
         "eslint": "^10.3.0",
         "eslint-plugin-vue": "^10.3.0",
