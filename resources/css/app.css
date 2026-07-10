@@ -36,11 +36,11 @@
 }
 
 .project-card {
-    @apply bg-white rounded-xl text-zinc-800 p-6 transition-all hover:scale-105;
+    @apply bg-white rounded-xl shadow-sm text-zinc-800 p-6;
 }
 
 .blog-card {
-    @apply bg-white rounded-xl text-zinc-800 p-6 transition-all hover:scale-105;
+    @apply bg-white rounded-xl shadow-sm text-zinc-800 p-6;
 }
 
 .cc-icon {

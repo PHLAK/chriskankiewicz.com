@@ -23,19 +23,19 @@
                         </div>
                     </a>
 
-                    <div class="line-clamp-8 text-ellipsis space-y-4">
+                    <div class="line-clamp-6 text-ellipsis space-y-4">
                         {{ post.description | raw }}
                     </div>
 
-                    <a href="{{ post.link }}" class="flex items-center gap-1 uppercase hover:underline">
-                        Continue reading {{ svg('regular/arrow-right', ['fill-current', 'size-6']) }}
+                    <a href="{{ post.link }}" class="inline-flex items-center gap-1 text-zinc-400 text-sm uppercase hover:underline">
+                        Continue reading {{ svg('regular/arrow-right', ['fill-current', 'size-4']) }}
                     </a>
                 </li>
             {% endfor %}
         </ul>
 
-        <div class="text-center mt-6">
-            <a href="https://blog.chriskankiewicz.com" class="inline-flex items-center gap-1 text-lg uppercase hover:underline">
+        <div class="text-center mt-8 sm:mt-12">
+            <a href="https://blog.chriskankiewicz.com" class="inline-flex items-center gap-1 text-zinc-500 text-lg uppercase hover:underline">
                 More blog posts {{ svg('regular/arrow-right', ['fill-current', 'size-6']) }}
             </a>
         </div>
