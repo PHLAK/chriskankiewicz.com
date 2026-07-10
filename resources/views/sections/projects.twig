@@ -1,11 +1,21 @@
 <div id="projects" class="bg-zinc-800 text-white w-full">
-    <div class="container py-8 sm:py-16">
-        <h2 class="text-lg text-zinc-600 text-center uppercase mb-8">Projects</h2>
+    <div class="container py-8 sm:py-12">
+        <a href="#projects">
+            <h2 class="text-xl text-zinc-500 text-center uppercase mb-8 sm:mb-12">
+                Projects
+            </h2>
+        </a>
 
         <ul class="list-none grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
             {% for project in projects %}
                 {% include 'components/project-card.twig' with { project: project } %}
             {% endfor %}
         </ul>
+
+        <div class="text-center mt-8 sm:mt-12">
+            <a href="https://github.com/PHLAK?tab=repositories" class="inline-flex items-center gap-1 text-zinc-500 text-lg uppercase hover:underline">
+                More projects {{ svg('regular/arrow-right', ['fill-current', 'size-6']) }}
+            </a>
+        </div>
     </div>
 </div>

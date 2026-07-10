@@ -11,7 +11,7 @@
 
 <link rel="icon" href="/images/favicon.png">
 
-{{ vite(['resources/css/app.css']) }}
+{{ vite(['resources/css/app.css', 'resources/js/app.js']) }}
 
 <title>Chris Kankiewicz • {{ sub_title }}</title>
 
@@ -25,4 +25,6 @@
     {% include 'sections/blog.twig' %}
 
     {% include 'sections/footer.twig' %}
+
+    {% include 'components/scroll-to-top.twig' %}
 </div>
