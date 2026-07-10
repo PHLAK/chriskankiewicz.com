@@ -12,7 +12,7 @@
     {% endif %}
 
     <div class="flex flex-wrap gap-2 font-mono text-sm text-zinc-500">
-        <a href="{{ project.source_url }}" class="flex-none flex items-center gap-1 hover:underline">
+        <a href="{{ project.html_url }}" class="flex-none flex items-center gap-1 hover:underline">
             {{ svg('brands/github', ['fill-current', 'size-4']) }}
 
             {{ project.full_name }}
