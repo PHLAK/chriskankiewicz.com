@@ -2,17 +2,12 @@
 
 declare(strict_types=1);
 
-use App\Decorators;
 use App\Factories;
 use App\Functions;
 use App\Managers;
 use App\Middlewares;
-use GuzzleHttp\Client;
 
-use function DI\create;
-use function DI\decorate;
 use function DI\factory;
-use function DI\get;
 use function DI\string;
 
 return [
