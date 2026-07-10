@@ -53,6 +53,7 @@ return [
 
     'middlewares' => [
         Middlewares\PruneCacheMiddleware::class,
+        Middlewares\RegisterGlobalsMiddleware::class,
         function (Slim\App $app, Slim\Views\Twig $twig): Slim\Views\TwigMiddleware {
             return Slim\Views\TwigMiddleware::create($app, $twig);
         },

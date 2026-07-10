@@ -31,24 +31,9 @@ class IndexController
     public function __invoke(Response $response): ResponseInterface
     {
         return $this->view->render($response, 'index.twig', [
-            'sub_title' => $this->subTitle(),
             'projects' => $this->projects(),
             'posts' => $this->blog->posts(6),
         ]);
-    }
-
-    private function subTitle(): string
-    {
-        $items = [
-            '👨‍💻 Passionate PHP developer',
-            '🐧 Linux junkie',
-            '🖥️ Avid PC gamer',
-            '☕️ Coffee aficionado',
-            '👫 Dedicated husband',
-            '👨‍👧‍👦 Proud father of two ',
-        ];
-
-        return $items[array_rand($items)];
     }
 
     /** @return Collection<object> */
