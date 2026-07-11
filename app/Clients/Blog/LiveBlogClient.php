@@ -19,10 +19,13 @@ class LiveBlogClient implements BlogClientInterface
 
         $feed = simplexml_load_string($response);
 
-        // if (! $feed->channel) {
-        //     throw new FeedException('Invalid feed.');
-        // }
+        if (! $feed->channel) {
+            throw new BlogClientException('Feed is invalid');
+        }
 
-        return array_slice(iterator_to_array($feed->channel->item, false), 0, $limit);
+        return array_map(
+            fn ($item): array => (array) $item,
+            array_slice(iterator_to_array($feed->channel->item, false), 0, $limit)
+        );
     }
 }

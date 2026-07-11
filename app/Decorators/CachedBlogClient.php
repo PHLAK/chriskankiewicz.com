@@ -19,13 +19,13 @@ class CachedBlogClient implements BlogClientInterface
 
     public function posts(?int $limit = null): array
     {
-        return $this->cache->get(sprintf('blog-posts-%d', $limit), function (ItemInterface $item) use ($limit): array {
+        return $this->cache->get('blog-posts', function (ItemInterface $item) use ($limit): array {
             try {
                 $posts = $this->blog->posts($limit);
             } catch (BlogClientException) {
-                $item->expiresAfter(DateInterval::createFromDateString('15 minutes'));
+                $item->expiresAfter(DateInterval::createFromDateString('1 minute'));
 
-                return $item->isHit() ? $item->get() : [];
+                return [];
             }
 
             $item->expiresAfter(DateInterval::createFromDateString('12 hours'));

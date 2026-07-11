@@ -25,7 +25,7 @@ class CachedGitHubClient implements GitHubClientInterface
             } catch (GitHubClientException) {
                 $item->expiresAfter(DateInterval::createFromDateString('15 minutes'));
 
-                return $item->isHit() ? $item->get() : json_decode('{}');
+                return (object) [];
             }
 
             $item->expiresAfter(DateInterval::createFromDateString('8 hours'));
