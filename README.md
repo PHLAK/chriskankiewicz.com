@@ -1,20 +1,26 @@
 <p align="center">
-    <h1 align="center">Chris Kankiewicz</h1>
-    <p align="center">Personal home page of Chris Kankiewicz.</p>
+    <img src="chris-kankiewicz.svg" alt="Chris Kankiewicz" width="50%">
 </p>
 
 <p align="center">
     <a href="https://github.com/PHLAK/chriskankiewicz.com/blob/master/LICENSE"><img src="https://img.shields.io/github/license/phlak/chriskankiewicz.com?style=flat-square" alt="License"></a>
+    <a href="https://github.com/PHLAK/chriskankiewicz.com/actions"><img src="https://img.shields.io/github/actions/workflow/status/PHLAK/chriskankiewicz.com/test-suite.yaml?style=flat-square" alt="Build Status"></a>
     <a href="https://www.ChrisKankiewicz.com"><img src="https://img.shields.io/badge/created_by-Chris%20Kankiewicz-319795.svg?style=flat-square" alt="Author"></a>
 </p>
 
----
+--
+
+<p align="center">
+    Home page of Chris Kankiewicz.
+</p>
+
+![ChrisKankiewicz.com Screenshot](screenshot.png)
 
 Requirements
 ------------
 
   - [PHP](https://secure.php.net/)
-  - [Node.js](https://nodejs.org/) / npm
+  - [Node.js](https://nodejs.org/) (npm)
   - [Composer](https://getcomposer.org/)
   - [Docker](https://www.docker.com/)
     - [Docker Compose](https://docs.docker.com/compose/)
