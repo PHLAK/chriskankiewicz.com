@@ -5,7 +5,6 @@ services:
       context: .
       target: dev
     image: phlak/chriskankiewicz-app:dev
-    depends_on: [memcached, valkey]
     extra_hosts:
       - host.docker.internal:host-gateway
     ports:
@@ -15,11 +14,6 @@ services:
       - ./.docker/php/config/php.dev.ini:/usr/local/etc/php/php.ini
       - ./.docker/apache2/config/000-default.dev.conf:/etc/apache2/sites-available/000-default.conf
     user: ${HOST_USER_ID:-1000}:${HOST_GROUP_ID:-1000}
-
-  memcached:
-    image: memcached:1.6
-    ports:
-      - ${MEMCACHED_PORT:-11211}:11211
 
   valkey:
     image: valkey/valkey:9.0
