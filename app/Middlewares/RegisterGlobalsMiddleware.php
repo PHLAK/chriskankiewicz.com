@@ -32,7 +32,6 @@ class RegisterGlobalsMiddleware
             '🧙‍♂️ Open sourcerer',
             '🖥️ Avid PC gamer',
             '☕️ Coffee aficionado',
-            '🛠️ Tinkerer',
             '👫 Dedicated husband',
             '👨‍👧‍👦 Proud father of two',
         ];

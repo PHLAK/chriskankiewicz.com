@@ -24,13 +24,13 @@ return [
         'phlak/twine',
         'phlak/splat',
         'phlak/semver',
-        'phlak/vuecolorclock',
+        'phlak/chronometer',
         'phlak/stash',
         'phlak/config',
-        'phlak/chronometer',
+        'phlak/vuecolorclock',
+        'phlak/docker-minecraft',
         'phlak/uses',
-        // '...',
-        // '...',
+        'phlak/dotfiles',
     ],
 
 ];
