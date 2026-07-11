@@ -8,7 +8,7 @@
     <a href="https://www.ChrisKankiewicz.com"><img src="https://img.shields.io/badge/created_by-Chris%20Kankiewicz-319795.svg?style=flat-square" alt="Author"></a>
 </p>
 
---
+---
 
 <p align="center">
     Home page of Chris Kankiewicz.
