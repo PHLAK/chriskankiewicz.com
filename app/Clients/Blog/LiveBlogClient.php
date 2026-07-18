@@ -17,7 +17,15 @@ class LiveBlogClient implements BlogClientInterface
     {
         $response = file_get_contents($this->feedUrl);
 
+        if ($response === false) {
+            throw new BlogClientException('Failed to fetch the feed');
+        }
+
         $feed = simplexml_load_string($response);
+
+        if ($feed === false) {
+            throw new BlogClientException('Failed to decode the feed');
+        }
 
         if (! $feed->channel) {
             throw new BlogClientException('Feed is invalid');

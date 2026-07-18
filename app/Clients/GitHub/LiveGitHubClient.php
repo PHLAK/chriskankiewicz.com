@@ -6,7 +6,7 @@ namespace App\Clients\GitHub;
 
 use App\Exceptions\GitHubClientException;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 
 class LiveGitHubClient implements GitHubClientInterface
 {
@@ -18,10 +18,10 @@ class LiveGitHubClient implements GitHubClientInterface
     {
         try {
             $response = $this->client->get(sprintf('repos/%s/%s', $owner, $repository));
-        } catch (ClientException $exception) {
+        } catch (GuzzleException $exception) {
             throw new GitHubClientException('Failed to fetch the repository', previous: $exception);
         }
 
-        return json_decode($response->getBody()->getContents(), flags: JSON_THROW_ON_ERROR);
+        return (object) json_decode($response->getBody()->getContents(), flags: JSON_THROW_ON_ERROR);
     }
 }

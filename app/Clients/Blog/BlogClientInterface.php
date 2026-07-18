@@ -8,6 +8,10 @@ use App\Exceptions\BlogClientException;
 
 interface BlogClientInterface
 {
-    /** @throws BlogClientException */
+    /**
+     * @throws BlogClientException
+     *
+     * @return list<array>
+     */
     public function posts(?int $limit = null): array;
 }

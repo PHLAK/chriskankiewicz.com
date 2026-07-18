@@ -1,0 +1,121 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method App\\Controllers\\IndexController\:\:__invoke\(\) throws checked exception App\\Exceptions\\BlogClientException but it''s missing from the PHPDoc @throws tag\.$#'
+			identifier: missingType.checkedException
+			count: 1
+			path: app/Controllers/IndexController.php
+
+		-
+			message: '#^Method App\\Controllers\\IndexController\:\:projects\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Controllers/IndexController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) expects callable\(mixed, int\|string\)\: object, Closure\(string\)\: object given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Controllers/IndexController.php
+
+		-
+			message: '#^Parameter \#1 \$owner of method App\\Clients\\GitHub\\GitHubClientInterface\:\:repository\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Controllers/IndexController.php
+
+		-
+			message: '#^Parameter \#2 \$repo of method App\\Clients\\GitHub\\GitHubClientInterface\:\:repository\(\) expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Controllers/IndexController.php
+
+		-
+			message: '#^Property App\\Controllers\\IndexController\:\:\$projects type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Controllers/IndexController.php
+
+		-
+			message: '#^Method App\\Factories\\CacheFactory\:\:getApcuAdapter\(\) throws checked exception Symfony\\Component\\Cache\\Exception\\CacheException but it''s missing from the PHPDoc @throws tag\.$#'
+			identifier: missingType.checkedException
+			count: 1
+			path: app/Factories/CacheFactory.php
+
+		-
+			message: '#^Parameter \#2 \$callable of class Twig\\TwigFilter constructor expects array\{class\-string, string\}\|\(callable\(\)\: mixed\)\|null, App\\Filters\\ViewFilter given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Factories/TwigFactory.php
+
+		-
+			message: '#^Parameter \#2 \$callable of class Twig\\TwigFunction constructor expects array\{class\-string, string\}\|\(callable\(\)\: mixed\)\|null, App\\Functions\\ViewFunction given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Factories/TwigFactory.php
+
+		-
+			message: '#^Method App\\Functions\\Svg\:\:addClassAttribute\(\) should return string but returns string\|false\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Functions/Svg.php
+
+		-
+			message: '#^Cannot access property \$file on mixed\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Functions/Vite.php
+
+		-
+			message: '#^Parameter \#2 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 5
+			path: app/Functions/Vite.php
+
+		-
+			message: '#^Parameter \#1 \$middleware of method Slim\\App\<DI\\Container\>\:\:add\(\) expects \(callable\(\)\: mixed\)\|Psr\\Http\\Server\\MiddlewareInterface\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Managers/MiddlewareManager.php
+
+		-
+			message: '#^Property App\\Managers\\MiddlewareManager\:\:\$middlewares type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Managers/MiddlewareManager.php
+
+		-
+			message: '#^Method App\\Middlewares\\PruneCacheMiddleware\:\:winsLottery\(\) throws checked exception Random\\RandomException but it''s missing from the PHPDoc @throws tag\.$#'
+			identifier: missingType.checkedException
+			count: 1
+			path: app/Middlewares/PruneCacheMiddleware.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 2
+			path: config/cache.php
+
+		-
+			message: '#^Cannot cast mixed to string\.$#'
+			identifier: cast.string
+			count: 2
+			path: config/cache.php
+
+		-
+			message: '#^Method Tests\\TestCase\:\:fileContents\(\) should return string but returns string\|false\.$#'
+			identifier: return.type
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Method Tests\\TestCase\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
+			identifier: missingType.checkedException
+			count: 1
+			path: tests/TestCase.php
+
+		-
+			message: '#^Property Tests\\TestCase\:\:\$cache \(Symfony\\Contracts\\Cache\\CacheInterface&Symfony\\Contracts\\Cache\\NamespacedPoolInterface\) does not accept mixed\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: tests/TestCase.php

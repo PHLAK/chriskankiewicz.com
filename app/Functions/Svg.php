@@ -26,7 +26,7 @@ class Svg extends ViewFunction
     }
 
     /** @param array<string> $classes */
-    private function addClassAttribute(string $svg, array $classes)
+    private function addClassAttribute(string $svg, array $classes): string
     {
         $dom = new DOMDocument;
         $dom->loadXML($svg);
