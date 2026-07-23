@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Factories;
+use App\Filters;
 use App\Functions;
 use App\Managers;
 use App\Middlewares;
@@ -33,6 +34,9 @@ return [
     'assets_path' => string('{build_path}/assets'),
     'manifest_path' => string('{build_path}/manifest.json'),
 
+    // User customization file path
+    'customizations_file' => string('{base_path}/customizations.html'),
+
     // -------------------------------------------------------------------------
     // Application managers
     // -------------------------------------------------------------------------
@@ -62,6 +66,7 @@ return [
 
     'view_functions' => [
         Functions\Config::class,
+        Functions\Customizations::class,
         Functions\Gravatar::class,
         Functions\Svg::class,
         Functions\Vite::class,
