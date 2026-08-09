@@ -24,8 +24,8 @@ class IndexControllerTest extends TestCase
     {
         $github = $this->mock(GithubClientInterface::class);
         $github->expects($this->exactly(12))->method('repository')->withParameterSetsInOrder(
-            ['phlak', 'plume'],
             ['directorylister', 'directorylister'],
+            ['phlak', 'plume'],
             ['phlak', 'twine'],
             ['phlak', 'splat'],
             ['phlak', 'semver'],
