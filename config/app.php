@@ -13,14 +13,13 @@ return [
     'timezone' => env('TIMEZONE', date_default_timezone_get()),
 
     'github_base_uri' => env('GITHUB_BASE_URI', 'https://api.github.com/'),
-
     'github_token' => env('GITHUB_TOKEN'),
 
     'blog_feed_url' => env('BLOG_FEED_URL', 'https://blog.chriskankiewicz.com/feed'),
 
     'projects' => [
-        'phlak/plume',
         'directorylister/directorylister',
+        'phlak/plume',
         'phlak/twine',
         'phlak/splat',
         'phlak/semver',
