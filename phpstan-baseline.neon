@@ -109,12 +109,6 @@ parameters:
 			path: tests/TestCase.php
 
 		-
-			message: '#^Method Tests\\TestCase\:\:setUp\(\) throws checked exception TypeError but it''s missing from the PHPDoc @throws tag\.$#'
-			identifier: missingType.checkedException
-			count: 1
-			path: tests/TestCase.php
-
-		-
 			message: '#^Property Tests\\TestCase\:\:\$cache \(Symfony\\Contracts\\Cache\\CacheInterface&Symfony\\Contracts\\Cache\\NamespacedPoolInterface\) does not accept mixed\.$#'
 			identifier: assign.propertyType
 			count: 1
